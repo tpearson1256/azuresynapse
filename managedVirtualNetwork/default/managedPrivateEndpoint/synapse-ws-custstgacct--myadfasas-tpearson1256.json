@@ -1,0 +1,7 @@
+{
+	"name": "synapse-ws-custstgacct--myadfasas-tpearson1256",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/8c95e5bc-6519-484b-a2e5-c1efd1fdd75f/resourceGroups/myadf/providers/Microsoft.Storage/storageAccounts/tpearson1256",
+		"groupId": "dfs"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sql--myadfasas",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/8c95e5bc-6519-484b-a2e5-c1efd1fdd75f/resourceGroups/myadf/providers/Microsoft.Synapse/workspaces/myadfasas",
+		"groupId": "sql",
+		"fqdns": [
+			"myadfasas.922137f8-3dd4-4f0e-bfb6-223d8e5adae0.sql.azuresynapse.net"
+		]
+	}
+}
