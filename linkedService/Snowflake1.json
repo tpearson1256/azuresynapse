@@ -1,0 +1,18 @@
+{
+	"name": "Snowflake1",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "PIHJDMO.CAPGEMINICOE",
+		"annotations": [],
+		"type": "Snowflake",
+		"typeProperties": {
+			"authenticationType": "Basic",
+			"connectionString": "jdbc:snowflake://PIHJDMO.CAPGEMINICOE.snowflakecomputing.com/?user=tony.pearson@capgemini.com&db=COETESTDB&warehouse=ETL&role=ACCOUNTADMIN&SCHEMA=MACHINE_LEARNING",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlNZTkFQU0VANzhDNzREOTktRjYyMC00MUY0LTgwNjktQ0EwNDA5RTg0QUU5X2MzMTIxZTIyLTA2YzEtNGZlNS05MTNmLWEyZjEyYTdmYzNlNyINCn0="
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
