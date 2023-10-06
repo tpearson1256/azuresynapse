@@ -1,0 +1,149 @@
+{
+	"name": "DataLineReferenceAllele",
+	"properties": {
+		"Name": "DataLineReferenceAllele",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The one or more reference bases that create the string of reference bases = REF\n\nThe reference allele(s) observed in a sample, set of samples, or a population in general",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "DataLineReferenceAllele.cdm.json/DataLineReferenceAllele",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Pos",
+					"Description": "The genomic coordinates on which the variant occurs.\n\nPOS - position: The reference position, with the 1st base having position 1. Positions are sorted numerically, in increasing order, within each reference sequence CHROM. It is permitted to have multiple records with the same POS. Telomeres are indicated by using positions 0 or N+1, where N is the length of the corresponding chromosome or contig. (Integer, Required)\n\nThe single-base position of the variant in the reference chromosome.\nFor SNPs, this position is the reference base with the variant; for indels or deletions, this position is the reference base immediately before the variant.",
+					"BaseAttributeReference": {
+						"Entity": "DataLineReferenceAllele.cdm.json/DataLineReferenceAllele",
+						"Name": "Pos"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReferenceBase",
+					"Description": "The reference base single letter.",
+					"BaseAttributeReference": {
+						"Entity": "DataLineReferenceAllele.cdm.json/DataLineReferenceAllele",
+						"Name": "ReferenceBase"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 1,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromContigId",
+					"Description": "The chromosome of the reference genome. Chromosomes appear in the same order as the reference FASTA file.",
+					"BaseAttributeReference": {
+						"Entity": "DataLineReferenceAllele.cdm.json/DataLineReferenceAllele",
+						"Name": "ChromContigId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "DataLineReferenceAllele.cdm.json/DataLineReferenceAllele",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DataLineReferenceAllele",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DataLineReferenceAllele",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"ReferenceFile\"},\"Pos\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"Pos\"},\"ReferenceBase\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"ReferenceBase\"},\"ChromContigId\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"ChromContigId\"},\"GeneSequencingFileFormatId\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"GeneSequencingFileFormatId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DataLineReferenceAllele\",\"path\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\"},\"description\":\"The one or more reference bases that create the string of reference bases = REF\\n\\nThe reference allele(s) observed in a sample, set of samples, or a population in general\",\"primaryKey\":[\"ReferenceFile\",\"Pos\",\"ReferenceBase\",\"ChromContigId\",\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"Pos\"},\"dataType\":\"integer\",\"description\":\"The genomic coordinates on which the variant occurs.\\n\\nPOS - position: The reference position, with the 1st base having position 1. Positions are sorted numerically, in increasing order, within each reference sequence CHROM. It is permitted to have multiple records with the same POS. Telomeres are indicated by using positions 0 or N+1, where N is the length of the corresponding chromosome or contig. (Integer, Required)\\n\\nThe single-base position of the variant in the reference chromosome.\\nFor SNPs, this position is the reference base with the variant; for indels or deletions, this position is the reference base immediately before the variant.\",\"isNullable\":false,\"name\":\"Pos\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"ReferenceBase\"},\"dataType\":\"decimal\",\"dataTypeLength\":1,\"description\":\"The reference base single letter.\",\"isNullable\":false,\"scale\":0,\"name\":\"ReferenceBase\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"ChromContigId\"},\"dataType\":\"integer\",\"description\":\"The chromosome of the reference genome. Chromosomes appear in the same order as the reference FASTA file.\",\"isNullable\":false,\"name\":\"ChromContigId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"}]}}}",
+			"Description": "The one or more reference bases that create the string of reference bases = REF\n\nThe reference allele(s) observed in a sample, set of samples, or a population in general",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,Pos,ReferenceBase,ChromContigId,GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pedjjqsvno",
+	"properties": {
+		"Name": "relationship-pedjjqsvno",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Drug",
+		"ToTableName": "AminoAcidDerivativeDrug",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DrugId",
+				"ToColumnName": "DrugId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Drug.cdm.json/Drug\",\"toEntity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"joinPairs\":[{\"fromAttribute\":\"DrugId\",\"toAttribute\":\"DrugId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

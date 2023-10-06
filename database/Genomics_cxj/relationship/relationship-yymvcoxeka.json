@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yymvcoxeka",
+	"properties": {
+		"Name": "relationship-yymvcoxeka",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTestMethod",
+		"ToTableName": "MedicalTestType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestMethodId",
+				"ToColumnName": "MedicalTestMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\",\"toEntity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestMethodId\",\"toAttribute\":\"MedicalTestMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

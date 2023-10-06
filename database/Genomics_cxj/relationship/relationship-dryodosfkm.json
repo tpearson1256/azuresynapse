@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dryodosfkm",
+	"properties": {
+		"Name": "relationship-dryodosfkm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenotypeReserveWord",
+		"ToTableName": "VcfFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GenotypeReserveWordId",
+				"ToColumnName": "FormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenotypeReserveWord.cdm.json/GenotypeReserveWord\",\"toEntity\":\"VcfFormat.cdm.json/VcfFormat\",\"joinPairs\":[{\"fromAttribute\":\"GenotypeReserveWordId\",\"toAttribute\":\"FormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

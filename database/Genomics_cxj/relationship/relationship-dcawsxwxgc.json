@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dcawsxwxgc",
+	"properties": {
+		"Name": "relationship-dcawsxwxgc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "KaryotypeBandingType",
+		"ToTableName": "KaryotypeTestChromosome",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "KaryotypeBandingTypeId",
+				"ToColumnName": "KaryotypeBandingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\",\"toEntity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"joinPairs\":[{\"fromAttribute\":\"KaryotypeBandingTypeId\",\"toAttribute\":\"KaryotypeBandingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,201 @@
+{
+	"name": "VcfFormat",
+	"properties": {
+		"Name": "VcfFormat",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "These lines define the annotations contained in the FORMAT columns of the VCF and will be preceded by ##format.\n\nIf genotype data is present in the file, these are followed by a FORMAT column header, then an arbitrary number of sample IDs. The header line is tab-delimited.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FormatId",
+					"Description": "The unique identifier of a format.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "FormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FormatNumber",
+					"Description": "The Format Number.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "FormatNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FormatType",
+					"Description": "The unique identifier of a VCF Format Type.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "FormatType"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FormatDescription",
+					"Description": "The format description",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "FormatDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FormatSource",
+					"Description": "The format source.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "FormatSource"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FormatVersion",
+					"Description": "The format version.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormat.cdm.json/VcfFormat",
+						"Name": "FormatVersion"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFormat",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFormat",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"ReferenceFile\"},\"GeneSequencingFileFormatId\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"FormatId\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatId\"},\"FormatNumber\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatNumber\"},\"FormatType\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatType\"},\"FormatDescription\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatDescription\"},\"FormatSource\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatSource\"},\"FormatVersion\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatVersion\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VcfFormat\",\"path\":\"VcfFormat.cdm.json/VcfFormat\"},\"description\":\"These lines define the annotations contained in the FORMAT columns of the VCF and will be preceded by ##format.\\n\\nIf genotype data is present in the file, these are followed by a FORMAT column header, then an arbitrary number of sample IDs. The header line is tab-delimited.\",\"primaryKey\":[\"ReferenceFile\",\"GeneSequencingFileFormatId\",\"FormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a format.\",\"isNullable\":false,\"name\":\"FormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatNumber\"},\"dataType\":\"integer\",\"description\":\"The Format Number.\",\"isNullable\":true,\"name\":\"FormatNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatType\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a VCF Format Type.\",\"isNullable\":true,\"name\":\"FormatType\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The format description\",\"isNullable\":true,\"name\":\"FormatDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatSource\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The format source.\",\"isNullable\":true,\"name\":\"FormatSource\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormat.cdm.json/VcfFormat\",\"name\":\"FormatVersion\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The format version.\",\"isNullable\":true,\"name\":\"FormatVersion\"}]}}}",
+			"Description": "These lines define the annotations contained in the FORMAT columns of the VCF and will be preceded by ##format.\n\nIf genotype data is present in the file, these are followed by a FORMAT column header, then an arbitrary number of sample IDs. The header line is tab-delimited.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,GeneSequencingFileFormatId,FormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

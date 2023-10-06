@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sovrgogqxy",
+	"properties": {
+		"Name": "relationship-sovrgogqxy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Fastq",
+		"ToTableName": "FastqIlluminaSequenceIdentifierPreVersion14",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatId",
+				"ToColumnName": "GeneSequencingFileFormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Fastq.cdm.json/Fastq\",\"toEntity\":\"FastqIlluminaSequenceIdentifierPreVersion14.cdm.json/FastqIlluminaSequenceIdentifierPreVersion14\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatId\",\"toAttribute\":\"GeneSequencingFileFormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

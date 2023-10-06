@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidBiofunctionType",
+	"properties": {
+		"Name": "AminoAcidBiofunctionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "An amino acid biofunction type.\n\nEx:\n-  protein synthesis\n-  amino acid biosynthesis",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidBiofunctionTypeId",
+					"Description": "The unique identifier of an amino acid biofunction type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType",
+						"Name": "AminoAcidBiofunctionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidBiofunctionTypeName",
+					"Description": "The name of an amino acid biofunction type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType",
+						"Name": "AminoAcidBiofunctionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidBiofunctionTypeDescription",
+					"Description": "The description of an amino acid biofunction type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType",
+						"Name": "AminoAcidBiofunctionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidBiofunctionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidBiofunctionType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidBiofunctionTypeId\":{\"entity\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\",\"name\":\"AminoAcidBiofunctionTypeId\"},\"AminoAcidBiofunctionTypeName\":{\"entity\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\",\"name\":\"AminoAcidBiofunctionTypeName\"},\"AminoAcidBiofunctionTypeDescription\":{\"entity\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\",\"name\":\"AminoAcidBiofunctionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidBiofunctionType\",\"path\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\"},\"description\":\"An amino acid biofunction type.\\n\\nEx:\\n-  protein synthesis\\n-  amino acid biosynthesis\",\"primaryKey\":[\"AminoAcidBiofunctionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\",\"name\":\"AminoAcidBiofunctionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid biofunction type.\",\"isNullable\":false,\"name\":\"AminoAcidBiofunctionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\",\"name\":\"AminoAcidBiofunctionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an amino acid biofunction type.\",\"isNullable\":true,\"name\":\"AminoAcidBiofunctionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\",\"name\":\"AminoAcidBiofunctionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an amino acid biofunction type.\",\"isNullable\":true,\"name\":\"AminoAcidBiofunctionTypeDescription\"}]}}}",
+			"Description": "An amino acid biofunction type.\n\nEx:\n-  protein synthesis\n-  amino acid biosynthesis",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidBiofunctionTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

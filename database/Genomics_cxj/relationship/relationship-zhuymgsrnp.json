@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zhuymgsrnp",
+	"properties": {
+		"Name": "relationship-zhuymgsrnp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IcdVersion",
+		"ToTableName": "InternationalStatisticalClassificationOfDiseaseCode",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IcdVersionNumber",
+				"ToColumnName": "IcdVersionNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IcdVersion.cdm.json/IcdVersion\",\"toEntity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"joinPairs\":[{\"fromAttribute\":\"IcdVersionNumber\",\"toAttribute\":\"IcdVersionNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

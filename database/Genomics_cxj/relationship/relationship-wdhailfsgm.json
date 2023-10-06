@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wdhailfsgm",
+	"properties": {
+		"Name": "relationship-wdhailfsgm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFileFormat",
+		"ToTableName": "PlainSequenceFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatId",
+				"ToColumnName": "GeneSequencingFileFormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFileFormat.cdm.json/GeneSequencingFileFormat\",\"toEntity\":\"PlainSequenceFormat.cdm.json/PlainSequenceFormat\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatId\",\"toAttribute\":\"GeneSequencingFileFormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

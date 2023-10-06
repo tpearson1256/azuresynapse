@@ -1,0 +1,26 @@
+{
+	"name": "relationship-havtvtvmnk",
+	"properties": {
+		"Name": "relationship-havtvtvmnk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SpecimenPartyRelationshipType",
+		"ToTableName": "SpecimenRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenPartyRelationshipTypeId",
+				"ToColumnName": "SpecimenPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\",\"toEntity\":\"SpecimenRelatedParty.cdm.json/SpecimenRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenPartyRelationshipTypeId\",\"toAttribute\":\"SpecimenPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

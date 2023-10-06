@@ -1,0 +1,115 @@
+{
+	"name": "DocumentConfidentialityType",
+	"properties": {
+		"Name": "DocumentConfidentialityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The confidentiality type associated with a Document.\n\nEx:\n- classified\n- trade secret\n- intellectual property\n- company private\n- personal private\n- none",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentConfidentialityTypeId",
+					"Description": "The unique identifier of a Document Confidentiality Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentConfidentialityType.cdm.json/DocumentConfidentialityType",
+						"Name": "DocumentConfidentialityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentConfidentialityTypeName",
+					"Description": "The name of a Document Confidentiality Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentConfidentialityType.cdm.json/DocumentConfidentialityType",
+						"Name": "DocumentConfidentialityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentConfidentialityTypeDescription",
+					"Description": "The description of a Document Confidentiality Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentConfidentialityType.cdm.json/DocumentConfidentialityType",
+						"Name": "DocumentConfidentialityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentConfidentialityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentConfidentialityType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentConfidentialityTypeId\":{\"entity\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\",\"name\":\"DocumentConfidentialityTypeId\"},\"DocumentConfidentialityTypeName\":{\"entity\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\",\"name\":\"DocumentConfidentialityTypeName\"},\"DocumentConfidentialityTypeDescription\":{\"entity\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\",\"name\":\"DocumentConfidentialityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentConfidentialityType\",\"path\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\"},\"description\":\"The confidentiality type associated with a Document.\\n\\nEx:\\n- classified\\n- trade secret\\n- intellectual property\\n- company private\\n- personal private\\n- none\",\"primaryKey\":[\"DocumentConfidentialityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\",\"name\":\"DocumentConfidentialityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Confidentiality Type.\",\"isNullable\":false,\"name\":\"DocumentConfidentialityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\",\"name\":\"DocumentConfidentialityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Document Confidentiality Type.\",\"isNullable\":true,\"name\":\"DocumentConfidentialityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\",\"name\":\"DocumentConfidentialityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Document Confidentiality Type.\",\"isNullable\":true,\"name\":\"DocumentConfidentialityTypeDescription\"}]}}}",
+			"Description": "The confidentiality type associated with a Document.\n\nEx:\n- classified\n- trade secret\n- intellectual property\n- company private\n- personal private\n- none",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentConfidentialityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jxrigxqsxo",
+	"properties": {
+		"Name": "relationship-jxrigxqsxo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FastqLineSequenceQualityType",
+		"ToTableName": "SangerFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FastqLineSequenceQualityTypeId",
+				"ToColumnName": "FastqLineSequenceQualityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\",\"toEntity\":\"SangerFormat.cdm.json/SangerFormat\",\"joinPairs\":[{\"fromAttribute\":\"FastqLineSequenceQualityTypeId\",\"toAttribute\":\"FastqLineSequenceQualityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

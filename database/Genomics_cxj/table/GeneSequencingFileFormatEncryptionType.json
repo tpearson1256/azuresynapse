@@ -1,0 +1,114 @@
+{
+	"name": "GeneSequencingFileFormatEncryptionType",
+	"properties": {
+		"Name": "GeneSequencingFileFormatEncryptionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type(s) of encryption that can be used to encrypt the associated gene sequencing file format.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequenceFileFormatEncryptionTypeId",
+					"Description": "The unique identifier of a gene sequence file format encryption type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType",
+						"Name": "GeneSequenceFileFormatEncryptionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatEncryptionTypeNote",
+					"Description": "A note, comment or additional information regarding the Gene Sequencing File Format Encryption Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType",
+						"Name": "GeneSequencingFileFormatEncryptionTypeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileFormatEncryptionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileFormatEncryptionType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequenceFileFormatEncryptionTypeId\":{\"entity\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeId\"},\"GeneSequencingFileFormatId\":{\"entity\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\",\"name\":\"GeneSequencingFileFormatId\"},\"GeneSequencingFileFormatEncryptionTypeNote\":{\"entity\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\",\"name\":\"GeneSequencingFileFormatEncryptionTypeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequencingFileFormatEncryptionType\",\"path\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\"},\"description\":\"The type(s) of encryption that can be used to encrypt the associated gene sequencing file format.\",\"primaryKey\":[\"GeneSequenceFileFormatEncryptionTypeId\",\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequence file format encryption type.\",\"isNullable\":false,\"name\":\"GeneSequenceFileFormatEncryptionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\",\"name\":\"GeneSequencingFileFormatEncryptionTypeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Gene Sequencing File Format Encryption Type.\",\"isNullable\":true,\"name\":\"GeneSequencingFileFormatEncryptionTypeNote\"}]}}}",
+			"Description": "The type(s) of encryption that can be used to encrypt the associated gene sequencing file format.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequenceFileFormatEncryptionTypeId,GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

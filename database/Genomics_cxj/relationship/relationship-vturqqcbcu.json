@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vturqqcbcu",
+	"properties": {
+		"Name": "relationship-vturqqcbcu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TissueType",
+		"ToTableName": "MedicalTestTypeSpecimenType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TissueTypeId",
+				"ToColumnName": "TissueTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TissueType.cdm.json/TissueType\",\"toEntity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"joinPairs\":[{\"fromAttribute\":\"TissueTypeId\",\"toAttribute\":\"TissueTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

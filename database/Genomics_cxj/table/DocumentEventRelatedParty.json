@@ -1,0 +1,166 @@
+{
+	"name": "DocumentEventRelatedParty",
+	"properties": {
+		"Name": "DocumentEventRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A party related to a document event.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentEventTypeId",
+					"Description": "The unique identifier of a Document Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty",
+						"Name": "DocumentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentEventTimestamp",
+					"Description": "The timestamp of the document event.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty",
+						"Name": "DocumentEventTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of a document event party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty",
+						"Name": "DocumentEventPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentEventRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the document event related party.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty",
+						"Name": "DocumentEventRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentEventRelatedParty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentEventRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentId\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentId\"},\"DocumentEventTypeId\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventTypeId\"},\"DocumentEventTimestamp\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventTimestamp\"},\"PartyId\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"PartyId\"},\"DocumentEventPartyRelationshipTypeId\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventPartyRelationshipTypeId\"},\"DocumentEventRelatedPartyNote\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentEventRelatedParty\",\"path\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\"},\"description\":\"A party related to a document event.\",\"primaryKey\":[\"DocumentId\",\"DocumentEventTypeId\",\"DocumentEventTimestamp\",\"PartyId\",\"DocumentEventPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Event Type.\",\"isNullable\":false,\"name\":\"DocumentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the document event.\",\"isNullable\":false,\"name\":\"DocumentEventTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a document event party relationship type.\",\"isNullable\":false,\"name\":\"DocumentEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"name\":\"DocumentEventRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the document event related party.\",\"isNullable\":true,\"name\":\"DocumentEventRelatedPartyNote\"}]}}}",
+			"Description": "A party related to a document event.",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentId,DocumentEventTypeId,DocumentEventTimestamp,PartyId,DocumentEventPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

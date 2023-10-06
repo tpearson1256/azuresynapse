@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tatnylemtb",
+	"properties": {
+		"Name": "relationship-tatnylemtb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentEvent",
+		"ToTableName": "DocumentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentEventTypeId",
+				"ToColumnName": "DocumentEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentEvent.cdm.json/DocumentEvent\",\"toEntity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"DocumentEventTypeId\",\"toAttribute\":\"DocumentEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

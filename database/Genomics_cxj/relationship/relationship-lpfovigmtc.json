@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lpfovigmtc",
+	"properties": {
+		"Name": "relationship-lpfovigmtc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenomicSpecimen",
+		"ToTableName": "SpecimenDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenId",
+				"ToColumnName": "SpecimenId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"toEntity\":\"SpecimenDocument.cdm.json/SpecimenDocument\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenId\",\"toAttribute\":\"SpecimenId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

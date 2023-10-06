@@ -1,0 +1,255 @@
+{
+	"name": "VcfDataLine",
+	"properties": {
+		"Name": "VcfDataLine",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "There are 8 fixed fields per record. All data lines are tab-delimited. In all cases, missing values are specified with a dot ('.'):\n\nCHROM\nPOS\nID\nREF\nALT\nFILTER\nQUAL\nFORMAT \nINFO\n\nIf genotype data is present in the file, these are followed by a FORMAT column header, then an arbitrary number of sample IDs. \n\nThe header line is tab-delimited.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromContigId",
+					"Description": "The chromosome of the reference genome. Chromosomes appear in the same order as the reference FASTA file.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "ChromContigId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Pos",
+					"Description": "The genomic coordinates on which the variant occurs.\n\nPOS - position: The reference position, with the 1st base having position 1. Positions are sorted numerically, in increasing order, within each reference sequence CHROM. It is permitted to have multiple records with the same POS. Telomeres are indicated by using positions 0 or N+1, where N is the length of the corresponding chromosome or contig. (Integer, Required)\n\nThe single-base position of the variant in the reference chromosome.\nFor SNPs, this position is the reference base with the variant; for indels or deletions, this position is the reference base immediately before the variant.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Pos"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Id",
+					"Description": "An optional identifier for the variant.\n\nBased on the contig and position of the call and whether a record exists at this site in a reference database such as dbSNP.\n\nThe rs number for the SNP obtained from dbSNP.txt, if applicable.\nIf there are multiple rs numbers at this location, the list is semicolon delimited. If no dbSNP entry exists at this position, a missing value marker ('.') is used.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Id"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Ref",
+					"Description": "The reference allele(s) observed in a sample, set of samples, or a population in general (depending how the VCF was generated).",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Ref"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Alt",
+					"Description": "The alternative allele(s) observed in a sample, set of samples, or a population in general (depending how the VCF was generated).",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Alt"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Filter",
+					"Description": "This  field contains the name(s) of any  filter(s) that the variant fails to pass, or the value PASS if the variant passed all  filters. If the FILTER value is . , then no  filtering has been applied to the records. It is extremely important to apply appropriate  filters before using a variant callset in downstream analysis. See our documentation on  filtering variants for more information on this topic.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Filter"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Qual",
+					"Description": "The Phred-scaled (https://www.broadinstitute.org/gatk/guide/article?id=4260) probability that a REF/ALT polymorphism exists at this site given sequencing data.\nBecause the Phred scale is -10 * log(1-p), a value of 10 indicates a 1 in 10 chance of error, while a 100 indicates a 1 in 10^10 chance (see the FAQ article (https://www.broadinstitute.org/gatk/guide/article?id=4260) for a detailed explanation). These values can grow very large when a large amount of data is used for variant calling, so QUAL is not often a very useful property for evaluating the quality of a variant call. See our documentation on  filtering variants for more information on this topic.\n\nNot to be confused with the sample-level annotation GQ; see this FAQ article (https://www.broadinstitute.org/gatk/guide/article? id=4860) for an explanation of the differences in what they mean and how they should be used.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Qual"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Info",
+					"Description": "Various site-level annotations.\n\nThe annotations contained in the INFO  field are represented as tag-value pairs, where the tag and value are separated by an equal sign, i.e. = , and pairs are separated by colons, i.e. ; as in this example: MQ=99.00;MQ0=0;QD=17.94 .\n\nThey typically summarize context information from the samples, but can also include information from other sources (e.g. population frequencies from a database resource). Some are annotated by default by the GATK tools that produce the callset, and some can be added on request. They are always defined in the VCF header, so that's an easy way to check what an annotation means if you don't recognize it. You can also  find additional information on how they are calculated and how they should be interpreted in the \"Annotations\" section of the Tool Documentation (https://www.broadinstitute.org/gatk/guide/tooldocs/).",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Info"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Format",
+					"Description": "Sample-specific information such as genotype and individual sample-level annotation values are contained in the FORMAT column.",
+					"BaseAttributeReference": {
+						"Entity": "VcfDataLine.cdm.json/VcfDataLine",
+						"Name": "Format"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfDataLine",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfDataLine",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"ReferenceFile\"},\"ChromContigId\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"ChromContigId\"},\"Pos\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Pos\"},\"GeneSequencingFileFormatId\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"GeneSequencingFileFormatId\"},\"Id\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Id\"},\"Ref\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Ref\"},\"Alt\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Alt\"},\"Filter\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Filter\"},\"Qual\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Qual\"},\"Info\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Info\"},\"Format\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Format\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VcfDataLine\",\"path\":\"VcfDataLine.cdm.json/VcfDataLine\"},\"description\":\"There are 8 fixed fields per record. All data lines are tab-delimited. In all cases, missing values are specified with a dot ('.'):\\n\\nCHROM\\nPOS\\nID\\nREF\\nALT\\nFILTER\\nQUAL\\nFORMAT \\nINFO\\n\\nIf genotype data is present in the file, these are followed by a FORMAT column header, then an arbitrary number of sample IDs. \\n\\nThe header line is tab-delimited.\",\"primaryKey\":[\"ReferenceFile\",\"ChromContigId\",\"Pos\",\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"ChromContigId\"},\"dataType\":\"integer\",\"description\":\"The chromosome of the reference genome. Chromosomes appear in the same order as the reference FASTA file.\",\"isNullable\":false,\"name\":\"ChromContigId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Pos\"},\"dataType\":\"integer\",\"description\":\"The genomic coordinates on which the variant occurs.\\n\\nPOS - position: The reference position, with the 1st base having position 1. Positions are sorted numerically, in increasing order, within each reference sequence CHROM. It is permitted to have multiple records with the same POS. Telomeres are indicated by using positions 0 or N+1, where N is the length of the corresponding chromosome or contig. (Integer, Required)\\n\\nThe single-base position of the variant in the reference chromosome.\\nFor SNPs, this position is the reference base with the variant; for indels or deletions, this position is the reference base immediately before the variant.\",\"isNullable\":false,\"name\":\"Pos\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Id\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"An optional identifier for the variant.\\n\\nBased on the contig and position of the call and whether a record exists at this site in a reference database such as dbSNP.\\n\\nThe rs number for the SNP obtained from dbSNP.txt, if applicable.\\nIf there are multiple rs numbers at this location, the list is semicolon delimited. If no dbSNP entry exists at this position, a missing value marker ('.') is used.\",\"isNullable\":true,\"name\":\"Id\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Ref\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The reference allele(s) observed in a sample, set of samples, or a population in general (depending how the VCF was generated).\",\"isNullable\":true,\"name\":\"Ref\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Alt\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The alternative allele(s) observed in a sample, set of samples, or a population in general (depending how the VCF was generated).\",\"isNullable\":true,\"name\":\"Alt\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Filter\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"This  field contains the name(s) of any  filter(s) that the variant fails to pass, or the value PASS if the variant passed all  filters. If the FILTER value is . , then no  filtering has been applied to the records. It is extremely important to apply appropriate  filters before using a variant callset in downstream analysis. See our documentation on  filtering variants for more information on this topic.\",\"isNullable\":true,\"name\":\"Filter\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Qual\"},\"dataType\":\"integer\",\"description\":\"The Phred-scaled (https://www.broadinstitute.org/gatk/guide/article?id=4260) probability that a REF/ALT polymorphism exists at this site given sequencing data.\\nBecause the Phred scale is -10 * log(1-p), a value of 10 indicates a 1 in 10 chance of error, while a 100 indicates a 1 in 10^10 chance (see the FAQ article (https://www.broadinstitute.org/gatk/guide/article?id=4260) for a detailed explanation). These values can grow very large when a large amount of data is used for variant calling, so QUAL is not often a very useful property for evaluating the quality of a variant call. See our documentation on  filtering variants for more information on this topic.\\n\\nNot to be confused with the sample-level annotation GQ; see this FAQ article (https://www.broadinstitute.org/gatk/guide/article? id=4860) for an explanation of the differences in what they mean and how they should be used.\",\"isNullable\":true,\"name\":\"Qual\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Info\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Various site-level annotations.\\n\\nThe annotations contained in the INFO  field are represented as tag-value pairs, where the tag and value are separated by an equal sign, i.e. = , and pairs are separated by colons, i.e. ; as in this example: MQ=99.00;MQ0=0;QD=17.94 .\\n\\nThey typically summarize context information from the samples, but can also include information from other sources (e.g. population frequencies from a database resource). Some are annotated by default by the GATK tools that produce the callset, and some can be added on request. They are always defined in the VCF header, so that's an easy way to check what an annotation means if you don't recognize it. You can also  find additional information on how they are calculated and how they should be interpreted in the \\\"Annotations\\\" section of the Tool Documentation (https://www.broadinstitute.org/gatk/guide/tooldocs/).\",\"isNullable\":true,\"name\":\"Info\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"name\":\"Format\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"Sample-specific information such as genotype and individual sample-level annotation values are contained in the FORMAT column.\",\"isNullable\":true,\"name\":\"Format\"}]}}}",
+			"Description": "There are 8 fixed fields per record. All data lines are tab-delimited. In all cases, missing values are specified with a dot ('.'):\n\nCHROM\nPOS\nID\nREF\nALT\nFILTER\nQUAL\nFORMAT \nINFO\n\nIf genotype data is present in the file, these are followed by a FORMAT column header, then an arbitrary number of sample IDs. \n\nThe header line is tab-delimited.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,ChromContigId,Pos,GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

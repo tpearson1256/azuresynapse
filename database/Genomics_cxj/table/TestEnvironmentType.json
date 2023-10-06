@@ -1,0 +1,116 @@
+{
+	"name": "TestEnvironmentType",
+	"properties": {
+		"Name": "TestEnvironmentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The environment associated with a test.\n\nEx:\nIn Vitro\nTaking place in an artificial environment such as a test tube.\n\nIn Vivo\nPertaining to a biochemical process or reaction taking place in a living cell or organism.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TestEnvironmentTypeId",
+					"Description": "The unique identifier of a Test Environment Type.",
+					"BaseAttributeReference": {
+						"Entity": "TestEnvironmentType.cdm.json/TestEnvironmentType",
+						"Name": "TestEnvironmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestEnvironmentTypeName",
+					"Description": "The name of a Test Environment Type.",
+					"BaseAttributeReference": {
+						"Entity": "TestEnvironmentType.cdm.json/TestEnvironmentType",
+						"Name": "TestEnvironmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestEnvironmentTypeDescription",
+					"Description": "The description of a Test Environment Type.",
+					"BaseAttributeReference": {
+						"Entity": "TestEnvironmentType.cdm.json/TestEnvironmentType",
+						"Name": "TestEnvironmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TestEnvironmentType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TestEnvironmentType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TestEnvironmentTypeId\":{\"entity\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\",\"name\":\"TestEnvironmentTypeId\"},\"TestEnvironmentTypeName\":{\"entity\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\",\"name\":\"TestEnvironmentTypeName\"},\"TestEnvironmentTypeDescription\":{\"entity\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\",\"name\":\"TestEnvironmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TestEnvironmentType\",\"path\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\"},\"description\":\"The environment associated with a test.\\n\\nEx:\\nIn Vitro\\nTaking place in an artificial environment such as a test tube.\\n\\nIn Vivo\\nPertaining to a biochemical process or reaction taking place in a living cell or organism.\",\"primaryKey\":[\"TestEnvironmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\",\"name\":\"TestEnvironmentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Test Environment Type.\",\"isNullable\":false,\"name\":\"TestEnvironmentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\",\"name\":\"TestEnvironmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Test Environment Type.\",\"isNullable\":true,\"name\":\"TestEnvironmentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\",\"name\":\"TestEnvironmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Test Environment Type.\",\"isNullable\":true,\"name\":\"TestEnvironmentTypeDescription\"}]}}}",
+			"Description": "The environment associated with a test.\n\nEx:\nIn Vitro\nTaking place in an artificial environment such as a test tube.\n\nIn Vivo\nPertaining to a biochemical process or reaction taking place in a living cell or organism.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "TestEnvironmentTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

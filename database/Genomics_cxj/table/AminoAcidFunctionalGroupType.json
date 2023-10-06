@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidFunctionalGroupType",
+	"properties": {
+		"Name": "AminoAcidFunctionalGroupType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The functional group associated with the amino acid.\n\nEx:\n-  Amide\n-  Acid\n-  Alcohol\n-  Ketone\n-  Aldehyde\n-  Anime\n-  Ester\n-  Ether\n-  Alkane",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidFunctionalGroupTypeId",
+					"Description": "The unique identifier of an amino acid functional group type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType",
+						"Name": "AminoAcidFunctionalGroupTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidFunctionalGroupTypeName",
+					"Description": "The name of an amino acid functional group type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType",
+						"Name": "AminoAcidFunctionalGroupTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidFunctionalGroupTypeDescription",
+					"Description": "The description of an amino acid functional group type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType",
+						"Name": "AminoAcidFunctionalGroupTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidFunctionalGroupType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidFunctionalGroupType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidFunctionalGroupTypeId\":{\"entity\":\"AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType\",\"name\":\"AminoAcidFunctionalGroupTypeId\"},\"AminoAcidFunctionalGroupTypeName\":{\"entity\":\"AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType\",\"name\":\"AminoAcidFunctionalGroupTypeName\"},\"AminoAcidFunctionalGroupTypeDescription\":{\"entity\":\"AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType\",\"name\":\"AminoAcidFunctionalGroupTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidFunctionalGroupType\",\"path\":\"AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType\"},\"description\":\"The functional group associated with the amino acid.\\n\\nEx:\\n-  Amide\\n-  Acid\\n-  Alcohol\\n-  Ketone\\n-  Aldehyde\\n-  Anime\\n-  Ester\\n-  Ether\\n-  Alkane\",\"primaryKey\":[\"AminoAcidFunctionalGroupTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType\",\"name\":\"AminoAcidFunctionalGroupTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid functional group type.\",\"isNullable\":false,\"name\":\"AminoAcidFunctionalGroupTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType\",\"name\":\"AminoAcidFunctionalGroupTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an amino acid functional group type.\",\"isNullable\":true,\"name\":\"AminoAcidFunctionalGroupTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidFunctionalGroupType.cdm.json/AminoAcidFunctionalGroupType\",\"name\":\"AminoAcidFunctionalGroupTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an amino acid functional group type.\",\"isNullable\":true,\"name\":\"AminoAcidFunctionalGroupTypeDescription\"}]}}}",
+			"Description": "The functional group associated with the amino acid.\n\nEx:\n-  Amide\n-  Acid\n-  Alcohol\n-  Ketone\n-  Aldehyde\n-  Anime\n-  Ester\n-  Ether\n-  Alkane",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidFunctionalGroupTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

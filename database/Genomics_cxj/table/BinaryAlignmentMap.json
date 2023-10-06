@@ -1,0 +1,310 @@
+{
+	"name": "BinaryAlignmentMap",
+	"properties": {
+		"Name": "BinaryAlignmentMap",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Binary Alignment Map (BAM) is the comprehensive raw data of genome sequencing, consisting of lossless, compressed binary representation of a sequence alignment map. \nBAM is the compressed binary representation of SAM (Sequence Alignment Map). \nBAM is in compressed BGZF format.\nBAM files can be decompressed to a human-readable text format (SAM) using SAM/BAM-specific utilities.\n\nSee SAM file format for BAM format details.\n\nEx:\nSAM Alignment Example:\n3658435    145    CHROMOSOME_I    1    0    100M    CHROMOSOME_II    2716898    0    \nGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCT\nAAGCCT    \n@CCC?:CCCCC@CCCEC>AFDFDBEGHEAHCIGIHHGIGEGJGGIIIHFHIHGF@HGGIGJJJJJIJJJJJJJJJJJJJJJJJJJJJHHHHHFF\nFFFCCC    RG:Z:1    NH:i:1    NM:i:0\n    \n5482659    65    CHROMOSOME_I    1    0    100M    CHROMOSOME_II    11954696    0    \nGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCT\nAAGCCT    \nCCCFFFFFHHGHGJJGIJHIJIJJJJJIJJJJJIJJGIJJJJJIIJIIJFJJJJJFIJJJJIIIIGIIJHHHHDEEFFFEEEEEDDDDCDCCCA\nAA?CC:    RG:Z:1    NH:i:1    NM:i:0",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column1QueryTemplateName",
+					"Description": "Query template NAME. Reads/segments having identical QNAME are regarded to come from the same template. \n\nA QNAME '*' indicates the information is unavailable. In a SAM file, a read may occupy multiple alignment lines, when its alignment is chimeric or when multiple mappings are given.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column1QueryTemplateName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column2BitwiseFlag",
+					"Description": "FLAG: Combination of bitwise FLAGs",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column2BitwiseFlag"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column3ReferenceSequenceName",
+					"Description": "Reference sequence NAME of the alignment. If @SQ header lines are present, RNAME (if not '*') must be present in one of the SQ-SN tag. An unmapped segment without coordinate has a '*' at this field. However, an unmapped segment may also have an ordinary coordinate such that it can be placed at a desired position after sorting. If RNAME is '*', no assumptions can be made about POS and CIGAR.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column3ReferenceSequenceName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column41BasedLeftmostMappingPosition",
+					"Description": "POS: 1-based leftmost mapping POSition of the first matching base. The first base in a reference sequence has coordinate \n1. POS is set as 0 for an unmapped read without coordinate. If POS is 0, no assumptions can be made about RNAME and CIGAR.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column41BasedLeftmostMappingPosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column5MappingQuality",
+					"Description": "MAPQ: MAPping Quality. It equals -10 log10 Pr{mapping position is wrong}, rounded to the nearest integer. A value 255 indicates that the mapping quality is not available.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column5MappingQuality"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column6CigarStringCigar",
+					"Description": "CIGAR: Concise Idiosyncratic Gapped Alignment Report (CIGAR) string",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column6CigarStringCigar"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column7ReferenceNameOfMateNextRead",
+					"Description": "RNEXT: Reference sequence name of the primary alignment of the NEXT read in the template. For the last read, the next read is the first read in the template. If @SQ header lines are present, RNEXT (if not '*' or '=') must be present in one of the SQ-SN tag. This field is set as '*' when the information is unavailable, and set as '=' if RNEXT is identical RNAME. If not '=' and the next read in the template has one primary mapping (see also bit 0x100 in FLAG), this field is identical to RNAME at the primary line of the next read. If RNEXT is '*', no assumptions can be made on PNEXT and bit 0x20.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column7ReferenceNameOfMateNextRead"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column8PositionOfMateNextRead",
+					"Description": "PNEXT: Position of the primary alignment of the NEXT read in the template. Set as 0 when the information is unavailable. This field equals POS at the primary line of the next read. If PNEXT is 0, no assumptions can be made on RNEXT and bit 0x20.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column8PositionOfMateNextRead"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column9OverservedTemplateLength",
+					"Description": "TLEN: signed observed Template LENgth. If all segments are mapped to the same reference, the unsigned observed template length equals the number of bases from the leftmost mapped base to the rightmost mapped base. The leftmost segment has a plus sign and the rightmost has a minus sign. The sign of segments in the middle is undefined. It is set as 0 for single-segment template or when the information is unavailable.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column9OverservedTemplateLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column10SegmentSequence",
+					"Description": "SEQ: segment SEQuence. This field can be a '*' when the sequence is not stored. If not a '*', the length of the sequence must equal the sum of lengths of M/I/S/=/X operations in CIGAR. An '=' denotes the base is identical to the reference base. No assumptions can be made on the letter cases.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column10SegmentSequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Column11AsciiOfPhredScaledBaseQuality",
+					"Description": "QUAL: ASCII of base QUALity plus 33 (same as the quality string in the Sanger FASTQ format). A base quality is the phred-scaled base error probability which equals -10 log10 Pr{base is wrong}. This field can be a '*' when quality is not stored. If not a '*', SEQ must not be a '*' and the length of the quality string ought to equal the length of SEQ.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "Column11AsciiOfPhredScaledBaseQuality"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SortedUnsortedFileIndicator",
+					"Description": "A SAM/BAM file can be unsorted, but sorting by coordinate is used to streamline data processing and to avoid loading extra alignments into memory.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "SortedUnsortedFileIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IndexedFileIndicator",
+					"Description": "A position-sorted BAM file can be indexed. We combine the UCSC binning scheme (Kent et al., 2002) and simple linear indexing to achieve fast random retrieval of alignments overlapping a specified chromosomal region.",
+					"BaseAttributeReference": {
+						"Entity": "BinaryAlignmentMap.cdm.json/BinaryAlignmentMap",
+						"Name": "IndexedFileIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/BinaryAlignmentMap",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/BinaryAlignmentMap",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"GeneSequencingFileFormatId\"},\"Column1QueryTemplateName\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column1QueryTemplateName\"},\"Column2BitwiseFlag\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column2BitwiseFlag\"},\"Column3ReferenceSequenceName\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column3ReferenceSequenceName\"},\"Column41BasedLeftmostMappingPosition\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column41BasedLeftmostMappingPosition\"},\"Column5MappingQuality\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column5MappingQuality\"},\"Column6CigarStringCigar\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column6CigarStringCigar\"},\"Column7ReferenceNameOfMateNextRead\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column7ReferenceNameOfMateNextRead\"},\"Column8PositionOfMateNextRead\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column8PositionOfMateNextRead\"},\"Column9OverservedTemplateLength\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column9OverservedTemplateLength\"},\"Column10SegmentSequence\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column10SegmentSequence\"},\"Column11AsciiOfPhredScaledBaseQuality\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column11AsciiOfPhredScaledBaseQuality\"},\"SortedUnsortedFileIndicator\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"SortedUnsortedFileIndicator\"},\"IndexedFileIndicator\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"IndexedFileIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BinaryAlignmentMap\",\"path\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\"},\"description\":\"Binary Alignment Map (BAM) is the comprehensive raw data of genome sequencing, consisting of lossless, compressed binary representation of a sequence alignment map. \\nBAM is the compressed binary representation of SAM (Sequence Alignment Map). \\nBAM is in compressed BGZF format.\\nBAM files can be decompressed to a human-readable text format (SAM) using SAM/BAM-specific utilities.\\n\\nSee SAM file format for BAM format details.\\n\\nEx:\\nSAM Alignment Example:\\n3658435    145    CHROMOSOME_I    1    0    100M    CHROMOSOME_II    2716898    0    \\nGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCT\\nAAGCCT    \\n@CCC?:CCCCC@CCCEC>AFDFDBEGHEAHCIGIHHGIGEGJGGIIIHFHIHGF@HGGIGJJJJJIJJJJJJJJJJJJJJJJJJJJJHHHHHFF\\nFFFCCC    RG:Z:1    NH:i:1    NM:i:0\\n    \\n5482659    65    CHROMOSOME_I    1    0    100M    CHROMOSOME_II    11954696    0    \\nGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCT\\nAAGCCT    \\nCCCFFFFFHHGHGJJGIJHIJIJJJJJIJJJJJIJJGIJJJJJIIJIIJFJJJJJFIJJJJIIIIGIIJHHHHDEEFFFEEEEEDDDDCDCCCA\\nAA?CC:    RG:Z:1    NH:i:1    NM:i:0\",\"primaryKey\":[\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column1QueryTemplateName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"Query template NAME. Reads/segments having identical QNAME are regarded to come from the same template. \\n\\nA QNAME '*' indicates the information is unavailable. In a SAM file, a read may occupy multiple alignment lines, when its alignment is chimeric or when multiple mappings are given.\",\"isNullable\":true,\"name\":\"Column1QueryTemplateName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column2BitwiseFlag\"},\"dataType\":\"boolean\",\"description\":\"FLAG: Combination of bitwise FLAGs\",\"isNullable\":true,\"name\":\"Column2BitwiseFlag\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column3ReferenceSequenceName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"Reference sequence NAME of the alignment. If @SQ header lines are present, RNAME (if not '*') must be present in one of the SQ-SN tag. An unmapped segment without coordinate has a '*' at this field. However, an unmapped segment may also have an ordinary coordinate such that it can be placed at a desired position after sorting. If RNAME is '*', no assumptions can be made about POS and CIGAR.\",\"isNullable\":true,\"name\":\"Column3ReferenceSequenceName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column41BasedLeftmostMappingPosition\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"POS: 1-based leftmost mapping POSition of the first matching base. The first base in a reference sequence has coordinate \\n1. POS is set as 0 for an unmapped read without coordinate. If POS is 0, no assumptions can be made about RNAME and CIGAR.\",\"isNullable\":true,\"name\":\"Column41BasedLeftmostMappingPosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column5MappingQuality\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"MAPQ: MAPping Quality. It equals -10 log10 Pr{mapping position is wrong}, rounded to the nearest integer. A value 255 indicates that the mapping quality is not available.\",\"isNullable\":true,\"name\":\"Column5MappingQuality\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column6CigarStringCigar\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"CIGAR: Concise Idiosyncratic Gapped Alignment Report (CIGAR) string\",\"isNullable\":true,\"name\":\"Column6CigarStringCigar\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column7ReferenceNameOfMateNextRead\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"RNEXT: Reference sequence name of the primary alignment of the NEXT read in the template. For the last read, the next read is the first read in the template. If @SQ header lines are present, RNEXT (if not '*' or '=') must be present in one of the SQ-SN tag. This field is set as '*' when the information is unavailable, and set as '=' if RNEXT is identical RNAME. If not '=' and the next read in the template has one primary mapping (see also bit 0x100 in FLAG), this field is identical to RNAME at the primary line of the next read. If RNEXT is '*', no assumptions can be made on PNEXT and bit 0x20.\",\"isNullable\":true,\"name\":\"Column7ReferenceNameOfMateNextRead\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column8PositionOfMateNextRead\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"PNEXT: Position of the primary alignment of the NEXT read in the template. Set as 0 when the information is unavailable. This field equals POS at the primary line of the next read. If PNEXT is 0, no assumptions can be made on RNEXT and bit 0x20.\",\"isNullable\":true,\"name\":\"Column8PositionOfMateNextRead\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column9OverservedTemplateLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"TLEN: signed observed Template LENgth. If all segments are mapped to the same reference, the unsigned observed template length equals the number of bases from the leftmost mapped base to the rightmost mapped base. The leftmost segment has a plus sign and the rightmost has a minus sign. The sign of segments in the middle is undefined. It is set as 0 for single-segment template or when the information is unavailable.\",\"isNullable\":true,\"scale\":2,\"name\":\"Column9OverservedTemplateLength\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column10SegmentSequence\"},\"dataType\":\"integer\",\"description\":\"SEQ: segment SEQuence. This field can be a '*' when the sequence is not stored. If not a '*', the length of the sequence must equal the sum of lengths of M/I/S/=/X operations in CIGAR. An '=' denotes the base is identical to the reference base. No assumptions can be made on the letter cases.\",\"isNullable\":true,\"name\":\"Column10SegmentSequence\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"Column11AsciiOfPhredScaledBaseQuality\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"QUAL: ASCII of base QUALity plus 33 (same as the quality string in the Sanger FASTQ format). A base quality is the phred-scaled base error probability which equals -10 log10 Pr{base is wrong}. This field can be a '*' when quality is not stored. If not a '*', SEQ must not be a '*' and the length of the quality string ought to equal the length of SEQ.\",\"isNullable\":true,\"name\":\"Column11AsciiOfPhredScaledBaseQuality\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"SortedUnsortedFileIndicator\"},\"dataType\":\"boolean\",\"description\":\"A SAM/BAM file can be unsorted, but sorting by coordinate is used to streamline data processing and to avoid loading extra alignments into memory.\",\"isNullable\":true,\"name\":\"SortedUnsortedFileIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BinaryAlignmentMap.cdm.json/BinaryAlignmentMap\",\"name\":\"IndexedFileIndicator\"},\"dataType\":\"boolean\",\"description\":\"A position-sorted BAM file can be indexed. We combine the UCSC binning scheme (Kent et al., 2002) and simple linear indexing to achieve fast random retrieval of alignments overlapping a specified chromosomal region.\",\"isNullable\":true,\"name\":\"IndexedFileIndicator\"}]}}}",
+			"Description": "Binary Alignment Map (BAM) is the comprehensive raw data of genome sequencing, consisting of lossless, compressed binary representation of a sequence alignment map. \nBAM is the compressed binary representation of SAM (Sequence Alignment Map). \nBAM is in compressed BGZF format.\nBAM files can be decompressed to a human-readable text format (SAM) using SAM/BAM-specific utilities.\n\nSee SAM file format for BAM format details.\n\nEx:\nSAM Alignment Example:\n3658435    145    CHROMOSOME_I    1    0    100M    CHROMOSOME_II    2716898    0    \nGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCT\nAAGCCT    \n@CCC?:CCCCC@CCCEC>AFDFDBEGHEAHCIGIHHGIGEGJGGIIIHFHIHGF@HGGIGJJJJJIJJJJJJJJJJJJJJJJJJJJJHHHHHFF\nFFFCCC    RG:Z:1    NH:i:1    NM:i:0\n    \n5482659    65    CHROMOSOME_I    1    0    100M    CHROMOSOME_II    11954696    0    \nGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCTAAGCCT\nAAGCCT    \nCCCFFFFFHHGHGJJGIJHIJIJJJJJIJJJJJIJJGIJJJJJIIJIIJFJJJJJFIJJJJIIIIGIIJHHHHDEEFFFEEEEEDDDDCDCCCA\nAA?CC:    RG:Z:1    NH:i:1    NM:i:0",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

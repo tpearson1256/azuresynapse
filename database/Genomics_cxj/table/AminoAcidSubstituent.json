@@ -1,0 +1,115 @@
+{
+	"name": "AminoAcidSubstituent",
+	"properties": {
+		"Name": "AminoAcidSubstituent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The substituent(s) associated with the amino acid.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSubstituent.cdm.json/AminoAcidSubstituent",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SubstituentId",
+					"Description": "The unique identifier of a substituent.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSubstituent.cdm.json/AminoAcidSubstituent",
+						"Name": "SubstituentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidSubstituentNote",
+					"Description": "A note, comment or additional information regarding the amino acid substituent.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSubstituent.cdm.json/AminoAcidSubstituent",
+						"Name": "AminoAcidSubstituentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidSubstituent",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidSubstituent",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidId\":{\"entity\":\"AminoAcidSubstituent.cdm.json/AminoAcidSubstituent\",\"name\":\"AminoAcidId\"},\"SubstituentId\":{\"entity\":\"AminoAcidSubstituent.cdm.json/AminoAcidSubstituent\",\"name\":\"SubstituentId\"},\"AminoAcidSubstituentNote\":{\"entity\":\"AminoAcidSubstituent.cdm.json/AminoAcidSubstituent\",\"name\":\"AminoAcidSubstituentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidSubstituent\",\"path\":\"AminoAcidSubstituent.cdm.json/AminoAcidSubstituent\"},\"description\":\"The substituent(s) associated with the amino acid.\",\"primaryKey\":[\"AminoAcidId\",\"SubstituentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSubstituent.cdm.json/AminoAcidSubstituent\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSubstituent.cdm.json/AminoAcidSubstituent\",\"name\":\"SubstituentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a substituent.\",\"isNullable\":false,\"name\":\"SubstituentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSubstituent.cdm.json/AminoAcidSubstituent\",\"name\":\"AminoAcidSubstituentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid substituent.\",\"isNullable\":true,\"name\":\"AminoAcidSubstituentNote\"}]}}}",
+			"Description": "The substituent(s) associated with the amino acid.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidId,SubstituentId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

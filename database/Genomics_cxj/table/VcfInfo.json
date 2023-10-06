@@ -1,0 +1,164 @@
+{
+	"name": "VcfInfo",
+	"properties": {
+		"Name": "VcfInfo",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "These lines define the annotations contained in the INFO columns of the VCF.\n\nThese lines will be preceded by ##field.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "VcfInfo.cdm.json/VcfInfo",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InfoId",
+					"Description": "The INFO ID.",
+					"BaseAttributeReference": {
+						"Entity": "VcfInfo.cdm.json/VcfInfo",
+						"Name": "InfoId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "VcfInfo.cdm.json/VcfInfo",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InfoNumber",
+					"Description": "The INFO Number.",
+					"BaseAttributeReference": {
+						"Entity": "VcfInfo.cdm.json/VcfInfo",
+						"Name": "InfoNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InfoType",
+					"Description": "The INFO Type.",
+					"BaseAttributeReference": {
+						"Entity": "VcfInfo.cdm.json/VcfInfo",
+						"Name": "InfoType"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InfoDescriptionId",
+					"Description": "The INFO Description.",
+					"BaseAttributeReference": {
+						"Entity": "VcfInfo.cdm.json/VcfInfo",
+						"Name": "InfoDescriptionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfInfo",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfInfo",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"ReferenceFile\"},\"InfoId\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoId\"},\"GeneSequencingFileFormatId\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"GeneSequencingFileFormatId\"},\"InfoNumber\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoNumber\"},\"InfoType\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoType\"},\"InfoDescriptionId\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoDescriptionId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VcfInfo\",\"path\":\"VcfInfo.cdm.json/VcfInfo\"},\"description\":\"These lines define the annotations contained in the INFO columns of the VCF.\\n\\nThese lines will be preceded by ##field.\",\"primaryKey\":[\"ReferenceFile\",\"InfoId\",\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoId\"},\"dataType\":\"integer\",\"description\":\"The INFO ID.\",\"isNullable\":false,\"name\":\"InfoId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoNumber\"},\"dataType\":\"integer\",\"description\":\"The INFO Number.\",\"isNullable\":true,\"name\":\"InfoNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoType\"},\"dataType\":\"integer\",\"description\":\"The INFO Type.\",\"isNullable\":true,\"name\":\"InfoType\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfInfo.cdm.json/VcfInfo\",\"name\":\"InfoDescriptionId\"},\"dataType\":\"integer\",\"description\":\"The INFO Description.\",\"isNullable\":false,\"name\":\"InfoDescriptionId\"}]}}}",
+			"Description": "These lines define the annotations contained in the INFO columns of the VCF.\n\nThese lines will be preceded by ##field.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,InfoId,GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

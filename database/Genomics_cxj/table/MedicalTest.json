@@ -1,0 +1,379 @@
+{
+	"name": "MedicalTest",
+	"properties": {
+		"Name": "MedicalTest",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A medical test is a diagnostic procedure performed to confirm, or determine the presence of a disease, condition or state in an individual.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestId",
+					"Description": "The unique identifier of a Medical Test.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterId",
+					"Description": "The unique identifier of an Encounter with a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "EncounterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestTypeId",
+					"Description": "The unique identifier of a Medical Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestRequestedTimestamp",
+					"Description": "The timestamp that the associated test was requested.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestRequestedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestScheduledForTimestamp",
+					"Description": "The scheduled timestamp of the medical test.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestScheduledForTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestStartTimestamp",
+					"Description": "The start timestamp of the medical test.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestCompletedTimestamp",
+					"Description": "The end or completion timestamp of the test.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestDescription",
+					"Description": "A description of the medical test.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestTakenPositionDescription",
+					"Description": "The position of the patient when they took the medical test.\n\nEx:\n- Standing\n- Sitting\n- Resting",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestTakenPositionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BodyLocationOfMedicalTest",
+					"Description": "The body location of the medical test.\n\nEx:\n- Left arm",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "BodyLocationOfMedicalTest"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Quantity",
+					"Description": "The quantity associated with a test.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "Quantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NeverEventIndicator",
+					"Description": "A Never Event is a serious, largely preventable, patient safety incident that should not occur. This field indicates whether the test is required as a result of such an event.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "NeverEventIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequirementTypeId",
+					"Description": "The unique identifier of a Requirement Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "RequirementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalCareOrderId",
+					"Description": "The unique identifier of a Medical Care Order.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalCareOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FacilityFloorplanLocationId",
+					"Description": "The unique identifier of a Facility Floorplan Location.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "FacilityFloorplanLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MemberPreauthorizationCode",
+					"Description": "The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MemberPreauthorizationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FacilityScheduledEventId",
+					"Description": "The unique identifier of a Facility Scheduled Event.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "FacilityScheduledEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestNote",
+					"Description": "A note, comment or additional information regarding a Medical Test.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTest.cdm.json/MedicalTest",
+						"Name": "MedicalTestNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTest",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTest",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestId\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestId\"},\"EncounterId\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"EncounterId\"},\"MedicalTestTypeId\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestTypeId\"},\"MedicalTestRequestedTimestamp\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestRequestedTimestamp\"},\"MedicalTestScheduledForTimestamp\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestScheduledForTimestamp\"},\"MedicalTestStartTimestamp\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestStartTimestamp\"},\"MedicalTestCompletedTimestamp\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestCompletedTimestamp\"},\"MedicalTestDescription\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestDescription\"},\"MedicalTestTakenPositionDescription\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestTakenPositionDescription\"},\"BodyLocationOfMedicalTest\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"BodyLocationOfMedicalTest\"},\"Quantity\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"Quantity\"},\"NeverEventIndicator\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"NeverEventIndicator\"},\"RequirementTypeId\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"RequirementTypeId\"},\"MedicalCareOrderId\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalCareOrderId\"},\"FacilityFloorplanLocationId\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"FacilityFloorplanLocationId\"},\"MemberPreauthorizationCode\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MemberPreauthorizationCode\"},\"FacilityScheduledEventId\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"FacilityScheduledEventId\"},\"MedicalTestNote\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalTest\",\"path\":\"MedicalTest.cdm.json/MedicalTest\"},\"description\":\"A medical test is a diagnostic procedure performed to confirm, or determine the presence of a disease, condition or state in an individual.\",\"primaryKey\":[\"MedicalTestId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test.\",\"isNullable\":false,\"name\":\"MedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"EncounterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Encounter with a Service Provider.\",\"isNullable\":false,\"name\":\"EncounterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Type.\",\"isNullable\":false,\"name\":\"MedicalTestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestRequestedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated test was requested.\",\"isNullable\":true,\"name\":\"MedicalTestRequestedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestScheduledForTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The scheduled timestamp of the medical test.\",\"isNullable\":true,\"name\":\"MedicalTestScheduledForTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the medical test.\",\"isNullable\":true,\"name\":\"MedicalTestStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end or completion timestamp of the test.\",\"isNullable\":true,\"name\":\"MedicalTestCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the medical test.\",\"isNullable\":true,\"name\":\"MedicalTestDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestTakenPositionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The position of the patient when they took the medical test.\\n\\nEx:\\n- Standing\\n- Sitting\\n- Resting\",\"isNullable\":true,\"name\":\"MedicalTestTakenPositionDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"BodyLocationOfMedicalTest\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The body location of the medical test.\\n\\nEx:\\n- Left arm\",\"isNullable\":true,\"name\":\"BodyLocationOfMedicalTest\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"Quantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity associated with a test.\",\"isNullable\":true,\"scale\":2,\"name\":\"Quantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"NeverEventIndicator\"},\"dataType\":\"boolean\",\"description\":\"A Never Event is a serious, largely preventable, patient safety incident that should not occur. This field indicates whether the test is required as a result of such an event.\",\"isNullable\":true,\"name\":\"NeverEventIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"RequirementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Requirement Type.\",\"isNullable\":true,\"name\":\"RequirementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalCareOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Care Order.\",\"isNullable\":true,\"name\":\"MedicalCareOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"FacilityFloorplanLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility Floorplan Location.\",\"isNullable\":true,\"name\":\"FacilityFloorplanLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MemberPreauthorizationCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.\",\"isNullable\":true,\"name\":\"MemberPreauthorizationCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"FacilityScheduledEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility Scheduled Event.\",\"isNullable\":true,\"name\":\"FacilityScheduledEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTest.cdm.json/MedicalTest\",\"name\":\"MedicalTestNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Medical Test.\",\"isNullable\":true,\"name\":\"MedicalTestNote\"}]}}}",
+			"Description": "A medical test is a diagnostic procedure performed to confirm, or determine the presence of a disease, condition or state in an individual.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

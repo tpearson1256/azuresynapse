@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nxxvcddbfo",
+	"properties": {
+		"Name": "relationship-nxxvcddbfo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "SampleFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "Pos",
+				"ToColumnName": "Pos"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"joinPairs\":[{\"fromAttribute\":\"Pos\",\"toAttribute\":\"Pos\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

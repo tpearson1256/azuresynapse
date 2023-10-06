@@ -1,0 +1,26 @@
+{
+	"name": "relationship-imhchvnvig",
+	"properties": {
+		"Name": "relationship-imhchvnvig",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Fastq",
+		"ToTableName": "FastqIlluminaSequenceIdentifierPostVersion13",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatId",
+				"ToColumnName": "GeneSequencingFileFormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Fastq.cdm.json/Fastq\",\"toEntity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatId\",\"toAttribute\":\"GeneSequencingFileFormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

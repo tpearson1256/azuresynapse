@@ -1,0 +1,26 @@
+{
+	"name": "relationship-czbhdcotkh",
+	"properties": {
+		"Name": "relationship-czbhdcotkh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SampleFormat",
+		"ToTableName": "SampleAnnotatedValue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "Format",
+				"ToColumnName": "Format"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"toEntity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"joinPairs\":[{\"fromAttribute\":\"Format\",\"toAttribute\":\"Format\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

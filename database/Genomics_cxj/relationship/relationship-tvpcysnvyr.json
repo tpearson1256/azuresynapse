@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tvpcysnvyr",
+	"properties": {
+		"Name": "relationship-tvpcysnvyr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTestType",
+		"ToTableName": "TestPanel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestTypeId",
+				"ToColumnName": "MedicalTestTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"toEntity\":\"TestPanel.cdm.json/TestPanel\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestTypeId\",\"toAttribute\":\"MedicalTestTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-geayaugfpl",
+	"properties": {
+		"Name": "relationship-geayaugfpl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TissueType",
+		"ToTableName": "GenomicSpecimen",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TissueTypeId",
+				"ToColumnName": "TissueTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TissueType.cdm.json/TissueType\",\"toEntity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"joinPairs\":[{\"fromAttribute\":\"TissueTypeId\",\"toAttribute\":\"TissueTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

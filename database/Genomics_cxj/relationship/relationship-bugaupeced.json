@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bugaupeced",
+	"properties": {
+		"Name": "relationship-bugaupeced",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTest",
+		"ToTableName": "EncounterTestResult",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestId",
+				"ToColumnName": "MedicalTestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTest.cdm.json/MedicalTest\",\"toEntity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestId\",\"toAttribute\":\"MedicalTestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

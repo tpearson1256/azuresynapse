@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lshjmmemzj",
+	"properties": {
+		"Name": "relationship-lshjmmemzj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReferenceBase",
+		"ToTableName": "DataLineReferenceAllele",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceBase",
+				"ToColumnName": "ReferenceBase"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReferenceBase.cdm.json/ReferenceBase\",\"toEntity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceBase\",\"toAttribute\":\"ReferenceBase\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

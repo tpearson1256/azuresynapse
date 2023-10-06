@@ -1,0 +1,115 @@
+{
+	"name": "SpecimenEventType",
+	"properties": {
+		"Name": "SpecimenEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A type of event that is associated with a specimen.\n\nEx:\n- Specimen submitted to lab\n- Specimen in testing\n- Specimen returned from lab\n- Specimen results submitted",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenEventTypeId",
+					"Description": "The unique identifier of a specimen event type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenEventType.cdm.json/SpecimenEventType",
+						"Name": "SpecimenEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenEventTypeName",
+					"Description": "The name of a specimen event type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenEventType.cdm.json/SpecimenEventType",
+						"Name": "SpecimenEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenEventTypeDescription",
+					"Description": "The description of a specimen event type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenEventType.cdm.json/SpecimenEventType",
+						"Name": "SpecimenEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenEventType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenEventType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenEventTypeId\":{\"entity\":\"SpecimenEventType.cdm.json/SpecimenEventType\",\"name\":\"SpecimenEventTypeId\"},\"SpecimenEventTypeName\":{\"entity\":\"SpecimenEventType.cdm.json/SpecimenEventType\",\"name\":\"SpecimenEventTypeName\"},\"SpecimenEventTypeDescription\":{\"entity\":\"SpecimenEventType.cdm.json/SpecimenEventType\",\"name\":\"SpecimenEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SpecimenEventType\",\"path\":\"SpecimenEventType.cdm.json/SpecimenEventType\"},\"description\":\"A type of event that is associated with a specimen.\\n\\nEx:\\n- Specimen submitted to lab\\n- Specimen in testing\\n- Specimen returned from lab\\n- Specimen results submitted\",\"primaryKey\":[\"SpecimenEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenEventType.cdm.json/SpecimenEventType\",\"name\":\"SpecimenEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a specimen event type.\",\"isNullable\":false,\"name\":\"SpecimenEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenEventType.cdm.json/SpecimenEventType\",\"name\":\"SpecimenEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a specimen event type.\",\"isNullable\":true,\"name\":\"SpecimenEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenEventType.cdm.json/SpecimenEventType\",\"name\":\"SpecimenEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a specimen event type.\",\"isNullable\":true,\"name\":\"SpecimenEventTypeDescription\"}]}}}",
+			"Description": "A type of event that is associated with a specimen.\n\nEx:\n- Specimen submitted to lab\n- Specimen in testing\n- Specimen returned from lab\n- Specimen results submitted",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenEventTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vmlpdvjced",
+	"properties": {
+		"Name": "relationship-vmlpdvjced",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "DataLineInfo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceFile",
+				"ToColumnName": "ReferenceFile"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"DataLineInfo.cdm.json/DataLineInfo\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceFile\",\"toAttribute\":\"ReferenceFile\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidFunction",
+	"properties": {
+		"Name": "AminoAcidFunction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A specific physical function that may be associated with an amino acid, protein, gene etc.\n\nEx:\n- lipid transport\n- excitatory neurotransmitters\n- inhibitory neurotransmitters\n- connective tissue generation\n- precursor of nitric oxide",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidFunctionId",
+					"Description": "The unique identifier of an amino acid function.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidFunction.cdm.json/AminoAcidFunction",
+						"Name": "AminoAcidFunctionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidFunctionName",
+					"Description": "The name of an amino acid function.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidFunction.cdm.json/AminoAcidFunction",
+						"Name": "AminoAcidFunctionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidFunctionDescription",
+					"Description": "The description of an amino acid function.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidFunction.cdm.json/AminoAcidFunction",
+						"Name": "AminoAcidFunctionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidFunction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidFunction",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidFunctionId\":{\"entity\":\"AminoAcidFunction.cdm.json/AminoAcidFunction\",\"name\":\"AminoAcidFunctionId\"},\"AminoAcidFunctionName\":{\"entity\":\"AminoAcidFunction.cdm.json/AminoAcidFunction\",\"name\":\"AminoAcidFunctionName\"},\"AminoAcidFunctionDescription\":{\"entity\":\"AminoAcidFunction.cdm.json/AminoAcidFunction\",\"name\":\"AminoAcidFunctionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidFunction\",\"path\":\"AminoAcidFunction.cdm.json/AminoAcidFunction\"},\"description\":\"A specific physical function that may be associated with an amino acid, protein, gene etc.\\n\\nEx:\\n- lipid transport\\n- excitatory neurotransmitters\\n- inhibitory neurotransmitters\\n- connective tissue generation\\n- precursor of nitric oxide\",\"primaryKey\":[\"AminoAcidFunctionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidFunction.cdm.json/AminoAcidFunction\",\"name\":\"AminoAcidFunctionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid function.\",\"isNullable\":false,\"name\":\"AminoAcidFunctionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidFunction.cdm.json/AminoAcidFunction\",\"name\":\"AminoAcidFunctionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an amino acid function.\",\"isNullable\":true,\"name\":\"AminoAcidFunctionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidFunction.cdm.json/AminoAcidFunction\",\"name\":\"AminoAcidFunctionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an amino acid function.\",\"isNullable\":true,\"name\":\"AminoAcidFunctionDescription\"}]}}}",
+			"Description": "A specific physical function that may be associated with an amino acid, protein, gene etc.\n\nEx:\n- lipid transport\n- excitatory neurotransmitters\n- inhibitory neurotransmitters\n- connective tissue generation\n- precursor of nitric oxide",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidFunctionId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

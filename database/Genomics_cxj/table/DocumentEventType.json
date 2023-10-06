@@ -1,0 +1,115 @@
+{
+	"name": "DocumentEventType",
+	"properties": {
+		"Name": "DocumentEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A Document Event Type that is associated with a Document.\n\nEx:\n- Document Filed\n- Document Authorized\n- Document Replaced\n- Document Reported Lost\n- Document Sent To Customer\n- Document Returned By Customer\n- Document Submitted\n- Document Approval\n- Document Completion\n- Document Reviewed\n- Document Accepted\n- Document Rejected\n- Document In-Preparation\n- Document in-Rewrite\n- Document Available Online\n- Document Requested\n- Document (Permit) Applied For\n- Document Granted\n- Document Provided",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentEventTypeId",
+					"Description": "The unique identifier of a Document Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventType.cdm.json/DocumentEventType",
+						"Name": "DocumentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentEventTypeName",
+					"Description": "The name of a Document Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventType.cdm.json/DocumentEventType",
+						"Name": "DocumentEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentEventTypeDescription",
+					"Description": "The description of a Document Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentEventType.cdm.json/DocumentEventType",
+						"Name": "DocumentEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentEventType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentEventType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentEventTypeId\":{\"entity\":\"DocumentEventType.cdm.json/DocumentEventType\",\"name\":\"DocumentEventTypeId\"},\"DocumentEventTypeName\":{\"entity\":\"DocumentEventType.cdm.json/DocumentEventType\",\"name\":\"DocumentEventTypeName\"},\"DocumentEventTypeDescription\":{\"entity\":\"DocumentEventType.cdm.json/DocumentEventType\",\"name\":\"DocumentEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentEventType\",\"path\":\"DocumentEventType.cdm.json/DocumentEventType\"},\"description\":\"A Document Event Type that is associated with a Document.\\n\\nEx:\\n- Document Filed\\n- Document Authorized\\n- Document Replaced\\n- Document Reported Lost\\n- Document Sent To Customer\\n- Document Returned By Customer\\n- Document Submitted\\n- Document Approval\\n- Document Completion\\n- Document Reviewed\\n- Document Accepted\\n- Document Rejected\\n- Document In-Preparation\\n- Document in-Rewrite\\n- Document Available Online\\n- Document Requested\\n- Document (Permit) Applied For\\n- Document Granted\\n- Document Provided\",\"primaryKey\":[\"DocumentEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventType.cdm.json/DocumentEventType\",\"name\":\"DocumentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Event Type.\",\"isNullable\":false,\"name\":\"DocumentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventType.cdm.json/DocumentEventType\",\"name\":\"DocumentEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Document Event Type.\",\"isNullable\":true,\"name\":\"DocumentEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentEventType.cdm.json/DocumentEventType\",\"name\":\"DocumentEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Document Event Type.\",\"isNullable\":true,\"name\":\"DocumentEventTypeDescription\"}]}}}",
+			"Description": "A Document Event Type that is associated with a Document.\n\nEx:\n- Document Filed\n- Document Authorized\n- Document Replaced\n- Document Reported Lost\n- Document Sent To Customer\n- Document Returned By Customer\n- Document Submitted\n- Document Approval\n- Document Completion\n- Document Reviewed\n- Document Accepted\n- Document Rejected\n- Document In-Preparation\n- Document in-Rewrite\n- Document Available Online\n- Document Requested\n- Document (Permit) Applied For\n- Document Granted\n- Document Provided",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentEventTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

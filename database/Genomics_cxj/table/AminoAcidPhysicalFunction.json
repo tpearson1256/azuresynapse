@@ -1,0 +1,132 @@
+{
+	"name": "AminoAcidPhysicalFunction",
+	"properties": {
+		"Name": "AminoAcidPhysicalFunction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The amino acid function(s) associated with the amino acid.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidFunctionId",
+					"Description": "The unique identifier of an amino acid function.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction",
+						"Name": "AminoAcidFunctionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPhysicalFunctionRelationshipTypeId",
+					"Description": "The unique identifier of an Amino Acid Physical Function Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction",
+						"Name": "AminoAcidPhysicalFunctionRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidFunctionNote",
+					"Description": "A note, comment or additional information regarding the amino acid physical function.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction",
+						"Name": "AminoAcidFunctionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPhysicalFunction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPhysicalFunction",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidId\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidId\"},\"AminoAcidFunctionId\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidFunctionId\"},\"AminoAcidPhysicalFunctionRelationshipTypeId\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeId\"},\"AminoAcidFunctionNote\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidFunctionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidPhysicalFunction\",\"path\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\"},\"description\":\"The amino acid function(s) associated with the amino acid.\",\"primaryKey\":[\"AminoAcidId\",\"AminoAcidFunctionId\",\"AminoAcidPhysicalFunctionRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidFunctionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid function.\",\"isNullable\":false,\"name\":\"AminoAcidFunctionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Amino Acid Physical Function Relationship Type.\",\"isNullable\":false,\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"name\":\"AminoAcidFunctionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid physical function.\",\"isNullable\":true,\"name\":\"AminoAcidFunctionNote\"}]}}}",
+			"Description": "The amino acid function(s) associated with the amino acid.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidId,AminoAcidFunctionId,AminoAcidPhysicalFunctionRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

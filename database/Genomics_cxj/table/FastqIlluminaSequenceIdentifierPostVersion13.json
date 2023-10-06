@@ -1,0 +1,238 @@
+{
+	"name": "FastqIlluminaSequenceIdentifierPostVersion13",
+	"properties": {
+		"Name": "FastqIlluminaSequenceIdentifierPostVersion13",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Illumina sequence identifiers post version 1.3\n\nEx:\n@EAS139:136:FC706VJ:2:2104:15343:197393 1:N:18:1\n\nwhere:\nEAS139   the unique instrument name\n136         the run id\nFC706VJ the flowcell id\n2             flowcell lane\n2104       tile number within the flowcell lane\n15343     'x'-coordinate of the cluster within the tile\n197393   'y'-coordinate of the cluster within the tile\n1             the member of a pair, 1 or 2 (paired-end or mate-pair reads only)\nY             Y if the read is filtered, N otherwise\n18           0 when none of the control bits are on, otherwise it is an even number\nATCACG index sequence",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InstrumentName",
+					"Description": "The name of the instrument.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "InstrumentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RunId",
+					"Description": "The unique identifier of the run.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "RunId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FlowcellId",
+					"Description": "The flowcell lane.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "FlowcellId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TileNumberWithinFlowcellLane",
+					"Description": "Tile number within the flowcell lane.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "TileNumberWithinFlowcellLane"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "XCoordinateOfTheClusterWithinTheTile",
+					"Description": "The 'x'-coordinate of the cluster within the tile.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "XCoordinateOfTheClusterWithinTheTile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "YCoordinateOfTheClusterWithinTheTile",
+					"Description": "The 'y'-coordinate of the cluster within the tile.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "YCoordinateOfTheClusterWithinTheTile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MemberOfPair",
+					"Description": "The member of a pair, 1 or 2 (paired-end or mate-pair reads only).",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "MemberOfPair"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReadFilteredIndicator",
+					"Description": "If Y if the read is filtered, N otherwise it is not.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "ReadFilteredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ControlBitsOnNumber",
+					"Description": "0 when none of the control bits are on, otherwise it is an even number.",
+					"BaseAttributeReference": {
+						"Entity": "FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13",
+						"Name": "ControlBitsOnNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FastqIlluminaSequenceIdentifierPostVersion13",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FastqIlluminaSequenceIdentifierPostVersion13",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"GeneSequencingFileFormatId\"},\"InstrumentName\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"InstrumentName\"},\"RunId\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"RunId\"},\"FlowcellId\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"FlowcellId\"},\"TileNumberWithinFlowcellLane\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"TileNumberWithinFlowcellLane\"},\"XCoordinateOfTheClusterWithinTheTile\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"XCoordinateOfTheClusterWithinTheTile\"},\"YCoordinateOfTheClusterWithinTheTile\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"YCoordinateOfTheClusterWithinTheTile\"},\"MemberOfPair\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"MemberOfPair\"},\"ReadFilteredIndicator\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"ReadFilteredIndicator\"},\"ControlBitsOnNumber\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"ControlBitsOnNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FastqIlluminaSequenceIdentifierPostVersion13\",\"path\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\"},\"description\":\"Illumina sequence identifiers post version 1.3\\n\\nEx:\\n@EAS139:136:FC706VJ:2:2104:15343:197393 1:N:18:1\\n\\nwhere:\\nEAS139   the unique instrument name\\n136         the run id\\nFC706VJ the flowcell id\\n2             flowcell lane\\n2104       tile number within the flowcell lane\\n15343     'x'-coordinate of the cluster within the tile\\n197393   'y'-coordinate of the cluster within the tile\\n1             the member of a pair, 1 or 2 (paired-end or mate-pair reads only)\\nY             Y if the read is filtered, N otherwise\\n18           0 when none of the control bits are on, otherwise it is an even number\\nATCACG index sequence\",\"primaryKey\":[\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"InstrumentName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the instrument.\",\"isNullable\":true,\"name\":\"InstrumentName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"RunId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the run.\",\"isNullable\":true,\"name\":\"RunId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"FlowcellId\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The flowcell lane.\",\"isNullable\":true,\"name\":\"FlowcellId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"TileNumberWithinFlowcellLane\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Tile number within the flowcell lane.\",\"isNullable\":true,\"name\":\"TileNumberWithinFlowcellLane\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"XCoordinateOfTheClusterWithinTheTile\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The 'x'-coordinate of the cluster within the tile.\",\"isNullable\":true,\"name\":\"XCoordinateOfTheClusterWithinTheTile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"YCoordinateOfTheClusterWithinTheTile\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The 'y'-coordinate of the cluster within the tile.\",\"isNullable\":true,\"name\":\"YCoordinateOfTheClusterWithinTheTile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"MemberOfPair\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The member of a pair, 1 or 2 (paired-end or mate-pair reads only).\",\"isNullable\":true,\"name\":\"MemberOfPair\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"ReadFilteredIndicator\"},\"dataType\":\"boolean\",\"description\":\"If Y if the read is filtered, N otherwise it is not.\",\"isNullable\":true,\"name\":\"ReadFilteredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqIlluminaSequenceIdentifierPostVersion13.cdm.json/FastqIlluminaSequenceIdentifierPostVersion13\",\"name\":\"ControlBitsOnNumber\"},\"dataType\":\"integer\",\"description\":\"0 when none of the control bits are on, otherwise it is an even number.\",\"isNullable\":true,\"name\":\"ControlBitsOnNumber\"}]}}}",
+			"Description": "Illumina sequence identifiers post version 1.3\n\nEx:\n@EAS139:136:FC706VJ:2:2104:15343:197393 1:N:18:1\n\nwhere:\nEAS139   the unique instrument name\n136         the run id\nFC706VJ the flowcell id\n2             flowcell lane\n2104       tile number within the flowcell lane\n15343     'x'-coordinate of the cluster within the tile\n197393   'y'-coordinate of the cluster within the tile\n1             the member of a pair, 1 or 2 (paired-end or mate-pair reads only)\nY             Y if the read is filtered, N otherwise\n18           0 when none of the control bits are on, otherwise it is an even number\nATCACG index sequence",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

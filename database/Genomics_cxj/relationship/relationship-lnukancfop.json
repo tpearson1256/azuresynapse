@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lnukancfop",
+	"properties": {
+		"Name": "relationship-lnukancfop",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentAvailabilityType",
+		"ToTableName": "DocumentAvailability",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentAvailabilityTypeId",
+				"ToColumnName": "DocumentAvailabilityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\",\"toEntity\":\"DocumentAvailability.cdm.json/DocumentAvailability\",\"joinPairs\":[{\"fromAttribute\":\"DocumentAvailabilityTypeId\",\"toAttribute\":\"DocumentAvailabilityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

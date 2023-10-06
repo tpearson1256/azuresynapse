@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ninfvbftnw",
+	"properties": {
+		"Name": "relationship-ninfvbftnw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SampleFormat",
+		"ToTableName": "DataLineFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "Format",
+				"ToColumnName": "Format"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"toEntity\":\"DataLineFormat.cdm.json/DataLineFormat\",\"joinPairs\":[{\"fromAttribute\":\"Format\",\"toAttribute\":\"Format\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pkzhhmpguu",
+	"properties": {
+		"Name": "relationship-pkzhhmpguu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenotypeReserveWord",
+		"ToTableName": "VcfInfo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GenotypeReserveWordId",
+				"ToColumnName": "InfoId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenotypeReserveWord.cdm.json/GenotypeReserveWord\",\"toEntity\":\"VcfInfo.cdm.json/VcfInfo\",\"joinPairs\":[{\"fromAttribute\":\"GenotypeReserveWordId\",\"toAttribute\":\"InfoId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

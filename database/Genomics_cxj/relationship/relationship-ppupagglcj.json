@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ppupagglcj",
+	"properties": {
+		"Name": "relationship-ppupagglcj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenbankFormatSequenceValueType",
+		"ToTableName": "GenbankFormatNucleicAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GenbankFormatSequenceValueTypeId",
+				"ToColumnName": "GenbankFormatSequenceValueTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\",\"toEntity\":\"GenbankFormatNucleicAminoAcidCodeOrder.cdm.json/GenbankFormatNucleicAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"GenbankFormatSequenceValueTypeId\",\"toAttribute\":\"GenbankFormatSequenceValueTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nqlmueuhut",
+	"properties": {
+		"Name": "relationship-nqlmueuhut",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Chromosome",
+		"ToTableName": "ChromosomeCharacteristic",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChromosomeId",
+				"ToColumnName": "ChromosomeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Chromosome.cdm.json/Chromosome\",\"toEntity\":\"ChromosomeCharacteristic.cdm.json/ChromosomeCharacteristic\",\"joinPairs\":[{\"fromAttribute\":\"ChromosomeId\",\"toAttribute\":\"ChromosomeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xdrtvzjisb",
+	"properties": {
+		"Name": "relationship-xdrtvzjisb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenomicSpecimen",
+		"ToTableName": "SpecimenStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenId",
+				"ToColumnName": "SpecimenId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"toEntity\":\"SpecimenStatus.cdm.json/SpecimenStatus\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenId\",\"toAttribute\":\"SpecimenId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,115 @@
+{
+	"name": "AminoAcidPhysicochemicalProperty",
+	"properties": {
+		"Name": "AminoAcidPhysicochemicalProperty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The physicochemical property(s) associated with the amino acid.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PhysicochemicalPropertyId",
+					"Description": "The unique identifier of a Physicochemical Property.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty",
+						"Name": "PhysicochemicalPropertyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPhysicochemicalPropertyNote",
+					"Description": "A note, comment or additional information regarding the amino acid physicochemical property.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty",
+						"Name": "AminoAcidPhysicochemicalPropertyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPhysicochemicalProperty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPhysicochemicalProperty",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidId\":{\"entity\":\"AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty\",\"name\":\"AminoAcidId\"},\"PhysicochemicalPropertyId\":{\"entity\":\"AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty\",\"name\":\"PhysicochemicalPropertyId\"},\"AminoAcidPhysicochemicalPropertyNote\":{\"entity\":\"AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty\",\"name\":\"AminoAcidPhysicochemicalPropertyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidPhysicochemicalProperty\",\"path\":\"AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty\"},\"description\":\"The physicochemical property(s) associated with the amino acid.\",\"primaryKey\":[\"AminoAcidId\",\"PhysicochemicalPropertyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty\",\"name\":\"PhysicochemicalPropertyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Physicochemical Property.\",\"isNullable\":false,\"name\":\"PhysicochemicalPropertyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicochemicalProperty.cdm.json/AminoAcidPhysicochemicalProperty\",\"name\":\"AminoAcidPhysicochemicalPropertyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid physicochemical property.\",\"isNullable\":true,\"name\":\"AminoAcidPhysicochemicalPropertyNote\"}]}}}",
+			"Description": "The physicochemical property(s) associated with the amino acid.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidId,PhysicochemicalPropertyId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

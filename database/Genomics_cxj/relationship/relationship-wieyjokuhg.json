@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wieyjokuhg",
+	"properties": {
+		"Name": "relationship-wieyjokuhg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFileFormat",
+		"ToTableName": "SequenceAlignmentMap",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatId",
+				"ToColumnName": "GeneSequencingFileFormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFileFormat.cdm.json/GeneSequencingFileFormat\",\"toEntity\":\"SequenceAlignmentMap.cdm.json/SequenceAlignmentMap\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatId\",\"toAttribute\":\"GeneSequencingFileFormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

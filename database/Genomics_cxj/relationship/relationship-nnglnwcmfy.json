@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nnglnwcmfy",
+	"properties": {
+		"Name": "relationship-nnglnwcmfy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFilePartyRelationshipType",
+		"ToTableName": "GeneSequencingFileRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFilePartyRelationshipTypeId",
+				"ToColumnName": "GeneSequencingFilePartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFilePartyRelationshipType.cdm.json/GeneSequencingFilePartyRelationshipType\",\"toEntity\":\"GeneSequencingFileRelatedParty.cdm.json/GeneSequencingFileRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFilePartyRelationshipTypeId\",\"toAttribute\":\"GeneSequencingFilePartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

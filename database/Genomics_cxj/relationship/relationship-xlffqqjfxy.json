@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xlffqqjfxy",
+	"properties": {
+		"Name": "relationship-xlffqqjfxy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TestEnvironmentType",
+		"ToTableName": "MedicalTestType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TestEnvironmentTypeId",
+				"ToColumnName": "TestEnvironmentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TestEnvironmentType.cdm.json/TestEnvironmentType\",\"toEntity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"joinPairs\":[{\"fromAttribute\":\"TestEnvironmentTypeId\",\"toAttribute\":\"TestEnvironmentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

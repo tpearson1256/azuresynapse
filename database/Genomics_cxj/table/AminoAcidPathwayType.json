@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidPathwayType",
+	"properties": {
+		"Name": "AminoAcidPathwayType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "An amino acid pathway.\n\nEx:\n-  Lysine Degradation",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidPathwayTypeId",
+					"Description": "The unique identifier of a amino acid pathway name.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPathwayType.cdm.json/AminoAcidPathwayType",
+						"Name": "AminoAcidPathwayTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPathwayTypeName",
+					"Description": "The name of a amino acid pathway name.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPathwayType.cdm.json/AminoAcidPathwayType",
+						"Name": "AminoAcidPathwayTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPathwayTypeDescription",
+					"Description": "The description of a amino acid pathway name.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPathwayType.cdm.json/AminoAcidPathwayType",
+						"Name": "AminoAcidPathwayTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPathwayType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPathwayType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidPathwayTypeId\":{\"entity\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\",\"name\":\"AminoAcidPathwayTypeId\"},\"AminoAcidPathwayTypeName\":{\"entity\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\",\"name\":\"AminoAcidPathwayTypeName\"},\"AminoAcidPathwayTypeDescription\":{\"entity\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\",\"name\":\"AminoAcidPathwayTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidPathwayType\",\"path\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\"},\"description\":\"An amino acid pathway.\\n\\nEx:\\n-  Lysine Degradation\",\"primaryKey\":[\"AminoAcidPathwayTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\",\"name\":\"AminoAcidPathwayTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a amino acid pathway name.\",\"isNullable\":false,\"name\":\"AminoAcidPathwayTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\",\"name\":\"AminoAcidPathwayTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a amino acid pathway name.\",\"isNullable\":true,\"name\":\"AminoAcidPathwayTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\",\"name\":\"AminoAcidPathwayTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a amino acid pathway name.\",\"isNullable\":true,\"name\":\"AminoAcidPathwayTypeDescription\"}]}}}",
+			"Description": "An amino acid pathway.\n\nEx:\n-  Lysine Degradation",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidPathwayTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

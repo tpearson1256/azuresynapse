@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sshtcwtvls",
+	"properties": {
+		"Name": "relationship-sshtcwtvls",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentAcquisitionMethodType",
+		"ToTableName": "DocumentAcquisitionMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentAcquisitionMethodTypeId",
+				"ToColumnName": "DocumentAcquisitionMethodTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\",\"toEntity\":\"DocumentAcquisitionMethod.cdm.json/DocumentAcquisitionMethod\",\"joinPairs\":[{\"fromAttribute\":\"DocumentAcquisitionMethodTypeId\",\"toAttribute\":\"DocumentAcquisitionMethodTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

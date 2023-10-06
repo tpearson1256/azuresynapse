@@ -1,0 +1,131 @@
+{
+	"name": "EncounterTestDocument",
+	"properties": {
+		"Name": "EncounterTestDocument",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The relationship of an encounter test and a document(s).",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestId",
+					"Description": "The unique identifier of a Medical Test.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestDocument.cdm.json/EncounterTestDocument",
+						"Name": "MedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestDocument.cdm.json/EncounterTestDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestDocumentTypeId",
+					"Description": "The unique identifier of an encounter test document type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestDocument.cdm.json/EncounterTestDocument",
+						"Name": "EncounterTestDocumentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestDocumentNote",
+					"Description": "A note, comment or additional information regarding the encounter test document.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestDocument.cdm.json/EncounterTestDocument",
+						"Name": "EncounterTestDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestDocument",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestDocument",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestId\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"MedicalTestId\"},\"DocumentId\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"DocumentId\"},\"EncounterTestDocumentTypeId\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"EncounterTestDocumentTypeId\"},\"EncounterTestDocumentNote\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"EncounterTestDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestDocument\",\"path\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\"},\"description\":\"The relationship of an encounter test and a document(s).\",\"primaryKey\":[\"MedicalTestId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"MedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test.\",\"isNullable\":false,\"name\":\"MedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"EncounterTestDocumentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an encounter test document type.\",\"isNullable\":false,\"name\":\"EncounterTestDocumentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"name\":\"EncounterTestDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the encounter test document.\",\"isNullable\":true,\"name\":\"EncounterTestDocumentNote\"}]}}}",
+			"Description": "The relationship of an encounter test and a document(s).",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestId,DocumentId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

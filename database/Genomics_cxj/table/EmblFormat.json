@@ -1,0 +1,97 @@
+{
+	"name": "EmblFormat",
+	"properties": {
+		"Name": "EmblFormat",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A sequence file in EMBL format can contain several sequences. \n\nOne sequence entry starts with an identifier line (\"ID\"), followed by further annotation lines. The start of the sequence is marked by a line starting with \"SQ\" and the end of the sequence is marked by two slashes (\"//\").\n\nAn example sequence in EMBL format is:\nID   AB000263 standard; RNA; PRI; 368 BP. XX AC   AB000263; XX DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds. XX SQ   Sequence 368 BP;      acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg        60      ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg       120      caggaataag gaaaagcagc ctcctgactt tcctcgcttg gtggtttgag tggacctccc       180      aggccagtgc cgggcccctc ataggagagg aagctcggga ggtggccagg cggcaggaag       240      gcgcaccccc ccagcaatcc gcgcgccggg acagaatgcc ctgcaggaac ttcttctgga       300      agaccttctc ctcctgcaaa taaaacctca cccatgaatg ctcacgcaag tttaattaca       360      gacctgaa",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormat.cdm.json/EmblFormat",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CompleteEmblSequence",
+					"Description": "The complete EMBL sequence.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormat.cdm.json/EmblFormat",
+						"Name": "CompleteEmblSequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EmblFormat",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EmblFormat",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"EmblFormat.cdm.json/EmblFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"CompleteEmblSequence\":{\"entity\":\"EmblFormat.cdm.json/EmblFormat\",\"name\":\"CompleteEmblSequence\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmblFormat\",\"path\":\"EmblFormat.cdm.json/EmblFormat\"},\"description\":\"A sequence file in EMBL format can contain several sequences. \\n\\nOne sequence entry starts with an identifier line (\\\"ID\\\"), followed by further annotation lines. The start of the sequence is marked by a line starting with \\\"SQ\\\" and the end of the sequence is marked by two slashes (\\\"//\\\").\\n\\nAn example sequence in EMBL format is:\\nID   AB000263 standard; RNA; PRI; 368 BP. XX AC   AB000263; XX DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds. XX SQ   Sequence 368 BP;      acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg        60      ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg       120      caggaataag gaaaagcagc ctcctgactt tcctcgcttg gtggtttgag tggacctccc       180      aggccagtgc cgggcccctc ataggagagg aagctcggga ggtggccagg cggcaggaag       240      gcgcaccccc ccagcaatcc gcgcgccggg acagaatgcc ctgcaggaac ttcttctgga       300      agaccttctc ctcctgcaaa taaaacctca cccatgaatg ctcacgcaag tttaattaca       360      gacctgaa\",\"primaryKey\":[\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormat.cdm.json/EmblFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormat.cdm.json/EmblFormat\",\"name\":\"CompleteEmblSequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The complete EMBL sequence.\",\"isNullable\":true,\"name\":\"CompleteEmblSequence\"}]}}}",
+			"Description": "A sequence file in EMBL format can contain several sequences. \n\nOne sequence entry starts with an identifier line (\"ID\"), followed by further annotation lines. The start of the sequence is marked by a line starting with \"SQ\" and the end of the sequence is marked by two slashes (\"//\").\n\nAn example sequence in EMBL format is:\nID   AB000263 standard; RNA; PRI; 368 BP. XX AC   AB000263; XX DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds. XX SQ   Sequence 368 BP;      acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg        60      ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg       120      caggaataag gaaaagcagc ctcctgactt tcctcgcttg gtggtttgag tggacctccc       180      aggccagtgc cgggcccctc ataggagagg aagctcggga ggtggccagg cggcaggaag       240      gcgcaccccc ccagcaatcc gcgcgccggg acagaatgcc ctgcaggaac ttcttctgga       300      agaccttctc ctcctgcaaa taaaacctca cccatgaatg ctcacgcaag tttaattaca       360      gacctgaa",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

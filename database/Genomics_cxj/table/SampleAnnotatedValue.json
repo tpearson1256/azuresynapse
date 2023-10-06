@@ -1,0 +1,167 @@
+{
+	"name": "SampleAnnotatedValue",
+	"properties": {
+		"Name": "SampleAnnotatedValue",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The annotation values are then recorded in corresponding order in each sample column (where the sample names are the SM tags identified in the read group data). Typically, you will at minimum have information about the genotype and confidence in the genotype for the sample at each site.\n\nEX: \nNA0001 0|0:48:1:51,51",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "SampleAnnotatedValue.cdm.json/SampleAnnotatedValue",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Pos",
+					"Description": "The genomic coordinates on which the variant occurs.\n\nPOS - position: The reference position, with the 1st base having position 1. Positions are sorted numerically, in increasing order, within each reference sequence CHROM. It is permitted to have multiple records with the same POS. Telomeres are indicated by using positions 0 or N+1, where N is the length of the corresponding chromosome or contig. (Integer, Required)\n\nThe single-base position of the variant in the reference chromosome.\nFor SNPs, this position is the reference base with the variant; for indels or deletions, this position is the reference base immediately before the variant.",
+					"BaseAttributeReference": {
+						"Entity": "SampleAnnotatedValue.cdm.json/SampleAnnotatedValue",
+						"Name": "Pos"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromContigId",
+					"Description": "The chromosome of the reference genome. Chromosomes appear in the same order as the reference FASTA file.",
+					"BaseAttributeReference": {
+						"Entity": "SampleAnnotatedValue.cdm.json/SampleAnnotatedValue",
+						"Name": "ChromContigId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Format",
+					"Description": "Sample-level annotations are tag-value pairs, like the INFO annotations, but the formatting is a bit different.\n \nThe short names of the sample-level annotations are recorded in the FORMAT field.\n\nThe annotation values are then recorded in corresponding order in each sample column (where the sample names are the SM tags identified in the read group data). Typically, you will at minimum have information about the genotype and confidence in the genotype for the sample at each site. See the next section on genotypes for more details.",
+					"BaseAttributeReference": {
+						"Entity": "SampleAnnotatedValue.cdm.json/SampleAnnotatedValue",
+						"Name": "Format"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "SampleAnnotatedValue.cdm.json/SampleAnnotatedValue",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SampleAnnotationValue",
+					"Description": "The associated sample annotation value.",
+					"BaseAttributeReference": {
+						"Entity": "SampleAnnotatedValue.cdm.json/SampleAnnotatedValue",
+						"Name": "SampleAnnotationValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SampleAnnotatedValue",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SampleAnnotatedValue",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"ReferenceFile\"},\"Pos\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"Pos\"},\"ChromContigId\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"ChromContigId\"},\"Format\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"Format\"},\"GeneSequencingFileFormatId\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"GeneSequencingFileFormatId\"},\"SampleAnnotationValue\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"SampleAnnotationValue\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SampleAnnotatedValue\",\"path\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\"},\"description\":\"The annotation values are then recorded in corresponding order in each sample column (where the sample names are the SM tags identified in the read group data). Typically, you will at minimum have information about the genotype and confidence in the genotype for the sample at each site.\\n\\nEX: \\nNA0001 0|0:48:1:51,51\",\"primaryKey\":[\"ReferenceFile\",\"Pos\",\"ChromContigId\",\"Format\",\"GeneSequencingFileFormatId\",\"SampleAnnotationValue\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"Pos\"},\"dataType\":\"integer\",\"description\":\"The genomic coordinates on which the variant occurs.\\n\\nPOS - position: The reference position, with the 1st base having position 1. Positions are sorted numerically, in increasing order, within each reference sequence CHROM. It is permitted to have multiple records with the same POS. Telomeres are indicated by using positions 0 or N+1, where N is the length of the corresponding chromosome or contig. (Integer, Required)\\n\\nThe single-base position of the variant in the reference chromosome.\\nFor SNPs, this position is the reference base with the variant; for indels or deletions, this position is the reference base immediately before the variant.\",\"isNullable\":false,\"name\":\"Pos\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"ChromContigId\"},\"dataType\":\"integer\",\"description\":\"The chromosome of the reference genome. Chromosomes appear in the same order as the reference FASTA file.\",\"isNullable\":false,\"name\":\"ChromContigId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"Format\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"Sample-level annotations are tag-value pairs, like the INFO annotations, but the formatting is a bit different.\\n \\nThe short names of the sample-level annotations are recorded in the FORMAT field.\\n\\nThe annotation values are then recorded in corresponding order in each sample column (where the sample names are the SM tags identified in the read group data). Typically, you will at minimum have information about the genotype and confidence in the genotype for the sample at each site. See the next section on genotypes for more details.\",\"isNullable\":false,\"name\":\"Format\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"name\":\"SampleAnnotationValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The associated sample annotation value.\",\"isNullable\":false,\"scale\":2,\"name\":\"SampleAnnotationValue\"}]}}}",
+			"Description": "The annotation values are then recorded in corresponding order in each sample column (where the sample names are the SM tags identified in the read group data). Typically, you will at minimum have information about the genotype and confidence in the genotype for the sample at each site.\n\nEX: \nNA0001 0|0:48:1:51,51",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,Pos,ChromContigId,Format,GeneSequencingFileFormatId,SampleAnnotationValue",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

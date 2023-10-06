@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tfcuszfdfe",
+	"properties": {
+		"Name": "relationship-tfcuszfdfe",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTest",
+		"ToTableName": "RelatedEncounterTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestId",
+				"ToColumnName": "RelatedMedicalTestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTest.cdm.json/MedicalTest\",\"toEntity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestId\",\"toAttribute\":\"RelatedMedicalTestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

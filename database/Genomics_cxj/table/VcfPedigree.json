@@ -1,0 +1,132 @@
+{
+	"name": "VcfPedigree",
+	"properties": {
+		"Name": "VcfPedigree",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "It is possible to record relationships between genomes using the following syntax:]\n\n##PEDIGREE=<ID=TumourSample,Original=GermlineID>\n##PEDIGREE=<ID=SomaticNonTumour,Original=GermlineID>\n##PEDIGREE=<ID=ChildID,Father=FatherID,Mother=MotherID>\n##PEDIGREE=<ID=SampleID,Name_1=Ancestor_1,...,Name_N=Ancestor_N>",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "VcfPedigree.cdm.json/VcfPedigree",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "VcfPedigree.cdm.json/VcfPedigree",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PedigreeId",
+					"Description": "The pedigree ID.",
+					"BaseAttributeReference": {
+						"Entity": "VcfPedigree.cdm.json/VcfPedigree",
+						"Name": "PedigreeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PedigreeDatabaseLink",
+					"Description": "A link to a database:",
+					"BaseAttributeReference": {
+						"Entity": "VcfPedigree.cdm.json/VcfPedigree",
+						"Name": "PedigreeDatabaseLink"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2083,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfPedigree",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfPedigree",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"ReferenceFile\"},\"GeneSequencingFileFormatId\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"GeneSequencingFileFormatId\"},\"PedigreeId\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"PedigreeId\"},\"PedigreeDatabaseLink\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"PedigreeDatabaseLink\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VcfPedigree\",\"path\":\"VcfPedigree.cdm.json/VcfPedigree\"},\"description\":\"It is possible to record relationships between genomes using the following syntax:]\\n\\n##PEDIGREE=<ID=TumourSample,Original=GermlineID>\\n##PEDIGREE=<ID=SomaticNonTumour,Original=GermlineID>\\n##PEDIGREE=<ID=ChildID,Father=FatherID,Mother=MotherID>\\n##PEDIGREE=<ID=SampleID,Name_1=Ancestor_1,...,Name_N=Ancestor_N>\",\"primaryKey\":[\"ReferenceFile\",\"GeneSequencingFileFormatId\",\"PedigreeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"PedigreeId\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The pedigree ID.\",\"isNullable\":false,\"name\":\"PedigreeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"name\":\"PedigreeDatabaseLink\"},\"dataType\":\"string\",\"dataTypeLength\":2083,\"description\":\"A link to a database:\",\"isNullable\":true,\"name\":\"PedigreeDatabaseLink\"}]}}}",
+			"Description": "It is possible to record relationships between genomes using the following syntax:]\n\n##PEDIGREE=<ID=TumourSample,Original=GermlineID>\n##PEDIGREE=<ID=SomaticNonTumour,Original=GermlineID>\n##PEDIGREE=<ID=ChildID,Father=FatherID,Mother=MotherID>\n##PEDIGREE=<ID=SampleID,Name_1=Ancestor_1,...,Name_N=Ancestor_N>",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,GeneSequencingFileFormatId,PedigreeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

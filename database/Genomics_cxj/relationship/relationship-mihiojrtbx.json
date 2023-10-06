@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mihiojrtbx",
+	"properties": {
+		"Name": "relationship-mihiojrtbx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IcdVersion",
+		"ToTableName": "IcdDiseaseCategory",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IcdVersionNumber",
+				"ToColumnName": "IcdVersionNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IcdVersion.cdm.json/IcdVersion\",\"toEntity\":\"IcdDiseaseCategory.cdm.json/IcdDiseaseCategory\",\"joinPairs\":[{\"fromAttribute\":\"IcdVersionNumber\",\"toAttribute\":\"IcdVersionNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

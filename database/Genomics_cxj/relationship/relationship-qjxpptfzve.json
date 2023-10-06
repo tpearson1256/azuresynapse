@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qjxpptfzve",
+	"properties": {
+		"Name": "relationship-qjxpptfzve",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GcgFormatSequenceValueType",
+		"ToTableName": "GcgFormatNucleicAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GcgFormatSequenceValueTypeId",
+				"ToColumnName": "GcgFormatSequenceValueTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\",\"toEntity\":\"GcgFormatNucleicAminoAcidCodeOrder.cdm.json/GcgFormatNucleicAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"GcgFormatSequenceValueTypeId\",\"toAttribute\":\"GcgFormatSequenceValueTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

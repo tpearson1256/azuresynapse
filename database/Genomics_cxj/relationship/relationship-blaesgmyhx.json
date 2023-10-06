@@ -1,0 +1,26 @@
+{
+	"name": "relationship-blaesgmyhx",
+	"properties": {
+		"Name": "relationship-blaesgmyhx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FastaNucleicAcidCode",
+		"ToTableName": "FastaFormatAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FastaNucleicAcidCode",
+				"ToColumnName": "FastaNucleicAcidCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\",\"toEntity\":\"FastaFormatAminoAcidCodeOrder.cdm.json/FastaFormatAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"FastaNucleicAcidCode\",\"toAttribute\":\"FastaNucleicAcidCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

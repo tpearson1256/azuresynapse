@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hjijpmahkx",
+	"properties": {
+		"Name": "relationship-hjijpmahkx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFile",
+		"ToTableName": "FileSecurity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FileId",
+				"ToColumnName": "FileId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFile.cdm.json/GeneSequencingFile\",\"toEntity\":\"FileSecurity.cdm.json/FileSecurity\",\"joinPairs\":[{\"fromAttribute\":\"FileId\",\"toAttribute\":\"FileId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

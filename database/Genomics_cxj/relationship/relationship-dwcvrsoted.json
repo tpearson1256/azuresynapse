@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dwcvrsoted",
+	"properties": {
+		"Name": "relationship-dwcvrsoted",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequenceFormatConverterType",
+		"ToTableName": "GeneSequenceFormatConverter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequenceFormatConverterTypeId",
+				"ToColumnName": "GeneSequenceFormatConverterTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequenceFormatConverterType.cdm.json/GeneSequenceFormatConverterType\",\"toEntity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequenceFormatConverterTypeId\",\"toAttribute\":\"GeneSequenceFormatConverterTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

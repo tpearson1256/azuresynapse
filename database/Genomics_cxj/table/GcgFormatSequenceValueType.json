@@ -1,0 +1,115 @@
+{
+	"name": "GcgFormatSequenceValueType",
+	"properties": {
+		"Name": "GcgFormatSequenceValueType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A potential value for a position in the GCG file sequence.\n\nEx:\n- \"..\"\n- A\n- C\n- T\n- G",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GcgFormatSequenceValueTypeId",
+					"Description": "The unique identifier of a GCG Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType",
+						"Name": "GcgFormatSequenceValueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GcgFormatSequenceValueTypeName",
+					"Description": "The name of a GCG Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType",
+						"Name": "GcgFormatSequenceValueTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GcgFormatSequenceValueTypeDescription",
+					"Description": "The description of a GCG Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType",
+						"Name": "GcgFormatSequenceValueTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GcgFormatSequenceValueType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GcgFormatSequenceValueType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GcgFormatSequenceValueTypeId\":{\"entity\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\",\"name\":\"GcgFormatSequenceValueTypeId\"},\"GcgFormatSequenceValueTypeName\":{\"entity\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\",\"name\":\"GcgFormatSequenceValueTypeName\"},\"GcgFormatSequenceValueTypeDescription\":{\"entity\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\",\"name\":\"GcgFormatSequenceValueTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GcgFormatSequenceValueType\",\"path\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\"},\"description\":\"A potential value for a position in the GCG file sequence.\\n\\nEx:\\n- \\\"..\\\"\\n- A\\n- C\\n- T\\n- G\",\"primaryKey\":[\"GcgFormatSequenceValueTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\",\"name\":\"GcgFormatSequenceValueTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a GCG Format Sequence Value Type.\",\"isNullable\":false,\"name\":\"GcgFormatSequenceValueTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\",\"name\":\"GcgFormatSequenceValueTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a GCG Format Sequence Value Type.\",\"isNullable\":true,\"name\":\"GcgFormatSequenceValueTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormatSequenceValueType.cdm.json/GcgFormatSequenceValueType\",\"name\":\"GcgFormatSequenceValueTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a GCG Format Sequence Value Type.\",\"isNullable\":true,\"name\":\"GcgFormatSequenceValueTypeDescription\"}]}}}",
+			"Description": "A potential value for a position in the GCG file sequence.\n\nEx:\n- \"..\"\n- A\n- C\n- T\n- G",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GcgFormatSequenceValueTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

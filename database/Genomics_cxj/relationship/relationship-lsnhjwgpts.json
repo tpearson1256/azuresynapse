@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lsnhjwgpts",
+	"properties": {
+		"Name": "relationship-lsnhjwgpts",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SpecimenDocumentType",
+		"ToTableName": "SpecimenDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenDocumentTypeId",
+				"ToColumnName": "SpecimenDocumentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\",\"toEntity\":\"SpecimenDocument.cdm.json/SpecimenDocument\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenDocumentTypeId\",\"toAttribute\":\"SpecimenDocumentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

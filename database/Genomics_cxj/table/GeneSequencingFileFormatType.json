@@ -1,0 +1,115 @@
+{
+	"name": "GeneSequencingFileFormatType",
+	"properties": {
+		"Name": "GeneSequencingFileFormatType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of gene sequencing file format.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatTypeId",
+					"Description": "The unique identifier of a Gene Sequencing File Format type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType",
+						"Name": "GeneSequencingFileFormatTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatTypeName",
+					"Description": "The name of a Gene Sequencing File Format type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType",
+						"Name": "GeneSequencingFileFormatTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatTypeDescription",
+					"Description": "The description of a Gene Sequencing File Format type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType",
+						"Name": "GeneSequencingFileFormatTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileFormatType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileFormatType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatTypeId\":{\"entity\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\",\"name\":\"GeneSequencingFileFormatTypeId\"},\"GeneSequencingFileFormatTypeName\":{\"entity\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\",\"name\":\"GeneSequencingFileFormatTypeName\"},\"GeneSequencingFileFormatTypeDescription\":{\"entity\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\",\"name\":\"GeneSequencingFileFormatTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequencingFileFormatType\",\"path\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\"},\"description\":\"The type of gene sequencing file format.\",\"primaryKey\":[\"GeneSequencingFileFormatTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\",\"name\":\"GeneSequencingFileFormatTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Gene Sequencing File Format type.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\",\"name\":\"GeneSequencingFileFormatTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Gene Sequencing File Format type.\",\"isNullable\":true,\"name\":\"GeneSequencingFileFormatTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\",\"name\":\"GeneSequencingFileFormatTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Gene Sequencing File Format type.\",\"isNullable\":true,\"name\":\"GeneSequencingFileFormatTypeDescription\"}]}}}",
+			"Description": "The type of gene sequencing file format.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dxwrabgxcu",
+	"properties": {
+		"Name": "relationship-dxwrabgxcu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTest",
+		"ToTableName": "EncounterTestDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestId",
+				"ToColumnName": "MedicalTestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTest.cdm.json/MedicalTest\",\"toEntity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestId\",\"toAttribute\":\"MedicalTestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

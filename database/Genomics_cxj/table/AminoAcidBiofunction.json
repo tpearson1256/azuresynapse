@@ -1,0 +1,115 @@
+{
+	"name": "AminoAcidBiofunction",
+	"properties": {
+		"Name": "AminoAcidBiofunction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The amino acid biofunction(s) associated with the amino acid.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidBiofunction.cdm.json/AminoAcidBiofunction",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidBiofunctionTypeId",
+					"Description": "The unique identifier of an amino acid biofunction type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidBiofunction.cdm.json/AminoAcidBiofunction",
+						"Name": "AminoAcidBiofunctionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidBiofunctionNote",
+					"Description": "A note, comment or additional information regarding the amino acid biofunction.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidBiofunction.cdm.json/AminoAcidBiofunction",
+						"Name": "AminoAcidBiofunctionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidBiofunction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidBiofunction",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidId\":{\"entity\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\",\"name\":\"AminoAcidId\"},\"AminoAcidBiofunctionTypeId\":{\"entity\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\",\"name\":\"AminoAcidBiofunctionTypeId\"},\"AminoAcidBiofunctionNote\":{\"entity\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\",\"name\":\"AminoAcidBiofunctionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidBiofunction\",\"path\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\"},\"description\":\"The amino acid biofunction(s) associated with the amino acid.\",\"primaryKey\":[\"AminoAcidId\",\"AminoAcidBiofunctionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\",\"name\":\"AminoAcidBiofunctionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid biofunction type.\",\"isNullable\":false,\"name\":\"AminoAcidBiofunctionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\",\"name\":\"AminoAcidBiofunctionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid biofunction.\",\"isNullable\":true,\"name\":\"AminoAcidBiofunctionNote\"}]}}}",
+			"Description": "The amino acid biofunction(s) associated with the amino acid.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidId,AminoAcidBiofunctionTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iqoqbnwrlt",
+	"properties": {
+		"Name": "relationship-iqoqbnwrlt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingMachineType",
+		"ToTableName": "GeneSequencingFileFormatMachineType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingMachineTypeId",
+				"ToColumnName": "GeneSequencingMachineTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\",\"toEntity\":\"GeneSequencingFileFormatMachineType.cdm.json/GeneSequencingFileFormatMachineType\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingMachineTypeId\",\"toAttribute\":\"GeneSequencingMachineTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

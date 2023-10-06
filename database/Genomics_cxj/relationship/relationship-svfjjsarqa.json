@@ -1,0 +1,26 @@
+{
+	"name": "relationship-svfjjsarqa",
+	"properties": {
+		"Name": "relationship-svfjjsarqa",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterTestEventType",
+		"ToTableName": "EncounterTestEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterTestEventTypeId",
+				"ToColumnName": "EncounterTestEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\",\"toEntity\":\"EncounterTestEvent.cdm.json/EncounterTestEvent\",\"joinPairs\":[{\"fromAttribute\":\"EncounterTestEventTypeId\",\"toAttribute\":\"EncounterTestEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

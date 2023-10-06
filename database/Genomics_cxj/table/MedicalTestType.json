@@ -1,0 +1,521 @@
+{
+	"name": "MedicalTestType",
+	"properties": {
+		"Name": "MedicalTestType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A type of medical test.\n\nEx:\nBlood Test\n-  Sodium\n-  Potassium \n-  Serum Iron (TSI)\n-  Ferritin\n-  pH\n-  Oxygen Saturation\n-  Total Protein\n-  Total Bilirubin\n-  Creatine Kinase (CK)\n-  Triglycerides\n-  Total Cholesterol\n-  HDL Cholesterol\n-  LDL Cholesterol\n-  PAP\n-  TSH\n-  Testosterone\n-  Progesterone\n-  Androstenedione\n-  Cortisol\n-  Growth Hormone\n-  Vitamin E\n\nBrain and Nervous System\n-  Carotid ultrasound (carotid doppler)\n-  Electromyography and nerve conduction studies\n-  Lumbar puncture (or spinal tap)\n-  Magnetic resonance imaging (MRI) of the brain\n-  Magnetic resonance imaging (MRI) of the spine\n-  Spinal tap (or lumbar puncture)\n\nSkin, Hair, Nails\n-  Skin biopsy\n\nEyes\n-  Fluorescein angiography (for diabetic retinopathy)\n-  Snellen test for visual acuity\n-  Tonometry\n\nEars, Nose, and Throat\n-  Rapid strep test\n-  Scratch test for allergies\n-  Throat culture\n\nBones, Joints, and Muscles\n-  Bone density test for osteoporosis\n-  Bone scan\n-  Computed tomography (CT) for back problems\n-  Myelography\n-  Back x-rays (spine x-rays)\n\nLungs\n-  Bronchoscopy\n-  Chest x-ray\n-  Mediastinoscopy\n-  Oxygen saturation test\n-  Pleural fluid sampling (or thoracentesis)\n-  Pulmonary angiogram\n-  Pulmonary function testing\n-  Sputum evaluation (and sputum induction)\n-  Thoracentesis (or pleural fluid sampling)\n-  Tuberculosis (TB) skin test\n-  Video-assisted thoracic surgery\n-  Ventilation-perfusion (or \"V-Q\" scan)\n\nHeart, Blood Vessels, and Circulation\n-  Arterial blood flow studies of the legs\n-  Cardiac catheterization\n-  Echocardiogram\n-  Electrocardiogram\n-  Electrophysiological (EP) testing of the heart\n-  Exercise stress test\n-  Holter monitor\n-  Venous ultrasound of the legs\n\nBlood Disorders\n-  Bone marrow biopsy\n-  Lymph node biopsy\n\nDigestive System\n-  Abdominal CT (computed tomography) scan\n-  Barium swallow (or upper gastrointestinal series or \"upper GI series\")\n-  Fecal occult blood (FOB) test\n-  Upper endoscopy (or esophagogastroduodenoscopy or \"EGD\")\n-  Upper gastrointestinal or upper GI series, (also called barium swallow)\n-  Abdominal ultrasound\n-  Endoscopic retrograde cholangiopancreatography (ERCP)\n-  Liver biopsy\n-  Percutaneous transhepatic cholangiography (PTCA)\n-  Anoscopy\n-  Barium enema\n-  Colonoscopy\n-  Flexible sigmoidoscopy\n\nUrinary System\n-  Cystourethrogram\n-  Cystoscopy\n-  Intravenous pyelogram\n-  Kidney biopsy\n-  Radionuclide scan of the kidneys\n-  Urinalysis\n\nHormonal Disorders\n-  Thyroid Scan\n\nInfertility, Pregnancy, and Childbirth\n-  Endometrial biopsy\n-  Hysterosalpingogram\n-  Hysteroscopy\n-  Laparoscopy\n-  Pelvic ultrasound and transvaginal ultrasound\n-  Amniocentesis\n-  Chorionic villus sampling\n-  Enhanced alpha fetoprotein test (or \"triple screen test\")\n-  Fetal ultrasound\nTriple screen test (or enhanced alpha fetoprotein test)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestTypeId",
+					"Description": "The unique identifier of a Medical Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "MedicalTestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestTypeName",
+					"Description": "The name of a Medical Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "MedicalTestTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestTypeDescription",
+					"Description": "The description of a Medical Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "MedicalTestTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestCategoryId",
+					"Description": "The unique identifier of a Medical Test Category.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "MedicalTestCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CptCode",
+					"Description": "The unique identifier of a CPT Code.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "CptCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HcpcsCode",
+					"Description": "The unique identifier of a HCPCS Code.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "HcpcsCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ApcCode",
+					"Description": "The unique identifier of an APC Code.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "ApcCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CdtCode",
+					"Description": "The unique identifier of a CDT Code.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "CdtCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestMethodId",
+					"Description": "The unique identifier of a Medical Test Method.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "MedicalTestMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestEnvironmentTypeId",
+					"Description": "The unique identifier of a Test Environment Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "TestEnvironmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenMethodId",
+					"Description": "The unique identifier of a Specimen Method.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "SpecimenMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestTechniqueId",
+					"Description": "The unique identifier of a test technique.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "TestTechniqueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FullyAutomatedTestIndicator",
+					"Description": "With a fully automated system all assay steps are performed automatically, the operator is only required to load reagents/samples and to programme the instrument.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "FullyAutomatedTestIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HospitalProcedureIndicator",
+					"Description": "Indicates that the procedure is a hospital procedure.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "HospitalProcedureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InOfficeProcedureIndicator",
+					"Description": "Indicates that the procedure is an in-office procedure.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "InOfficeProcedureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "KineticTestIndicator",
+					"Description": "A diagnostic test where the speed of the reaction is measured and the rate at which the signal is produced will reflect the analyte concentration.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "KineticTestIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicallyNecessaryProcedureIndicator",
+					"Description": "Those covered procedures that are:\n\na. provided for the diagnosis, treatment, cure or relief of a health condition, illness, injury or disease;\n\nb. not for experimental, investigational or cosmetic purposes;\n\nc. necessary for and appropriate to the diagnosis, treatment, cure or relief of a health condition, illness, injury, disease or its symptoms;\n\nd. within generally accepted standards of medical care in the community;\n\ne. not solely for the convenience of the insured, the insured's family or the provider.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "MedicallyNecessaryProcedureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicareApprovedIndicator",
+					"Description": "Medical services for which Medicare normally pays.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "MedicareApprovedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PhysicianPerformedProcedureIndicator",
+					"Description": "Indicates that the Medical Procedure must be performed by a physician.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "PhysicianPerformedProcedureIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequiresPriorAuthorizationIndicator",
+					"Description": "Indicates that the medical procedure requires prior authorization.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "RequiresPriorAuthorizationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PanelIndicator",
+					"Description": "Indicates whether the medical test type is a test panel that consists of multiple individual medical test types.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "PanelIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StandardWholesalePrice",
+					"Description": "The standard, or default, price charged retailers for the Product.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "StandardWholesalePrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ListPrice",
+					"Description": "The standard retail price of the Product before the application of any discount.\n\nThis is the price that normally appears in catalogs, on purchase orders and invoices.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "ListPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TargetReturnPrice",
+					"Description": "A price established as part of a strategy to yield a specific return on investment.\n\nTarget-Return Price = (unit cost) + ((desired return)*(invested capital))/unit sales\n\nThe Target-Return Price ignores competitor's pricing and price elasticity.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "TargetReturnPrice"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StandardCost",
+					"Description": "The estimated or calculated cost to manufacture or produce the Product.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "StandardCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProductMargin",
+					"Description": "The difference between the Standard Retail Price of a product and the cost to produce it.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestType.cdm.json/MedicalTestType",
+						"Name": "ProductMargin"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestTypeId\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestTypeId\"},\"MedicalTestTypeName\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestTypeName\"},\"MedicalTestTypeDescription\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestTypeDescription\"},\"MedicalTestCategoryId\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestCategoryId\"},\"CptCode\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"CptCode\"},\"HcpcsCode\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"HcpcsCode\"},\"ApcCode\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"ApcCode\"},\"CdtCode\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"CdtCode\"},\"MedicalTestMethodId\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestMethodId\"},\"TestEnvironmentTypeId\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"TestEnvironmentTypeId\"},\"SpecimenMethodId\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"SpecimenMethodId\"},\"TestTechniqueId\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"TestTechniqueId\"},\"FullyAutomatedTestIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"FullyAutomatedTestIndicator\"},\"HospitalProcedureIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"HospitalProcedureIndicator\"},\"InOfficeProcedureIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"InOfficeProcedureIndicator\"},\"KineticTestIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"KineticTestIndicator\"},\"MedicallyNecessaryProcedureIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicallyNecessaryProcedureIndicator\"},\"MedicareApprovedIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicareApprovedIndicator\"},\"PhysicianPerformedProcedureIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"PhysicianPerformedProcedureIndicator\"},\"RequiresPriorAuthorizationIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"RequiresPriorAuthorizationIndicator\"},\"PanelIndicator\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"PanelIndicator\"},\"StandardWholesalePrice\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"StandardWholesalePrice\"},\"ListPrice\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"ListPrice\"},\"TargetReturnPrice\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"TargetReturnPrice\"},\"StandardCost\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"StandardCost\"},\"ProductMargin\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"ProductMargin\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalTestType\",\"path\":\"MedicalTestType.cdm.json/MedicalTestType\"},\"description\":\"A type of medical test.\\n\\nEx:\\nBlood Test\\n-  Sodium\\n-  Potassium \\n-  Serum Iron (TSI)\\n-  Ferritin\\n-  pH\\n-  Oxygen Saturation\\n-  Total Protein\\n-  Total Bilirubin\\n-  Creatine Kinase (CK)\\n-  Triglycerides\\n-  Total Cholesterol\\n-  HDL Cholesterol\\n-  LDL Cholesterol\\n-  PAP\\n-  TSH\\n-  Testosterone\\n-  Progesterone\\n-  Androstenedione\\n-  Cortisol\\n-  Growth Hormone\\n-  Vitamin E\\n\\nBrain and Nervous System\\n-  Carotid ultrasound (carotid doppler)\\n-  Electromyography and nerve conduction studies\\n-  Lumbar puncture (or spinal tap)\\n-  Magnetic resonance imaging (MRI) of the brain\\n-  Magnetic resonance imaging (MRI) of the spine\\n-  Spinal tap (or lumbar puncture)\\n\\nSkin, Hair, Nails\\n-  Skin biopsy\\n\\nEyes\\n-  Fluorescein angiography (for diabetic retinopathy)\\n-  Snellen test for visual acuity\\n-  Tonometry\\n\\nEars, Nose, and Throat\\n-  Rapid strep test\\n-  Scratch test for allergies\\n-  Throat culture\\n\\nBones, Joints, and Muscles\\n-  Bone density test for osteoporosis\\n-  Bone scan\\n-  Computed tomography (CT) for back problems\\n-  Myelography\\n-  Back x-rays (spine x-rays)\\n\\nLungs\\n-  Bronchoscopy\\n-  Chest x-ray\\n-  Mediastinoscopy\\n-  Oxygen saturation test\\n-  Pleural fluid sampling (or thoracentesis)\\n-  Pulmonary angiogram\\n-  Pulmonary function testing\\n-  Sputum evaluation (and sputum induction)\\n-  Thoracentesis (or pleural fluid sampling)\\n-  Tuberculosis (TB) skin test\\n-  Video-assisted thoracic surgery\\n-  Ventilation-perfusion (or \\\"V-Q\\\" scan)\\n\\nHeart, Blood Vessels, and Circulation\\n-  Arterial blood flow studies of the legs\\n-  Cardiac catheterization\\n-  Echocardiogram\\n-  Electrocardiogram\\n-  Electrophysiological (EP) testing of the heart\\n-  Exercise stress test\\n-  Holter monitor\\n-  Venous ultrasound of the legs\\n\\nBlood Disorders\\n-  Bone marrow biopsy\\n-  Lymph node biopsy\\n\\nDigestive System\\n-  Abdominal CT (computed tomography) scan\\n-  Barium swallow (or upper gastrointestinal series or \\\"upper GI series\\\")\\n-  Fecal occult blood (FOB) test\\n-  Upper endoscopy (or esophagogastroduodenoscopy or \\\"EGD\\\")\\n-  Upper gastrointestinal or upper GI series, (also called barium swallow)\\n-  Abdominal ultrasound\\n-  Endoscopic retrograde cholangiopancreatography (ERCP)\\n-  Liver biopsy\\n-  Percutaneous transhepatic cholangiography (PTCA)\\n-  Anoscopy\\n-  Barium enema\\n-  Colonoscopy\\n-  Flexible sigmoidoscopy\\n\\nUrinary System\\n-  Cystourethrogram\\n-  Cystoscopy\\n-  Intravenous pyelogram\\n-  Kidney biopsy\\n-  Radionuclide scan of the kidneys\\n-  Urinalysis\\n\\nHormonal Disorders\\n-  Thyroid Scan\\n\\nInfertility, Pregnancy, and Childbirth\\n-  Endometrial biopsy\\n-  Hysterosalpingogram\\n-  Hysteroscopy\\n-  Laparoscopy\\n-  Pelvic ultrasound and transvaginal ultrasound\\n-  Amniocentesis\\n-  Chorionic villus sampling\\n-  Enhanced alpha fetoprotein test (or \\\"triple screen test\\\")\\n-  Fetal ultrasound\\nTriple screen test (or enhanced alpha fetoprotein test)\",\"primaryKey\":[\"MedicalTestTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Type.\",\"isNullable\":false,\"name\":\"MedicalTestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Medical Test Type.\",\"isNullable\":true,\"name\":\"MedicalTestTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Medical Test Type.\",\"isNullable\":true,\"name\":\"MedicalTestTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Category.\",\"isNullable\":true,\"name\":\"MedicalTestCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"CptCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a CPT Code.\",\"isNullable\":true,\"name\":\"CptCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"HcpcsCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a HCPCS Code.\",\"isNullable\":true,\"name\":\"HcpcsCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"ApcCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of an APC Code.\",\"isNullable\":true,\"name\":\"ApcCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"CdtCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a CDT Code.\",\"isNullable\":true,\"name\":\"CdtCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicalTestMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Method.\",\"isNullable\":true,\"name\":\"MedicalTestMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"TestEnvironmentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Test Environment Type.\",\"isNullable\":true,\"name\":\"TestEnvironmentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"SpecimenMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen Method.\",\"isNullable\":true,\"name\":\"SpecimenMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"TestTechniqueId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a test technique.\",\"isNullable\":true,\"name\":\"TestTechniqueId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"FullyAutomatedTestIndicator\"},\"dataType\":\"boolean\",\"description\":\"With a fully automated system all assay steps are performed automatically, the operator is only required to load reagents/samples and to programme the instrument.\",\"isNullable\":true,\"name\":\"FullyAutomatedTestIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"HospitalProcedureIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the procedure is a hospital procedure.\",\"isNullable\":true,\"name\":\"HospitalProcedureIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"InOfficeProcedureIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the procedure is an in-office procedure.\",\"isNullable\":true,\"name\":\"InOfficeProcedureIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"KineticTestIndicator\"},\"dataType\":\"boolean\",\"description\":\"A diagnostic test where the speed of the reaction is measured and the rate at which the signal is produced will reflect the analyte concentration.\",\"isNullable\":true,\"name\":\"KineticTestIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicallyNecessaryProcedureIndicator\"},\"dataType\":\"boolean\",\"description\":\"Those covered procedures that are:\\n\\na. provided for the diagnosis, treatment, cure or relief of a health condition, illness, injury or disease;\\n\\nb. not for experimental, investigational or cosmetic purposes;\\n\\nc. necessary for and appropriate to the diagnosis, treatment, cure or relief of a health condition, illness, injury, disease or its symptoms;\\n\\nd. within generally accepted standards of medical care in the community;\\n\\ne. not solely for the convenience of the insured, the insured's family or the provider.\",\"isNullable\":true,\"name\":\"MedicallyNecessaryProcedureIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"MedicareApprovedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Medical services for which Medicare normally pays.\",\"isNullable\":true,\"name\":\"MedicareApprovedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"PhysicianPerformedProcedureIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the Medical Procedure must be performed by a physician.\",\"isNullable\":true,\"name\":\"PhysicianPerformedProcedureIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"RequiresPriorAuthorizationIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the medical procedure requires prior authorization.\",\"isNullable\":true,\"name\":\"RequiresPriorAuthorizationIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"PanelIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the medical test type is a test panel that consists of multiple individual medical test types.\",\"isNullable\":true,\"name\":\"PanelIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"StandardWholesalePrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The standard, or default, price charged retailers for the Product.\",\"isNullable\":true,\"scale\":2,\"name\":\"StandardWholesalePrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"ListPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The standard retail price of the Product before the application of any discount.\\n\\nThis is the price that normally appears in catalogs, on purchase orders and invoices.\",\"isNullable\":true,\"scale\":2,\"name\":\"ListPrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"TargetReturnPrice\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"A price established as part of a strategy to yield a specific return on investment.\\n\\nTarget-Return Price = (unit cost) + ((desired return)*(invested capital))/unit sales\\n\\nThe Target-Return Price ignores competitor's pricing and price elasticity.\",\"isNullable\":true,\"scale\":2,\"name\":\"TargetReturnPrice\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"StandardCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated or calculated cost to manufacture or produce the Product.\",\"isNullable\":true,\"scale\":2,\"name\":\"StandardCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"name\":\"ProductMargin\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The difference between the Standard Retail Price of a product and the cost to produce it.\",\"isNullable\":true,\"scale\":2,\"name\":\"ProductMargin\"}]}}}",
+			"Description": "A type of medical test.\n\nEx:\nBlood Test\n-  Sodium\n-  Potassium \n-  Serum Iron (TSI)\n-  Ferritin\n-  pH\n-  Oxygen Saturation\n-  Total Protein\n-  Total Bilirubin\n-  Creatine Kinase (CK)\n-  Triglycerides\n-  Total Cholesterol\n-  HDL Cholesterol\n-  LDL Cholesterol\n-  PAP\n-  TSH\n-  Testosterone\n-  Progesterone\n-  Androstenedione\n-  Cortisol\n-  Growth Hormone\n-  Vitamin E\n\nBrain and Nervous System\n-  Carotid ultrasound (carotid doppler)\n-  Electromyography and nerve conduction studies\n-  Lumbar puncture (or spinal tap)\n-  Magnetic resonance imaging (MRI) of the brain\n-  Magnetic resonance imaging (MRI) of the spine\n-  Spinal tap (or lumbar puncture)\n\nSkin, Hair, Nails\n-  Skin biopsy\n\nEyes\n-  Fluorescein angiography (for diabetic retinopathy)\n-  Snellen test for visual acuity\n-  Tonometry\n\nEars, Nose, and Throat\n-  Rapid strep test\n-  Scratch test for allergies\n-  Throat culture\n\nBones, Joints, and Muscles\n-  Bone density test for osteoporosis\n-  Bone scan\n-  Computed tomography (CT) for back problems\n-  Myelography\n-  Back x-rays (spine x-rays)\n\nLungs\n-  Bronchoscopy\n-  Chest x-ray\n-  Mediastinoscopy\n-  Oxygen saturation test\n-  Pleural fluid sampling (or thoracentesis)\n-  Pulmonary angiogram\n-  Pulmonary function testing\n-  Sputum evaluation (and sputum induction)\n-  Thoracentesis (or pleural fluid sampling)\n-  Tuberculosis (TB) skin test\n-  Video-assisted thoracic surgery\n-  Ventilation-perfusion (or \"V-Q\" scan)\n\nHeart, Blood Vessels, and Circulation\n-  Arterial blood flow studies of the legs\n-  Cardiac catheterization\n-  Echocardiogram\n-  Electrocardiogram\n-  Electrophysiological (EP) testing of the heart\n-  Exercise stress test\n-  Holter monitor\n-  Venous ultrasound of the legs\n\nBlood Disorders\n-  Bone marrow biopsy\n-  Lymph node biopsy\n\nDigestive System\n-  Abdominal CT (computed tomography) scan\n-  Barium swallow (or upper gastrointestinal series or \"upper GI series\")\n-  Fecal occult blood (FOB) test\n-  Upper endoscopy (or esophagogastroduodenoscopy or \"EGD\")\n-  Upper gastrointestinal or upper GI series, (also called barium swallow)\n-  Abdominal ultrasound\n-  Endoscopic retrograde cholangiopancreatography (ERCP)\n-  Liver biopsy\n-  Percutaneous transhepatic cholangiography (PTCA)\n-  Anoscopy\n-  Barium enema\n-  Colonoscopy\n-  Flexible sigmoidoscopy\n\nUrinary System\n-  Cystourethrogram\n-  Cystoscopy\n-  Intravenous pyelogram\n-  Kidney biopsy\n-  Radionuclide scan of the kidneys\n-  Urinalysis\n\nHormonal Disorders\n-  Thyroid Scan\n\nInfertility, Pregnancy, and Childbirth\n-  Endometrial biopsy\n-  Hysterosalpingogram\n-  Hysteroscopy\n-  Laparoscopy\n-  Pelvic ultrasound and transvaginal ultrasound\n-  Amniocentesis\n-  Chorionic villus sampling\n-  Enhanced alpha fetoprotein test (or \"triple screen test\")\n-  Fetal ultrasound\nTriple screen test (or enhanced alpha fetoprotein test)",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "MedicalTestTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

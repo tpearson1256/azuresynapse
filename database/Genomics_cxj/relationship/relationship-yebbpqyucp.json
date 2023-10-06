@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yebbpqyucp",
+	"properties": {
+		"Name": "relationship-yebbpqyucp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "GeneSequenceFormatConverterType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "ProvidedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"GeneSequenceFormatConverterType.cdm.json/GeneSequenceFormatConverterType\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"ProvidedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

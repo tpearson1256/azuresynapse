@@ -1,0 +1,26 @@
+{
+	"name": "relationship-afdptectmm",
+	"properties": {
+		"Name": "relationship-afdptectmm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SpecimenMethod",
+		"ToTableName": "MedicalTestType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenMethodId",
+				"ToColumnName": "SpecimenMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SpecimenMethod.cdm.json/SpecimenMethod\",\"toEntity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenMethodId\",\"toAttribute\":\"SpecimenMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mpkfmxtkfz",
+	"properties": {
+		"Name": "relationship-mpkfmxtkfz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SpecimenType",
+		"ToTableName": "GenomicSpecimen",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenTypeId",
+				"ToColumnName": "SpecimenTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SpecimenType.cdm.json/SpecimenType\",\"toEntity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenTypeId\",\"toAttribute\":\"SpecimenTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

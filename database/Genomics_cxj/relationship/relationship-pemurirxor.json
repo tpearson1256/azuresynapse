@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pemurirxor",
+	"properties": {
+		"Name": "relationship-pemurirxor",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfFormatType",
+		"ToTableName": "VcfInfo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VcfFormatTypeId",
+				"ToColumnName": "InfoType"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfFormatType.cdm.json/VcfFormatType\",\"toEntity\":\"VcfInfo.cdm.json/VcfInfo\",\"joinPairs\":[{\"fromAttribute\":\"VcfFormatTypeId\",\"toAttribute\":\"InfoType\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

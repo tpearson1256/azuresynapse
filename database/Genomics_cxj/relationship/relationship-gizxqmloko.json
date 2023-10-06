@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gizxqmloko",
+	"properties": {
+		"Name": "relationship-gizxqmloko",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenomicSpecimen",
+		"ToTableName": "RelatedSpecimen",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenId",
+				"ToColumnName": "RelatedSpecimenId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"toEntity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenId\",\"toAttribute\":\"RelatedSpecimenId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

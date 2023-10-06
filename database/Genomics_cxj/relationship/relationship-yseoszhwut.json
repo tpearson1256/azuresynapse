@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yseoszhwut",
+	"properties": {
+		"Name": "relationship-yseoszhwut",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequenceFormatPartyRelationshipType",
+		"ToTableName": "GeneSequenceFormatRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequenceFormatPartyRelationshipTypeId",
+				"ToColumnName": "GeneSequenceFormatPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\",\"toEntity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequenceFormatPartyRelationshipTypeId\",\"toAttribute\":\"GeneSequenceFormatPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

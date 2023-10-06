@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidClass",
+	"properties": {
+		"Name": "AminoAcidClass",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The class of the amino acid, which is typically grouped in 6 main classifications.\n\nEx:\n-  Aliphatic\n-  Hydroxyl or Sulfur/Selenium-containing\n-  Cyclic\n-  Aromatic\n-  Basic\n-  Acidic and their Amide",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidClassId",
+					"Description": "The unique identifier of an amino class.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidClass.cdm.json/AminoAcidClass",
+						"Name": "AminoAcidClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidClassName",
+					"Description": "The name of an amino class.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidClass.cdm.json/AminoAcidClass",
+						"Name": "AminoAcidClassName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidClassDescription",
+					"Description": "The description of an amino class.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidClass.cdm.json/AminoAcidClass",
+						"Name": "AminoAcidClassDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidClass",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidClass",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidClassId\":{\"entity\":\"AminoAcidClass.cdm.json/AminoAcidClass\",\"name\":\"AminoAcidClassId\"},\"AminoAcidClassName\":{\"entity\":\"AminoAcidClass.cdm.json/AminoAcidClass\",\"name\":\"AminoAcidClassName\"},\"AminoAcidClassDescription\":{\"entity\":\"AminoAcidClass.cdm.json/AminoAcidClass\",\"name\":\"AminoAcidClassDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidClass\",\"path\":\"AminoAcidClass.cdm.json/AminoAcidClass\"},\"description\":\"The class of the amino acid, which is typically grouped in 6 main classifications.\\n\\nEx:\\n-  Aliphatic\\n-  Hydroxyl or Sulfur/Selenium-containing\\n-  Cyclic\\n-  Aromatic\\n-  Basic\\n-  Acidic and their Amide\",\"primaryKey\":[\"AminoAcidClassId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidClass.cdm.json/AminoAcidClass\",\"name\":\"AminoAcidClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino class.\",\"isNullable\":false,\"name\":\"AminoAcidClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidClass.cdm.json/AminoAcidClass\",\"name\":\"AminoAcidClassName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an amino class.\",\"isNullable\":true,\"name\":\"AminoAcidClassName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidClass.cdm.json/AminoAcidClass\",\"name\":\"AminoAcidClassDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an amino class.\",\"isNullable\":true,\"name\":\"AminoAcidClassDescription\"}]}}}",
+			"Description": "The class of the amino acid, which is typically grouped in 6 main classifications.\n\nEx:\n-  Aliphatic\n-  Hydroxyl or Sulfur/Selenium-containing\n-  Cyclic\n-  Aromatic\n-  Basic\n-  Acidic and their Amide",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidClassId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

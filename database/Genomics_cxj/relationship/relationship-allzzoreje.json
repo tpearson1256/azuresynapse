@@ -1,0 +1,26 @@
+{
+	"name": "relationship-allzzoreje",
+	"properties": {
+		"Name": "relationship-allzzoreje",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTestType",
+		"ToTableName": "MedicalTestTypeSpecimenType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestTypeId",
+				"ToColumnName": "MedicalTestTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"toEntity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestTypeId\",\"toAttribute\":\"MedicalTestTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,131 @@
+{
+	"name": "GeneSequenceFormatConverter",
+	"properties": {
+		"Name": "GeneSequenceFormatConverter",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The format converter type(s) available for the gene sequence format.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatConverterTypeId",
+					"Description": "The unique identifier of a gene sequence format converter type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter",
+						"Name": "GeneSequenceFormatConverterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatConverterVersionNumber",
+					"Description": "The version number of the gene sequence format converter.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter",
+						"Name": "GeneSequenceFormatConverterVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatConverterNote",
+					"Description": "A note, comment or additional information regarding the gene sequence format converter.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter",
+						"Name": "GeneSequenceFormatConverterNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFormatConverter",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFormatConverter",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequencingFileFormatId\"},\"GeneSequenceFormatConverterTypeId\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequenceFormatConverterTypeId\"},\"GeneSequenceFormatConverterVersionNumber\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequenceFormatConverterVersionNumber\"},\"GeneSequenceFormatConverterNote\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequenceFormatConverterNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequenceFormatConverter\",\"path\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\"},\"description\":\"The format converter type(s) available for the gene sequence format.\",\"primaryKey\":[\"GeneSequencingFileFormatId\",\"GeneSequenceFormatConverterTypeId\",\"GeneSequenceFormatConverterVersionNumber\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequenceFormatConverterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequence format converter type.\",\"isNullable\":false,\"name\":\"GeneSequenceFormatConverterTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequenceFormatConverterVersionNumber\"},\"dataType\":\"integer\",\"description\":\"The version number of the gene sequence format converter.\",\"isNullable\":false,\"name\":\"GeneSequenceFormatConverterVersionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatConverter.cdm.json/GeneSequenceFormatConverter\",\"name\":\"GeneSequenceFormatConverterNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the gene sequence format converter.\",\"isNullable\":true,\"name\":\"GeneSequenceFormatConverterNote\"}]}}}",
+			"Description": "The format converter type(s) available for the gene sequence format.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId,GeneSequenceFormatConverterTypeId,GeneSequenceFormatConverterVersionNumber",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

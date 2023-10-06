@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidStructuralFunctionalGroup",
+	"properties": {
+		"Name": "AminoAcidStructuralFunctionalGroup",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Amino Acids can be classified according to the core structural functional groups' locations as:\n\n- alpha\n- beta\n- gamma\n- delta",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidStructuralFunctionalGroupId",
+					"Description": "The unique identifier of a Amino Acid Structural Functional Group.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup",
+						"Name": "AminoAcidStructuralFunctionalGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidStructuralFunctionalGroupName",
+					"Description": "The name of a Amino Acid Structural Functional Group.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup",
+						"Name": "AminoAcidStructuralFunctionalGroupName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidStructuralFunctionalGroupDescription",
+					"Description": "The description of a Amino Acid Structural Functional Group.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup",
+						"Name": "AminoAcidStructuralFunctionalGroupDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidStructuralFunctionalGroup",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidStructuralFunctionalGroup",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidStructuralFunctionalGroupId\":{\"entity\":\"AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup\",\"name\":\"AminoAcidStructuralFunctionalGroupId\"},\"AminoAcidStructuralFunctionalGroupName\":{\"entity\":\"AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup\",\"name\":\"AminoAcidStructuralFunctionalGroupName\"},\"AminoAcidStructuralFunctionalGroupDescription\":{\"entity\":\"AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup\",\"name\":\"AminoAcidStructuralFunctionalGroupDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidStructuralFunctionalGroup\",\"path\":\"AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup\"},\"description\":\"Amino Acids can be classified according to the core structural functional groups' locations as:\\n\\n- alpha\\n- beta\\n- gamma\\n- delta\",\"primaryKey\":[\"AminoAcidStructuralFunctionalGroupId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup\",\"name\":\"AminoAcidStructuralFunctionalGroupId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Amino Acid Structural Functional Group.\",\"isNullable\":false,\"name\":\"AminoAcidStructuralFunctionalGroupId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup\",\"name\":\"AminoAcidStructuralFunctionalGroupName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Amino Acid Structural Functional Group.\",\"isNullable\":true,\"name\":\"AminoAcidStructuralFunctionalGroupName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidStructuralFunctionalGroup.cdm.json/AminoAcidStructuralFunctionalGroup\",\"name\":\"AminoAcidStructuralFunctionalGroupDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Amino Acid Structural Functional Group.\",\"isNullable\":true,\"name\":\"AminoAcidStructuralFunctionalGroupDescription\"}]}}}",
+			"Description": "Amino Acids can be classified according to the core structural functional groups' locations as:\n\n- alpha\n- beta\n- gamma\n- delta",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidStructuralFunctionalGroupId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

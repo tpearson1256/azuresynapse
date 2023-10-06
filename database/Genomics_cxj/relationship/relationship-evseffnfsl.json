@@ -1,0 +1,26 @@
+{
+	"name": "relationship-evseffnfsl",
+	"properties": {
+		"Name": "relationship-evseffnfsl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MajorDiagnosticCategory",
+		"ToTableName": "InternationalStatisticalClassificationOfDiseaseCode",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MajorDiagnosticCategoryId",
+				"ToColumnName": "MajorDiagnosticCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"toEntity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"joinPairs\":[{\"fromAttribute\":\"MajorDiagnosticCategoryId\",\"toAttribute\":\"MajorDiagnosticCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

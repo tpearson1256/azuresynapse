@@ -1,0 +1,255 @@
+{
+	"name": "KaryotypeTestChromosome",
+	"properties": {
+		"Name": "KaryotypeTestChromosome",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Six different characteristics of karyotypes are usually observed and compared:[21]\nDifferences in absolute sizes of chromosomes.  Chromosomes can vary in absolute size by as much as twenty-fold between genera of the same family. For example, the legumes Lotus tenuis and Vicia faba each have six pairs of chromosomes, yet V. faba chromosomes are many times larger.  These differences probably reflect different amounts of DNA duplication.\nDifferences in the position of centromeres.  These differences probably came about through translocations.\nDifferences in relative size of chromosomes.  These differences probably arose from segmental interchange of unequal lengths.\nDifferences in basic number of chromosomes. These differences could have resulted from successive unequal translocations which removed all the essential genetic material from a chromosome, permitting its loss without penalty to the organism (the dislocation hypothesis) or through fusion.  Humans have one pair fewer chromosomes than the great apes.  Human chromosome 2 appears to have resulted from the fusion of two ancestral chromosomes, and many of the genes of those two original chromosomes have been translocated to other chromosomes.\nDifferences in number and position of satellites. Satellites are small bodies attached to a chromosome by a thin thread.\nDifferences in degree and distribution of heterochromatic regions.  Heterochromatin stains darker than euchromatin.  Heterochromatin is packed tighter.  Heterochromatin consists mainly of genetically inactive and repetitive DNA sequences.  Euchromatin is usually under active transcription.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestId",
+					"Description": "The unique identifier of a Medical Test.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "MedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeNumber",
+					"Description": "The chromosome number of the associated karyotype test results.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "ChromosomeNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeId",
+					"Description": "The unique identifier of a chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "ChromosomeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeSizeDifferenceStatement",
+					"Description": "Differences in absolute sizes of chromosomes.  Chromosomes can vary in absolute size by as much as twenty-fold between genera of the same family. For example, the legumes Lotus tenuis and Vicia faba each have six pairs of chromosomes, yet V. faba chromosomes are many times larger.  These differences probably reflect different amounts of DNA duplication.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "ChromosomeSizeDifferenceStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeCentromerePositionStatement",
+					"Description": "Differences in the position of centromeres.  These differences probably came about through translocations.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "ChromosomeCentromerePositionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeRelativeSizeStatement",
+					"Description": "Differences in relative size of chromosomes.  These differences probably arose from segmental interchange of unequal lengths.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "ChromosomeRelativeSizeStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeNumberStatement",
+					"Description": "Differences in basic number of chromosomes. These differences could have resulted from successive unequal translocations which removed all the essential genetic material from a chromosome, permitting its loss without penalty to the organism (the dislocation hypothesis) or through fusion.  Humans have one pair fewer chromosomes than the great apes.  Human chromosome 2 appears to have resulted from the fusion of two ancestral chromosomes, and many of the genes of those two original chromosomes have been translocated to other chromosomes",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "ChromosomeNumberStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SatellitesNumberAndPositionStatement",
+					"Description": "Differences in degree and distribution of heterochromatic regions.  Heterochromatin stains darker than euchromatin.  Heterochromatin is packed tighter.  Heterochromatin consists mainly of genetically inactive and repetitive DNA sequences.  Euchromatin is usually under active transcription.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "SatellitesNumberAndPositionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HeterochromaticRegionDistributionAndDegreeStatement",
+					"Description": "Differences in degree and distribution of heterochromatic regions.  Heterochromatin stains darker than euchromatin.  Heterochromatin is packed tighter.  Heterochromatin consists mainly of genetically inactive and repetitive DNA sequences.  Euchromatin is usually under active transcription.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "HeterochromaticRegionDistributionAndDegreeStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "KaryotypeRepresentationBlob",
+					"Description": "The graphic representation of the karyotype/chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "KaryotypeRepresentationBlob"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "KaryotypeBandingTypeId",
+					"Description": "The unique identifier of a karyotype banding type.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome",
+						"Name": "KaryotypeBandingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/KaryotypeTestChromosome",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/KaryotypeTestChromosome",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestId\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"MedicalTestId\"},\"ChromosomeNumber\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeNumber\"},\"ChromosomeId\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeId\"},\"ChromosomeSizeDifferenceStatement\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeSizeDifferenceStatement\"},\"ChromosomeCentromerePositionStatement\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeCentromerePositionStatement\"},\"ChromosomeRelativeSizeStatement\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeRelativeSizeStatement\"},\"ChromosomeNumberStatement\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeNumberStatement\"},\"SatellitesNumberAndPositionStatement\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"SatellitesNumberAndPositionStatement\"},\"HeterochromaticRegionDistributionAndDegreeStatement\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"HeterochromaticRegionDistributionAndDegreeStatement\"},\"KaryotypeRepresentationBlob\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"KaryotypeRepresentationBlob\"},\"KaryotypeBandingTypeId\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"KaryotypeBandingTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"KaryotypeTestChromosome\",\"path\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\"},\"description\":\"Six different characteristics of karyotypes are usually observed and compared:[21]\\nDifferences in absolute sizes of chromosomes.  Chromosomes can vary in absolute size by as much as twenty-fold between genera of the same family. For example, the legumes Lotus tenuis and Vicia faba each have six pairs of chromosomes, yet V. faba chromosomes are many times larger.  These differences probably reflect different amounts of DNA duplication.\\nDifferences in the position of centromeres.  These differences probably came about through translocations.\\nDifferences in relative size of chromosomes.  These differences probably arose from segmental interchange of unequal lengths.\\nDifferences in basic number of chromosomes. These differences could have resulted from successive unequal translocations which removed all the essential genetic material from a chromosome, permitting its loss without penalty to the organism (the dislocation hypothesis) or through fusion.  Humans have one pair fewer chromosomes than the great apes.  Human chromosome 2 appears to have resulted from the fusion of two ancestral chromosomes, and many of the genes of those two original chromosomes have been translocated to other chromosomes.\\nDifferences in number and position of satellites. Satellites are small bodies attached to a chromosome by a thin thread.\\nDifferences in degree and distribution of heterochromatic regions.  Heterochromatin stains darker than euchromatin.  Heterochromatin is packed tighter.  Heterochromatin consists mainly of genetically inactive and repetitive DNA sequences.  Euchromatin is usually under active transcription.\",\"primaryKey\":[\"MedicalTestId\",\"ChromosomeNumber\",\"ChromosomeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"MedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test.\",\"isNullable\":false,\"name\":\"MedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeNumber\"},\"dataType\":\"integer\",\"description\":\"The chromosome number of the associated karyotype test results.\",\"isNullable\":false,\"name\":\"ChromosomeNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a chromosome.\",\"isNullable\":false,\"name\":\"ChromosomeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeSizeDifferenceStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Differences in absolute sizes of chromosomes.  Chromosomes can vary in absolute size by as much as twenty-fold between genera of the same family. For example, the legumes Lotus tenuis and Vicia faba each have six pairs of chromosomes, yet V. faba chromosomes are many times larger.  These differences probably reflect different amounts of DNA duplication.\",\"isNullable\":true,\"name\":\"ChromosomeSizeDifferenceStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeCentromerePositionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Differences in the position of centromeres.  These differences probably came about through translocations.\",\"isNullable\":true,\"name\":\"ChromosomeCentromerePositionStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeRelativeSizeStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Differences in relative size of chromosomes.  These differences probably arose from segmental interchange of unequal lengths.\",\"isNullable\":true,\"name\":\"ChromosomeRelativeSizeStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"ChromosomeNumberStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Differences in basic number of chromosomes. These differences could have resulted from successive unequal translocations which removed all the essential genetic material from a chromosome, permitting its loss without penalty to the organism (the dislocation hypothesis) or through fusion.  Humans have one pair fewer chromosomes than the great apes.  Human chromosome 2 appears to have resulted from the fusion of two ancestral chromosomes, and many of the genes of those two original chromosomes have been translocated to other chromosomes\",\"isNullable\":true,\"name\":\"ChromosomeNumberStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"SatellitesNumberAndPositionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Differences in degree and distribution of heterochromatic regions.  Heterochromatin stains darker than euchromatin.  Heterochromatin is packed tighter.  Heterochromatin consists mainly of genetically inactive and repetitive DNA sequences.  Euchromatin is usually under active transcription.\",\"isNullable\":true,\"name\":\"SatellitesNumberAndPositionStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"HeterochromaticRegionDistributionAndDegreeStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Differences in degree and distribution of heterochromatic regions.  Heterochromatin stains darker than euchromatin.  Heterochromatin is packed tighter.  Heterochromatin consists mainly of genetically inactive and repetitive DNA sequences.  Euchromatin is usually under active transcription.\",\"isNullable\":true,\"name\":\"HeterochromaticRegionDistributionAndDegreeStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"KaryotypeRepresentationBlob\"},\"dataType\":\"binary\",\"description\":\"The graphic representation of the karyotype/chromosome.\",\"isNullable\":true,\"name\":\"KaryotypeRepresentationBlob\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"name\":\"KaryotypeBandingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a karyotype banding type.\",\"isNullable\":true,\"name\":\"KaryotypeBandingTypeId\"}]}}}",
+			"Description": "Six different characteristics of karyotypes are usually observed and compared:[21]\nDifferences in absolute sizes of chromosomes.  Chromosomes can vary in absolute size by as much as twenty-fold between genera of the same family. For example, the legumes Lotus tenuis and Vicia faba each have six pairs of chromosomes, yet V. faba chromosomes are many times larger.  These differences probably reflect different amounts of DNA duplication.\nDifferences in the position of centromeres.  These differences probably came about through translocations.\nDifferences in relative size of chromosomes.  These differences probably arose from segmental interchange of unequal lengths.\nDifferences in basic number of chromosomes. These differences could have resulted from successive unequal translocations which removed all the essential genetic material from a chromosome, permitting its loss without penalty to the organism (the dislocation hypothesis) or through fusion.  Humans have one pair fewer chromosomes than the great apes.  Human chromosome 2 appears to have resulted from the fusion of two ancestral chromosomes, and many of the genes of those two original chromosomes have been translocated to other chromosomes.\nDifferences in number and position of satellites. Satellites are small bodies attached to a chromosome by a thin thread.\nDifferences in degree and distribution of heterochromatic regions.  Heterochromatin stains darker than euchromatin.  Heterochromatin is packed tighter.  Heterochromatin consists mainly of genetically inactive and repetitive DNA sequences.  Euchromatin is usually under active transcription.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestId,ChromosomeNumber,ChromosomeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

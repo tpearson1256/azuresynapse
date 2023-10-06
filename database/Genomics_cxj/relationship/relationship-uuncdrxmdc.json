@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uuncdrxmdc",
+	"properties": {
+		"Name": "relationship-uuncdrxmdc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TestTechnique",
+		"ToTableName": "MedicalTestType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TestTechniqueId",
+				"ToColumnName": "TestTechniqueId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TestTechnique.cdm.json/TestTechnique\",\"toEntity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"joinPairs\":[{\"fromAttribute\":\"TestTechniqueId\",\"toAttribute\":\"TestTechniqueId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

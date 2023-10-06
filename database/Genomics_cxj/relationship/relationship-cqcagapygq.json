@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cqcagapygq",
+	"properties": {
+		"Name": "relationship-cqcagapygq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenomicEncounter",
+		"ToTableName": "MedicalTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterId",
+				"ToColumnName": "EncounterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"toEntity\":\"MedicalTest.cdm.json/MedicalTest\",\"joinPairs\":[{\"fromAttribute\":\"EncounterId\",\"toAttribute\":\"EncounterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

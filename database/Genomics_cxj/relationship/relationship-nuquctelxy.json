@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nuquctelxy",
+	"properties": {
+		"Name": "relationship-nuquctelxy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GenomicSpecimen",
+		"ToTableName": "SpecimenRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenId",
+				"ToColumnName": "SpecimenId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"toEntity\":\"SpecimenRelatedParty.cdm.json/SpecimenRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenId\",\"toAttribute\":\"SpecimenId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

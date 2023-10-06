@@ -1,0 +1,115 @@
+{
+	"name": "DocumentStandardType",
+	"properties": {
+		"Name": "DocumentStandardType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The document standard(s) associated with a document.\n\nEx:\nISO/IEC 26300:2006 Open Document Format for Office Applications\nX3D ISO standard for representing 3D computer graphics\nISO 9001\nISO/TR 10255\nISO/IEC 19503",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentStandardTypeId",
+					"Description": "The unique identifier of a Document Standard Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentStandardType.cdm.json/DocumentStandardType",
+						"Name": "DocumentStandardTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentStandardTypeName",
+					"Description": "The name of a Document Standard Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentStandardType.cdm.json/DocumentStandardType",
+						"Name": "DocumentStandardTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentStandardTypeDescription",
+					"Description": "The description of a Document Standard Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentStandardType.cdm.json/DocumentStandardType",
+						"Name": "DocumentStandardTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentStandardType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentStandardType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentStandardTypeId\":{\"entity\":\"DocumentStandardType.cdm.json/DocumentStandardType\",\"name\":\"DocumentStandardTypeId\"},\"DocumentStandardTypeName\":{\"entity\":\"DocumentStandardType.cdm.json/DocumentStandardType\",\"name\":\"DocumentStandardTypeName\"},\"DocumentStandardTypeDescription\":{\"entity\":\"DocumentStandardType.cdm.json/DocumentStandardType\",\"name\":\"DocumentStandardTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentStandardType\",\"path\":\"DocumentStandardType.cdm.json/DocumentStandardType\"},\"description\":\"The document standard(s) associated with a document.\\n\\nEx:\\nISO/IEC 26300:2006 Open Document Format for Office Applications\\nX3D ISO standard for representing 3D computer graphics\\nISO 9001\\nISO/TR 10255\\nISO/IEC 19503\",\"primaryKey\":[\"DocumentStandardTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentStandardType.cdm.json/DocumentStandardType\",\"name\":\"DocumentStandardTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Standard Type.\",\"isNullable\":false,\"name\":\"DocumentStandardTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentStandardType.cdm.json/DocumentStandardType\",\"name\":\"DocumentStandardTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Document Standard Type.\",\"isNullable\":true,\"name\":\"DocumentStandardTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentStandardType.cdm.json/DocumentStandardType\",\"name\":\"DocumentStandardTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Document Standard Type.\",\"isNullable\":true,\"name\":\"DocumentStandardTypeDescription\"}]}}}",
+			"Description": "The document standard(s) associated with a document.\n\nEx:\nISO/IEC 26300:2006 Open Document Format for Office Applications\nX3D ISO standard for representing 3D computer graphics\nISO 9001\nISO/TR 10255\nISO/IEC 19503",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentStandardTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

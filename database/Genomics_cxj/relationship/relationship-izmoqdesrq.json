@@ -1,0 +1,26 @@
+{
+	"name": "relationship-izmoqdesrq",
+	"properties": {
+		"Name": "relationship-izmoqdesrq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterTestDocumentType",
+		"ToTableName": "EncounterTestDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterTestDocumentTypeId",
+				"ToColumnName": "EncounterTestDocumentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\",\"toEntity\":\"EncounterTestDocument.cdm.json/EncounterTestDocument\",\"joinPairs\":[{\"fromAttribute\":\"EncounterTestDocumentTypeId\",\"toAttribute\":\"EncounterTestDocumentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

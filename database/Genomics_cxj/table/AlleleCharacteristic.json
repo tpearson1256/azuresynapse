@@ -1,0 +1,115 @@
+{
+	"name": "AlleleCharacteristic",
+	"properties": {
+		"Name": "AlleleCharacteristic",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The allele characteristic(s) associated with the allele.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AlleleId",
+					"Description": "The unique identifier of an allele.",
+					"BaseAttributeReference": {
+						"Entity": "AlleleCharacteristic.cdm.json/AlleleCharacteristic",
+						"Name": "AlleleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleCharacteristicTypeId",
+					"Description": "The unique identifier of an Allele Characteristic Type.",
+					"BaseAttributeReference": {
+						"Entity": "AlleleCharacteristic.cdm.json/AlleleCharacteristic",
+						"Name": "AlleleCharacteristicTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleCharacteristicNote",
+					"Description": "A note, comment or additional information regarding the allele characteristic.",
+					"BaseAttributeReference": {
+						"Entity": "AlleleCharacteristic.cdm.json/AlleleCharacteristic",
+						"Name": "AlleleCharacteristicNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AlleleCharacteristic",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AlleleCharacteristic",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AlleleId\":{\"entity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"name\":\"AlleleId\"},\"AlleleCharacteristicTypeId\":{\"entity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"name\":\"AlleleCharacteristicTypeId\"},\"AlleleCharacteristicNote\":{\"entity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"name\":\"AlleleCharacteristicNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AlleleCharacteristic\",\"path\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\"},\"description\":\"The allele characteristic(s) associated with the allele.\",\"primaryKey\":[\"AlleleId\",\"AlleleCharacteristicTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"name\":\"AlleleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an allele.\",\"isNullable\":false,\"name\":\"AlleleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"name\":\"AlleleCharacteristicTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Allele Characteristic Type.\",\"isNullable\":false,\"name\":\"AlleleCharacteristicTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"name\":\"AlleleCharacteristicNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the allele characteristic.\",\"isNullable\":true,\"name\":\"AlleleCharacteristicNote\"}]}}}",
+			"Description": "The allele characteristic(s) associated with the allele.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AlleleId,AlleleCharacteristicTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

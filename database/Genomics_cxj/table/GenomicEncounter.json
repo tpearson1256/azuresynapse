@@ -1,0 +1,547 @@
+{
+	"name": "GenomicEncounter",
+	"properties": {
+		"Name": "GenomicEncounter",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A contact between an individual and the health care system for a health care service or set of services related to one or more medical conditions involving one or more tests, service, medical procedures, products, items, ancillary services etc. \n\nSome organizations refer to this as an Episode of Care, while others prefer to think of a group of related Encounters as an Episode of Care.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterId",
+					"Description": "The unique identifier of an Encounter with a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "EncounterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterStartTimestamp",
+					"Description": "The period start timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "EncounterStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterEndTimestamp",
+					"Description": "The period end timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "EncounterEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SubjectId",
+					"Description": "The unique identifier of a Subject.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "SubjectId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReferringServiceProviderId",
+					"Description": "The unique identifier of the referring Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "ReferringServiceProviderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AdmittingDiagnosisStatement",
+					"Description": "Words that your doctor uses to describe your condition",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "AdmittingDiagnosisStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PrincipalDiagnosisStatement",
+					"Description": "The medical condition that is ultimately determined to have caused a patient's admission to the hospital. The principal diagnosis is used to assign every patient to a diagnosis related group. This diagnosis may differ from the admitting and major diagnoses.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "PrincipalDiagnosisStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EndOfEncounterDiagnosisStatement",
+					"Description": "The final diagnosis associated with the encounter, which means identifying a disease by its signs, symptoms, and laboratory findings",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "EndOfEncounterDiagnosisStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MemberBeneficiaryLiabilityStatement",
+					"Description": "A statement that you are responsible for some treatments or charges.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "MemberBeneficiaryLiabilityStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LengthOfStay",
+					"Description": "LOS expressed in hours refers to the length of stay. It is a term used by insurance companies, case managers and/or employers to describe the amount of time an individual stays in a hospital or in-patient facility.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "LengthOfStay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterNotes",
+					"Description": "Notes, comments or additional information regarding the encounter.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "EncounterNotes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HealthcareFacilityId",
+					"Description": "The unique identifier of a Healthcare Facility.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "HealthcareFacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FacilityFloorplanLocationId",
+					"Description": "The unique identifier of a Facility Floorplan Location.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "FacilityFloorplanLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MemberPreauthorizationCode",
+					"Description": "The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "MemberPreauthorizationCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ResultOfWorkRelatedAccidentIndicator",
+					"Description": "Indicates that the encounter is a result of a work-related accident.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "ResultOfWorkRelatedAccidentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UncompensatedCareIndicator",
+					"Description": "Service provided by physicians and hospitals for which no payment is received from the patient or from third-party payers. \n\nSome costs for these services may be covered through cost-shifting. Not all uncompensated care results from charity care. It also includes bad debts from persons who are not classified as charity cases but who are unable or unwilling to pay their bill. See cost shifting.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "UncompensatedCareIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OutOfNetworkEncounterIndicator",
+					"Description": "Services performed by a provider who has not signed a contract with the member's health plan to be part of a provider network.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "OutOfNetworkEncounterIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReferralRequiredIndicator",
+					"Description": "Indicates that a referral is required as a result of the encounter.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "ReferralRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EmploymentIllnessRelatedIndicator",
+					"Description": "Indicates whether the illness was job-related.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "EmploymentIllnessRelatedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DisabledIndicator",
+					"Description": "Indicates if the encounter is due to a disability.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "DisabledIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReAdmissionIndicator",
+					"Description": "Indicates whether the Encounter is the result of a re-admission.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "ReAdmissionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CaseManagerId",
+					"Description": "The unique identifier of a case manager.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "CaseManagerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TriageClassificationId",
+					"Description": "The unique identifier of a Triage Classification.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "TriageClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTypeId",
+					"Description": "The unique identifier of an Encounter Type.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "EncounterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AdmissionLevelOfCareId",
+					"Description": "The unique identifier of an Admission Level Of Care.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "AdmissionLevelOfCareId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HealthProgramId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "HealthProgramId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicaidCaseName",
+					"Description": "The case name assigned by Medicaid.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "MedicaidCaseName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicaidCaseNumber",
+					"Description": "The case number assigned by Medicaid.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicEncounter.cdm.json/GenomicEncounter",
+						"Name": "MedicaidCaseNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenomicEncounter",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenomicEncounter",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterId\"},\"EncounterStartTimestamp\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterStartTimestamp\"},\"EncounterEndTimestamp\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterEndTimestamp\"},\"SubjectId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"SubjectId\"},\"ReferringServiceProviderId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ReferringServiceProviderId\"},\"AdmittingDiagnosisStatement\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"AdmittingDiagnosisStatement\"},\"PrincipalDiagnosisStatement\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"PrincipalDiagnosisStatement\"},\"EndOfEncounterDiagnosisStatement\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EndOfEncounterDiagnosisStatement\"},\"MemberBeneficiaryLiabilityStatement\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MemberBeneficiaryLiabilityStatement\"},\"LengthOfStay\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"LengthOfStay\"},\"EncounterNotes\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterNotes\"},\"HealthcareFacilityId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"HealthcareFacilityId\"},\"FacilityFloorplanLocationId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"FacilityFloorplanLocationId\"},\"MemberPreauthorizationCode\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MemberPreauthorizationCode\"},\"ResultOfWorkRelatedAccidentIndicator\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ResultOfWorkRelatedAccidentIndicator\"},\"UncompensatedCareIndicator\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"UncompensatedCareIndicator\"},\"OutOfNetworkEncounterIndicator\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"OutOfNetworkEncounterIndicator\"},\"ReferralRequiredIndicator\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ReferralRequiredIndicator\"},\"EmploymentIllnessRelatedIndicator\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EmploymentIllnessRelatedIndicator\"},\"DisabledIndicator\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"DisabledIndicator\"},\"ReAdmissionIndicator\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ReAdmissionIndicator\"},\"CaseManagerId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"CaseManagerId\"},\"TriageClassificationId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"TriageClassificationId\"},\"EncounterTypeId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterTypeId\"},\"AdmissionLevelOfCareId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"AdmissionLevelOfCareId\"},\"HealthProgramId\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"HealthProgramId\"},\"MedicaidCaseName\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MedicaidCaseName\"},\"MedicaidCaseNumber\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MedicaidCaseNumber\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GenomicEncounter\",\"path\":\"GenomicEncounter.cdm.json/GenomicEncounter\"},\"description\":\"A contact between an individual and the health care system for a health care service or set of services related to one or more medical conditions involving one or more tests, service, medical procedures, products, items, ancillary services etc. \\n\\nSome organizations refer to this as an Episode of Care, while others prefer to think of a group of related Encounters as an Episode of Care.\",\"primaryKey\":[\"EncounterId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Encounter with a Service Provider.\",\"isNullable\":false,\"name\":\"EncounterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.\",\"isNullable\":true,\"name\":\"EncounterStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of treatment between admission and discharge from a modality, e.g., inpatient, residential, partial hospitalization, and outpatient, or the period of time between the first procedure and last procedure on an outpatient basis for a given diagnosis. Many healthcare statistics and profiles use this unit as a base for comparisons.\",\"isNullable\":true,\"name\":\"EncounterEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"SubjectId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Subject.\",\"isNullable\":true,\"name\":\"SubjectId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ReferringServiceProviderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the referring Service Provider.\",\"isNullable\":true,\"name\":\"ReferringServiceProviderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"AdmittingDiagnosisStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"Words that your doctor uses to describe your condition\",\"isNullable\":true,\"name\":\"AdmittingDiagnosisStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"PrincipalDiagnosisStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The medical condition that is ultimately determined to have caused a patient's admission to the hospital. The principal diagnosis is used to assign every patient to a diagnosis related group. This diagnosis may differ from the admitting and major diagnoses.\",\"isNullable\":true,\"name\":\"PrincipalDiagnosisStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EndOfEncounterDiagnosisStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The final diagnosis associated with the encounter, which means identifying a disease by its signs, symptoms, and laboratory findings\",\"isNullable\":true,\"name\":\"EndOfEncounterDiagnosisStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MemberBeneficiaryLiabilityStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement that you are responsible for some treatments or charges.\",\"isNullable\":true,\"name\":\"MemberBeneficiaryLiabilityStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"LengthOfStay\"},\"dataType\":\"integer\",\"description\":\"LOS expressed in hours refers to the length of stay. It is a term used by insurance companies, case managers and/or employers to describe the amount of time an individual stays in a hospital or in-patient facility.\",\"isNullable\":true,\"name\":\"LengthOfStay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterNotes\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the encounter.\",\"isNullable\":true,\"name\":\"EncounterNotes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"HealthcareFacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Healthcare Facility.\",\"isNullable\":true,\"name\":\"HealthcareFacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"FacilityFloorplanLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility Floorplan Location.\",\"isNullable\":true,\"name\":\"FacilityFloorplanLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MemberPreauthorizationCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The preauthorization code assigned to the member. The number stating that your treatment has been approved by your insurance plan.\",\"isNullable\":true,\"name\":\"MemberPreauthorizationCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ResultOfWorkRelatedAccidentIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the encounter is a result of a work-related accident.\",\"isNullable\":true,\"name\":\"ResultOfWorkRelatedAccidentIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"UncompensatedCareIndicator\"},\"dataType\":\"boolean\",\"description\":\"Service provided by physicians and hospitals for which no payment is received from the patient or from third-party payers. \\n\\nSome costs for these services may be covered through cost-shifting. Not all uncompensated care results from charity care. It also includes bad debts from persons who are not classified as charity cases but who are unable or unwilling to pay their bill. See cost shifting.\",\"isNullable\":true,\"name\":\"UncompensatedCareIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"OutOfNetworkEncounterIndicator\"},\"dataType\":\"boolean\",\"description\":\"Services performed by a provider who has not signed a contract with the member's health plan to be part of a provider network.\",\"isNullable\":true,\"name\":\"OutOfNetworkEncounterIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ReferralRequiredIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that a referral is required as a result of the encounter.\",\"isNullable\":true,\"name\":\"ReferralRequiredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EmploymentIllnessRelatedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the illness was job-related.\",\"isNullable\":true,\"name\":\"EmploymentIllnessRelatedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"DisabledIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates if the encounter is due to a disability.\",\"isNullable\":true,\"name\":\"DisabledIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"ReAdmissionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the Encounter is the result of a re-admission.\",\"isNullable\":true,\"name\":\"ReAdmissionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"CaseManagerId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a case manager.\",\"isNullable\":true,\"name\":\"CaseManagerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"TriageClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Triage Classification.\",\"isNullable\":true,\"name\":\"TriageClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"EncounterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Type.\",\"isNullable\":true,\"name\":\"EncounterTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"AdmissionLevelOfCareId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Admission Level Of Care.\",\"isNullable\":true,\"name\":\"AdmissionLevelOfCareId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"HealthProgramId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":true,\"name\":\"HealthProgramId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MedicaidCaseName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The case name assigned by Medicaid.\",\"isNullable\":true,\"name\":\"MedicaidCaseName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicEncounter.cdm.json/GenomicEncounter\",\"name\":\"MedicaidCaseNumber\"},\"dataType\":\"integer\",\"description\":\"The case number assigned by Medicaid.\",\"isNullable\":true,\"name\":\"MedicaidCaseNumber\"}]}}}",
+			"Description": "A contact between an individual and the health care system for a health care service or set of services related to one or more medical conditions involving one or more tests, service, medical procedures, products, items, ancillary services etc. \n\nSome organizations refer to this as an Episode of Care, while others prefer to think of a group of related Encounters as an Episode of Care.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EncounterId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

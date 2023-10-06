@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kbpsgmtexq",
+	"properties": {
+		"Name": "relationship-kbpsgmtexq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SpecimenStatusType",
+		"ToTableName": "SpecimenStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenStatusTypeId",
+				"ToColumnName": "SpecimenStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\",\"toEntity\":\"SpecimenStatus.cdm.json/SpecimenStatus\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenStatusTypeId\",\"toAttribute\":\"SpecimenStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

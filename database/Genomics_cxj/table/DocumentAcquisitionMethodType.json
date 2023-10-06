@@ -1,0 +1,115 @@
+{
+	"name": "DocumentAcquisitionMethodType",
+	"properties": {
+		"Name": "DocumentAcquisitionMethodType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The document acquisition method type(s) associated with a document.\n\nEx:\n- download\n- purchase\n- upon request\n- view via www site",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentAcquisitionMethodTypeId",
+					"Description": "The unique identifier of a Document Acquisition Method Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType",
+						"Name": "DocumentAcquisitionMethodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentAcquisitionMethodTypeName",
+					"Description": "The name of a Document Acquisition Method Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType",
+						"Name": "DocumentAcquisitionMethodTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentAcquisitionMethodTypeDescription",
+					"Description": "The description of a Document Acquisition Method Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType",
+						"Name": "DocumentAcquisitionMethodTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentAcquisitionMethodType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentAcquisitionMethodType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentAcquisitionMethodTypeId\":{\"entity\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\",\"name\":\"DocumentAcquisitionMethodTypeId\"},\"DocumentAcquisitionMethodTypeName\":{\"entity\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\",\"name\":\"DocumentAcquisitionMethodTypeName\"},\"DocumentAcquisitionMethodTypeDescription\":{\"entity\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\",\"name\":\"DocumentAcquisitionMethodTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentAcquisitionMethodType\",\"path\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\"},\"description\":\"The document acquisition method type(s) associated with a document.\\n\\nEx:\\n- download\\n- purchase\\n- upon request\\n- view via www site\",\"primaryKey\":[\"DocumentAcquisitionMethodTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\",\"name\":\"DocumentAcquisitionMethodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Acquisition Method Type.\",\"isNullable\":false,\"name\":\"DocumentAcquisitionMethodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\",\"name\":\"DocumentAcquisitionMethodTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Document Acquisition Method Type.\",\"isNullable\":true,\"name\":\"DocumentAcquisitionMethodTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAcquisitionMethodType.cdm.json/DocumentAcquisitionMethodType\",\"name\":\"DocumentAcquisitionMethodTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Document Acquisition Method Type.\",\"isNullable\":true,\"name\":\"DocumentAcquisitionMethodTypeDescription\"}]}}}",
+			"Description": "The document acquisition method type(s) associated with a document.\n\nEx:\n- download\n- purchase\n- upon request\n- view via www site",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentAcquisitionMethodTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-utupojrwll",
+	"properties": {
+		"Name": "relationship-utupojrwll",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SampleFormat",
+		"ToTableName": "SampleAnnotatedValue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "Pos",
+				"ToColumnName": "Pos"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"toEntity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"joinPairs\":[{\"fromAttribute\":\"Pos\",\"toAttribute\":\"Pos\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

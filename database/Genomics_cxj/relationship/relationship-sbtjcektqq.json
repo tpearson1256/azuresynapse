@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sbtjcektqq",
+	"properties": {
+		"Name": "relationship-sbtjcektqq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentEventPartyRelationshipType",
+		"ToTableName": "DocumentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentEventPartyRelationshipTypeId",
+				"ToColumnName": "DocumentEventPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentEventPartyRelationshipType.cdm.json/DocumentEventPartyRelationshipType\",\"toEntity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"DocumentEventPartyRelationshipTypeId\",\"toAttribute\":\"DocumentEventPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

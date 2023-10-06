@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uwdjcqihfl",
+	"properties": {
+		"Name": "relationship-uwdjcqihfl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTest",
+		"ToTableName": "KaryotypeTestChromosome",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestId",
+				"ToColumnName": "MedicalTestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTest.cdm.json/MedicalTest\",\"toEntity\":\"KaryotypeTestChromosome.cdm.json/KaryotypeTestChromosome\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestId\",\"toAttribute\":\"MedicalTestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

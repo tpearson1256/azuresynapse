@@ -1,0 +1,97 @@
+{
+	"name": "GenotypeReserveWord",
+	"properties": {
+		"Name": "GenotypeReserveWord",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Genotype ID reserve words:\n\nwhere ex:\n\nAA - Ancestral allele\nAC - Allele count in genotypes, for each ALT allele \nAD - Total read depth for each allele?\nADF - Read depth for each allele on the forward strand?\nADR - Read depth for each allele on the reverse strand?\nAF - Allele frequency for each ALT allele \nAHAP\nAN - Total number of alleles in called genotypes?\nBQ - RMS base quality?\nCICN - Confidence interval around copy number for the segment\nCICNADJ - Confidence interval around copy number for the adjacency\nCILEN - Confidence interval around the inserted material between breakends\nDB - dbSNP membership?\nDBRIPID - ID of this element in DBRIP\nDBVARID - ID of this element in DBVAR\nDGVID - ID of this element in Database of Genomic Variation\nDNADJ - Copy number of adjacency\nDP - read depth at this position for this sample\nDBVARID - ID of this element in DBVAR\nDGVID - ID of this element in Database of Genomic Variation\nDNADJ - Copy number of adjacency\nDP - read depth at this position for this sample\nDPADJ - Read Depth of adjacency\nEC - comma separated list of expected alternate allele counts for each alternate allele\nEND - End position (for use with symbolic alleles)?\nENENT - ID of event associated to breakend\nFC - Functional Consequence\nFT - sample genotype filter indicating if this genotype was \"called\"\nENENT - ID of event associated to breakend\nGL - genotype likelihoods comprised of comma separated floating point log10-scaled likelihoods for all possible genotype \nGLE - genotype likelihoods of heterogeneous ploidy\nGQ - conditional genotype quality\nGT - genotype, encoded as allele values separated by either of / or |.\nH2 - HapMap2 membership\nH3 - HapMap3 membership\nHAP\nHQ - haplotype qualities, two comma separated phred qualities\nIMPRECISE  (structural variants) \nMATEID - ID of mate breakends\nMETRANS - Mobile element transduction info of the form\nMQ - RMS mapping quality\nMQ0 - Number of MAPQ == 0 reads?\nNOVEL\nNL- Noise level\nNS - Number of samples with data?\nPARID - ID of partner breakend\nPL - Normalized, Phred-scaled likelihoods for genotypes\nPQ - phasing quality\nPS - phase set\nQD - Variant Confidence/Quality by Depth\nSB - Strand bias?\nSOMATIC - Somatic mutation (for cancer genomics)?\nVALIDATED - Validated by follow-up experiment?\nSVLEN - single alternate allele\nVF - Variant frequency; the percentage of reads supporting the alternate allele.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GenotypeReserveWordId",
+					"Description": "The unique identifier of a Genotype Reserve Word.",
+					"BaseAttributeReference": {
+						"Entity": "GenotypeReserveWord.cdm.json/GenotypeReserveWord",
+						"Name": "GenotypeReserveWordId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GenotypeIdReserveWordDescription",
+					"Description": "The description of a Genotype Reserve Word.",
+					"BaseAttributeReference": {
+						"Entity": "GenotypeReserveWord.cdm.json/GenotypeReserveWord",
+						"Name": "GenotypeIdReserveWordDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenotypeReserveWord",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenotypeReserveWord",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GenotypeReserveWordId\":{\"entity\":\"GenotypeReserveWord.cdm.json/GenotypeReserveWord\",\"name\":\"GenotypeReserveWordId\"},\"GenotypeIdReserveWordDescription\":{\"entity\":\"GenotypeReserveWord.cdm.json/GenotypeReserveWord\",\"name\":\"GenotypeIdReserveWordDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GenotypeReserveWord\",\"path\":\"GenotypeReserveWord.cdm.json/GenotypeReserveWord\"},\"description\":\"Genotype ID reserve words:\\n\\nwhere ex:\\n\\nAA - Ancestral allele\\nAC - Allele count in genotypes, for each ALT allele \\nAD - Total read depth for each allele?\\nADF - Read depth for each allele on the forward strand?\\nADR - Read depth for each allele on the reverse strand?\\nAF - Allele frequency for each ALT allele \\nAHAP\\nAN - Total number of alleles in called genotypes?\\nBQ - RMS base quality?\\nCICN - Confidence interval around copy number for the segment\\nCICNADJ - Confidence interval around copy number for the adjacency\\nCILEN - Confidence interval around the inserted material between breakends\\nDB - dbSNP membership?\\nDBRIPID - ID of this element in DBRIP\\nDBVARID - ID of this element in DBVAR\\nDGVID - ID of this element in Database of Genomic Variation\\nDNADJ - Copy number of adjacency\\nDP - read depth at this position for this sample\\nDBVARID - ID of this element in DBVAR\\nDGVID - ID of this element in Database of Genomic Variation\\nDNADJ - Copy number of adjacency\\nDP - read depth at this position for this sample\\nDPADJ - Read Depth of adjacency\\nEC - comma separated list of expected alternate allele counts for each alternate allele\\nEND - End position (for use with symbolic alleles)?\\nENENT - ID of event associated to breakend\\nFC - Functional Consequence\\nFT - sample genotype filter indicating if this genotype was \\\"called\\\"\\nENENT - ID of event associated to breakend\\nGL - genotype likelihoods comprised of comma separated floating point log10-scaled likelihoods for all possible genotype \\nGLE - genotype likelihoods of heterogeneous ploidy\\nGQ - conditional genotype quality\\nGT - genotype, encoded as allele values separated by either of / or |.\\nH2 - HapMap2 membership\\nH3 - HapMap3 membership\\nHAP\\nHQ - haplotype qualities, two comma separated phred qualities\\nIMPRECISE  (structural variants) \\nMATEID - ID of mate breakends\\nMETRANS - Mobile element transduction info of the form\\nMQ - RMS mapping quality\\nMQ0 - Number of MAPQ == 0 reads?\\nNOVEL\\nNL- Noise level\\nNS - Number of samples with data?\\nPARID - ID of partner breakend\\nPL - Normalized, Phred-scaled likelihoods for genotypes\\nPQ - phasing quality\\nPS - phase set\\nQD - Variant Confidence/Quality by Depth\\nSB - Strand bias?\\nSOMATIC - Somatic mutation (for cancer genomics)?\\nVALIDATED - Validated by follow-up experiment?\\nSVLEN - single alternate allele\\nVF - Variant frequency; the percentage of reads supporting the alternate allele.\",\"primaryKey\":[\"GenotypeReserveWordId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenotypeReserveWord.cdm.json/GenotypeReserveWord\",\"name\":\"GenotypeReserveWordId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Genotype Reserve Word.\",\"isNullable\":false,\"name\":\"GenotypeReserveWordId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenotypeReserveWord.cdm.json/GenotypeReserveWord\",\"name\":\"GenotypeIdReserveWordDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Genotype Reserve Word.\",\"isNullable\":true,\"name\":\"GenotypeIdReserveWordDescription\"}]}}}",
+			"Description": "Genotype ID reserve words:\n\nwhere ex:\n\nAA - Ancestral allele\nAC - Allele count in genotypes, for each ALT allele \nAD - Total read depth for each allele?\nADF - Read depth for each allele on the forward strand?\nADR - Read depth for each allele on the reverse strand?\nAF - Allele frequency for each ALT allele \nAHAP\nAN - Total number of alleles in called genotypes?\nBQ - RMS base quality?\nCICN - Confidence interval around copy number for the segment\nCICNADJ - Confidence interval around copy number for the adjacency\nCILEN - Confidence interval around the inserted material between breakends\nDB - dbSNP membership?\nDBRIPID - ID of this element in DBRIP\nDBVARID - ID of this element in DBVAR\nDGVID - ID of this element in Database of Genomic Variation\nDNADJ - Copy number of adjacency\nDP - read depth at this position for this sample\nDBVARID - ID of this element in DBVAR\nDGVID - ID of this element in Database of Genomic Variation\nDNADJ - Copy number of adjacency\nDP - read depth at this position for this sample\nDPADJ - Read Depth of adjacency\nEC - comma separated list of expected alternate allele counts for each alternate allele\nEND - End position (for use with symbolic alleles)?\nENENT - ID of event associated to breakend\nFC - Functional Consequence\nFT - sample genotype filter indicating if this genotype was \"called\"\nENENT - ID of event associated to breakend\nGL - genotype likelihoods comprised of comma separated floating point log10-scaled likelihoods for all possible genotype \nGLE - genotype likelihoods of heterogeneous ploidy\nGQ - conditional genotype quality\nGT - genotype, encoded as allele values separated by either of / or |.\nH2 - HapMap2 membership\nH3 - HapMap3 membership\nHAP\nHQ - haplotype qualities, two comma separated phred qualities\nIMPRECISE  (structural variants) \nMATEID - ID of mate breakends\nMETRANS - Mobile element transduction info of the form\nMQ - RMS mapping quality\nMQ0 - Number of MAPQ == 0 reads?\nNOVEL\nNL- Noise level\nNS - Number of samples with data?\nPARID - ID of partner breakend\nPL - Normalized, Phred-scaled likelihoods for genotypes\nPQ - phasing quality\nPS - phase set\nQD - Variant Confidence/Quality by Depth\nSB - Strand bias?\nSOMATIC - Somatic mutation (for cancer genomics)?\nVALIDATED - Validated by follow-up experiment?\nSVLEN - single alternate allele\nVF - Variant frequency; the percentage of reads supporting the alternate allele.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GenotypeReserveWordId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

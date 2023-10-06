@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidPolarityType",
+	"properties": {
+		"Name": "AminoAcidPolarityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of amino acid polarity.\n\nEx:\n-  Positive\n-  Negative\n-  Neutral\n-  Slightly polar\n-  Non-polar\n-  Polar positive\n-  Polar negative",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidPolarityTypeId",
+					"Description": "The unique identifier of an Amino Acid Polarity Type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPolarityType.cdm.json/AminoAcidPolarityType",
+						"Name": "AminoAcidPolarityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPolarityTypeName",
+					"Description": "The name of an Amino Acid Polarity Type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPolarityType.cdm.json/AminoAcidPolarityType",
+						"Name": "AminoAcidPolarityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPolarityTypeDescription",
+					"Description": "The description of an Amino Acid Polarity Type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPolarityType.cdm.json/AminoAcidPolarityType",
+						"Name": "AminoAcidPolarityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPolarityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPolarityType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidPolarityTypeId\":{\"entity\":\"AminoAcidPolarityType.cdm.json/AminoAcidPolarityType\",\"name\":\"AminoAcidPolarityTypeId\"},\"AminoAcidPolarityTypeName\":{\"entity\":\"AminoAcidPolarityType.cdm.json/AminoAcidPolarityType\",\"name\":\"AminoAcidPolarityTypeName\"},\"AminoAcidPolarityTypeDescription\":{\"entity\":\"AminoAcidPolarityType.cdm.json/AminoAcidPolarityType\",\"name\":\"AminoAcidPolarityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidPolarityType\",\"path\":\"AminoAcidPolarityType.cdm.json/AminoAcidPolarityType\"},\"description\":\"The type of amino acid polarity.\\n\\nEx:\\n-  Positive\\n-  Negative\\n-  Neutral\\n-  Slightly polar\\n-  Non-polar\\n-  Polar positive\\n-  Polar negative\",\"primaryKey\":[\"AminoAcidPolarityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPolarityType.cdm.json/AminoAcidPolarityType\",\"name\":\"AminoAcidPolarityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Amino Acid Polarity Type.\",\"isNullable\":false,\"name\":\"AminoAcidPolarityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPolarityType.cdm.json/AminoAcidPolarityType\",\"name\":\"AminoAcidPolarityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Amino Acid Polarity Type.\",\"isNullable\":true,\"name\":\"AminoAcidPolarityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPolarityType.cdm.json/AminoAcidPolarityType\",\"name\":\"AminoAcidPolarityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Amino Acid Polarity Type.\",\"isNullable\":true,\"name\":\"AminoAcidPolarityTypeDescription\"}]}}}",
+			"Description": "The type of amino acid polarity.\n\nEx:\n-  Positive\n-  Negative\n-  Neutral\n-  Slightly polar\n-  Non-polar\n-  Polar positive\n-  Polar negative",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidPolarityTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vrjlaidwur",
+	"properties": {
+		"Name": "relationship-vrjlaidwur",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfFormat",
+		"ToTableName": "DataLineFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FormatId",
+				"ToColumnName": "FormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfFormat.cdm.json/VcfFormat\",\"toEntity\":\"DataLineFormat.cdm.json/DataLineFormat\",\"joinPairs\":[{\"fromAttribute\":\"FormatId\",\"toAttribute\":\"FormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

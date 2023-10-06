@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rjxcqkiypd",
+	"properties": {
+		"Name": "relationship-rjxcqkiypd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentAccessMethodType",
+		"ToTableName": "DocumentAccessMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentAccessMethodTypeId",
+				"ToColumnName": "DocumentAccessMethodTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\",\"toEntity\":\"DocumentAccessMethod.cdm.json/DocumentAccessMethod\",\"joinPairs\":[{\"fromAttribute\":\"DocumentAccessMethodTypeId\",\"toAttribute\":\"DocumentAccessMethodTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

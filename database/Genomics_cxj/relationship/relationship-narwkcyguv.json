@@ -1,0 +1,26 @@
+{
+	"name": "relationship-narwkcyguv",
+	"properties": {
+		"Name": "relationship-narwkcyguv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Fasta",
+		"ToTableName": "FastaFormatNucleicAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatId",
+				"ToColumnName": "GeneSequencingFileFormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Fasta.cdm.json/Fasta\",\"toEntity\":\"FastaFormatNucleicAminoAcidCodeOrder.cdm.json/FastaFormatNucleicAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatId\",\"toAttribute\":\"GeneSequencingFileFormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

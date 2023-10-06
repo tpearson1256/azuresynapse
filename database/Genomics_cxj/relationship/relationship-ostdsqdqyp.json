@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ostdsqdqyp",
+	"properties": {
+		"Name": "relationship-ostdsqdqyp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfFileFormat",
+		"ToTableName": "VcfPedigree",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceFile",
+				"ToColumnName": "ReferenceFile"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"toEntity\":\"VcfPedigree.cdm.json/VcfPedigree\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceFile\",\"toAttribute\":\"ReferenceFile\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nwbrlxfxox",
+	"properties": {
+		"Name": "relationship-nwbrlxfxox",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FileSecurityType",
+		"ToTableName": "FileSecurity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FileSecurityTypeId",
+				"ToColumnName": "FileSecurityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FileSecurityType.cdm.json/FileSecurityType\",\"toEntity\":\"FileSecurity.cdm.json/FileSecurity\",\"joinPairs\":[{\"fromAttribute\":\"FileSecurityTypeId\",\"toAttribute\":\"FileSecurityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

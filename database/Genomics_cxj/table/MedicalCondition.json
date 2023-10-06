@@ -1,0 +1,254 @@
+{
+	"name": "MedicalCondition",
+	"properties": {
+		"Name": "MedicalCondition",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A disease, illness or injury; any physiologic, mental or psychological condition or disorder. This includes pregnancy and complications of pregnancy.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalConditionId",
+					"Description": "The unique identifier of a medical condition.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "MedicalConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalConditionName",
+					"Description": "The name of a medical condition.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "MedicalConditionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalConditionDescription",
+					"Description": "The description of a medical condition.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "MedicalConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IcdVersionNumber",
+					"Description": "The version number of the ICD Code.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "IcdVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IcdDiseaseCode",
+					"Description": "The code identifying an ICD-defined disease.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "IcdDiseaseCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DiagnosisRelatedGroupVersionId",
+					"Description": "The unique identifier of a Diagnosis-Related Group Version.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "DiagnosisRelatedGroupVersionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DiagnosisRelatedGroupCode",
+					"Description": "The code identifying a Diagnosis-Related Group.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "DiagnosisRelatedGroupCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MajorDiagnosticCategoryId",
+					"Description": "The unique identifier of a Major Diagnostic Category.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "MajorDiagnosticCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SnomedCtConceptId",
+					"Description": "The unique identifier of a SNOMED CT Concept.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "SnomedCtConceptId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalConditionTypeId",
+					"Description": "The unique identifier of a medical condition type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "MedicalConditionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AffectedOrganStatement",
+					"Description": "A statement regarding the affected organ(s).",
+					"BaseAttributeReference": {
+						"Entity": "MedicalCondition.cdm.json/MedicalCondition",
+						"Name": "AffectedOrganStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalCondition",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalCondition",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalConditionId\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionId\"},\"MedicalConditionName\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionName\"},\"MedicalConditionDescription\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionDescription\"},\"IcdVersionNumber\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"IcdVersionNumber\"},\"IcdDiseaseCode\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"IcdDiseaseCode\"},\"DiagnosisRelatedGroupVersionId\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"DiagnosisRelatedGroupVersionId\"},\"DiagnosisRelatedGroupCode\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"DiagnosisRelatedGroupCode\"},\"MajorDiagnosticCategoryId\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MajorDiagnosticCategoryId\"},\"SnomedCtConceptId\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"SnomedCtConceptId\"},\"MedicalConditionTypeId\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionTypeId\"},\"AffectedOrganStatement\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"AffectedOrganStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalCondition\",\"path\":\"MedicalCondition.cdm.json/MedicalCondition\"},\"description\":\"A disease, illness or injury; any physiologic, mental or psychological condition or disorder. This includes pregnancy and complications of pregnancy.\",\"primaryKey\":[\"MedicalConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a medical condition.\",\"isNullable\":false,\"name\":\"MedicalConditionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a medical condition.\",\"isNullable\":true,\"name\":\"MedicalConditionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a medical condition.\",\"isNullable\":true,\"name\":\"MedicalConditionDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"IcdVersionNumber\"},\"dataType\":\"integer\",\"description\":\"The version number of the ICD Code.\",\"isNullable\":true,\"name\":\"IcdVersionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"IcdDiseaseCode\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The code identifying an ICD-defined disease.\",\"isNullable\":true,\"name\":\"IcdDiseaseCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"DiagnosisRelatedGroupVersionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Diagnosis-Related Group Version.\",\"isNullable\":true,\"name\":\"DiagnosisRelatedGroupVersionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"DiagnosisRelatedGroupCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The code identifying a Diagnosis-Related Group.\",\"isNullable\":true,\"name\":\"DiagnosisRelatedGroupCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MajorDiagnosticCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Major Diagnostic Category.\",\"isNullable\":true,\"name\":\"MajorDiagnosticCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"SnomedCtConceptId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a SNOMED CT Concept.\",\"isNullable\":true,\"name\":\"SnomedCtConceptId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"MedicalConditionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a medical condition type.\",\"isNullable\":true,\"name\":\"MedicalConditionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"name\":\"AffectedOrganStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the affected organ(s).\",\"isNullable\":true,\"name\":\"AffectedOrganStatement\"}]}}}",
+			"Description": "A disease, illness or injury; any physiologic, mental or psychological condition or disorder. This includes pregnancy and complications of pregnancy.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalConditionId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

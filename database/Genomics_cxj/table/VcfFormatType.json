@@ -1,0 +1,97 @@
+{
+	"name": "VcfFormatType",
+	"properties": {
+		"Name": "VcfFormatType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Possible Types for FORMAT fields are:\n\nInteger\nFloat\nCharacter \nFlag\nString",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "VcfFormatTypeId",
+					"Description": "The unique identifier of a VCF Format Type.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormatType.cdm.json/VcfFormatType",
+						"Name": "VcfFormatTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "VcfFormatDescription",
+					"Description": "The description of a VCF Format Type.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFormatType.cdm.json/VcfFormatType",
+						"Name": "VcfFormatDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFormatType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFormatType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"VcfFormatTypeId\":{\"entity\":\"VcfFormatType.cdm.json/VcfFormatType\",\"name\":\"VcfFormatTypeId\"},\"VcfFormatDescription\":{\"entity\":\"VcfFormatType.cdm.json/VcfFormatType\",\"name\":\"VcfFormatDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VcfFormatType\",\"path\":\"VcfFormatType.cdm.json/VcfFormatType\"},\"description\":\"Possible Types for FORMAT fields are:\\n\\nInteger\\nFloat\\nCharacter \\nFlag\\nString\",\"primaryKey\":[\"VcfFormatTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormatType.cdm.json/VcfFormatType\",\"name\":\"VcfFormatTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a VCF Format Type.\",\"isNullable\":false,\"name\":\"VcfFormatTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFormatType.cdm.json/VcfFormatType\",\"name\":\"VcfFormatDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a VCF Format Type.\",\"isNullable\":true,\"name\":\"VcfFormatDescription\"}]}}}",
+			"Description": "Possible Types for FORMAT fields are:\n\nInteger\nFloat\nCharacter \nFlag\nString",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "VcfFormatTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

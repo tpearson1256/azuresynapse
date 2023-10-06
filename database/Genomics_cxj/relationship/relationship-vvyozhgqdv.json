@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vvyozhgqdv",
+	"properties": {
+		"Name": "relationship-vvyozhgqdv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FastaNucleicAminoAcidCode",
+		"ToTableName": "PlainSequenceFormatNucleicAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FastaNucleicAminoAcidCode",
+				"ToColumnName": "FastaNucleicAminoAcidCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FastaNucleicAminoAcidCode.cdm.json/FastaNucleicAminoAcidCode\",\"toEntity\":\"PlainSequenceFormatNucleicAminoAcidCodeOrder.cdm.json/PlainSequenceFormatNucleicAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"FastaNucleicAminoAcidCode\",\"toAttribute\":\"FastaNucleicAminoAcidCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

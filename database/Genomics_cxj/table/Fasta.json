@@ -1,0 +1,133 @@
+{
+	"name": "Fasta",
+	"properties": {
+		"Name": "Fasta",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which base pairs or amino acids are represented using single-letter codes. A sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line is distinguished from the sequence data by a greater-than (\">\") symbol in the first column. It is recommended that all lines of text be shorter than 80 characters in length.\n\nAn example sequence in FASTA format is:\n\n>gi|186681228|ref|YP_001864424.1| phycoerythrobilin: ferredoxin oxidoreductase\nMNSERSDVTLYQPFLDYAIAYMRSRLDLEPYPIPTGFESNSAVVGKGKNQEEVVTTSYAFQTAKLRQIRA\nAHVQGGNSLQVLNFVIFPHLNYDLPFFGADLVTLPGGHLIALDMQPLFRDDSAYQAKYTEPILPIFHAHQ\nQHLSWGGDFPEEAQPFFSPAFLWTRPQETAVVETQVFAAFKDYLKAYLDFVEQAEAVTDSQNLVAIKQAQ\nLRYLRYRAEKDPARGMFKRFYGAEWTEEYIHGFLFDLERKLTVVK\n\nIn bioinformatics, FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes. The format also allows for sequence names and comments to precede the sequences. The format originates from the FASTA software package, but has now become a standard in the field of bioinformatics.\n\nFASTA stores a variable number of sequence records, and for each record it stores the sequence itself, and a sequence ID. Each record starts with a header line whose first character is >, followed by the sequence ID. The next lines of a record contain the actual sequence.\n\nThe Wikipedia article gives several examples for peptide sequences, but since FASTQ and SAM are used exclusively (?) for nucleotide sequences, here's a nucleotide example:\n\n>Mus_musculus_tRNA-Ala-AGC-1-1 (chr13.trna34-AlaAGC)\nGGGGGTGTAGCTCAGTGGTAGAGCGCGTGCTTAGCATGCACGAGGcCCTGGGTTCGATCC\nCCAGCACCTCCA\n>Mus_musculus_tRNA-Ala-AGC-10-1 (chr13.trna457-AlaAGC)\nGGGGGATTAGCTCAAATGGTAGAGCGCTCGCTTAGCATGCAAGAGGtAGTGGGATCGATG\nCCCACATCCTCCA\nThe ID can be in any arbitrary format, although several conventions exist.\n\nIn the context of nucleotide sequences, FASTA is mostly used to store reference data; that is, data extracted from a curated database; the above is adapted from GtRNAdb (a database of tRNA sequences).\n\nA sequence file in FASTA format can contain several sequences.\nEach sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line must begin with a greater-than (\">\") symbol in the first column.\nAn example sequence in FASTA format is:\n>AB000263 |acc=AB000263|descr=Homo sapiens mRNA for prepro cortistatin like peptide, complete cds.|len=368 ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGC CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCC CTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAG TTTAATTACAGACCTGAA",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "Fasta.cdm.json/Fasta",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastaFileFormatDescription",
+					"Description": "A description of the FASTA file format.\n\nFASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which base pairs or amino acids are represented using single-letter codes. A sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line is distinguished from the sequence data by a greater-than (\">\") symbol in the first column. It is recommended that all lines of text be shorter than 80 characters in length.\n\nFASTA stores a variable number of sequence records, and for each record it stores the sequence itself, and a sequence ID. Each record starts with a header line whose first character is >, followed by the sequence ID. The next lines of a record contain the actual sequence.",
+					"BaseAttributeReference": {
+						"Entity": "Fasta.cdm.json/Fasta",
+						"Name": "FastaFileFormatDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastaFileFormatNote",
+					"Description": "A note, comment or additional information regarding the FASTA file format.",
+					"BaseAttributeReference": {
+						"Entity": "Fasta.cdm.json/Fasta",
+						"Name": "FastaFileFormatNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastaSequence",
+					"Description": "The FASTA sequence.",
+					"BaseAttributeReference": {
+						"Entity": "Fasta.cdm.json/Fasta",
+						"Name": "FastaSequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Fasta",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Fasta",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"GeneSequencingFileFormatId\"},\"FastaFileFormatDescription\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"FastaFileFormatDescription\"},\"FastaFileFormatNote\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"FastaFileFormatNote\"},\"FastaSequence\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"FastaSequence\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Fasta\",\"path\":\"Fasta.cdm.json/Fasta\"},\"description\":\"FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which base pairs or amino acids are represented using single-letter codes. A sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line is distinguished from the sequence data by a greater-than (\\\">\\\") symbol in the first column. It is recommended that all lines of text be shorter than 80 characters in length.\\n\\nAn example sequence in FASTA format is:\\n\\n>gi|186681228|ref|YP_001864424.1| phycoerythrobilin: ferredoxin oxidoreductase\\nMNSERSDVTLYQPFLDYAIAYMRSRLDLEPYPIPTGFESNSAVVGKGKNQEEVVTTSYAFQTAKLRQIRA\\nAHVQGGNSLQVLNFVIFPHLNYDLPFFGADLVTLPGGHLIALDMQPLFRDDSAYQAKYTEPILPIFHAHQ\\nQHLSWGGDFPEEAQPFFSPAFLWTRPQETAVVETQVFAAFKDYLKAYLDFVEQAEAVTDSQNLVAIKQAQ\\nLRYLRYRAEKDPARGMFKRFYGAEWTEEYIHGFLFDLERKLTVVK\\n\\nIn bioinformatics, FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes. The format also allows for sequence names and comments to precede the sequences. The format originates from the FASTA software package, but has now become a standard in the field of bioinformatics.\\n\\nFASTA stores a variable number of sequence records, and for each record it stores the sequence itself, and a sequence ID. Each record starts with a header line whose first character is >, followed by the sequence ID. The next lines of a record contain the actual sequence.\\n\\nThe Wikipedia article gives several examples for peptide sequences, but since FASTQ and SAM are used exclusively (?) for nucleotide sequences, here's a nucleotide example:\\n\\n>Mus_musculus_tRNA-Ala-AGC-1-1 (chr13.trna34-AlaAGC)\\nGGGGGTGTAGCTCAGTGGTAGAGCGCGTGCTTAGCATGCACGAGGcCCTGGGTTCGATCC\\nCCAGCACCTCCA\\n>Mus_musculus_tRNA-Ala-AGC-10-1 (chr13.trna457-AlaAGC)\\nGGGGGATTAGCTCAAATGGTAGAGCGCTCGCTTAGCATGCAAGAGGtAGTGGGATCGATG\\nCCCACATCCTCCA\\nThe ID can be in any arbitrary format, although several conventions exist.\\n\\nIn the context of nucleotide sequences, FASTA is mostly used to store reference data; that is, data extracted from a curated database; the above is adapted from GtRNAdb (a database of tRNA sequences).\\n\\nA sequence file in FASTA format can contain several sequences.\\nEach sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line must begin with a greater-than (\\\">\\\") symbol in the first column.\\nAn example sequence in FASTA format is:\\n>AB000263 |acc=AB000263|descr=Homo sapiens mRNA for prepro cortistatin like peptide, complete cds.|len=368 ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGC CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCC CTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAG TTTAATTACAGACCTGAA\",\"primaryKey\":[\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"FastaFileFormatDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the FASTA file format.\\n\\nFASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which base pairs or amino acids are represented using single-letter codes. A sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line is distinguished from the sequence data by a greater-than (\\\">\\\") symbol in the first column. It is recommended that all lines of text be shorter than 80 characters in length.\\n\\nFASTA stores a variable number of sequence records, and for each record it stores the sequence itself, and a sequence ID. Each record starts with a header line whose first character is >, followed by the sequence ID. The next lines of a record contain the actual sequence.\",\"isNullable\":true,\"name\":\"FastaFileFormatDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"FastaFileFormatNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the FASTA file format.\",\"isNullable\":true,\"name\":\"FastaFileFormatNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fasta.cdm.json/Fasta\",\"name\":\"FastaSequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The FASTA sequence.\",\"isNullable\":true,\"name\":\"FastaSequence\"}]}}}",
+			"Description": "FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which base pairs or amino acids are represented using single-letter codes. A sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line is distinguished from the sequence data by a greater-than (\">\") symbol in the first column. It is recommended that all lines of text be shorter than 80 characters in length.\n\nAn example sequence in FASTA format is:\n\n>gi|186681228|ref|YP_001864424.1| phycoerythrobilin: ferredoxin oxidoreductase\nMNSERSDVTLYQPFLDYAIAYMRSRLDLEPYPIPTGFESNSAVVGKGKNQEEVVTTSYAFQTAKLRQIRA\nAHVQGGNSLQVLNFVIFPHLNYDLPFFGADLVTLPGGHLIALDMQPLFRDDSAYQAKYTEPILPIFHAHQ\nQHLSWGGDFPEEAQPFFSPAFLWTRPQETAVVETQVFAAFKDYLKAYLDFVEQAEAVTDSQNLVAIKQAQ\nLRYLRYRAEKDPARGMFKRFYGAEWTEEYIHGFLFDLERKLTVVK\n\nIn bioinformatics, FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes. The format also allows for sequence names and comments to precede the sequences. The format originates from the FASTA software package, but has now become a standard in the field of bioinformatics.\n\nFASTA stores a variable number of sequence records, and for each record it stores the sequence itself, and a sequence ID. Each record starts with a header line whose first character is >, followed by the sequence ID. The next lines of a record contain the actual sequence.\n\nThe Wikipedia article gives several examples for peptide sequences, but since FASTQ and SAM are used exclusively (?) for nucleotide sequences, here's a nucleotide example:\n\n>Mus_musculus_tRNA-Ala-AGC-1-1 (chr13.trna34-AlaAGC)\nGGGGGTGTAGCTCAGTGGTAGAGCGCGTGCTTAGCATGCACGAGGcCCTGGGTTCGATCC\nCCAGCACCTCCA\n>Mus_musculus_tRNA-Ala-AGC-10-1 (chr13.trna457-AlaAGC)\nGGGGGATTAGCTCAAATGGTAGAGCGCTCGCTTAGCATGCAAGAGGtAGTGGGATCGATG\nCCCACATCCTCCA\nThe ID can be in any arbitrary format, although several conventions exist.\n\nIn the context of nucleotide sequences, FASTA is mostly used to store reference data; that is, data extracted from a curated database; the above is adapted from GtRNAdb (a database of tRNA sequences).\n\nA sequence file in FASTA format can contain several sequences.\nEach sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line must begin with a greater-than (\">\") symbol in the first column.\nAn example sequence in FASTA format is:\n>AB000263 |acc=AB000263|descr=Homo sapiens mRNA for prepro cortistatin like peptide, complete cds.|len=368 ACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGC CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCC CTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAG TTTAATTACAGACCTGAA",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

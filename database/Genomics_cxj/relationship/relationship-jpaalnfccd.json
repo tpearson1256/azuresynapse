@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jpaalnfccd",
+	"properties": {
+		"Name": "relationship-jpaalnfccd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterTestRelationshipType",
+		"ToTableName": "RelatedEncounterTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterTestRelationshipTypeId",
+				"ToColumnName": "EncounterTestRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\",\"toEntity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"joinPairs\":[{\"fromAttribute\":\"EncounterTestRelationshipTypeId\",\"toAttribute\":\"EncounterTestRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

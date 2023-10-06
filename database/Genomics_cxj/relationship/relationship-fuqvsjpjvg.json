@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fuqvsjpjvg",
+	"properties": {
+		"Name": "relationship-fuqvsjpjvg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfContig",
+		"ToTableName": "VcfDataLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceFile",
+				"ToColumnName": "ReferenceFile"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfContig.cdm.json/VcfContig\",\"toEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceFile\",\"toAttribute\":\"ReferenceFile\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

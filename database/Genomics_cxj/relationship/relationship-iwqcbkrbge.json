@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iwqcbkrbge",
+	"properties": {
+		"Name": "relationship-iwqcbkrbge",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AminoAcidDerivative",
+		"ToTableName": "AminoAcidDerivativeDrug",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AminoAcidDerivativeId",
+				"ToColumnName": "AminoAcidDerivativeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"toEntity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"joinPairs\":[{\"fromAttribute\":\"AminoAcidDerivativeId\",\"toAttribute\":\"AminoAcidDerivativeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

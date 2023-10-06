@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ekmszgdfrg",
+	"properties": {
+		"Name": "relationship-ekmszgdfrg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequenceFileFormatEncryptionType",
+		"ToTableName": "GeneSequencingFileFormatEncryptionType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequenceFileFormatEncryptionTypeId",
+				"ToColumnName": "GeneSequenceFileFormatEncryptionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\",\"toEntity\":\"GeneSequencingFileFormatEncryptionType.cdm.json/GeneSequencingFileFormatEncryptionType\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequenceFileFormatEncryptionTypeId\",\"toAttribute\":\"GeneSequenceFileFormatEncryptionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

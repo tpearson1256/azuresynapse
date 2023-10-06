@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sfhpjeggdv",
+	"properties": {
+		"Name": "relationship-sfhpjeggdv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IgFormat",
+		"ToTableName": "IgFormatNucleicAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatId",
+				"ToColumnName": "GeneSequencingFileFormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IgFormat.cdm.json/IgFormat\",\"toEntity\":\"IgFormatNucleicAminoAcidCodeOrder.cdm.json/IgFormatNucleicAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatId\",\"toAttribute\":\"GeneSequencingFileFormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

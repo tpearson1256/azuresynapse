@@ -1,0 +1,115 @@
+{
+	"name": "FastqLineSequenceQualityType",
+	"properties": {
+		"Name": "FastqLineSequenceQualityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The FASTQ !line sequence quality type.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FastqLineSequenceQualityTypeId",
+					"Description": "The unique identifier of a FASTQ line sequence quality type.",
+					"BaseAttributeReference": {
+						"Entity": "FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType",
+						"Name": "FastqLineSequenceQualityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastqLineSequenceQualityTypeName",
+					"Description": "The name of a FASTQ line sequence quality type.",
+					"BaseAttributeReference": {
+						"Entity": "FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType",
+						"Name": "FastqLineSequenceQualityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastqLineSequenceQualityTypeDescription",
+					"Description": "The description of a FASTQ line sequence quality type.",
+					"BaseAttributeReference": {
+						"Entity": "FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType",
+						"Name": "FastqLineSequenceQualityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FastqLineSequenceQualityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FastqLineSequenceQualityType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FastqLineSequenceQualityTypeId\":{\"entity\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\",\"name\":\"FastqLineSequenceQualityTypeId\"},\"FastqLineSequenceQualityTypeName\":{\"entity\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\",\"name\":\"FastqLineSequenceQualityTypeName\"},\"FastqLineSequenceQualityTypeDescription\":{\"entity\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\",\"name\":\"FastqLineSequenceQualityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FastqLineSequenceQualityType\",\"path\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\"},\"description\":\"The FASTQ !line sequence quality type.\",\"primaryKey\":[\"FastqLineSequenceQualityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\",\"name\":\"FastqLineSequenceQualityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a FASTQ line sequence quality type.\",\"isNullable\":false,\"name\":\"FastqLineSequenceQualityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\",\"name\":\"FastqLineSequenceQualityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a FASTQ line sequence quality type.\",\"isNullable\":true,\"name\":\"FastqLineSequenceQualityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastqLineSequenceQualityType.cdm.json/FastqLineSequenceQualityType\",\"name\":\"FastqLineSequenceQualityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a FASTQ line sequence quality type.\",\"isNullable\":true,\"name\":\"FastqLineSequenceQualityTypeDescription\"}]}}}",
+			"Description": "The FASTQ !line sequence quality type.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "FastqLineSequenceQualityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

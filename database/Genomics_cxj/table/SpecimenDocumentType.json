@@ -1,0 +1,115 @@
+{
+	"name": "SpecimenDocumentType",
+	"properties": {
+		"Name": "SpecimenDocumentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of specimen document.\n\nEx:\n- Lab Report\n- Specimen Handling Guideline\n- Specimen Reporting Guideline",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenDocumentTypeId",
+					"Description": "The unique identifier of a specimen document type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenDocumentType.cdm.json/SpecimenDocumentType",
+						"Name": "SpecimenDocumentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenDocumentTypeName",
+					"Description": "The name of a specimen document type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenDocumentType.cdm.json/SpecimenDocumentType",
+						"Name": "SpecimenDocumentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenDocumentTypeDescription",
+					"Description": "The description of a specimen document type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenDocumentType.cdm.json/SpecimenDocumentType",
+						"Name": "SpecimenDocumentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenDocumentType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenDocumentType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenDocumentTypeId\":{\"entity\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\",\"name\":\"SpecimenDocumentTypeId\"},\"SpecimenDocumentTypeName\":{\"entity\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\",\"name\":\"SpecimenDocumentTypeName\"},\"SpecimenDocumentTypeDescription\":{\"entity\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\",\"name\":\"SpecimenDocumentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SpecimenDocumentType\",\"path\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\"},\"description\":\"The type of specimen document.\\n\\nEx:\\n- Lab Report\\n- Specimen Handling Guideline\\n- Specimen Reporting Guideline\",\"primaryKey\":[\"SpecimenDocumentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\",\"name\":\"SpecimenDocumentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a specimen document type.\",\"isNullable\":false,\"name\":\"SpecimenDocumentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\",\"name\":\"SpecimenDocumentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a specimen document type.\",\"isNullable\":true,\"name\":\"SpecimenDocumentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenDocumentType.cdm.json/SpecimenDocumentType\",\"name\":\"SpecimenDocumentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a specimen document type.\",\"isNullable\":true,\"name\":\"SpecimenDocumentTypeDescription\"}]}}}",
+			"Description": "The type of specimen document.\n\nEx:\n- Lab Report\n- Specimen Handling Guideline\n- Specimen Reporting Guideline",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenDocumentTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

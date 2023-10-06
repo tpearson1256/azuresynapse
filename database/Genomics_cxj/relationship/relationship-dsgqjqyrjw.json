@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dsgqjqyrjw",
+	"properties": {
+		"Name": "relationship-dsgqjqyrjw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MajorDiagnosticCategory",
+		"ToTableName": "MedicalCondition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MajorDiagnosticCategoryId",
+				"ToColumnName": "MajorDiagnosticCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"toEntity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"joinPairs\":[{\"fromAttribute\":\"MajorDiagnosticCategoryId\",\"toAttribute\":\"MajorDiagnosticCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

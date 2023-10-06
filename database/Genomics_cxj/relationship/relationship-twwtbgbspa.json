@@ -1,0 +1,26 @@
+{
+	"name": "relationship-twwtbgbspa",
+	"properties": {
+		"Name": "relationship-twwtbgbspa",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentStatusType",
+		"ToTableName": "DocumentStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentStatusTypeId",
+				"ToColumnName": "DocumentStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentStatusType.cdm.json/DocumentStatusType\",\"toEntity\":\"DocumentStatus.cdm.json/DocumentStatus\",\"joinPairs\":[{\"fromAttribute\":\"DocumentStatusTypeId\",\"toAttribute\":\"DocumentStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

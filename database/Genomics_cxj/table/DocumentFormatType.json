@@ -1,0 +1,115 @@
+{
+	"name": "DocumentFormatType",
+	"properties": {
+		"Name": "DocumentFormatType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The format of the associated document.\n\nEx:\n- MP4 video\n- QuickTime\n- Flash\n- html\n- MIME Email\n- MP4 audio\n- Window Media Audio\n- Paper\n- Leaflet\n- Brochure",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentFormatTypeId",
+					"Description": "The unique identifier of a document format type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentFormatType.cdm.json/DocumentFormatType",
+						"Name": "DocumentFormatTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentFormatTypeName",
+					"Description": "The name of a document format type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentFormatType.cdm.json/DocumentFormatType",
+						"Name": "DocumentFormatTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentFormatTypeDescription",
+					"Description": "The description of a document format type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentFormatType.cdm.json/DocumentFormatType",
+						"Name": "DocumentFormatTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentFormatType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentFormatType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentFormatTypeId\":{\"entity\":\"DocumentFormatType.cdm.json/DocumentFormatType\",\"name\":\"DocumentFormatTypeId\"},\"DocumentFormatTypeName\":{\"entity\":\"DocumentFormatType.cdm.json/DocumentFormatType\",\"name\":\"DocumentFormatTypeName\"},\"DocumentFormatTypeDescription\":{\"entity\":\"DocumentFormatType.cdm.json/DocumentFormatType\",\"name\":\"DocumentFormatTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentFormatType\",\"path\":\"DocumentFormatType.cdm.json/DocumentFormatType\"},\"description\":\"The format of the associated document.\\n\\nEx:\\n- MP4 video\\n- QuickTime\\n- Flash\\n- html\\n- MIME Email\\n- MP4 audio\\n- Window Media Audio\\n- Paper\\n- Leaflet\\n- Brochure\",\"primaryKey\":[\"DocumentFormatTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentFormatType.cdm.json/DocumentFormatType\",\"name\":\"DocumentFormatTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a document format type.\",\"isNullable\":false,\"name\":\"DocumentFormatTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentFormatType.cdm.json/DocumentFormatType\",\"name\":\"DocumentFormatTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a document format type.\",\"isNullable\":true,\"name\":\"DocumentFormatTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentFormatType.cdm.json/DocumentFormatType\",\"name\":\"DocumentFormatTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a document format type.\",\"isNullable\":true,\"name\":\"DocumentFormatTypeDescription\"}]}}}",
+			"Description": "The format of the associated document.\n\nEx:\n- MP4 video\n- QuickTime\n- Flash\n- html\n- MIME Email\n- MP4 audio\n- Window Media Audio\n- Paper\n- Leaflet\n- Brochure",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentFormatTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,97 @@
+{
+	"name": "PlainSequenceFormat",
+	"properties": {
+		"Name": "PlainSequenceFormat",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Plain sequence format\nA sequence in plain format may contain only IUPAC characters and spaces (no numbers!).\nNote: A file in plain sequence format may only contain one sequence, while most other formats accept several sequences in one file.\nAn example sequence in plain format is:\nACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGC CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCC CTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAG TTTAATTACAGACCTGAA \n\nNote:\nThe sequence contains amino acid codes or nucleic acid codes that are the IUPAC Codes, which are the same ones used by the FASTA file format.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "PlainSequenceFormat.cdm.json/PlainSequenceFormat",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Sequence",
+					"Description": "A file in plain sequence format may only contain one sequence, while most other formats accept several sequences in one file.",
+					"BaseAttributeReference": {
+						"Entity": "PlainSequenceFormat.cdm.json/PlainSequenceFormat",
+						"Name": "Sequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/PlainSequenceFormat",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/PlainSequenceFormat",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"PlainSequenceFormat.cdm.json/PlainSequenceFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"Sequence\":{\"entity\":\"PlainSequenceFormat.cdm.json/PlainSequenceFormat\",\"name\":\"Sequence\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PlainSequenceFormat\",\"path\":\"PlainSequenceFormat.cdm.json/PlainSequenceFormat\"},\"description\":\"Plain sequence format\\nA sequence in plain format may contain only IUPAC characters and spaces (no numbers!).\\nNote: A file in plain sequence format may only contain one sequence, while most other formats accept several sequences in one file.\\nAn example sequence in plain format is:\\nACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGC CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCC CTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAG TTTAATTACAGACCTGAA \\n\\nNote:\\nThe sequence contains amino acid codes or nucleic acid codes that are the IUPAC Codes, which are the same ones used by the FASTA file format.\",\"primaryKey\":[\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlainSequenceFormat.cdm.json/PlainSequenceFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlainSequenceFormat.cdm.json/PlainSequenceFormat\",\"name\":\"Sequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A file in plain sequence format may only contain one sequence, while most other formats accept several sequences in one file.\",\"isNullable\":true,\"name\":\"Sequence\"}]}}}",
+			"Description": "Plain sequence format\nA sequence in plain format may contain only IUPAC characters and spaces (no numbers!).\nNote: A file in plain sequence format may only contain one sequence, while most other formats accept several sequences in one file.\nAn example sequence in plain format is:\nACAAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCC CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGC CTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGG AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCC CTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAG TTTAATTACAGACCTGAA \n\nNote:\nThe sequence contains amino acid codes or nucleic acid codes that are the IUPAC Codes, which are the same ones used by the FASTA file format.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,169 @@
+{
+	"name": "GcgFormat",
+	"properties": {
+		"Name": "GcgFormat",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A sequence file in GCG format contains exactly one sequence, begins with annotation lines and the start of the sequence is marked by a line ending with two dot (\"..\") characters. This line also contains the sequence identifier, the sequence length and a checksum. This format should only be used if the file was created with the GCG package.\n\nThe sequence is marked by a line ending with two dot (\"..\") characters. This line also contains the sequence identifier, the sequence length and a checksum. This format should only be used if the file was created with the GCG package.\n\nAn example sequence in GCG format is:\n\nID   AB000263 standard; RNA; PRI; 368 BP. XX AC   AB000263; XX DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds. XX SQ   Sequence 368 BP; AB000263  Length: 368  Check: 4514  ..        1  acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg       61  ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg      121  caggaataag gaaaagcagc ctcctgactt tcctcgcttg gtggtttgag tggacctccc      181  aggccagtgc cgggcccctc ataggagagg aagctcggga ggtggccagg cggcaggaag      241  gcgcaccccc ccagcaatcc gcgcgccggg acagaatgcc ctgcaggaac ttcttctgga      301  agaccttctc ctcctgcaaa taaaacctca cccatgaatg ctcacgcaag tttaattaca      361  gacctgaa",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormat.cdm.json/GcgFormat",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CompleteGcgSequence",
+					"Description": "The complete GCG sequence.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormat.cdm.json/GcgFormat",
+						"Name": "CompleteGcgSequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SequenceIdentifier",
+					"Description": "The sequence identifier.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormat.cdm.json/GcgFormat",
+						"Name": "SequenceIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TheSequenceLength",
+					"Description": "The length of the sequence.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormat.cdm.json/GcgFormat",
+						"Name": "TheSequenceLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SequenceChecksum",
+					"Description": "The sequence checksum.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormat.cdm.json/GcgFormat",
+						"Name": "SequenceChecksum"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GsgRsfFormatIndicator",
+					"Description": "Indicates that the format is a GCG-RSF(rich sequence format) Format.",
+					"BaseAttributeReference": {
+						"Entity": "GcgFormat.cdm.json/GcgFormat",
+						"Name": "GsgRsfFormatIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GcgFormat",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GcgFormat",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"CompleteGcgSequence\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"CompleteGcgSequence\"},\"SequenceIdentifier\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"SequenceIdentifier\"},\"TheSequenceLength\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"TheSequenceLength\"},\"SequenceChecksum\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"SequenceChecksum\"},\"GsgRsfFormatIndicator\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"GsgRsfFormatIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GcgFormat\",\"path\":\"GcgFormat.cdm.json/GcgFormat\"},\"description\":\"A sequence file in GCG format contains exactly one sequence, begins with annotation lines and the start of the sequence is marked by a line ending with two dot (\\\"..\\\") characters. This line also contains the sequence identifier, the sequence length and a checksum. This format should only be used if the file was created with the GCG package.\\n\\nThe sequence is marked by a line ending with two dot (\\\"..\\\") characters. This line also contains the sequence identifier, the sequence length and a checksum. This format should only be used if the file was created with the GCG package.\\n\\nAn example sequence in GCG format is:\\n\\nID   AB000263 standard; RNA; PRI; 368 BP. XX AC   AB000263; XX DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds. XX SQ   Sequence 368 BP; AB000263  Length: 368  Check: 4514  ..        1  acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg       61  ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg      121  caggaataag gaaaagcagc ctcctgactt tcctcgcttg gtggtttgag tggacctccc      181  aggccagtgc cgggcccctc ataggagagg aagctcggga ggtggccagg cggcaggaag      241  gcgcaccccc ccagcaatcc gcgcgccggg acagaatgcc ctgcaggaac ttcttctgga      301  agaccttctc ctcctgcaaa taaaacctca cccatgaatg ctcacgcaag tttaattaca      361  gacctgaa\",\"primaryKey\":[\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"CompleteGcgSequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The complete GCG sequence.\",\"isNullable\":true,\"name\":\"CompleteGcgSequence\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"SequenceIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The sequence identifier.\",\"isNullable\":true,\"name\":\"SequenceIdentifier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"TheSequenceLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The length of the sequence.\",\"isNullable\":true,\"scale\":8,\"name\":\"TheSequenceLength\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"SequenceChecksum\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The sequence checksum.\",\"isNullable\":true,\"name\":\"SequenceChecksum\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GcgFormat.cdm.json/GcgFormat\",\"name\":\"GsgRsfFormatIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the format is a GCG-RSF(rich sequence format) Format.\",\"isNullable\":true,\"name\":\"GsgRsfFormatIndicator\"}]}}}",
+			"Description": "A sequence file in GCG format contains exactly one sequence, begins with annotation lines and the start of the sequence is marked by a line ending with two dot (\"..\") characters. This line also contains the sequence identifier, the sequence length and a checksum. This format should only be used if the file was created with the GCG package.\n\nThe sequence is marked by a line ending with two dot (\"..\") characters. This line also contains the sequence identifier, the sequence length and a checksum. This format should only be used if the file was created with the GCG package.\n\nAn example sequence in GCG format is:\n\nID   AB000263 standard; RNA; PRI; 368 BP. XX AC   AB000263; XX DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds. XX SQ   Sequence 368 BP; AB000263  Length: 368  Check: 4514  ..        1  acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg       61  ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg      121  caggaataag gaaaagcagc ctcctgactt tcctcgcttg gtggtttgag tggacctccc      181  aggccagtgc cgggcccctc ataggagagg aagctcggga ggtggccagg cggcaggaag      241  gcgcaccccc ccagcaatcc gcgcgccggg acagaatgcc ctgcaggaac ttcttctgga      301  agaccttctc ctcctgcaaa taaaacctca cccatgaatg ctcacgcaag tttaattaca      361  gacctgaa",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

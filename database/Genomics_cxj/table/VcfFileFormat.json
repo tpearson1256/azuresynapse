@@ -1,0 +1,186 @@
+{
+	"name": "VcfFileFormat",
+	"properties": {
+		"Name": "VcfFileFormat",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "VCF records use a single general system for representing genetic variation data.\n\nVCF files are used to report sequence variations (e.g., SNPs, indels and larger structural variants) together with rich annotations. VCF files are modular where the annotations and genotype information for a variant are separated from the call itself.\n\nVCF files are tab-delimited files that report a mutation for each row. VCFs are available at the GDC in a raw format or an annotated format that contains additional information about the location and consequences of each somatic variant.\n\nVCF records use a simple haplotype representation for REF and ALT alleles to describe variant haplotypes at a locus. ALT haplotypes are constructed from the REF haplotype by taking the REF allele bases at the POS in the reference genotype and replacing them with the ALT bases. In essence, the VCF record specifies a-REF-t and the alternative haplotypes are a-ALT-t for e.\n\nThe character encoding of VCF files is UTF-8.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFileFormat.cdm.json/VcfFileFormat",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFileFormat.cdm.json/VcfFileFormat",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FileFormat",
+					"Description": "A single 'fileformat' field is always required, must be the first line in the file, and details the VCF format version number.\n\n For example, for VCF version 4.2, this line should read:\n##fileformat=VCFv4.2",
+					"BaseAttributeReference": {
+						"Entity": "VcfFileFormat.cdm.json/VcfFileFormat",
+						"Name": "FileFormat"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FileDate",
+					"Description": "The file created date.\n\nIn the flat file received this line will begin with ##fileDate.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFileFormat.cdm.json/VcfFileFormat",
+						"Name": "FileDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FileSource",
+					"Description": "The file source.\n\nIn the flat file received this line will begin with ##source.\n\nEx:\nGenotypeGVCFs",
+					"BaseAttributeReference": {
+						"Entity": "VcfFileFormat.cdm.json/VcfFileFormat",
+						"Name": "FileSource"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "Phasing",
+					"Description": "The phasing program associated with the file.\n\nThe type o f ReadBackedPhasing program serves to discover these haplotypes based on high-throughput sequencing reads.\n\nIn the flat file received this line will begin with ##phasing.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFileFormat.cdm.json/VcfFileFormat",
+						"Name": "Phasing"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FileText",
+					"Description": "The 'raw' or 'contiguous' text of the file.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFileFormat.cdm.json/VcfFileFormat",
+						"Name": "FileText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFileFormat",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFileFormat",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"ReferenceFile\"},\"GeneSequencingFileFormatId\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"FileFormat\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileFormat\"},\"FileDate\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileDate\"},\"FileSource\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileSource\"},\"Phasing\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"Phasing\"},\"FileText\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileText\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VcfFileFormat\",\"path\":\"VcfFileFormat.cdm.json/VcfFileFormat\"},\"description\":\"VCF records use a single general system for representing genetic variation data.\\n\\nVCF files are used to report sequence variations (e.g., SNPs, indels and larger structural variants) together with rich annotations. VCF files are modular where the annotations and genotype information for a variant are separated from the call itself.\\n\\nVCF files are tab-delimited files that report a mutation for each row. VCFs are available at the GDC in a raw format or an annotated format that contains additional information about the location and consequences of each somatic variant.\\n\\nVCF records use a simple haplotype representation for REF and ALT alleles to describe variant haplotypes at a locus. ALT haplotypes are constructed from the REF haplotype by taking the REF allele bases at the POS in the reference genotype and replacing them with the ALT bases. In essence, the VCF record specifies a-REF-t and the alternative haplotypes are a-ALT-t for e.\\n\\nThe character encoding of VCF files is UTF-8.\",\"primaryKey\":[\"ReferenceFile\",\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileFormat\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"A single 'fileformat' field is always required, must be the first line in the file, and details the VCF format version number.\\n\\n For example, for VCF version 4.2, this line should read:\\n##fileformat=VCFv4.2\",\"isNullable\":true,\"name\":\"FileFormat\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The file created date.\\n\\nIn the flat file received this line will begin with ##fileDate.\",\"isNullable\":true,\"name\":\"FileDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileSource\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The file source.\\n\\nIn the flat file received this line will begin with ##source.\\n\\nEx:\\nGenotypeGVCFs\",\"isNullable\":true,\"name\":\"FileSource\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"Phasing\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The phasing program associated with the file.\\n\\nThe type o f ReadBackedPhasing program serves to discover these haplotypes based on high-throughput sequencing reads.\\n\\nIn the flat file received this line will begin with ##phasing.\",\"isNullable\":true,\"name\":\"Phasing\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"name\":\"FileText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The 'raw' or 'contiguous' text of the file.\",\"isNullable\":true,\"name\":\"FileText\"}]}}}",
+			"Description": "VCF records use a single general system for representing genetic variation data.\n\nVCF files are used to report sequence variations (e.g., SNPs, indels and larger structural variants) together with rich annotations. VCF files are modular where the annotations and genotype information for a variant are separated from the call itself.\n\nVCF files are tab-delimited files that report a mutation for each row. VCFs are available at the GDC in a raw format or an annotated format that contains additional information about the location and consequences of each somatic variant.\n\nVCF records use a simple haplotype representation for REF and ALT alleles to describe variant haplotypes at a locus. ALT haplotypes are constructed from the REF haplotype by taking the REF allele bases at the POS in the reference genotype and replacing them with the ALT bases. In essence, the VCF record specifies a-REF-t and the alternative haplotypes are a-ALT-t for e.\n\nThe character encoding of VCF files is UTF-8.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

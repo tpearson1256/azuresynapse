@@ -1,0 +1,114 @@
+{
+	"name": "GeneSequenceFileFormatExtension",
+	"properties": {
+		"Name": "GeneSequenceFileFormatExtension",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The compression types that can be used to compress the associated gene sequence file format.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFileExtensionTypeId",
+					"Description": "The unique identifier of a gene sequence file extension type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension",
+						"Name": "GeneSequenceFileExtensionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatCompressionTypeNote",
+					"Description": "A note, comment or additional information regarding the Gene Sequence Format Compression Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension",
+						"Name": "GeneSequenceFormatCompressionTypeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFileFormatExtension",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFileFormatExtension",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension\",\"name\":\"GeneSequencingFileFormatId\"},\"GeneSequenceFileExtensionTypeId\":{\"entity\":\"GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension\",\"name\":\"GeneSequenceFileExtensionTypeId\"},\"GeneSequenceFormatCompressionTypeNote\":{\"entity\":\"GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension\",\"name\":\"GeneSequenceFormatCompressionTypeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequenceFileFormatExtension\",\"path\":\"GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension\"},\"description\":\"The compression types that can be used to compress the associated gene sequence file format.\",\"primaryKey\":[\"GeneSequencingFileFormatId\",\"GeneSequenceFileExtensionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension\",\"name\":\"GeneSequenceFileExtensionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequence file extension type.\",\"isNullable\":false,\"name\":\"GeneSequenceFileExtensionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatExtension.cdm.json/GeneSequenceFileFormatExtension\",\"name\":\"GeneSequenceFormatCompressionTypeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Gene Sequence Format Compression Type.\",\"isNullable\":true,\"name\":\"GeneSequenceFormatCompressionTypeNote\"}]}}}",
+			"Description": "The compression types that can be used to compress the associated gene sequence file format.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId,GeneSequenceFileExtensionTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,484 @@
+{
+	"name": "GenomicSpecimen",
+	"properties": {
+		"Name": "GenomicSpecimen",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A specimen is a sample of a medical patient's tissue, fluid, or other material derived from the patient used for laboratory analysis to assist differential diagnosis or staging of a disease process. Common examples include throat swabs, sputum, urine, blood, surgical drain fluids, tissue biopsies, etc.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenId",
+					"Description": "The unique identifier of a Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenTypeId",
+					"Description": "The unique identifier of a Specimen Type.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenDescription",
+					"Description": "A description of the Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenTakenTimestamp",
+					"Description": "The timestamp that the Specimen was taken.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenTakenTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenNote",
+					"Description": "A note, comment or additional information regarding a Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenMethodId",
+					"Description": "The unique identifier of a Specimen Method.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProcessingTechniqueId",
+					"Description": "The unique identifier of a Processing Technique.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "ProcessingTechniqueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenLength",
+					"Description": "The length of the Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenLength"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenWidth",
+					"Description": "The width of the Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenWidth"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenHeight",
+					"Description": "The height of the Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenHeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LWHUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "LWHUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenWeight",
+					"Description": "The weight of the Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenWeight"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "WeightUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "WeightUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenVolume",
+					"Description": "The volume of the specimen collected in ML.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenVolume"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "VolumeUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "VolumeUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterId",
+					"Description": "The unique identifier of an Encounter with a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "EncounterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalCareOrderId",
+					"Description": "The unique identifier of a Medical Care Order.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "MedicalCareOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenCollectionMedicalProcedureId",
+					"Description": "The unique identifier of a Medical Procedure.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenCollectionMedicalProcedureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenCollectionMedicalProcedureRequestedTimestamp",
+					"Description": "The timestamp that the associated medical procedure was requested.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SpecimenCollectionMedicalProcedureRequestedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RequirementTypeId",
+					"Description": "The unique identifier of a Requirement Type.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "RequirementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TissueTypeId",
+					"Description": "The unique identifier of a tissue type.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "TissueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ServiceProviderId",
+					"Description": "The unique identifier of a Service Provider.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "ServiceProviderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PatientId",
+					"Description": "The unique identifier of a Patient.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "PatientId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SubjectId",
+					"Description": "The unique identifier of a Subject.",
+					"BaseAttributeReference": {
+						"Entity": "GenomicSpecimen.cdm.json/GenomicSpecimen",
+						"Name": "SubjectId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenomicSpecimen",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenomicSpecimen",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenId\"},\"SpecimenTypeId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenTypeId\"},\"SpecimenDescription\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenDescription\"},\"SpecimenTakenTimestamp\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenTakenTimestamp\"},\"SpecimenNote\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenNote\"},\"SpecimenMethodId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenMethodId\"},\"ProcessingTechniqueId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"ProcessingTechniqueId\"},\"SpecimenLength\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenLength\"},\"SpecimenWidth\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenWidth\"},\"SpecimenHeight\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenHeight\"},\"LWHUnitOfMeasureId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"LWHUnitOfMeasureId\"},\"SpecimenWeight\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenWeight\"},\"WeightUnitOfMeasureId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"WeightUnitOfMeasureId\"},\"SpecimenVolume\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenVolume\"},\"VolumeUnitOfMeasureId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"VolumeUnitOfMeasureId\"},\"EncounterId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"EncounterId\"},\"MedicalCareOrderId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"MedicalCareOrderId\"},\"SpecimenCollectionMedicalProcedureId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenCollectionMedicalProcedureId\"},\"SpecimenCollectionMedicalProcedureRequestedTimestamp\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenCollectionMedicalProcedureRequestedTimestamp\"},\"RequirementTypeId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"RequirementTypeId\"},\"TissueTypeId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"TissueTypeId\"},\"ServiceProviderId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"ServiceProviderId\"},\"PatientId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"PatientId\"},\"SubjectId\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SubjectId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GenomicSpecimen\",\"path\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\"},\"description\":\"A specimen is a sample of a medical patient's tissue, fluid, or other material derived from the patient used for laboratory analysis to assist differential diagnosis or staging of a disease process. Common examples include throat swabs, sputum, urine, blood, surgical drain fluids, tissue biopsies, etc.\",\"primaryKey\":[\"SpecimenId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen.\",\"isNullable\":false,\"name\":\"SpecimenId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen Type.\",\"isNullable\":true,\"name\":\"SpecimenTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the Specimen.\",\"isNullable\":true,\"name\":\"SpecimenDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenTakenTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Specimen was taken.\",\"isNullable\":true,\"name\":\"SpecimenTakenTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Specimen.\",\"isNullable\":true,\"name\":\"SpecimenNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen Method.\",\"isNullable\":true,\"name\":\"SpecimenMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"ProcessingTechniqueId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Processing Technique.\",\"isNullable\":true,\"name\":\"ProcessingTechniqueId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenLength\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The length of the Specimen.\",\"isNullable\":true,\"scale\":8,\"name\":\"SpecimenLength\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenWidth\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The width of the Specimen.\",\"isNullable\":true,\"scale\":8,\"name\":\"SpecimenWidth\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenHeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The height of the Specimen.\",\"isNullable\":true,\"scale\":8,\"name\":\"SpecimenHeight\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"LWHUnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"LWHUnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenWeight\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The weight of the Specimen.\",\"isNullable\":true,\"scale\":8,\"name\":\"SpecimenWeight\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"WeightUnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"WeightUnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenVolume\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The volume of the specimen collected in ML.\",\"isNullable\":true,\"scale\":8,\"name\":\"SpecimenVolume\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"VolumeUnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"VolumeUnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"EncounterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Encounter with a Service Provider.\",\"isNullable\":false,\"name\":\"EncounterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"MedicalCareOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Care Order.\",\"isNullable\":true,\"name\":\"MedicalCareOrderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenCollectionMedicalProcedureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Procedure.\",\"isNullable\":true,\"name\":\"SpecimenCollectionMedicalProcedureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SpecimenCollectionMedicalProcedureRequestedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the associated medical procedure was requested.\",\"isNullable\":true,\"name\":\"SpecimenCollectionMedicalProcedureRequestedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"RequirementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Requirement Type.\",\"isNullable\":true,\"name\":\"RequirementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"TissueTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a tissue type.\",\"isNullable\":true,\"name\":\"TissueTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"ServiceProviderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Provider.\",\"isNullable\":true,\"name\":\"ServiceProviderId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"PatientId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Patient.\",\"isNullable\":true,\"name\":\"PatientId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenomicSpecimen.cdm.json/GenomicSpecimen\",\"name\":\"SubjectId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Subject.\",\"isNullable\":true,\"name\":\"SubjectId\"}]}}}",
+			"Description": "A specimen is a sample of a medical patient's tissue, fluid, or other material derived from the patient used for laboratory analysis to assist differential diagnosis or staging of a disease process. Common examples include throat swabs, sputum, urine, blood, surgical drain fluids, tissue biopsies, etc.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qjbhyonjub",
+	"properties": {
+		"Name": "relationship-qjbhyonjub",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfInfo",
+		"ToTableName": "DataLineInfo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InfoId",
+				"ToColumnName": "InfoId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfInfo.cdm.json/VcfInfo\",\"toEntity\":\"DataLineInfo.cdm.json/DataLineInfo\",\"joinPairs\":[{\"fromAttribute\":\"InfoId\",\"toAttribute\":\"InfoId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

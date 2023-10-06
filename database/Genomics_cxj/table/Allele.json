@@ -1,0 +1,895 @@
+{
+	"name": "Allele",
+	"properties": {
+		"Name": "Allele",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A variant of the similar DNA sequence at a given locus is called an allele.\n\nAn Allele is a gene.   \n\nIn humans, alleles of particular genes come in pairs, one on each chromosome? (we have 23 pairs of chromosomes). If the alleles of a particular gene are the same, the organism is described as homozygous? for that gene. If they are different the organism is described as heterozygous? for that gene.\nAn individual's phenotype? is determined by the combination of alleles they have.\nFor example, for a gene that determines eye color there may be several different alleles. One allele may result in blue eyes, while another might result in brown eyes. The final color of the individual's eyes will depend on which alleles they have and how they interact.\nThe characteristic associated with a certain allele can sometimes be dominant ?or recessive?.\n\nAllele - A different form of a gene at a particular locus. The characteristics of a single copy of a specific gene or of a single copy of a specific location on a chromosome. For example, one copy of a specific STR region might have 10 repeats, while the other copy might have 11 repeats. These would represent two alleles of that STR region.\n\ngenes at the corresponding loci may exist in different forms (alleles)\n\nallele - one variant of a particular gene; for example, there are blue and brown alleles of the eye-color gene.\n\nalternate forms or varieties of a gene.   The alleles for a trait occupy the same locus or position on homologous chromosomes and thus govern the same trait.  However, because they are different, their action may result in different expressions of that trait.\n\nThe word \"allele\" is a short form of allelomorph (?other form?), which was used in the early days of genetics to describe variant forms of a gene detected as different phenotypes.\n\nMost genes are the same in all people, but a small number of genes (less than 1 percent of the total) are slightly different between people. Alleles are forms of the same gene with small differences in their sequence of DNA bases.\n\nAn ''allele'' is one variant of that gene. In many cases, all people would have the gene, but certain people will have a specific allele of that gene, which results in the trait. This could be a simple trait like hair or eye color.\n\nAn Allele is a one of multiple alternative forms of a single gene\n\nThe information within a particular gene is not always exactly the same between one organism and another, so different copies of a gene do not always give exactly the same instructions. \n\nEach unique form of a single gene is called an allele. \n\nVariant forms of the same gene. Different alleles produce variations in inherited characteristics such as eye color or blood type.\nDefinition from: Office of Rare Diseases at the National Institutes of Health\nOne of the alternative versions of a gene at a given location (locus) along a chromosome\nDefinition from: GeneReviews from the University of Washington and the National Center for Biotechnology Information\nAn allele is one of two or more versions of a gene. An individual inherits two alleles for each gene, one from each parent. If the two alleles are the same, the individual is homozygous for that gene. If the alleles are different, the individual is heterozygous. Though the term \"allele\" was originally used to describe variation among genes, it now also refers to variation among non-coding DNA sequences.\n\nThus, when the mainstream press refers to \"having\" a \"gene\" for a specific trait, this is generally inaccurate. In most cases, all people would have a gene for the trait in question, but certain people will have a specific allele of that gene, which results in the trait variant",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AlleleId",
+					"Description": "The unique identifier of an allele.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AlleleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleName",
+					"Description": "The name of the allele.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AlleleName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleDescription",
+					"Description": "A description of the allele.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AlleleDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleNomenclature",
+					"Description": "The chromosomal locus of an Allele might be written \"7q31.2'. \n\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\n\n7 = chromosome 7\nq = long arm q\n3 = region 3\n1.2 = band 1/sub-band #2",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AlleleNomenclature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocusArmPositionRegionNumber",
+					"Description": "The region number where:\n\nThe chromosomal locus of a allele might be written \"7q31.2'. \n\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\n\n7 = chromosome 7\nq = long arm q\n3 = region 3\n1.2 = band 1/sub-band #2",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "LocusArmPositionRegionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocusArmPositionBandNumber",
+					"Description": "The region number where:\n\nThe chromosomal locus of a allele might be written \"7q31.2'. \n\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\n\n7 = chromosome 7\nq = long arm q\n3 = region 3\n1.2 = band 1/sub-band #2",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "LocusArmPositionBandNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocusArmPositionSubBandNumber",
+					"Description": "The region number where:\n\nThe chromosomal locus of a allele might be written \"7q31.2'. \n\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\n\n7 = chromosome 7\nq = long arm q\n3 = region 3\n1.2 = band 1/sub-band #2",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "LocusArmPositionSubBandNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeId",
+					"Description": "The unique identifier of a chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ChromosomeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocusArmPositionRegionNumber2",
+					"Description": "The region number where:\n\nThe chromosomal locus of a allele might be written \"7q31.2'. \n\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\n\n7 = chromosome 7\nq = long arm q\n3 = region 3\n1.2 = band 1/sub-band #2",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "LocusArmPositionRegionNumber2"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocusArmPositionBandNumber2",
+					"Description": "The band number where:\n\nThe chromosomal locus of a allele might be written \"7q31.2'. \n\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\n\n7 = chromosome 7\nq = long arm q\n3 = region 3\n1.2 = band 1/sub-band #2",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "LocusArmPositionBandNumber2"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LocusArmPositionSubBandNumber2",
+					"Description": "The sub-band number where:\n\nThe chromosomal locus of a allele might be written \"7q31.2'. \n\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\n\n7 = chromosome 7\nq = long arm q\n3 = region 3\n1.2 = band 1/sub-band #2",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "LocusArmPositionSubBandNumber2"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleCytogenicLocation",
+					"Description": "Geneticists use maps to describe the location of a particular allele on a chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AlleleCytogenicLocation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleGenelocLocation",
+					"Description": "The GeneLoc location of the allele.\n\nEx:\nALB is located at 73,397,114-73,421,412 bp",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AlleleGenelocLocation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleUnigeneClusterLocation",
+					"Description": "The Unigene Cluster location.\n\nEx:\nUnigene Cluster Hs.5462",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AlleleUnigeneClusterLocation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneEnsemblId",
+					"Description": "The Ensembl allele ID.\n\nEx:\nENSG00000080493",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "GeneEnsemblId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeShortArmPositionP",
+					"Description": "The position is on the chromosome's short arm  q indicates the long arm (chosen as next letter in alphabet after p.\nEx:\nThe chromosomal locus of a gene might be written \"6p21.3\". Because \"21\" refers to \"region 2, band 1\" this is read as \"two one\".\nThe entire locus is \"six P two one point three.\"",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ChromosomeShortArmPositionP"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeLongArmPositionQ",
+					"Description": "The position is on the chromosome's short arm  q indicates the long arm (chosen as next letter in alphabet after p.\nEx:\nThe chromosomal locus of a gene might be written \"6p21.3\". Because \"21\" refers to \"region 2, band 1\" this is read as \"two one\".\nThe entire locus is \"six P two one point three.\"",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ChromosomeLongArmPositionQ"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ArmPositionRegionNumber",
+					"Description": "The 'region' component of the gene chromosomal locus where locus = region + band .\n\nThe chromosomal locus of a gene might be written \"6p21.3\". Because \"21\" refers to \"region 2, band 1\" this is read as \"two one\".\nThe entire locus is \"six P two one point three.\"",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ArmPositionRegionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ArmPositionBandNumber",
+					"Description": "The band' component of the gene chromosomal locus where locus = region + band .\n\nThe chromosomal locus of a gene might be written \"6p21.3\". Because \"21\" refers to \"region 2, band 1\" this is read as \"two one\".\nThe entire locus is \"six P two one point three.\"",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ArmPositionBandNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ArmPositionSubBandNumber",
+					"Description": "The sub-band number of the gene.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ArmPositionSubBandNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DnaTopStrandPatternCodonSequenceText",
+					"Description": "A codon = sequence of three nucleotide bases in a DNA or RNA molecule that code for a specific type of amino acid that will be used in the synthesis of a protein.\n\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\nA base-paired DNA sequence:\nATCGATTGAGCTCTAGCG\nTAGCTAACTCGAGATCGC\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\nAUCGAUUGAGCUCUAGCG\nUAGCUAACUCGAGAUCGC",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "DnaTopStrandPatternCodonSequenceText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DnaBottomStrandPatternCodonSequenceText",
+					"Description": "A codon = sequence of three nucleotide bases in a DNA or RNA molecule that code for a specific type of amino acid that will be used in the synthesis of a protein.\n\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\nA base-paired DNA sequence:\nATCGATTGAGCTCTAGCG\nTAGCTAACTCGAGATCGC\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\nAUCGAUUGAGCUCUAGCG\nUAGCUAACUCGAGAUCGC",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "DnaBottomStrandPatternCodonSequenceText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RnaTopStrandPatternCodonSequenceText",
+					"Description": "The RNA top strand codon sequence.\n\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\nA base-paired DNA sequence:\nATCGATTGAGCTCTAGCG\nTAGCTAACTCGAGATCGC\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\nAUCGAUUGAGCUCUAGCG\nUAGCUAACUCGAGAUCGC",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "RnaTopStrandPatternCodonSequenceText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RnaBottomStrandPatternCodonSequenceText",
+					"Description": "The RNA bottom strand codon sequence.\n\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\nA base-paired DNA sequence:\nATCGATTGAGCTCTAGCG\nTAGCTAACTCGAGATCGC\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\nAUCGAUUGAGCUCUAGCG\nUAGCUAACUCGAGAUCGC",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "RnaBottomStrandPatternCodonSequenceText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DominateGeneIndicator",
+					"Description": "In many cases, genotypic interactions between the two alleles at a locus can be described as dominant or recessive, according to which of the two homozygous genotypes the phenotype of the heterozygote most resembles. Where the heterozygote is indistinguishable from one of the homozygotes, the allele involved is said to be dominant to the other, which is said to be recessive to the former.[5] The degree and pattern of dominance varies among loci.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "DominateGeneIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RecessiveGeneIndicator",
+					"Description": "In many cases, genotypic interactions between the two alleles at a locus can be described as dominant or recessive, according to which of the two homozygous genotypes the phenotype of the heterozygote most resembles. Where the heterozygote is indistinguishable from one of the homozygotes, the allele involved is said to be dominant to the other, which is said to be recessive to the former.[5] The degree and pattern of dominance varies among loci.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "RecessiveGeneIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AutosomalDominantGeneIndicator",
+					"Description": "Autosomal dominant means that a person only needs one copy of the changed gene in order to have the disorder. Usually, the changed gene is inherited from a parent who also has the disorder and every generation in the family may have members with the disorder. There are some instances in which a person has the gene that causes the disorder and does not show symptoms of the disorder, but can still pass the gene to his or her children. A person who carriers a gene for an autosomal dominant disorder has a 50% chance of passing the gene to each child.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AutosomalDominantGeneIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AutosomalRecessiveGeneIndicator",
+					"Description": "Autosomal recessive means that it is necessary to have two copies of the changed gene to have the disorder. Each parent contributes one changed copy of the gene to the child who has the disorder. The parents are called carriers of the disorder because they have one normal copy of the gene and one changed copy of the gene, but they do not show symptoms of the disorder. When both parents are carriers of the changed gene, each of their children has a 25% chance of having the disorder, a 50% chance of being a carrier of the disorder (like their parents), and a 25% chance of neither being a carrier nor having the disorder. These risks are the same for each pregnancy. When there is more than one person in a family who has the disease, these people are often in the same generation.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AutosomalRecessiveGeneIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AdditiveAlleleIndicator",
+					"Description": "A description of the allele.\n\nEx:\nThe protein encoded by this gene belongs to the ferlin family and is a skeletal muscle protein found associated with the sarcolemma. It is involved in muscle contraction and contains C2 domains that play a role in calcium-mediated membrane fusion events, suggesting that it may be involved in membrane regeneration and repair. In addition, the protein encoded by this gene binds caveolin-3, a skeletal muscle membrane protein which is important in the formation of caveolae. Specific mutations in this gene have been shown to cause autosomal recessive limb girdle muscular dystrophy type 2B (LGMD2B) as well as Miyoshi myopathy. Alternative splicing results in multiple transcript variants.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AdditiveAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PleiotropicAlleleIndicator",
+					"Description": "The characteristic that occurs when a single allele affects multiple phenotypes.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "PleiotropicAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MarkerAlleleIndicator",
+					"Description": "A marker is a allele or DNA sequence with a known chromosomal location.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "MarkerAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SelectableMarkerIndictor",
+					"Description": "An allele whose expression allows one to identify cells that have been transformed or transfected with a vector containing the marker gene.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "SelectableMarkerIndictor"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RegulatorAlleleIndicator",
+					"Description": "An allele that can initiate or block the functions of other genes.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "RegulatorAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "XLinkedAlleleIndicator",
+					"Description": "Referring to an allele that is carried by an X chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "XLinkedAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "YLinkedAlleleIndicator",
+					"Description": "Referring to an allele that is carried by an X chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "YLinkedAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OncogeneAlleleIndicator",
+					"Description": "An allele, one or more forms of which is associated with cancer.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "OncogeneAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProtoOncogeneAlleleIndicator",
+					"Description": "A normal allele that can become an oncogene due to mutations or increased expression.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ProtoOncogeneAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "XLinkedRecessiveIndicator",
+					"Description": "An allele that follows a pattern similar to autosomal dominant inheritance except that more females are affected than males.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "XLinkedRecessiveIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "LethalityAlleleIndicator",
+					"Description": "The characteristic that occurs when the presence of one or more alleles leads directly to the death of the organism.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "LethalityAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PleiotropyAlleleIndicator",
+					"Description": "The characteristic that occurs when a single allele affects multiple phenotypes.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "PleiotropyAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DiseaseAlleleIndicator",
+					"Description": "An allele that carries or is responsible for a disorder, defect or a disease.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "DiseaseAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "HomeoticAlleleIndicator",
+					"Description": "Alleles that control developmental patterns, determining where, when, and how body segments and structures develop.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "HomeoticAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ConstitutiveAlleleIndicator",
+					"Description": "An allele that is transcribed continually compared to a facultative gene which is only transcribed as needed.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "ConstitutiveAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FacultativeAlleleIndicator",
+					"Description": "A compared to a constitutive allele.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "FacultativeAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "InducibleAlleleIndicator",
+					"Description": "An allele whose expression is either responsive to environmental change or dependent on the position of the cell cycle.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "InducibleAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MutantAlleleIndicator",
+					"Description": "A rare allele, genotype, or phenotype in a population.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "MutantAlleleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneId",
+					"Description": "The unique identifier of a gene.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "GeneId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AllelePairingTypeId",
+					"Description": "The unique identifier of an allele pairing type.",
+					"BaseAttributeReference": {
+						"Entity": "Allele.cdm.json/Allele",
+						"Name": "AllelePairingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Allele",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Allele",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AlleleId\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleId\"},\"AlleleName\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleName\"},\"AlleleDescription\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleDescription\"},\"AlleleNomenclature\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleNomenclature\"},\"LocusArmPositionRegionNumber\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionRegionNumber\"},\"LocusArmPositionBandNumber\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionBandNumber\"},\"LocusArmPositionSubBandNumber\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionSubBandNumber\"},\"ChromosomeId\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ChromosomeId\"},\"LocusArmPositionRegionNumber2\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionRegionNumber2\"},\"LocusArmPositionBandNumber2\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionBandNumber2\"},\"LocusArmPositionSubBandNumber2\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionSubBandNumber2\"},\"AlleleCytogenicLocation\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleCytogenicLocation\"},\"AlleleGenelocLocation\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleGenelocLocation\"},\"AlleleUnigeneClusterLocation\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleUnigeneClusterLocation\"},\"GeneEnsemblId\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"GeneEnsemblId\"},\"ChromosomeShortArmPositionP\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ChromosomeShortArmPositionP\"},\"ChromosomeLongArmPositionQ\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ChromosomeLongArmPositionQ\"},\"ArmPositionRegionNumber\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ArmPositionRegionNumber\"},\"ArmPositionBandNumber\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ArmPositionBandNumber\"},\"ArmPositionSubBandNumber\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ArmPositionSubBandNumber\"},\"DnaTopStrandPatternCodonSequenceText\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DnaTopStrandPatternCodonSequenceText\"},\"DnaBottomStrandPatternCodonSequenceText\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DnaBottomStrandPatternCodonSequenceText\"},\"RnaTopStrandPatternCodonSequenceText\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RnaTopStrandPatternCodonSequenceText\"},\"RnaBottomStrandPatternCodonSequenceText\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RnaBottomStrandPatternCodonSequenceText\"},\"DominateGeneIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DominateGeneIndicator\"},\"RecessiveGeneIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RecessiveGeneIndicator\"},\"AutosomalDominantGeneIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AutosomalDominantGeneIndicator\"},\"AutosomalRecessiveGeneIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AutosomalRecessiveGeneIndicator\"},\"AdditiveAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AdditiveAlleleIndicator\"},\"PleiotropicAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"PleiotropicAlleleIndicator\"},\"MarkerAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"MarkerAlleleIndicator\"},\"SelectableMarkerIndictor\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"SelectableMarkerIndictor\"},\"RegulatorAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RegulatorAlleleIndicator\"},\"XLinkedAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"XLinkedAlleleIndicator\"},\"YLinkedAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"YLinkedAlleleIndicator\"},\"OncogeneAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"OncogeneAlleleIndicator\"},\"ProtoOncogeneAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ProtoOncogeneAlleleIndicator\"},\"XLinkedRecessiveIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"XLinkedRecessiveIndicator\"},\"LethalityAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LethalityAlleleIndicator\"},\"PleiotropyAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"PleiotropyAlleleIndicator\"},\"DiseaseAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DiseaseAlleleIndicator\"},\"HomeoticAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"HomeoticAlleleIndicator\"},\"ConstitutiveAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ConstitutiveAlleleIndicator\"},\"FacultativeAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"FacultativeAlleleIndicator\"},\"InducibleAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"InducibleAlleleIndicator\"},\"MutantAlleleIndicator\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"MutantAlleleIndicator\"},\"GeneId\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"GeneId\"},\"AllelePairingTypeId\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AllelePairingTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Allele\",\"path\":\"Allele.cdm.json/Allele\"},\"description\":\"A variant of the similar DNA sequence at a given locus is called an allele.\\n\\nAn Allele is a gene.   \\n\\nIn humans, alleles of particular genes come in pairs, one on each chromosome? (we have 23 pairs of chromosomes). If the alleles of a particular gene are the same, the organism is described as homozygous? for that gene. If they are different the organism is described as heterozygous? for that gene.\\nAn individual's phenotype? is determined by the combination of alleles they have.\\nFor example, for a gene that determines eye color there may be several different alleles. One allele may result in blue eyes, while another might result in brown eyes. The final color of the individual's eyes will depend on which alleles they have and how they interact.\\nThe characteristic associated with a certain allele can sometimes be dominant ?or recessive?.\\n\\nAllele - A different form of a gene at a particular locus. The characteristics of a single copy of a specific gene or of a single copy of a specific location on a chromosome. For example, one copy of a specific STR region might have 10 repeats, while the other copy might have 11 repeats. These would represent two alleles of that STR region.\\n\\ngenes at the corresponding loci may exist in different forms (alleles)\\n\\nallele - one variant of a particular gene; for example, there are blue and brown alleles of the eye-color gene.\\n\\nalternate forms or varieties of a gene.   The alleles for a trait occupy the same locus or position on homologous chromosomes and thus govern the same trait.  However, because they are different, their action may result in different expressions of that trait.\\n\\nThe word \\\"allele\\\" is a short form of allelomorph (?other form?), which was used in the early days of genetics to describe variant forms of a gene detected as different phenotypes.\\n\\nMost genes are the same in all people, but a small number of genes (less than 1 percent of the total) are slightly different between people. Alleles are forms of the same gene with small differences in their sequence of DNA bases.\\n\\nAn ''allele'' is one variant of that gene. In many cases, all people would have the gene, but certain people will have a specific allele of that gene, which results in the trait. This could be a simple trait like hair or eye color.\\n\\nAn Allele is a one of multiple alternative forms of a single gene\\n\\nThe information within a particular gene is not always exactly the same between one organism and another, so different copies of a gene do not always give exactly the same instructions. \\n\\nEach unique form of a single gene is called an allele. \\n\\nVariant forms of the same gene. Different alleles produce variations in inherited characteristics such as eye color or blood type.\\nDefinition from: Office of Rare Diseases at the National Institutes of Health\\nOne of the alternative versions of a gene at a given location (locus) along a chromosome\\nDefinition from: GeneReviews from the University of Washington and the National Center for Biotechnology Information\\nAn allele is one of two or more versions of a gene. An individual inherits two alleles for each gene, one from each parent. If the two alleles are the same, the individual is homozygous for that gene. If the alleles are different, the individual is heterozygous. Though the term \\\"allele\\\" was originally used to describe variation among genes, it now also refers to variation among non-coding DNA sequences.\\n\\nThus, when the mainstream press refers to \\\"having\\\" a \\\"gene\\\" for a specific trait, this is generally inaccurate. In most cases, all people would have a gene for the trait in question, but certain people will have a specific allele of that gene, which results in the trait variant\",\"primaryKey\":[\"AlleleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an allele.\",\"isNullable\":false,\"name\":\"AlleleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the allele.\",\"isNullable\":true,\"name\":\"AlleleName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the allele.\",\"isNullable\":true,\"name\":\"AlleleDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleNomenclature\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The chromosomal locus of an Allele might be written \\\"7q31.2'. \\n\\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\\n\\n7 = chromosome 7\\nq = long arm q\\n3 = region 3\\n1.2 = band 1/sub-band #2\",\"isNullable\":true,\"name\":\"AlleleNomenclature\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionRegionNumber\"},\"dataType\":\"integer\",\"description\":\"The region number where:\\n\\nThe chromosomal locus of a allele might be written \\\"7q31.2'. \\n\\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\\n\\n7 = chromosome 7\\nq = long arm q\\n3 = region 3\\n1.2 = band 1/sub-band #2\",\"isNullable\":true,\"name\":\"LocusArmPositionRegionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionBandNumber\"},\"dataType\":\"integer\",\"description\":\"The region number where:\\n\\nThe chromosomal locus of a allele might be written \\\"7q31.2'. \\n\\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\\n\\n7 = chromosome 7\\nq = long arm q\\n3 = region 3\\n1.2 = band 1/sub-band #2\",\"isNullable\":true,\"name\":\"LocusArmPositionBandNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionSubBandNumber\"},\"dataType\":\"integer\",\"description\":\"The region number where:\\n\\nThe chromosomal locus of a allele might be written \\\"7q31.2'. \\n\\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\\n\\n7 = chromosome 7\\nq = long arm q\\n3 = region 3\\n1.2 = band 1/sub-band #2\",\"isNullable\":true,\"name\":\"LocusArmPositionSubBandNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ChromosomeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a chromosome.\",\"isNullable\":true,\"name\":\"ChromosomeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionRegionNumber2\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The region number where:\\n\\nThe chromosomal locus of a allele might be written \\\"7q31.2'. \\n\\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\\n\\n7 = chromosome 7\\nq = long arm q\\n3 = region 3\\n1.2 = band 1/sub-band #2\",\"isNullable\":true,\"name\":\"LocusArmPositionRegionNumber2\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionBandNumber2\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The band number where:\\n\\nThe chromosomal locus of a allele might be written \\\"7q31.2'. \\n\\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\\n\\n7 = chromosome 7\\nq = long arm q\\n3 = region 3\\n1.2 = band 1/sub-band #2\",\"isNullable\":true,\"name\":\"LocusArmPositionBandNumber2\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LocusArmPositionSubBandNumber2\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The sub-band number where:\\n\\nThe chromosomal locus of a allele might be written \\\"7q31.2'. \\n\\nThis means the allele is on the long arm of chromosome 7 at position 7131.2 where:\\n\\n7 = chromosome 7\\nq = long arm q\\n3 = region 3\\n1.2 = band 1/sub-band #2\",\"isNullable\":true,\"name\":\"LocusArmPositionSubBandNumber2\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleCytogenicLocation\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Geneticists use maps to describe the location of a particular allele on a chromosome.\",\"isNullable\":true,\"name\":\"AlleleCytogenicLocation\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleGenelocLocation\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The GeneLoc location of the allele.\\n\\nEx:\\nALB is located at 73,397,114-73,421,412 bp\",\"isNullable\":true,\"name\":\"AlleleGenelocLocation\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AlleleUnigeneClusterLocation\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The Unigene Cluster location.\\n\\nEx:\\nUnigene Cluster Hs.5462\",\"isNullable\":true,\"name\":\"AlleleUnigeneClusterLocation\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"GeneEnsemblId\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The Ensembl allele ID.\\n\\nEx:\\nENSG00000080493\",\"isNullable\":true,\"name\":\"GeneEnsemblId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ChromosomeShortArmPositionP\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The position is on the chromosome's short arm  q indicates the long arm (chosen as next letter in alphabet after p.\\nEx:\\nThe chromosomal locus of a gene might be written \\\"6p21.3\\\". Because \\\"21\\\" refers to \\\"region 2, band 1\\\" this is read as \\\"two one\\\".\\nThe entire locus is \\\"six P two one point three.\\\"\",\"isNullable\":true,\"name\":\"ChromosomeShortArmPositionP\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ChromosomeLongArmPositionQ\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The position is on the chromosome's short arm  q indicates the long arm (chosen as next letter in alphabet after p.\\nEx:\\nThe chromosomal locus of a gene might be written \\\"6p21.3\\\". Because \\\"21\\\" refers to \\\"region 2, band 1\\\" this is read as \\\"two one\\\".\\nThe entire locus is \\\"six P two one point three.\\\"\",\"isNullable\":true,\"name\":\"ChromosomeLongArmPositionQ\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ArmPositionRegionNumber\"},\"dataType\":\"integer\",\"description\":\"The 'region' component of the gene chromosomal locus where locus = region + band .\\n\\nThe chromosomal locus of a gene might be written \\\"6p21.3\\\". Because \\\"21\\\" refers to \\\"region 2, band 1\\\" this is read as \\\"two one\\\".\\nThe entire locus is \\\"six P two one point three.\\\"\",\"isNullable\":true,\"name\":\"ArmPositionRegionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ArmPositionBandNumber\"},\"dataType\":\"integer\",\"description\":\"The band' component of the gene chromosomal locus where locus = region + band .\\n\\nThe chromosomal locus of a gene might be written \\\"6p21.3\\\". Because \\\"21\\\" refers to \\\"region 2, band 1\\\" this is read as \\\"two one\\\".\\nThe entire locus is \\\"six P two one point three.\\\"\",\"isNullable\":true,\"name\":\"ArmPositionBandNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ArmPositionSubBandNumber\"},\"dataType\":\"integer\",\"description\":\"The sub-band number of the gene.\",\"isNullable\":true,\"name\":\"ArmPositionSubBandNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DnaTopStrandPatternCodonSequenceText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A codon = sequence of three nucleotide bases in a DNA or RNA molecule that code for a specific type of amino acid that will be used in the synthesis of a protein.\\n\\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\\nA base-paired DNA sequence:\\nATCGATTGAGCTCTAGCG\\nTAGCTAACTCGAGATCGC\\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\\nAUCGAUUGAGCUCUAGCG\\nUAGCUAACUCGAGAUCGC\",\"isNullable\":true,\"name\":\"DnaTopStrandPatternCodonSequenceText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DnaBottomStrandPatternCodonSequenceText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A codon = sequence of three nucleotide bases in a DNA or RNA molecule that code for a specific type of amino acid that will be used in the synthesis of a protein.\\n\\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\\nA base-paired DNA sequence:\\nATCGATTGAGCTCTAGCG\\nTAGCTAACTCGAGATCGC\\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\\nAUCGAUUGAGCUCUAGCG\\nUAGCUAACUCGAGAUCGC\",\"isNullable\":true,\"name\":\"DnaBottomStrandPatternCodonSequenceText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RnaTopStrandPatternCodonSequenceText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The RNA top strand codon sequence.\\n\\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\\nA base-paired DNA sequence:\\nATCGATTGAGCTCTAGCG\\nTAGCTAACTCGAGATCGC\\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\\nAUCGAUUGAGCUCUAGCG\\nUAGCUAACUCGAGAUCGC\",\"isNullable\":true,\"name\":\"RnaTopStrandPatternCodonSequenceText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RnaBottomStrandPatternCodonSequenceText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The RNA bottom strand codon sequence.\\n\\nThe following DNA sequences illustrate pair double-stranded patterns. By convention, the top strand is written from the 5' end to the 3' end; thus, the bottom strand is written 3' to 5'.\\nA base-paired DNA sequence:\\nATCGATTGAGCTCTAGCG\\nTAGCTAACTCGAGATCGC\\nThe corresponding RNA sequence, in which uracil is substituted for thymine where uracil takes its place in the RNA strand:\\nAUCGAUUGAGCUCUAGCG\\nUAGCUAACUCGAGAUCGC\",\"isNullable\":true,\"name\":\"RnaBottomStrandPatternCodonSequenceText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DominateGeneIndicator\"},\"dataType\":\"boolean\",\"description\":\"In many cases, genotypic interactions between the two alleles at a locus can be described as dominant or recessive, according to which of the two homozygous genotypes the phenotype of the heterozygote most resembles. Where the heterozygote is indistinguishable from one of the homozygotes, the allele involved is said to be dominant to the other, which is said to be recessive to the former.[5] The degree and pattern of dominance varies among loci.\",\"isNullable\":true,\"name\":\"DominateGeneIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RecessiveGeneIndicator\"},\"dataType\":\"boolean\",\"description\":\"In many cases, genotypic interactions between the two alleles at a locus can be described as dominant or recessive, according to which of the two homozygous genotypes the phenotype of the heterozygote most resembles. Where the heterozygote is indistinguishable from one of the homozygotes, the allele involved is said to be dominant to the other, which is said to be recessive to the former.[5] The degree and pattern of dominance varies among loci.\",\"isNullable\":true,\"name\":\"RecessiveGeneIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AutosomalDominantGeneIndicator\"},\"dataType\":\"boolean\",\"description\":\"Autosomal dominant means that a person only needs one copy of the changed gene in order to have the disorder. Usually, the changed gene is inherited from a parent who also has the disorder and every generation in the family may have members with the disorder. There are some instances in which a person has the gene that causes the disorder and does not show symptoms of the disorder, but can still pass the gene to his or her children. A person who carriers a gene for an autosomal dominant disorder has a 50% chance of passing the gene to each child.\",\"isNullable\":true,\"name\":\"AutosomalDominantGeneIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AutosomalRecessiveGeneIndicator\"},\"dataType\":\"boolean\",\"description\":\"Autosomal recessive means that it is necessary to have two copies of the changed gene to have the disorder. Each parent contributes one changed copy of the gene to the child who has the disorder. The parents are called carriers of the disorder because they have one normal copy of the gene and one changed copy of the gene, but they do not show symptoms of the disorder. When both parents are carriers of the changed gene, each of their children has a 25% chance of having the disorder, a 50% chance of being a carrier of the disorder (like their parents), and a 25% chance of neither being a carrier nor having the disorder. These risks are the same for each pregnancy. When there is more than one person in a family who has the disease, these people are often in the same generation.\",\"isNullable\":true,\"name\":\"AutosomalRecessiveGeneIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AdditiveAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"A description of the allele.\\n\\nEx:\\nThe protein encoded by this gene belongs to the ferlin family and is a skeletal muscle protein found associated with the sarcolemma. It is involved in muscle contraction and contains C2 domains that play a role in calcium-mediated membrane fusion events, suggesting that it may be involved in membrane regeneration and repair. In addition, the protein encoded by this gene binds caveolin-3, a skeletal muscle membrane protein which is important in the formation of caveolae. Specific mutations in this gene have been shown to cause autosomal recessive limb girdle muscular dystrophy type 2B (LGMD2B) as well as Miyoshi myopathy. Alternative splicing results in multiple transcript variants.\",\"isNullable\":true,\"name\":\"AdditiveAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"PleiotropicAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"The characteristic that occurs when a single allele affects multiple phenotypes.\",\"isNullable\":true,\"name\":\"PleiotropicAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"MarkerAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"A marker is a allele or DNA sequence with a known chromosomal location.\",\"isNullable\":true,\"name\":\"MarkerAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"SelectableMarkerIndictor\"},\"dataType\":\"boolean\",\"description\":\"An allele whose expression allows one to identify cells that have been transformed or transfected with a vector containing the marker gene.\",\"isNullable\":true,\"name\":\"SelectableMarkerIndictor\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"RegulatorAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"An allele that can initiate or block the functions of other genes.\",\"isNullable\":true,\"name\":\"RegulatorAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"XLinkedAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Referring to an allele that is carried by an X chromosome.\",\"isNullable\":true,\"name\":\"XLinkedAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"YLinkedAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Referring to an allele that is carried by an X chromosome.\",\"isNullable\":true,\"name\":\"YLinkedAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"OncogeneAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"An allele, one or more forms of which is associated with cancer.\",\"isNullable\":true,\"name\":\"OncogeneAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ProtoOncogeneAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"A normal allele that can become an oncogene due to mutations or increased expression.\",\"isNullable\":true,\"name\":\"ProtoOncogeneAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"XLinkedRecessiveIndicator\"},\"dataType\":\"boolean\",\"description\":\"An allele that follows a pattern similar to autosomal dominant inheritance except that more females are affected than males.\",\"isNullable\":true,\"name\":\"XLinkedRecessiveIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"LethalityAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"The characteristic that occurs when the presence of one or more alleles leads directly to the death of the organism.\",\"isNullable\":true,\"name\":\"LethalityAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"PleiotropyAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"The characteristic that occurs when a single allele affects multiple phenotypes.\",\"isNullable\":true,\"name\":\"PleiotropyAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"DiseaseAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"An allele that carries or is responsible for a disorder, defect or a disease.\",\"isNullable\":true,\"name\":\"DiseaseAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"HomeoticAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Alleles that control developmental patterns, determining where, when, and how body segments and structures develop.\",\"isNullable\":true,\"name\":\"HomeoticAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"ConstitutiveAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"An allele that is transcribed continually compared to a facultative gene which is only transcribed as needed.\",\"isNullable\":true,\"name\":\"ConstitutiveAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"FacultativeAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"A compared to a constitutive allele.\",\"isNullable\":true,\"name\":\"FacultativeAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"InducibleAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"An allele whose expression is either responsive to environmental change or dependent on the position of the cell cycle.\",\"isNullable\":true,\"name\":\"InducibleAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"MutantAlleleIndicator\"},\"dataType\":\"boolean\",\"description\":\"A rare allele, genotype, or phenotype in a population.\",\"isNullable\":true,\"name\":\"MutantAlleleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"GeneId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene.\",\"isNullable\":true,\"name\":\"GeneId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Allele.cdm.json/Allele\",\"name\":\"AllelePairingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an allele pairing type.\",\"isNullable\":true,\"name\":\"AllelePairingTypeId\"}]}}}",
+			"Description": "A variant of the similar DNA sequence at a given locus is called an allele.\n\nAn Allele is a gene.   \n\nIn humans, alleles of particular genes come in pairs, one on each chromosome? (we have 23 pairs of chromosomes). If the alleles of a particular gene are the same, the organism is described as homozygous? for that gene. If they are different the organism is described as heterozygous? for that gene.\nAn individual's phenotype? is determined by the combination of alleles they have.\nFor example, for a gene that determines eye color there may be several different alleles. One allele may result in blue eyes, while another might result in brown eyes. The final color of the individual's eyes will depend on which alleles they have and how they interact.\nThe characteristic associated with a certain allele can sometimes be dominant ?or recessive?.\n\nAllele - A different form of a gene at a particular locus. The characteristics of a single copy of a specific gene or of a single copy of a specific location on a chromosome. For example, one copy of a specific STR region might have 10 repeats, while the other copy might have 11 repeats. These would represent two alleles of that STR region.\n\ngenes at the corresponding loci may exist in different forms (alleles)\n\nallele - one variant of a particular gene; for example, there are blue and brown alleles of the eye-color gene.\n\nalternate forms or varieties of a gene.   The alleles for a trait occupy the same locus or position on homologous chromosomes and thus govern the same trait.  However, because they are different, their action may result in different expressions of that trait.\n\nThe word \"allele\" is a short form of allelomorph (?other form?), which was used in the early days of genetics to describe variant forms of a gene detected as different phenotypes.\n\nMost genes are the same in all people, but a small number of genes (less than 1 percent of the total) are slightly different between people. Alleles are forms of the same gene with small differences in their sequence of DNA bases.\n\nAn ''allele'' is one variant of that gene. In many cases, all people would have the gene, but certain people will have a specific allele of that gene, which results in the trait. This could be a simple trait like hair or eye color.\n\nAn Allele is a one of multiple alternative forms of a single gene\n\nThe information within a particular gene is not always exactly the same between one organism and another, so different copies of a gene do not always give exactly the same instructions. \n\nEach unique form of a single gene is called an allele. \n\nVariant forms of the same gene. Different alleles produce variations in inherited characteristics such as eye color or blood type.\nDefinition from: Office of Rare Diseases at the National Institutes of Health\nOne of the alternative versions of a gene at a given location (locus) along a chromosome\nDefinition from: GeneReviews from the University of Washington and the National Center for Biotechnology Information\nAn allele is one of two or more versions of a gene. An individual inherits two alleles for each gene, one from each parent. If the two alleles are the same, the individual is homozygous for that gene. If the alleles are different, the individual is heterozygous. Though the term \"allele\" was originally used to describe variation among genes, it now also refers to variation among non-coding DNA sequences.\n\nThus, when the mainstream press refers to \"having\" a \"gene\" for a specific trait, this is generally inaccurate. In most cases, all people would have a gene for the trait in question, but certain people will have a specific allele of that gene, which results in the trait variant",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AlleleId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

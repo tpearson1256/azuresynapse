@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidSideChainClass",
+	"properties": {
+		"Name": "AminoAcidSideChainClass",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "There are four classes of amino acids based on the different side chains:\n\n-Non-polar and neutral: \nalanine, glycine, isoleucine, leucine, methionine, phenylalanine, proline, and valine.\n\n- Polar and neutral: \nasparagine, cysteine, glutamine, serine, threonine, tryptophan, and tyrosine.\n\n- Acidic and polar: \naspartic acid, and glutamic acid.\n    \n- Basic and polar: \narginine, histidine, and lysine.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidSideChainClassId",
+					"Description": "The unique identifier of an Amino Acid Side Chain Class.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass",
+						"Name": "AminoAcidSideChainClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidSideChainClassName",
+					"Description": "The name of an Amino Acid Side Chain Class.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass",
+						"Name": "AminoAcidSideChainClassName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidSideChainClassDescription",
+					"Description": "The description of an Amino Acid Side Chain Class.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass",
+						"Name": "AminoAcidSideChainClassDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidSideChainClass",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidSideChainClass",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidSideChainClassId\":{\"entity\":\"AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass\",\"name\":\"AminoAcidSideChainClassId\"},\"AminoAcidSideChainClassName\":{\"entity\":\"AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass\",\"name\":\"AminoAcidSideChainClassName\"},\"AminoAcidSideChainClassDescription\":{\"entity\":\"AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass\",\"name\":\"AminoAcidSideChainClassDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidSideChainClass\",\"path\":\"AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass\"},\"description\":\"There are four classes of amino acids based on the different side chains:\\n\\n-Non-polar and neutral: \\nalanine, glycine, isoleucine, leucine, methionine, phenylalanine, proline, and valine.\\n\\n- Polar and neutral: \\nasparagine, cysteine, glutamine, serine, threonine, tryptophan, and tyrosine.\\n\\n- Acidic and polar: \\naspartic acid, and glutamic acid.\\n    \\n- Basic and polar: \\narginine, histidine, and lysine.\",\"primaryKey\":[\"AminoAcidSideChainClassId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass\",\"name\":\"AminoAcidSideChainClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Amino Acid Side Chain Class.\",\"isNullable\":false,\"name\":\"AminoAcidSideChainClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass\",\"name\":\"AminoAcidSideChainClassName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Amino Acid Side Chain Class.\",\"isNullable\":true,\"name\":\"AminoAcidSideChainClassName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSideChainClass.cdm.json/AminoAcidSideChainClass\",\"name\":\"AminoAcidSideChainClassDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Amino Acid Side Chain Class.\",\"isNullable\":true,\"name\":\"AminoAcidSideChainClassDescription\"}]}}}",
+			"Description": "There are four classes of amino acids based on the different side chains:\n\n-Non-polar and neutral: \nalanine, glycine, isoleucine, leucine, methionine, phenylalanine, proline, and valine.\n\n- Polar and neutral: \nasparagine, cysteine, glutamine, serine, threonine, tryptophan, and tyrosine.\n\n- Acidic and polar: \naspartic acid, and glutamic acid.\n    \n- Basic and polar: \narginine, histidine, and lysine.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidSideChainClassId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

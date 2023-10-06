@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ydrrorougd",
+	"properties": {
+		"Name": "relationship-ydrrorougd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "AminoAcidSynonym",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "SynonymProvidingPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"SynonymProvidingPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

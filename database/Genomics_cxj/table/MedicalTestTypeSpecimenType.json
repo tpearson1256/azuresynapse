@@ -1,0 +1,148 @@
+{
+	"name": "MedicalTestTypeSpecimenType",
+	"properties": {
+		"Name": "MedicalTestTypeSpecimenType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The types of specimens produced by the medical test type.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestTypeId",
+					"Description": "The unique identifier of a Medical Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType",
+						"Name": "MedicalTestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenTypeId",
+					"Description": "The unique identifier of a Specimen Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType",
+						"Name": "SpecimenTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TissueTypeId",
+					"Description": "The unique identifier of a tissue type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType",
+						"Name": "TissueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MandatoryOptionalSpecimenTypeIndicator",
+					"Description": "Indicates whether the specimen type is mandatory or optional.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType",
+						"Name": "MandatoryOptionalSpecimenTypeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestTypeSpecimenTypeNote",
+					"Description": "A note, comment or additional information regarding the medical test type specimen type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType",
+						"Name": "MedicalTestTypeSpecimenTypeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestTypeSpecimenType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestTypeSpecimenType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestTypeId\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"MedicalTestTypeId\"},\"SpecimenTypeId\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"SpecimenTypeId\"},\"TissueTypeId\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"TissueTypeId\"},\"MandatoryOptionalSpecimenTypeIndicator\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"MandatoryOptionalSpecimenTypeIndicator\"},\"MedicalTestTypeSpecimenTypeNote\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"MedicalTestTypeSpecimenTypeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalTestTypeSpecimenType\",\"path\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\"},\"description\":\"The types of specimens produced by the medical test type.\",\"primaryKey\":[\"MedicalTestTypeId\",\"SpecimenTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"MedicalTestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Type.\",\"isNullable\":false,\"name\":\"MedicalTestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"SpecimenTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen Type.\",\"isNullable\":false,\"name\":\"SpecimenTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"TissueTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a tissue type.\",\"isNullable\":true,\"name\":\"TissueTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"MandatoryOptionalSpecimenTypeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the specimen type is mandatory or optional.\",\"isNullable\":true,\"name\":\"MandatoryOptionalSpecimenTypeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestTypeSpecimenType.cdm.json/MedicalTestTypeSpecimenType\",\"name\":\"MedicalTestTypeSpecimenTypeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the medical test type specimen type.\",\"isNullable\":true,\"name\":\"MedicalTestTypeSpecimenTypeNote\"}]}}}",
+			"Description": "The types of specimens produced by the medical test type.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestTypeId,SpecimenTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

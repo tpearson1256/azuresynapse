@@ -1,0 +1,115 @@
+{
+	"name": "DocumentSecurityType",
+	"properties": {
+		"Name": "DocumentSecurityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A means or method of securing the document.\n\nEx:\n- password\n- URL access\n- encrypted/password \n- none",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentSecurityTypeId",
+					"Description": "The unique identifier of a Document Security Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentSecurityType.cdm.json/DocumentSecurityType",
+						"Name": "DocumentSecurityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentSecurityTypeName",
+					"Description": "The name of a Document Security Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentSecurityType.cdm.json/DocumentSecurityType",
+						"Name": "DocumentSecurityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentSecurityTypeDescription",
+					"Description": "The description of a Document Security Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentSecurityType.cdm.json/DocumentSecurityType",
+						"Name": "DocumentSecurityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentSecurityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentSecurityType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentSecurityTypeId\":{\"entity\":\"DocumentSecurityType.cdm.json/DocumentSecurityType\",\"name\":\"DocumentSecurityTypeId\"},\"DocumentSecurityTypeName\":{\"entity\":\"DocumentSecurityType.cdm.json/DocumentSecurityType\",\"name\":\"DocumentSecurityTypeName\"},\"DocumentSecurityTypeDescription\":{\"entity\":\"DocumentSecurityType.cdm.json/DocumentSecurityType\",\"name\":\"DocumentSecurityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentSecurityType\",\"path\":\"DocumentSecurityType.cdm.json/DocumentSecurityType\"},\"description\":\"A means or method of securing the document.\\n\\nEx:\\n- password\\n- URL access\\n- encrypted/password \\n- none\",\"primaryKey\":[\"DocumentSecurityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentSecurityType.cdm.json/DocumentSecurityType\",\"name\":\"DocumentSecurityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Security Type.\",\"isNullable\":false,\"name\":\"DocumentSecurityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentSecurityType.cdm.json/DocumentSecurityType\",\"name\":\"DocumentSecurityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Document Security Type.\",\"isNullable\":true,\"name\":\"DocumentSecurityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentSecurityType.cdm.json/DocumentSecurityType\",\"name\":\"DocumentSecurityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Document Security Type.\",\"isNullable\":true,\"name\":\"DocumentSecurityTypeDescription\"}]}}}",
+			"Description": "A means or method of securing the document.\n\nEx:\n- password\n- URL access\n- encrypted/password \n- none",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentSecurityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sjlnkvaphv",
+	"properties": {
+		"Name": "relationship-sjlnkvaphv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MedicalTest",
+		"ToTableName": "EncounterTestGenomicInformation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MedicalTestId",
+				"ToColumnName": "MedicalTestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MedicalTest.cdm.json/MedicalTest\",\"toEntity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"joinPairs\":[{\"fromAttribute\":\"MedicalTestId\",\"toAttribute\":\"MedicalTestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

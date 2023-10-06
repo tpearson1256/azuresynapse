@@ -1,0 +1,167 @@
+{
+	"name": "EncounterTestRelatedParty",
+	"properties": {
+		"Name": "EncounterTestRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A party that is related to an encounter test for the indicated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestId",
+					"Description": "The unique identifier of a Medical Test.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty",
+						"Name": "MedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Party Encounter Test Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty",
+						"Name": "EncounterTestPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RelationshipPeriodStartTimestamp",
+					"Description": "The period start timestamp of the relationship.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty",
+						"Name": "RelationshipPeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RelationshipPeriodEndTimestamp",
+					"Description": "The period end timestamp of the relationship.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty",
+						"Name": "RelationshipPeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding the test party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty",
+						"Name": "TestPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestRelatedParty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestId\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"MedicalTestId\"},\"PartyId\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"PartyId\"},\"EncounterTestPartyRelationshipTypeId\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"EncounterTestPartyRelationshipTypeId\"},\"RelationshipPeriodStartTimestamp\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"RelationshipPeriodStartTimestamp\"},\"RelationshipPeriodEndTimestamp\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"RelationshipPeriodEndTimestamp\"},\"TestPartyRelationshipNote\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"TestPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestRelatedParty\",\"path\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\"},\"description\":\"A party that is related to an encounter test for the indicated period.\",\"primaryKey\":[\"MedicalTestId\",\"PartyId\",\"EncounterTestPartyRelationshipTypeId\",\"RelationshipPeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"MedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test.\",\"isNullable\":false,\"name\":\"MedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"EncounterTestPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Party Encounter Test Relationship.\",\"isNullable\":false,\"name\":\"EncounterTestPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"RelationshipPeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the relationship.\",\"isNullable\":false,\"name\":\"RelationshipPeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"RelationshipPeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the relationship.\",\"isNullable\":true,\"name\":\"RelationshipPeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"name\":\"TestPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the test party relationship.\",\"isNullable\":true,\"name\":\"TestPartyRelationshipNote\"}]}}}",
+			"Description": "A party that is related to an encounter test for the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestId,PartyId,EncounterTestPartyRelationshipTypeId,RelationshipPeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

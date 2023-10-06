@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gzeektevqs",
+	"properties": {
+		"Name": "relationship-gzeektevqs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "SampleFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceFile",
+				"ToColumnName": "ReferenceFile"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceFile\",\"toAttribute\":\"ReferenceFile\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

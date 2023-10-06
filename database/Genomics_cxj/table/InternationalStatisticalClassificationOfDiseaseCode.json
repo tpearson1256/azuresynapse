@@ -1,0 +1,166 @@
+{
+	"name": "InternationalStatisticalClassificationOfDiseaseCode",
+	"properties": {
+		"Name": "InternationalStatisticalClassificationOfDiseaseCode",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The International Statistical Classification of Diseases and Related Health Problems (most commonly known by the abbreviation ICD) provides codes to classify diseases and a wide variety of signs, symptoms, abnormal findings, complaints, social circumstances and external causes of injury or disease. Every health condition can be assigned to a unique category and given a code, up to six characters long. Such categories can include a set of similar diseases.\n\nThe ICD is a core classification of the WHO Family of International Classifications (WHO-FIC).\n\nThe United States will begin official use of ICD-10 on October 10, 2013",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IcdVersionNumber",
+					"Description": "The version number of the ICD Code.",
+					"BaseAttributeReference": {
+						"Entity": "InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode",
+						"Name": "IcdVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IcdDiseaseCode",
+					"Description": "The code identifying an ICD-defined disease.",
+					"BaseAttributeReference": {
+						"Entity": "InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode",
+						"Name": "IcdDiseaseCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IcdDiseaseName",
+					"Description": "The name of an ICD-defined disease.",
+					"BaseAttributeReference": {
+						"Entity": "InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode",
+						"Name": "IcdDiseaseName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IcdDiseaseCategoryVersionNumber",
+					"Description": "The version of the ICD Disease Code.",
+					"BaseAttributeReference": {
+						"Entity": "InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode",
+						"Name": "IcdDiseaseCategoryVersionNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IcdDiseaseCategoryId",
+					"Description": "The unique identifier of an ICD Disease Category.",
+					"BaseAttributeReference": {
+						"Entity": "InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode",
+						"Name": "IcdDiseaseCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MajorDiagnosticCategoryId",
+					"Description": "The unique identifier of a Major Diagnostic Category.",
+					"BaseAttributeReference": {
+						"Entity": "InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode",
+						"Name": "MajorDiagnosticCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/InternationalStatisticalClassificationOfDiseaseCode",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/InternationalStatisticalClassificationOfDiseaseCode",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IcdVersionNumber\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdVersionNumber\"},\"IcdDiseaseCode\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseCode\"},\"IcdDiseaseName\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseName\"},\"IcdDiseaseCategoryVersionNumber\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseCategoryVersionNumber\"},\"IcdDiseaseCategoryId\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseCategoryId\"},\"MajorDiagnosticCategoryId\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"MajorDiagnosticCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InternationalStatisticalClassificationOfDiseaseCode\",\"path\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\"},\"description\":\"The International Statistical Classification of Diseases and Related Health Problems (most commonly known by the abbreviation ICD) provides codes to classify diseases and a wide variety of signs, symptoms, abnormal findings, complaints, social circumstances and external causes of injury or disease. Every health condition can be assigned to a unique category and given a code, up to six characters long. Such categories can include a set of similar diseases.\\n\\nThe ICD is a core classification of the WHO Family of International Classifications (WHO-FIC).\\n\\nThe United States will begin official use of ICD-10 on October 10, 2013\",\"primaryKey\":[\"IcdVersionNumber\",\"IcdDiseaseCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdVersionNumber\"},\"dataType\":\"integer\",\"description\":\"The version number of the ICD Code.\",\"isNullable\":false,\"name\":\"IcdVersionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseCode\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The code identifying an ICD-defined disease.\",\"isNullable\":false,\"name\":\"IcdDiseaseCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an ICD-defined disease.\",\"isNullable\":true,\"name\":\"IcdDiseaseName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseCategoryVersionNumber\"},\"dataType\":\"integer\",\"description\":\"The version of the ICD Disease Code.\",\"isNullable\":false,\"name\":\"IcdDiseaseCategoryVersionNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"IcdDiseaseCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an ICD Disease Category.\",\"isNullable\":true,\"name\":\"IcdDiseaseCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"name\":\"MajorDiagnosticCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Major Diagnostic Category.\",\"isNullable\":true,\"name\":\"MajorDiagnosticCategoryId\"}]}}}",
+			"Description": "The International Statistical Classification of Diseases and Related Health Problems (most commonly known by the abbreviation ICD) provides codes to classify diseases and a wide variety of signs, symptoms, abnormal findings, complaints, social circumstances and external causes of injury or disease. Every health condition can be assigned to a unique category and given a code, up to six characters long. Such categories can include a set of similar diseases.\n\nThe ICD is a core classification of the WHO Family of International Classifications (WHO-FIC).\n\nThe United States will begin official use of ICD-10 on October 10, 2013",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "IcdVersionNumber,IcdDiseaseCode",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,99 @@
+{
+	"name": "ProcedureCode",
+	"properties": {
+		"Name": "ProcedureCode",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Procedure Code (CPT Code)- A code given to medical and surgical procedures and treatments.\n\nThe American Medical Association's Physicians' Current Procedural Terminology is contained in the CPT user guide. The maintenance of these codes is the responsibility of the American Medical Association with consultation from the AMA CPT Editorial Panel, Advisory Committee, and the AMA CPT Health Care Professionals Advisory Committee. Procedure codes in the CPT user guide are reviewed and revised annually. CPT codes are five-character, all numeric configurations (e.g., 99215).",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CptCode",
+					"Description": "The unique identifier of a CPT Code.",
+					"BaseAttributeReference": {
+						"Entity": "ProcedureCode.cdm.json/ProcedureCode",
+						"Name": "CptCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 5,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CptCodeDescription",
+					"Description": "The description of a CPT Code.",
+					"BaseAttributeReference": {
+						"Entity": "ProcedureCode.cdm.json/ProcedureCode",
+						"Name": "CptCodeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/ProcedureCode",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/ProcedureCode",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CptCode\":{\"entity\":\"ProcedureCode.cdm.json/ProcedureCode\",\"name\":\"CptCode\"},\"CptCodeDescription\":{\"entity\":\"ProcedureCode.cdm.json/ProcedureCode\",\"name\":\"CptCodeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProcedureCode\",\"path\":\"ProcedureCode.cdm.json/ProcedureCode\"},\"description\":\"Procedure Code (CPT Code)- A code given to medical and surgical procedures and treatments.\\n\\nThe American Medical Association's Physicians' Current Procedural Terminology is contained in the CPT user guide. The maintenance of these codes is the responsibility of the American Medical Association with consultation from the AMA CPT Editorial Panel, Advisory Committee, and the AMA CPT Health Care Professionals Advisory Committee. Procedure codes in the CPT user guide are reviewed and revised annually. CPT codes are five-character, all numeric configurations (e.g., 99215).\",\"primaryKey\":[\"CptCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProcedureCode.cdm.json/ProcedureCode\",\"name\":\"CptCode\"},\"dataType\":\"string\",\"dataTypeLength\":5,\"description\":\"The unique identifier of a CPT Code.\",\"isNullable\":false,\"name\":\"CptCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProcedureCode.cdm.json/ProcedureCode\",\"name\":\"CptCodeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a CPT Code.\",\"isNullable\":true,\"name\":\"CptCodeDescription\"}]}}}",
+			"Description": "Procedure Code (CPT Code)- A code given to medical and surgical procedures and treatments.\n\nThe American Medical Association's Physicians' Current Procedural Terminology is contained in the CPT user guide. The maintenance of these codes is the responsibility of the American Medical Association with consultation from the AMA CPT Editorial Panel, Advisory Committee, and the AMA CPT Health Care Professionals Advisory Committee. Procedure codes in the CPT user guide are reviewed and revised annually. CPT codes are five-character, all numeric configurations (e.g., 99215).",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "CptCode",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

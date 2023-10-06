@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jcbvivfiyg",
+	"properties": {
+		"Name": "relationship-jcbvivfiyg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "DataLineAlternateAlle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "Pos",
+				"ToColumnName": "Pos"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"DataLineAlternateAlle.cdm.json/DataLineAlternateAlle\",\"joinPairs\":[{\"fromAttribute\":\"Pos\",\"toAttribute\":\"Pos\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

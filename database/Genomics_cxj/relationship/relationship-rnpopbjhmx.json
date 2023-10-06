@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rnpopbjhmx",
+	"properties": {
+		"Name": "relationship-rnpopbjhmx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfFileFormat",
+		"ToTableName": "VcfDataLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceFile",
+				"ToColumnName": "ReferenceFile"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfFileFormat.cdm.json/VcfFileFormat\",\"toEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceFile\",\"toAttribute\":\"ReferenceFile\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

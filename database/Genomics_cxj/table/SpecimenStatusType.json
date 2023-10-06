@@ -1,0 +1,115 @@
+{
+	"name": "SpecimenStatusType",
+	"properties": {
+		"Name": "SpecimenStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A status type that may be associated with a specimen.\n\nEx:\n- Awaiting results\n- Completed\n- Inconclusive/retest required\n- Indecisive results\n- N/A\n- Performed\n- Scheduled\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenStatusTypeId",
+					"Description": "The unique identifier of a specimen status type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenStatusType.cdm.json/SpecimenStatusType",
+						"Name": "SpecimenStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenStatusTypeName",
+					"Description": "The name of a specimen status type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenStatusType.cdm.json/SpecimenStatusType",
+						"Name": "SpecimenStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenStatusTypeDescription",
+					"Description": "The description of a specimen status type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenStatusType.cdm.json/SpecimenStatusType",
+						"Name": "SpecimenStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenStatusType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenStatusTypeId\":{\"entity\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\",\"name\":\"SpecimenStatusTypeId\"},\"SpecimenStatusTypeName\":{\"entity\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\",\"name\":\"SpecimenStatusTypeName\"},\"SpecimenStatusTypeDescription\":{\"entity\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\",\"name\":\"SpecimenStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SpecimenStatusType\",\"path\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\"},\"description\":\"A status type that may be associated with a specimen.\\n\\nEx:\\n- Awaiting results\\n- Completed\\n- Inconclusive/retest required\\n- Indecisive results\\n- N/A\\n- Performed\\n- Scheduled\\n- Unknown\",\"primaryKey\":[\"SpecimenStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\",\"name\":\"SpecimenStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a specimen status type.\",\"isNullable\":false,\"name\":\"SpecimenStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\",\"name\":\"SpecimenStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a specimen status type.\",\"isNullable\":true,\"name\":\"SpecimenStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenStatusType.cdm.json/SpecimenStatusType\",\"name\":\"SpecimenStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a specimen status type.\",\"isNullable\":true,\"name\":\"SpecimenStatusTypeDescription\"}]}}}",
+			"Description": "A status type that may be associated with a specimen.\n\nEx:\n- Awaiting results\n- Completed\n- Inconclusive/retest required\n- Indecisive results\n- N/A\n- Performed\n- Scheduled\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenStatusTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

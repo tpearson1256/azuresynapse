@@ -1,0 +1,204 @@
+{
+	"name": "Fastq",
+	"properties": {
+		"Name": "Fastq",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "FASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity.\n\nIt was originally developed at the Welcome Trust Sanger Institute to bundle a FASTA sequence and its quality data, but has recently become the de facto standard for storing the output of high-throughput sequencing instruments such as the Illumina Genome Analyzer.\n\nFASTQ was conceived to solve a specific problem of FASTA files: when sequencing, the confidence in a given base call (that is, the identity of a nucleotide) varies. This is expressed in the Phred quality score. FASTA had no standardized way of encoding this. By contrast, a FASTQ record contains a sequence of quality scores for each nucleotide.\n\nA FASTQ record has the following format:\nA line starting with @, containing the sequence ID.\nOne or more lines that contain the sequence.\nA new line starting with the character +, and being either empty or repeating the sequence ID.\nOne or more lines that contain the quality scores.\n\nwhere:\n\nA FASTQ file usually uses four lines per sequence.\n1 - a '@' character, followed by a sequence identifier and an optional description\n2 - the raw sequence letters.\n3 - a '+' character, optionally followed by the same sequence identifier (and any description)\n4 - quality values for the sequence in Line 2\n\nHere's an example of a FASTQ file with two records:\n\n@071112_SLXA-EAS1_s_7:5:1:817:345\nGGGTGATGGCCGCTGCCGATGGCGTC\nAAATCCCACC\n+\nIIIIIIIIIIIIIIIIIIIIIIIIII\nIIII9IG9IC\n@071112_SLXA-EAS1_s_7:5:1:801:338\nGTTCAGGGATACGACGTTTGTATTTTAAGAATCTGA\n+\nIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBI\nFASTQ files are mostly used to store short-read data from high-throughput sequencing experiments. As a consequence, the sequence and quality scores are usually put into a single line each, and indeed many tools assume that each record in a FASTQ file is exactly four lines long, even though this isn't guaranteed.\n\nAs for FASTA, the format of the sequence ID isn't standardized, but different producers of FASTQ use fixed notations that follow strict conventions.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastqFileFormatDescription",
+					"Description": "A description of the FASTQ file format.\n\nFASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity.\n\nIt was originally developed at the Welcome Trust Sanger Institute to bundle a FASTA sequence and its quality data, but has recently become the de facto standard for storing the output of high-throughput sequencing instruments such as the Illumina Genome Analyzer.\n\nFASTQ was conceived to solve a specific problem of FASTA files: when sequencing, the confidence in a given base call (that is, the identity of a nucleotide) varies. This is expressed in the Phred quality score. FASTA had no standardized way of encoding this. By contrast, a FASTQ record contains a sequence of quality scores for each nucleotide.\n\nA FASTQ record has the following format:\n\nA line starting with @, containing the sequence ID.\nOne or more lines that contain the sequence.\nA new line starting with the character +, and being either empty or repeating the sequence ID.\nOne or more lines that contain the quality scores.\nHere's an example of a FASTQ file with two records:",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "FastqFileFormatDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastQLine1Sequence",
+					"Description": "Line 1 begins with a '@' character and is followed by a sequence identifier and an optional description (like a FASTA title line).",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "FastQLine1Sequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastQLine2Sequence",
+					"Description": "Line 2 is the raw sequence letters.",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "FastQLine2Sequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastQLine3Sequence",
+					"Description": "Line 3 begins with a '+' character and is optionally followed by the same sequence identifier (and any description) again.",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "FastQLine3Sequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastQLine4Sequence",
+					"Description": "Line 4 encodes the quality values for the sequence in Line 2, and must contain the same number of symbols as letters in the sequence.",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "FastQLine4Sequence"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastqLineSequenceQualityTypeId",
+					"Description": "The unique identifier of a FASTQ line sequence quality type.",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "FastqLineSequenceQualityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastqFileFormatNote",
+					"Description": "A note, comment or additional information regarding the FASTQ file format.",
+					"BaseAttributeReference": {
+						"Entity": "Fastq.cdm.json/Fastq",
+						"Name": "FastqFileFormatNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Fastq",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Fastq",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"GeneSequencingFileFormatId\"},\"FastqFileFormatDescription\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastqFileFormatDescription\"},\"FastQLine1Sequence\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine1Sequence\"},\"FastQLine2Sequence\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine2Sequence\"},\"FastQLine3Sequence\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine3Sequence\"},\"FastQLine4Sequence\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine4Sequence\"},\"FastqLineSequenceQualityTypeId\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastqLineSequenceQualityTypeId\"},\"FastqFileFormatNote\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastqFileFormatNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Fastq\",\"path\":\"Fastq.cdm.json/Fastq\"},\"description\":\"FASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity.\\n\\nIt was originally developed at the Welcome Trust Sanger Institute to bundle a FASTA sequence and its quality data, but has recently become the de facto standard for storing the output of high-throughput sequencing instruments such as the Illumina Genome Analyzer.\\n\\nFASTQ was conceived to solve a specific problem of FASTA files: when sequencing, the confidence in a given base call (that is, the identity of a nucleotide) varies. This is expressed in the Phred quality score. FASTA had no standardized way of encoding this. By contrast, a FASTQ record contains a sequence of quality scores for each nucleotide.\\n\\nA FASTQ record has the following format:\\nA line starting with @, containing the sequence ID.\\nOne or more lines that contain the sequence.\\nA new line starting with the character +, and being either empty or repeating the sequence ID.\\nOne or more lines that contain the quality scores.\\n\\nwhere:\\n\\nA FASTQ file usually uses four lines per sequence.\\n1 - a '@' character, followed by a sequence identifier and an optional description\\n2 - the raw sequence letters.\\n3 - a '+' character, optionally followed by the same sequence identifier (and any description)\\n4 - quality values for the sequence in Line 2\\n\\nHere's an example of a FASTQ file with two records:\\n\\n@071112_SLXA-EAS1_s_7:5:1:817:345\\nGGGTGATGGCCGCTGCCGATGGCGTC\\nAAATCCCACC\\n+\\nIIIIIIIIIIIIIIIIIIIIIIIIII\\nIIII9IG9IC\\n@071112_SLXA-EAS1_s_7:5:1:801:338\\nGTTCAGGGATACGACGTTTGTATTTTAAGAATCTGA\\n+\\nIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBI\\nFASTQ files are mostly used to store short-read data from high-throughput sequencing experiments. As a consequence, the sequence and quality scores are usually put into a single line each, and indeed many tools assume that each record in a FASTQ file is exactly four lines long, even though this isn't guaranteed.\\n\\nAs for FASTA, the format of the sequence ID isn't standardized, but different producers of FASTQ use fixed notations that follow strict conventions.\",\"primaryKey\":[\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastqFileFormatDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the FASTQ file format.\\n\\nFASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity.\\n\\nIt was originally developed at the Welcome Trust Sanger Institute to bundle a FASTA sequence and its quality data, but has recently become the de facto standard for storing the output of high-throughput sequencing instruments such as the Illumina Genome Analyzer.\\n\\nFASTQ was conceived to solve a specific problem of FASTA files: when sequencing, the confidence in a given base call (that is, the identity of a nucleotide) varies. This is expressed in the Phred quality score. FASTA had no standardized way of encoding this. By contrast, a FASTQ record contains a sequence of quality scores for each nucleotide.\\n\\nA FASTQ record has the following format:\\n\\nA line starting with @, containing the sequence ID.\\nOne or more lines that contain the sequence.\\nA new line starting with the character +, and being either empty or repeating the sequence ID.\\nOne or more lines that contain the quality scores.\\nHere's an example of a FASTQ file with two records:\",\"isNullable\":true,\"name\":\"FastqFileFormatDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine1Sequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Line 1 begins with a '@' character and is followed by a sequence identifier and an optional description (like a FASTA title line).\",\"isNullable\":true,\"name\":\"FastQLine1Sequence\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine2Sequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Line 2 is the raw sequence letters.\",\"isNullable\":true,\"name\":\"FastQLine2Sequence\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine3Sequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Line 3 begins with a '+' character and is optionally followed by the same sequence identifier (and any description) again.\",\"isNullable\":true,\"name\":\"FastQLine3Sequence\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastQLine4Sequence\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Line 4 encodes the quality values for the sequence in Line 2, and must contain the same number of symbols as letters in the sequence.\",\"isNullable\":true,\"name\":\"FastQLine4Sequence\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastqLineSequenceQualityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a FASTQ line sequence quality type.\",\"isNullable\":true,\"name\":\"FastqLineSequenceQualityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Fastq.cdm.json/Fastq\",\"name\":\"FastqFileFormatNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the FASTQ file format.\",\"isNullable\":true,\"name\":\"FastqFileFormatNote\"}]}}}",
+			"Description": "FASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity.\n\nIt was originally developed at the Welcome Trust Sanger Institute to bundle a FASTA sequence and its quality data, but has recently become the de facto standard for storing the output of high-throughput sequencing instruments such as the Illumina Genome Analyzer.\n\nFASTQ was conceived to solve a specific problem of FASTA files: when sequencing, the confidence in a given base call (that is, the identity of a nucleotide) varies. This is expressed in the Phred quality score. FASTA had no standardized way of encoding this. By contrast, a FASTQ record contains a sequence of quality scores for each nucleotide.\n\nA FASTQ record has the following format:\nA line starting with @, containing the sequence ID.\nOne or more lines that contain the sequence.\nA new line starting with the character +, and being either empty or repeating the sequence ID.\nOne or more lines that contain the quality scores.\n\nwhere:\n\nA FASTQ file usually uses four lines per sequence.\n1 - a '@' character, followed by a sequence identifier and an optional description\n2 - the raw sequence letters.\n3 - a '+' character, optionally followed by the same sequence identifier (and any description)\n4 - quality values for the sequence in Line 2\n\nHere's an example of a FASTQ file with two records:\n\n@071112_SLXA-EAS1_s_7:5:1:817:345\nGGGTGATGGCCGCTGCCGATGGCGTC\nAAATCCCACC\n+\nIIIIIIIIIIIIIIIIIIIIIIIIII\nIIII9IG9IC\n@071112_SLXA-EAS1_s_7:5:1:801:338\nGTTCAGGGATACGACGTTTGTATTTTAAGAATCTGA\n+\nIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBI\nFASTQ files are mostly used to store short-read data from high-throughput sequencing experiments. As a consequence, the sequence and quality scores are usually put into a single line each, and indeed many tools assume that each record in a FASTQ file is exactly four lines long, even though this isn't guaranteed.\n\nAs for FASTA, the format of the sequence ID isn't standardized, but different producers of FASTQ use fixed notations that follow strict conventions.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gykwvwpban",
+	"properties": {
+		"Name": "relationship-gykwvwpban",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFile",
+		"ToTableName": "GeneSequencingFileRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FileId",
+				"ToColumnName": "FileId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFile.cdm.json/GeneSequencingFile\",\"toEntity\":\"GeneSequencingFileRelatedParty.cdm.json/GeneSequencingFileRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"FileId\",\"toAttribute\":\"FileId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

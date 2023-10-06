@@ -1,0 +1,115 @@
+{
+	"name": "FastaNucleicAcidCode",
+	"properties": {
+		"Name": "FastaNucleicAcidCode",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The nucleic acid codes used by the FASTA file format.\n\nA --> adenosine          \nM --> A C (amino)\nC --> cytidine            \nS --> G C (strong)\nG --> guanine             \nW --> A T (weak)\nT --> thymidine           \nB --> G T C\nU --> uridine            \n D --> G A T R --> G A (purine)       \n H --> A C T\nY --> T C (pyrimidine)    \nV --> G C A K --> G T (keto)         \n N --> A G C T (any)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FastaNucleicAcidCode",
+					"Description": "The FASTA nucleic acid code.",
+					"BaseAttributeReference": {
+						"Entity": "FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode",
+						"Name": "FastaNucleicAcidCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastaNucleicAcidName",
+					"Description": "The FASTA nucleic acid name.",
+					"BaseAttributeReference": {
+						"Entity": "FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode",
+						"Name": "FastaNucleicAcidName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FastaNucleicAcidDescription",
+					"Description": "The FASTA nucleic acid description.",
+					"BaseAttributeReference": {
+						"Entity": "FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode",
+						"Name": "FastaNucleicAcidDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FastaNucleicAcidCode",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FastaNucleicAcidCode",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FastaNucleicAcidCode\":{\"entity\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\",\"name\":\"FastaNucleicAcidCode\"},\"FastaNucleicAcidName\":{\"entity\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\",\"name\":\"FastaNucleicAcidName\"},\"FastaNucleicAcidDescription\":{\"entity\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\",\"name\":\"FastaNucleicAcidDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FastaNucleicAcidCode\",\"path\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\"},\"description\":\"The nucleic acid codes used by the FASTA file format.\\n\\nA --> adenosine          \\nM --> A C (amino)\\nC --> cytidine            \\nS --> G C (strong)\\nG --> guanine             \\nW --> A T (weak)\\nT --> thymidine           \\nB --> G T C\\nU --> uridine            \\n D --> G A T R --> G A (purine)       \\n H --> A C T\\nY --> T C (pyrimidine)    \\nV --> G C A K --> G T (keto)         \\n N --> A G C T (any)\",\"primaryKey\":[\"FastaNucleicAcidCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\",\"name\":\"FastaNucleicAcidCode\"},\"dataType\":\"integer\",\"description\":\"The FASTA nucleic acid code.\",\"isNullable\":false,\"name\":\"FastaNucleicAcidCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\",\"name\":\"FastaNucleicAcidName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The FASTA nucleic acid name.\",\"isNullable\":true,\"name\":\"FastaNucleicAcidName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FastaNucleicAcidCode.cdm.json/FastaNucleicAcidCode\",\"name\":\"FastaNucleicAcidDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The FASTA nucleic acid description.\",\"isNullable\":true,\"name\":\"FastaNucleicAcidDescription\"}]}}}",
+			"Description": "The nucleic acid codes used by the FASTA file format.\n\nA --> adenosine          \nM --> A C (amino)\nC --> cytidine            \nS --> G C (strong)\nG --> guanine             \nW --> A T (weak)\nT --> thymidine           \nB --> G T C\nU --> uridine            \n D --> G A T R --> G A (purine)       \n H --> A C T\nY --> T C (pyrimidine)    \nV --> G C A K --> G T (keto)         \n N --> A G C T (any)",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "FastaNucleicAcidCode",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

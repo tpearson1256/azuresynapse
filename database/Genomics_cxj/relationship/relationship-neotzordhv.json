@@ -1,0 +1,26 @@
+{
+	"name": "relationship-neotzordhv",
+	"properties": {
+		"Name": "relationship-neotzordhv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "TestPanel",
+		"ToTableName": "TestPanelTestType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TestPanelId",
+				"ToColumnName": "TestPanelId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"TestPanel.cdm.json/TestPanel\",\"toEntity\":\"TestPanelTestType.cdm.json/TestPanelTestType\",\"joinPairs\":[{\"fromAttribute\":\"TestPanelId\",\"toAttribute\":\"TestPanelId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,115 @@
+{
+	"name": "MajorDiagnosticCategory",
+	"properties": {
+		"Name": "MajorDiagnosticCategory",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The Major Diagnostic Categories (MDC) are formed by dividing all possible principle diagnoses (ICD) into 25 mutually exclusive diagnosis areas. The diagnoses in each MDC correspond to a single organ system or etiology. \n\nThe following is a List of Major Diagnostic Categories:\n\nMDC  Description \n0    Pre-MDC\n1    Nervous System\n2    Eye\n3    Ear, Nose, Mouth And Throat\n4    Respiratory System\n5    Circulatory System\n6    Digestive System\n7    Hepatobiliary System And Pancreas\n8    Musculoskeletal System And Connective Tissue\n9    Skin, Subcutaneous Tissue And Breast\n10   Endocrine, Nutritional And Metabolic System\n11   Kidney And Urinary Tract\n12   Male Reproductive System\n13   Female Reproductive System\n14   Pregnancy, Childbirth And Puerperium\n15   Newborn And Other Neonates (Perinatal Period)\n16   Blood and Blood Forming Organs and Immunological Disorders\n17   Myeloproliferative DDs (Poorly Differentiated Neoplasms)\n18   Infectious and Parasitic DDs\n19   Mental Diseases and Disorders\n20   Alcohol/Drug Use or Induced Mental Disorders\n21   Injuries, Poison And Toxic Effect of Drugs\n22   Burns\n23   Factors Influencing Health Status\n24   Multiple Significant Trauma\n25   Human Immunodeficiency Virus Infection",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MajorDiagnosticCategoryId",
+					"Description": "The unique identifier of a Major Diagnostic Category.",
+					"BaseAttributeReference": {
+						"Entity": "MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory",
+						"Name": "MajorDiagnosticCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MajorDiagnosticCategoryName",
+					"Description": "The name of a Major Diagnostic Category.",
+					"BaseAttributeReference": {
+						"Entity": "MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory",
+						"Name": "MajorDiagnosticCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MajorDiagnosticCategoryDescription",
+					"Description": "The description of a Major Diagnostic Category.",
+					"BaseAttributeReference": {
+						"Entity": "MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory",
+						"Name": "MajorDiagnosticCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MajorDiagnosticCategory",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MajorDiagnosticCategory",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MajorDiagnosticCategoryId\":{\"entity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"name\":\"MajorDiagnosticCategoryId\"},\"MajorDiagnosticCategoryName\":{\"entity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"name\":\"MajorDiagnosticCategoryName\"},\"MajorDiagnosticCategoryDescription\":{\"entity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"name\":\"MajorDiagnosticCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MajorDiagnosticCategory\",\"path\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\"},\"description\":\"The Major Diagnostic Categories (MDC) are formed by dividing all possible principle diagnoses (ICD) into 25 mutually exclusive diagnosis areas. The diagnoses in each MDC correspond to a single organ system or etiology. \\n\\nThe following is a List of Major Diagnostic Categories:\\n\\nMDC  Description \\n0    Pre-MDC\\n1    Nervous System\\n2    Eye\\n3    Ear, Nose, Mouth And Throat\\n4    Respiratory System\\n5    Circulatory System\\n6    Digestive System\\n7    Hepatobiliary System And Pancreas\\n8    Musculoskeletal System And Connective Tissue\\n9    Skin, Subcutaneous Tissue And Breast\\n10   Endocrine, Nutritional And Metabolic System\\n11   Kidney And Urinary Tract\\n12   Male Reproductive System\\n13   Female Reproductive System\\n14   Pregnancy, Childbirth And Puerperium\\n15   Newborn And Other Neonates (Perinatal Period)\\n16   Blood and Blood Forming Organs and Immunological Disorders\\n17   Myeloproliferative DDs (Poorly Differentiated Neoplasms)\\n18   Infectious and Parasitic DDs\\n19   Mental Diseases and Disorders\\n20   Alcohol/Drug Use or Induced Mental Disorders\\n21   Injuries, Poison And Toxic Effect of Drugs\\n22   Burns\\n23   Factors Influencing Health Status\\n24   Multiple Significant Trauma\\n25   Human Immunodeficiency Virus Infection\",\"primaryKey\":[\"MajorDiagnosticCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"name\":\"MajorDiagnosticCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Major Diagnostic Category.\",\"isNullable\":false,\"name\":\"MajorDiagnosticCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"name\":\"MajorDiagnosticCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Major Diagnostic Category.\",\"isNullable\":true,\"name\":\"MajorDiagnosticCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MajorDiagnosticCategory.cdm.json/MajorDiagnosticCategory\",\"name\":\"MajorDiagnosticCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Major Diagnostic Category.\",\"isNullable\":true,\"name\":\"MajorDiagnosticCategoryDescription\"}]}}}",
+			"Description": "The Major Diagnostic Categories (MDC) are formed by dividing all possible principle diagnoses (ICD) into 25 mutually exclusive diagnosis areas. The diagnoses in each MDC correspond to a single organ system or etiology. \n\nThe following is a List of Major Diagnostic Categories:\n\nMDC  Description \n0    Pre-MDC\n1    Nervous System\n2    Eye\n3    Ear, Nose, Mouth And Throat\n4    Respiratory System\n5    Circulatory System\n6    Digestive System\n7    Hepatobiliary System And Pancreas\n8    Musculoskeletal System And Connective Tissue\n9    Skin, Subcutaneous Tissue And Breast\n10   Endocrine, Nutritional And Metabolic System\n11   Kidney And Urinary Tract\n12   Male Reproductive System\n13   Female Reproductive System\n14   Pregnancy, Childbirth And Puerperium\n15   Newborn And Other Neonates (Perinatal Period)\n16   Blood and Blood Forming Organs and Immunological Disorders\n17   Myeloproliferative DDs (Poorly Differentiated Neoplasms)\n18   Infectious and Parasitic DDs\n19   Mental Diseases and Disorders\n20   Alcohol/Drug Use or Induced Mental Disorders\n21   Injuries, Poison And Toxic Effect of Drugs\n22   Burns\n23   Factors Influencing Health Status\n24   Multiple Significant Trauma\n25   Human Immunodeficiency Virus Infection",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MajorDiagnosticCategoryId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

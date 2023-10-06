@@ -1,0 +1,115 @@
+{
+	"name": "DocumentAccessMethodType",
+	"properties": {
+		"Name": "DocumentAccessMethodType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A means or method of accessing the document.\n\nEx:\n- Acrobat Reader\n- Firefox\n- Google Chrome\n- HPGL Viewer\n- Microsoft Edge",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentAccessMethodTypeId",
+					"Description": "The unique identifier of a document access method.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAccessMethodType.cdm.json/DocumentAccessMethodType",
+						"Name": "DocumentAccessMethodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentAccessMethodTypeName",
+					"Description": "The name of a document access method.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAccessMethodType.cdm.json/DocumentAccessMethodType",
+						"Name": "DocumentAccessMethodTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentAccessMethodTypeDescription",
+					"Description": "The description of a document access method.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAccessMethodType.cdm.json/DocumentAccessMethodType",
+						"Name": "DocumentAccessMethodTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentAccessMethodType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentAccessMethodType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentAccessMethodTypeId\":{\"entity\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\",\"name\":\"DocumentAccessMethodTypeId\"},\"DocumentAccessMethodTypeName\":{\"entity\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\",\"name\":\"DocumentAccessMethodTypeName\"},\"DocumentAccessMethodTypeDescription\":{\"entity\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\",\"name\":\"DocumentAccessMethodTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentAccessMethodType\",\"path\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\"},\"description\":\"A means or method of accessing the document.\\n\\nEx:\\n- Acrobat Reader\\n- Firefox\\n- Google Chrome\\n- HPGL Viewer\\n- Microsoft Edge\",\"primaryKey\":[\"DocumentAccessMethodTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\",\"name\":\"DocumentAccessMethodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a document access method.\",\"isNullable\":false,\"name\":\"DocumentAccessMethodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\",\"name\":\"DocumentAccessMethodTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a document access method.\",\"isNullable\":true,\"name\":\"DocumentAccessMethodTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAccessMethodType.cdm.json/DocumentAccessMethodType\",\"name\":\"DocumentAccessMethodTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a document access method.\",\"isNullable\":true,\"name\":\"DocumentAccessMethodTypeDescription\"}]}}}",
+			"Description": "A means or method of accessing the document.\n\nEx:\n- Acrobat Reader\n- Firefox\n- Google Chrome\n- HPGL Viewer\n- Microsoft Edge",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentAccessMethodTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

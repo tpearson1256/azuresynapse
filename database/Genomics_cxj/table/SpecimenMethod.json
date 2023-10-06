@@ -1,0 +1,115 @@
+{
+	"name": "SpecimenMethod",
+	"properties": {
+		"Name": "SpecimenMethod",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The method by which the specimen is obtained.\n\nEx:\n- Throat culture\n- Fluid specimen\n- Needle specimen\n- Negative stain\n- Ultramicrotome\n- Catheter urine culture\n- Cheek-scraping\n- Mouthwash\n- Chewing gum\n- Spit-up\n- Skin-scraping\n- Blood Sample\n- Hair Sample\n- Skin Sample\n- Amniotic Fluid Sample",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenMethodId",
+					"Description": "The unique identifier of a Specimen Method.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenMethod.cdm.json/SpecimenMethod",
+						"Name": "SpecimenMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenMethodName",
+					"Description": "The name of a Specimen Method.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenMethod.cdm.json/SpecimenMethod",
+						"Name": "SpecimenMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenMethodDescription",
+					"Description": "The description of a Specimen Method.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenMethod.cdm.json/SpecimenMethod",
+						"Name": "SpecimenMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenMethod",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenMethod",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenMethodId\":{\"entity\":\"SpecimenMethod.cdm.json/SpecimenMethod\",\"name\":\"SpecimenMethodId\"},\"SpecimenMethodName\":{\"entity\":\"SpecimenMethod.cdm.json/SpecimenMethod\",\"name\":\"SpecimenMethodName\"},\"SpecimenMethodDescription\":{\"entity\":\"SpecimenMethod.cdm.json/SpecimenMethod\",\"name\":\"SpecimenMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SpecimenMethod\",\"path\":\"SpecimenMethod.cdm.json/SpecimenMethod\"},\"description\":\"The method by which the specimen is obtained.\\n\\nEx:\\n- Throat culture\\n- Fluid specimen\\n- Needle specimen\\n- Negative stain\\n- Ultramicrotome\\n- Catheter urine culture\\n- Cheek-scraping\\n- Mouthwash\\n- Chewing gum\\n- Spit-up\\n- Skin-scraping\\n- Blood Sample\\n- Hair Sample\\n- Skin Sample\\n- Amniotic Fluid Sample\",\"primaryKey\":[\"SpecimenMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenMethod.cdm.json/SpecimenMethod\",\"name\":\"SpecimenMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen Method.\",\"isNullable\":false,\"name\":\"SpecimenMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenMethod.cdm.json/SpecimenMethod\",\"name\":\"SpecimenMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Specimen Method.\",\"isNullable\":true,\"name\":\"SpecimenMethodName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenMethod.cdm.json/SpecimenMethod\",\"name\":\"SpecimenMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Specimen Method.\",\"isNullable\":true,\"name\":\"SpecimenMethodDescription\"}]}}}",
+			"Description": "The method by which the specimen is obtained.\n\nEx:\n- Throat culture\n- Fluid specimen\n- Needle specimen\n- Negative stain\n- Ultramicrotome\n- Catheter urine culture\n- Cheek-scraping\n- Mouthwash\n- Chewing gum\n- Spit-up\n- Skin-scraping\n- Blood Sample\n- Hair Sample\n- Skin Sample\n- Amniotic Fluid Sample",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenMethodId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

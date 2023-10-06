@@ -1,0 +1,595 @@
+{
+	"name": "Chromosome",
+	"properties": {
+		"Name": "Chromosome",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A chromosome is simply a very long piece of DNA that cells can easily copy. \nChromosomes are made of DNA and protein.\nIt helps keep DNA organized and compact. \n\nEvery chromosome contains a single molecule of DNA.\n\nProteins keep the DNA folded into an orderly, compact shape.\nThe largest chromosome of an organism is generally referred to as chromosome 1, the next largest as chromosome 2, and so on. \nDifferent chromosomes contain different genes. That is, each chromosome contains a specific chunk of the genome.\nEach chromosome has a constriction point called the centromere, which divides the chromosome into two sections, or \"arms.\" The short arm of the chromosome is labeled the \"p arm.\" The long arm of the chromosome is labeled the \"q arm.\"     The location of the centromere on each chromosome gives the chromosome its characteristic shape, and can be used to help describe the location of specific genes.\n\n \nNew cells get their chromosomes from old cells through cell division, or mitosis.     In preparation for mitosis, a cell makes a copy of each of its chromosomes, building replicas of each DNA molecule and the packaging proteins.    If all goes according to plan each new cell ends up with a full set of chromosomes.\nThough similar in basic appearance, different chromosomes vary slightly in size and shape. In addition, when chromosomes are stained with fluorescent dyes they develop distinctive patterns of bright and dark bands. These subtle differences enable cell biologists to distinguish different chromosomes from one another.\nHuman Chromosomes\nThe entire DNA in a human body is packaged in  23 pairs of chromosomes = 46 total.\nTwenty-two of these pairs, called autosomes, look the same in both males and females. The 23rd pair, the sex chromosomes, differ between males and females.\n\nChromosomes (and genes) are made up of the 4 letters of DNA. And cells read the letters found in stretches of DNA called genes to make proteins that help our bodies and minds run properly.\n\nThere is also DNA on the chromosome string between the genes. This DNA is called \"non-coding DNA.\"  The non-coding DNA has become useful in defining biological relationships and obtaining solid evidence in forensic laboratory evaluations.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ChromosomeId",
+					"Description": "The unique identifier of a chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "ChromosomeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeNumber",
+					"Description": "The number assigned to the Chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "ChromosomeNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfGenes",
+					"Description": "The number of genes contained in the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfGenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TotalNumberOfBasePairs",
+					"Description": "The total number of base pairs contained in the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "TotalNumberOfBasePairs"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfSequencedBasedPairs",
+					"Description": "The number of sequenced based pairs contained in the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfSequencedBasedPairs"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfShortArmBasepairs",
+					"Description": "The number of chromosome short arm 7p basepairs.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfShortArmBasepairs"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfLongArmBasepairs",
+					"Description": "The number of chromosome long arm 7q basepairs.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfLongArmBasepairs"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OverallMaleAverageGeneticSize",
+					"Description": "The overall male average genetic size.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "OverallMaleAverageGeneticSize"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "OverallFemaleAverageGeneticSize",
+					"Description": "The overall female average genetic size.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "OverallFemaleAverageGeneticSize"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AverageRecombinationLengthCmMb",
+					"Description": "The average recombination length of the chromosome in cM/MB.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "AverageRecombinationLengthCmMb"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IscnTranslocationNomenclature",
+					"Description": "The designation t(A;B)(p1;q2) is used to denote a translocation between chromosome A and chromosome B. \n\nThe information in the second set of parentheses, when given, gives the precise location within the chromosome for chromosomes A and B respectively-with p indicating the short arm of the chromosome, q indicating the long arm, and the numbers after p or q refers to regions, bands and sub-bands.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "IscnTranslocationNomenclature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FusedGeneNomenclature",
+					"Description": "The nomenclature of the fused gene.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "FusedGeneNomenclature"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfNovelGenes",
+					"Description": "The number of Novel genes associated with the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfNovelGenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfPartialGenes",
+					"Description": "The number of partial genes associated with the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfPartialGenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfPredictedGenes",
+					"Description": "The number of predicted genes associated with the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfPredictedGenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfPutativeNonCodingGenes",
+					"Description": "The number of putative non-coding genes associated with the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfPutativeNonCodingGenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfTcrGeneSegments",
+					"Description": "The number of TCR gene segments of the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfTcrGeneSegments"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfTcrPseudogenes",
+					"Description": "The number of TCR pseudogenes associated with the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfTcrPseudogenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfPseudogenes",
+					"Description": "The number of pseudogenes associated with the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfPseudogenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "NumberOfOverlappingGenes",
+					"Description": "The number of overlapping genes associated with the chromosome.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "NumberOfOverlappingGenes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PercentageOfChromosomeTranscribed",
+					"Description": "The percentage of the chromosome that has been transcribed.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "PercentageOfChromosomeTranscribed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeTelomere",
+					"Description": "Telomeres are distinctive structures found at the ends of our chromosomes. They consist of the same short DNA sequence repeated over and over again.\n\nIn humans, as well as all other vertebrates, the telomere sequence is TTAGGG.\n\nTelomeres serve three major purposes:\n\n-  They help to organize each of our 46 chromosomes in the nucleus \n\n-  They protect the ends of our chromosomes by forming a cap without which our chromosomes may end up sticking to other chromosomes.\n\n-  They allow the chromosome to be replicated properly during cell division.\n\nEvery time a cell carries out DNA replication the chromosomes are shortened by about 25-200 bases (A, C, G, or T) per replication.  However, because the ends are protected by telomeres, the only part of the chromosome that is lost, is the telomere, and the DNA is left undamaged.   Without telomeres, important DNA would be lost every time a cell divides.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "ChromosomeTelomere"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "BalancedChromosomeTranslocationIndicator",
+					"Description": "Translocations can be balanced (in an even exchange of material with no genetic information extra or missing.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "BalancedChromosomeTranslocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UnbalancedChromosomeTranslocationIndicator",
+					"Description": "Where the exchange of chromosome material is unequal resulting in extra or missing genes).",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "UnbalancedChromosomeTranslocationIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DuplicatedChromosomeIndicator",
+					"Description": "Chromosomes are single linear strands, whereas duplicated chromosomes contain two identical copies joined by a centromere.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "DuplicatedChromosomeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProkaryoticChromosomeIndicator",
+					"Description": "Prokaryotic chromosomes are single, circular, and do not contain a histone scaffold which means they are not composed of chromatin.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "ProkaryoticChromosomeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EukaryoticChromosomeIndicator",
+					"Description": "Eukaryotic chromosomes are composed of chromatin and are multiple and linear.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "EukaryoticChromosomeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UnduplicatedChromosomeIndicator",
+					"Description": "Chromosomes are single linear strands, whereas duplicated chromosomes contain two identical copies joined by a centromere.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "UnduplicatedChromosomeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AcrocentricChromosomeIndicator",
+					"Description": "Acrocentric chromosomes are those with the\ncentromere very close to the outer tip, giving the chromosome a 'V' shaped appearance. \nThe acrocentric chromosomes are numbers 13, 14, 15, 21 and 22.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "AcrocentricChromosomeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeClassificationId",
+					"Description": "The unique identifier of a chromosome classification.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "ChromosomeClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ChromosomeTypeId",
+					"Description": "The unique identifier of a chromosome type.",
+					"BaseAttributeReference": {
+						"Entity": "Chromosome.cdm.json/Chromosome",
+						"Name": "ChromosomeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Chromosome",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/Chromosome",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ChromosomeId\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeId\"},\"ChromosomeNumber\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeNumber\"},\"NumberOfGenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfGenes\"},\"TotalNumberOfBasePairs\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"TotalNumberOfBasePairs\"},\"NumberOfSequencedBasedPairs\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfSequencedBasedPairs\"},\"NumberOfShortArmBasepairs\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfShortArmBasepairs\"},\"NumberOfLongArmBasepairs\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfLongArmBasepairs\"},\"OverallMaleAverageGeneticSize\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"OverallMaleAverageGeneticSize\"},\"OverallFemaleAverageGeneticSize\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"OverallFemaleAverageGeneticSize\"},\"AverageRecombinationLengthCmMb\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"AverageRecombinationLengthCmMb\"},\"IscnTranslocationNomenclature\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"IscnTranslocationNomenclature\"},\"FusedGeneNomenclature\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"FusedGeneNomenclature\"},\"NumberOfNovelGenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfNovelGenes\"},\"NumberOfPartialGenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPartialGenes\"},\"NumberOfPredictedGenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPredictedGenes\"},\"NumberOfPutativeNonCodingGenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPutativeNonCodingGenes\"},\"NumberOfTcrGeneSegments\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfTcrGeneSegments\"},\"NumberOfTcrPseudogenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfTcrPseudogenes\"},\"NumberOfPseudogenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPseudogenes\"},\"NumberOfOverlappingGenes\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfOverlappingGenes\"},\"PercentageOfChromosomeTranscribed\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"PercentageOfChromosomeTranscribed\"},\"ChromosomeTelomere\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeTelomere\"},\"BalancedChromosomeTranslocationIndicator\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"BalancedChromosomeTranslocationIndicator\"},\"UnbalancedChromosomeTranslocationIndicator\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"UnbalancedChromosomeTranslocationIndicator\"},\"DuplicatedChromosomeIndicator\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"DuplicatedChromosomeIndicator\"},\"ProkaryoticChromosomeIndicator\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ProkaryoticChromosomeIndicator\"},\"EukaryoticChromosomeIndicator\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"EukaryoticChromosomeIndicator\"},\"UnduplicatedChromosomeIndicator\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"UnduplicatedChromosomeIndicator\"},\"AcrocentricChromosomeIndicator\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"AcrocentricChromosomeIndicator\"},\"ChromosomeClassificationId\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeClassificationId\"},\"ChromosomeTypeId\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Chromosome\",\"path\":\"Chromosome.cdm.json/Chromosome\"},\"description\":\"A chromosome is simply a very long piece of DNA that cells can easily copy. \\nChromosomes are made of DNA and protein.\\nIt helps keep DNA organized and compact. \\n\\nEvery chromosome contains a single molecule of DNA.\\n\\nProteins keep the DNA folded into an orderly, compact shape.\\nThe largest chromosome of an organism is generally referred to as chromosome 1, the next largest as chromosome 2, and so on. \\nDifferent chromosomes contain different genes. That is, each chromosome contains a specific chunk of the genome.\\nEach chromosome has a constriction point called the centromere, which divides the chromosome into two sections, or \\\"arms.\\\" The short arm of the chromosome is labeled the \\\"p arm.\\\" The long arm of the chromosome is labeled the \\\"q arm.\\\"     The location of the centromere on each chromosome gives the chromosome its characteristic shape, and can be used to help describe the location of specific genes.\\n\\n \\nNew cells get their chromosomes from old cells through cell division, or mitosis.     In preparation for mitosis, a cell makes a copy of each of its chromosomes, building replicas of each DNA molecule and the packaging proteins.    If all goes according to plan each new cell ends up with a full set of chromosomes.\\nThough similar in basic appearance, different chromosomes vary slightly in size and shape. In addition, when chromosomes are stained with fluorescent dyes they develop distinctive patterns of bright and dark bands. These subtle differences enable cell biologists to distinguish different chromosomes from one another.\\nHuman Chromosomes\\nThe entire DNA in a human body is packaged in  23 pairs of chromosomes = 46 total.\\nTwenty-two of these pairs, called autosomes, look the same in both males and females. The 23rd pair, the sex chromosomes, differ between males and females.\\n\\nChromosomes (and genes) are made up of the 4 letters of DNA. And cells read the letters found in stretches of DNA called genes to make proteins that help our bodies and minds run properly.\\n\\nThere is also DNA on the chromosome string between the genes. This DNA is called \\\"non-coding DNA.\\\"  The non-coding DNA has become useful in defining biological relationships and obtaining solid evidence in forensic laboratory evaluations.\",\"primaryKey\":[\"ChromosomeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a chromosome.\",\"isNullable\":false,\"name\":\"ChromosomeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeNumber\"},\"dataType\":\"integer\",\"description\":\"The number assigned to the Chromosome.\",\"isNullable\":true,\"name\":\"ChromosomeNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfGenes\"},\"dataType\":\"integer\",\"description\":\"The number of genes contained in the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfGenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"TotalNumberOfBasePairs\"},\"dataType\":\"integer\",\"description\":\"The total number of base pairs contained in the chromosome.\",\"isNullable\":true,\"name\":\"TotalNumberOfBasePairs\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfSequencedBasedPairs\"},\"dataType\":\"integer\",\"description\":\"The number of sequenced based pairs contained in the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfSequencedBasedPairs\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfShortArmBasepairs\"},\"dataType\":\"integer\",\"description\":\"The number of chromosome short arm 7p basepairs.\",\"isNullable\":true,\"name\":\"NumberOfShortArmBasepairs\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfLongArmBasepairs\"},\"dataType\":\"integer\",\"description\":\"The number of chromosome long arm 7q basepairs.\",\"isNullable\":true,\"name\":\"NumberOfLongArmBasepairs\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"OverallMaleAverageGeneticSize\"},\"dataType\":\"integer\",\"description\":\"The overall male average genetic size.\",\"isNullable\":true,\"name\":\"OverallMaleAverageGeneticSize\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"OverallFemaleAverageGeneticSize\"},\"dataType\":\"integer\",\"description\":\"The overall female average genetic size.\",\"isNullable\":true,\"name\":\"OverallFemaleAverageGeneticSize\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"AverageRecombinationLengthCmMb\"},\"dataType\":\"integer\",\"description\":\"The average recombination length of the chromosome in cM/MB.\",\"isNullable\":true,\"name\":\"AverageRecombinationLengthCmMb\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"IscnTranslocationNomenclature\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The designation t(A;B)(p1;q2) is used to denote a translocation between chromosome A and chromosome B. \\n\\nThe information in the second set of parentheses, when given, gives the precise location within the chromosome for chromosomes A and B respectively-with p indicating the short arm of the chromosome, q indicating the long arm, and the numbers after p or q refers to regions, bands and sub-bands.\",\"isNullable\":true,\"name\":\"IscnTranslocationNomenclature\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"FusedGeneNomenclature\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The nomenclature of the fused gene.\",\"isNullable\":true,\"name\":\"FusedGeneNomenclature\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfNovelGenes\"},\"dataType\":\"integer\",\"description\":\"The number of Novel genes associated with the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfNovelGenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPartialGenes\"},\"dataType\":\"integer\",\"description\":\"The number of partial genes associated with the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfPartialGenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPredictedGenes\"},\"dataType\":\"integer\",\"description\":\"The number of predicted genes associated with the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfPredictedGenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPutativeNonCodingGenes\"},\"dataType\":\"integer\",\"description\":\"The number of putative non-coding genes associated with the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfPutativeNonCodingGenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfTcrGeneSegments\"},\"dataType\":\"integer\",\"description\":\"The number of TCR gene segments of the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfTcrGeneSegments\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfTcrPseudogenes\"},\"dataType\":\"integer\",\"description\":\"The number of TCR pseudogenes associated with the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfTcrPseudogenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfPseudogenes\"},\"dataType\":\"integer\",\"description\":\"The number of pseudogenes associated with the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfPseudogenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"NumberOfOverlappingGenes\"},\"dataType\":\"integer\",\"description\":\"The number of overlapping genes associated with the chromosome.\",\"isNullable\":true,\"name\":\"NumberOfOverlappingGenes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"PercentageOfChromosomeTranscribed\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The percentage of the chromosome that has been transcribed.\",\"isNullable\":true,\"scale\":8,\"name\":\"PercentageOfChromosomeTranscribed\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeTelomere\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"Telomeres are distinctive structures found at the ends of our chromosomes. They consist of the same short DNA sequence repeated over and over again.\\n\\nIn humans, as well as all other vertebrates, the telomere sequence is TTAGGG.\\n\\nTelomeres serve three major purposes:\\n\\n-  They help to organize each of our 46 chromosomes in the nucleus \\n\\n-  They protect the ends of our chromosomes by forming a cap without which our chromosomes may end up sticking to other chromosomes.\\n\\n-  They allow the chromosome to be replicated properly during cell division.\\n\\nEvery time a cell carries out DNA replication the chromosomes are shortened by about 25-200 bases (A, C, G, or T) per replication.  However, because the ends are protected by telomeres, the only part of the chromosome that is lost, is the telomere, and the DNA is left undamaged.   Without telomeres, important DNA would be lost every time a cell divides.\",\"isNullable\":true,\"name\":\"ChromosomeTelomere\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"BalancedChromosomeTranslocationIndicator\"},\"dataType\":\"boolean\",\"description\":\"Translocations can be balanced (in an even exchange of material with no genetic information extra or missing.\",\"isNullable\":true,\"name\":\"BalancedChromosomeTranslocationIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"UnbalancedChromosomeTranslocationIndicator\"},\"dataType\":\"boolean\",\"description\":\"Where the exchange of chromosome material is unequal resulting in extra or missing genes).\",\"isNullable\":true,\"name\":\"UnbalancedChromosomeTranslocationIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"DuplicatedChromosomeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Chromosomes are single linear strands, whereas duplicated chromosomes contain two identical copies joined by a centromere.\",\"isNullable\":true,\"name\":\"DuplicatedChromosomeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ProkaryoticChromosomeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Prokaryotic chromosomes are single, circular, and do not contain a histone scaffold which means they are not composed of chromatin.\",\"isNullable\":true,\"name\":\"ProkaryoticChromosomeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"EukaryoticChromosomeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Eukaryotic chromosomes are composed of chromatin and are multiple and linear.\",\"isNullable\":true,\"name\":\"EukaryoticChromosomeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"UnduplicatedChromosomeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Chromosomes are single linear strands, whereas duplicated chromosomes contain two identical copies joined by a centromere.\",\"isNullable\":true,\"name\":\"UnduplicatedChromosomeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"AcrocentricChromosomeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Acrocentric chromosomes are those with the\\ncentromere very close to the outer tip, giving the chromosome a 'V' shaped appearance. \\nThe acrocentric chromosomes are numbers 13, 14, 15, 21 and 22.\",\"isNullable\":true,\"name\":\"AcrocentricChromosomeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a chromosome classification.\",\"isNullable\":true,\"name\":\"ChromosomeClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Chromosome.cdm.json/Chromosome\",\"name\":\"ChromosomeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a chromosome type.\",\"isNullable\":true,\"name\":\"ChromosomeTypeId\"}]}}}",
+			"Description": "A chromosome is simply a very long piece of DNA that cells can easily copy. \nChromosomes are made of DNA and protein.\nIt helps keep DNA organized and compact. \n\nEvery chromosome contains a single molecule of DNA.\n\nProteins keep the DNA folded into an orderly, compact shape.\nThe largest chromosome of an organism is generally referred to as chromosome 1, the next largest as chromosome 2, and so on. \nDifferent chromosomes contain different genes. That is, each chromosome contains a specific chunk of the genome.\nEach chromosome has a constriction point called the centromere, which divides the chromosome into two sections, or \"arms.\" The short arm of the chromosome is labeled the \"p arm.\" The long arm of the chromosome is labeled the \"q arm.\"     The location of the centromere on each chromosome gives the chromosome its characteristic shape, and can be used to help describe the location of specific genes.\n\n \nNew cells get their chromosomes from old cells through cell division, or mitosis.     In preparation for mitosis, a cell makes a copy of each of its chromosomes, building replicas of each DNA molecule and the packaging proteins.    If all goes according to plan each new cell ends up with a full set of chromosomes.\nThough similar in basic appearance, different chromosomes vary slightly in size and shape. In addition, when chromosomes are stained with fluorescent dyes they develop distinctive patterns of bright and dark bands. These subtle differences enable cell biologists to distinguish different chromosomes from one another.\nHuman Chromosomes\nThe entire DNA in a human body is packaged in  23 pairs of chromosomes = 46 total.\nTwenty-two of these pairs, called autosomes, look the same in both males and females. The 23rd pair, the sex chromosomes, differ between males and females.\n\nChromosomes (and genes) are made up of the 4 letters of DNA. And cells read the letters found in stretches of DNA called genes to make proteins that help our bodies and minds run properly.\n\nThere is also DNA on the chromosome string between the genes. This DNA is called \"non-coding DNA.\"  The non-coding DNA has become useful in defining biological relationships and obtaining solid evidence in forensic laboratory evaluations.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "ChromosomeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

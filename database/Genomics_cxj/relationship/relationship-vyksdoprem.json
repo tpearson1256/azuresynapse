@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vyksdoprem",
+	"properties": {
+		"Name": "relationship-vyksdoprem",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GcgFormat",
+		"ToTableName": "GcgFormatNucleicAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatId",
+				"ToColumnName": "GeneSequencingFileFormatId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GcgFormat.cdm.json/GcgFormat\",\"toEntity\":\"GcgFormatNucleicAminoAcidCodeOrder.cdm.json/GcgFormatNucleicAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatId\",\"toAttribute\":\"GeneSequencingFileFormatId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

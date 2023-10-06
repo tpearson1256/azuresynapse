@@ -1,0 +1,116 @@
+{
+	"name": "AlleleCharacteristicType",
+	"properties": {
+		"Name": "AlleleCharacteristicType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "An allele characteristic.\n\nEx:\n- Dominant Allele\n- Recessive Allele\n- Mutation Allele\n- Null Allele\n\nwhere:\n\nDominant Allele - an allele that masks the presence of a recessive allele.\n\nMutation Allele -  an alteration of genetic material such that a new variation is produced.  \n\nRecessive Allele -causes a phenotype in a homozygous genotype  \n\nNull Allele - A null allele is a mutated copy of a gene that lacks that gene's normal function. \n\nThis can be attributed to the absence of the gene product (i.e. protein, RNA etc.) at the molecular level or a non-functional gene product.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AlleleCharacteristicTypeId",
+					"Description": "The unique identifier of an Allele Characteristic Type.",
+					"BaseAttributeReference": {
+						"Entity": "AlleleCharacteristicType.cdm.json/AlleleCharacteristicType",
+						"Name": "AlleleCharacteristicTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleCharacteristicTypeName",
+					"Description": "The name of an Allele Characteristic Type.",
+					"BaseAttributeReference": {
+						"Entity": "AlleleCharacteristicType.cdm.json/AlleleCharacteristicType",
+						"Name": "AlleleCharacteristicTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AlleleCharacteristicTypeDescription",
+					"Description": "The description of an Allele Characteristic Type.",
+					"BaseAttributeReference": {
+						"Entity": "AlleleCharacteristicType.cdm.json/AlleleCharacteristicType",
+						"Name": "AlleleCharacteristicTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AlleleCharacteristicType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AlleleCharacteristicType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AlleleCharacteristicTypeId\":{\"entity\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\",\"name\":\"AlleleCharacteristicTypeId\"},\"AlleleCharacteristicTypeName\":{\"entity\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\",\"name\":\"AlleleCharacteristicTypeName\"},\"AlleleCharacteristicTypeDescription\":{\"entity\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\",\"name\":\"AlleleCharacteristicTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AlleleCharacteristicType\",\"path\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\"},\"description\":\"An allele characteristic.\\n\\nEx:\\n- Dominant Allele\\n- Recessive Allele\\n- Mutation Allele\\n- Null Allele\\n\\nwhere:\\n\\nDominant Allele - an allele that masks the presence of a recessive allele.\\n\\nMutation Allele -  an alteration of genetic material such that a new variation is produced.  \\n\\nRecessive Allele -causes a phenotype in a homozygous genotype  \\n\\nNull Allele - A null allele is a mutated copy of a gene that lacks that gene's normal function. \\n\\nThis can be attributed to the absence of the gene product (i.e. protein, RNA etc.) at the molecular level or a non-functional gene product.\",\"primaryKey\":[\"AlleleCharacteristicTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\",\"name\":\"AlleleCharacteristicTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Allele Characteristic Type.\",\"isNullable\":false,\"name\":\"AlleleCharacteristicTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\",\"name\":\"AlleleCharacteristicTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Allele Characteristic Type.\",\"isNullable\":true,\"name\":\"AlleleCharacteristicTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\",\"name\":\"AlleleCharacteristicTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Allele Characteristic Type.\",\"isNullable\":true,\"name\":\"AlleleCharacteristicTypeDescription\"}]}}}",
+			"Description": "An allele characteristic.\n\nEx:\n- Dominant Allele\n- Recessive Allele\n- Mutation Allele\n- Null Allele\n\nwhere:\n\nDominant Allele - an allele that masks the presence of a recessive allele.\n\nMutation Allele -  an alteration of genetic material such that a new variation is produced.  \n\nRecessive Allele -causes a phenotype in a homozygous genotype  \n\nNull Allele - A null allele is a mutated copy of a gene that lacks that gene's normal function. \n\nThis can be attributed to the absence of the gene product (i.e. protein, RNA etc.) at the molecular level or a non-functional gene product.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AlleleCharacteristicTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

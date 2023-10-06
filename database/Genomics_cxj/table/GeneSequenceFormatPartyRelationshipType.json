@@ -1,0 +1,115 @@
+{
+	"name": "GeneSequenceFormatPartyRelationshipType",
+	"properties": {
+		"Name": "GeneSequenceFormatPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The nature of the relationship between the gene sequence format and party.\n\nEx:\n- Developed-by Party\n- Supported-by Party\n- Maintained-by Party\n- Contact Party\n- IP Owned-by Party\n- Sold-by Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequenceFormatPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Gene Sequence Format Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType",
+						"Name": "GeneSequenceFormatPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatPartyRelationshipTypeName",
+					"Description": "The name of a Gene Sequence Format Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType",
+						"Name": "GeneSequenceFormatPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatPartyRelationshipTypeDescription",
+					"Description": "The description of a Gene Sequence Format Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType",
+						"Name": "GeneSequenceFormatPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFormatPartyRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFormatPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequenceFormatPartyRelationshipTypeId\":{\"entity\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeId\"},\"GeneSequenceFormatPartyRelationshipTypeName\":{\"entity\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeName\"},\"GeneSequenceFormatPartyRelationshipTypeDescription\":{\"entity\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequenceFormatPartyRelationshipType\",\"path\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\"},\"description\":\"The nature of the relationship between the gene sequence format and party.\\n\\nEx:\\n- Developed-by Party\\n- Supported-by Party\\n- Maintained-by Party\\n- Contact Party\\n- IP Owned-by Party\\n- Sold-by Party\",\"primaryKey\":[\"GeneSequenceFormatPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Gene Sequence Format Party Relationship Type.\",\"isNullable\":false,\"name\":\"GeneSequenceFormatPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Gene Sequence Format Party Relationship Type.\",\"isNullable\":true,\"name\":\"GeneSequenceFormatPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatPartyRelationshipType.cdm.json/GeneSequenceFormatPartyRelationshipType\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Gene Sequence Format Party Relationship Type.\",\"isNullable\":true,\"name\":\"GeneSequenceFormatPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the gene sequence format and party.\n\nEx:\n- Developed-by Party\n- Supported-by Party\n- Maintained-by Party\n- Contact Party\n- IP Owned-by Party\n- Sold-by Party",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequenceFormatPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

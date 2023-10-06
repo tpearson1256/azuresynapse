@@ -1,0 +1,115 @@
+{
+	"name": "SpecimenPartyRelationshipType",
+	"properties": {
+		"Name": "SpecimenPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The nature of the relationship between the Specimen and the party.\n\nEx:\n- Specimen Party\n- Requested-By Party\n- Authorized-by Party\n- Attending Physician\n- Read-By Party\n- Shipped-by Party\n- Received-By Party\n- Performed-by Party\n- Tested-by Party\n- Report-to Party\n- Documented-by Party\n- CC-to Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Specimen-Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType",
+						"Name": "SpecimenPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenPartyRelationshipTypeName",
+					"Description": "The name of an Specimen-Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType",
+						"Name": "SpecimenPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenPartyRelationshipTypeDescription",
+					"Description": "The description of an Specimen-Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType",
+						"Name": "SpecimenPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenPartyRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenPartyRelationshipTypeId\":{\"entity\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\",\"name\":\"SpecimenPartyRelationshipTypeId\"},\"SpecimenPartyRelationshipTypeName\":{\"entity\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\",\"name\":\"SpecimenPartyRelationshipTypeName\"},\"SpecimenPartyRelationshipTypeDescription\":{\"entity\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\",\"name\":\"SpecimenPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SpecimenPartyRelationshipType\",\"path\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\"},\"description\":\"The nature of the relationship between the Specimen and the party.\\n\\nEx:\\n- Specimen Party\\n- Requested-By Party\\n- Authorized-by Party\\n- Attending Physician\\n- Read-By Party\\n- Shipped-by Party\\n- Received-By Party\\n- Performed-by Party\\n- Tested-by Party\\n- Report-to Party\\n- Documented-by Party\\n- CC-to Party\",\"primaryKey\":[\"SpecimenPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\",\"name\":\"SpecimenPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Specimen-Party Relationship Type.\",\"isNullable\":false,\"name\":\"SpecimenPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\",\"name\":\"SpecimenPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Specimen-Party Relationship Type.\",\"isNullable\":true,\"name\":\"SpecimenPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenPartyRelationshipType.cdm.json/SpecimenPartyRelationshipType\",\"name\":\"SpecimenPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Specimen-Party Relationship Type.\",\"isNullable\":true,\"name\":\"SpecimenPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the Specimen and the party.\n\nEx:\n- Specimen Party\n- Requested-By Party\n- Authorized-by Party\n- Attending Physician\n- Read-By Party\n- Shipped-by Party\n- Received-By Party\n- Performed-by Party\n- Tested-by Party\n- Report-to Party\n- Documented-by Party\n- CC-to Party",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

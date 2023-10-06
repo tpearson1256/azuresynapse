@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vrquzgsxyc",
+	"properties": {
+		"Name": "relationship-vrquzgsxyc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SampleFormat",
+		"ToTableName": "DataLineFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceFile",
+				"ToColumnName": "ReferenceFile"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"toEntity\":\"DataLineFormat.cdm.json/DataLineFormat\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceFile\",\"toAttribute\":\"ReferenceFile\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

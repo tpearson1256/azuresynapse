@@ -1,0 +1,131 @@
+{
+	"name": "RelatedEncounterTest",
+	"properties": {
+		"Name": "RelatedEncounterTest",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The relationship of two or more encounter test(s).",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestId",
+					"Description": "The unique identifier of a Medical Test.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedEncounterTest.cdm.json/RelatedEncounterTest",
+						"Name": "MedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RelatedMedicalTestId",
+					"Description": "The unique identifier of a Medical Test.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedEncounterTest.cdm.json/RelatedEncounterTest",
+						"Name": "RelatedMedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestRelationshipNote",
+					"Description": "A note, comment or additional information regarding the related encounter test",
+					"BaseAttributeReference": {
+						"Entity": "RelatedEncounterTest.cdm.json/RelatedEncounterTest",
+						"Name": "EncounterTestRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestRelationshipTypeId",
+					"Description": "The unique identifier of an Encounter Test Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedEncounterTest.cdm.json/RelatedEncounterTest",
+						"Name": "EncounterTestRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/RelatedEncounterTest",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/RelatedEncounterTest",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestId\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"MedicalTestId\"},\"RelatedMedicalTestId\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"RelatedMedicalTestId\"},\"EncounterTestRelationshipNote\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"EncounterTestRelationshipNote\"},\"EncounterTestRelationshipTypeId\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"EncounterTestRelationshipTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedEncounterTest\",\"path\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\"},\"description\":\"The relationship of two or more encounter test(s).\",\"primaryKey\":[\"MedicalTestId\",\"RelatedMedicalTestId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"MedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test.\",\"isNullable\":false,\"name\":\"MedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"RelatedMedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test.\",\"isNullable\":false,\"name\":\"RelatedMedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"EncounterTestRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the related encounter test\",\"isNullable\":true,\"name\":\"EncounterTestRelationshipNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedEncounterTest.cdm.json/RelatedEncounterTest\",\"name\":\"EncounterTestRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Test Relationship Type.\",\"isNullable\":true,\"name\":\"EncounterTestRelationshipTypeId\"}]}}}",
+			"Description": "The relationship of two or more encounter test(s).",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestId,RelatedMedicalTestId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

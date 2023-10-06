@@ -1,0 +1,115 @@
+{
+	"name": "EncounterTestRelationshipType",
+	"properties": {
+		"Name": "EncounterTestRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The nature of the relationship between two or more Encounter Test(s).\n\nEx:\n- Original Test\n- Prerequisite Test\n- Associated Test\n- Re-do Test",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterTestRelationshipTypeId",
+					"Description": "The unique identifier of an Encounter Test Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType",
+						"Name": "EncounterTestRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestRelationshipTypeName",
+					"Description": "The name of an Encounter Test Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType",
+						"Name": "EncounterTestRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestRelationshipTypeDescription",
+					"Description": "The description of an Encounter Test Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType",
+						"Name": "EncounterTestRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterTestRelationshipTypeId\":{\"entity\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\",\"name\":\"EncounterTestRelationshipTypeId\"},\"EncounterTestRelationshipTypeName\":{\"entity\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\",\"name\":\"EncounterTestRelationshipTypeName\"},\"EncounterTestRelationshipTypeDescription\":{\"entity\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\",\"name\":\"EncounterTestRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestRelationshipType\",\"path\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\"},\"description\":\"The nature of the relationship between two or more Encounter Test(s).\\n\\nEx:\\n- Original Test\\n- Prerequisite Test\\n- Associated Test\\n- Re-do Test\",\"primaryKey\":[\"EncounterTestRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\",\"name\":\"EncounterTestRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Test Relationship Type.\",\"isNullable\":false,\"name\":\"EncounterTestRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\",\"name\":\"EncounterTestRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Encounter Test Relationship Type.\",\"isNullable\":true,\"name\":\"EncounterTestRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestRelationshipType.cdm.json/EncounterTestRelationshipType\",\"name\":\"EncounterTestRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Encounter Test Relationship Type.\",\"isNullable\":true,\"name\":\"EncounterTestRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between two or more Encounter Test(s).\n\nEx:\n- Original Test\n- Prerequisite Test\n- Associated Test\n- Re-do Test",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EncounterTestRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

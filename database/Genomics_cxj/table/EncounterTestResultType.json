@@ -1,0 +1,115 @@
+{
+	"name": "EncounterTestResultType",
+	"properties": {
+		"Name": "EncounterTestResultType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The result type of the Encounter Test.\n\nEx:\n- Normal\n- Abnormal\n- Within acceptable limits\n- Exceeds acceptable limits\n- Below acceptable limits\n- Within specifications\n- Exceeds specification\n- Inconclusive\n- Positive\n- Negative\n- As expected\n- Unknown\n- N/A\n- Additional testing required",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterTestResultTypeId",
+					"Description": "The unique identifier of an Encounter Test Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResultType.cdm.json/EncounterTestResultType",
+						"Name": "EncounterTestResultTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestResultTypeName",
+					"Description": "The name of an Encounter Test Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResultType.cdm.json/EncounterTestResultType",
+						"Name": "EncounterTestResultTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestResultTypeDescription",
+					"Description": "The description of an Encounter Test Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResultType.cdm.json/EncounterTestResultType",
+						"Name": "EncounterTestResultTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestResultType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestResultType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterTestResultTypeId\":{\"entity\":\"EncounterTestResultType.cdm.json/EncounterTestResultType\",\"name\":\"EncounterTestResultTypeId\"},\"EncounterTestResultTypeName\":{\"entity\":\"EncounterTestResultType.cdm.json/EncounterTestResultType\",\"name\":\"EncounterTestResultTypeName\"},\"EncounterTestResultTypeDescription\":{\"entity\":\"EncounterTestResultType.cdm.json/EncounterTestResultType\",\"name\":\"EncounterTestResultTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestResultType\",\"path\":\"EncounterTestResultType.cdm.json/EncounterTestResultType\"},\"description\":\"The result type of the Encounter Test.\\n\\nEx:\\n- Normal\\n- Abnormal\\n- Within acceptable limits\\n- Exceeds acceptable limits\\n- Below acceptable limits\\n- Within specifications\\n- Exceeds specification\\n- Inconclusive\\n- Positive\\n- Negative\\n- As expected\\n- Unknown\\n- N/A\\n- Additional testing required\",\"primaryKey\":[\"EncounterTestResultTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResultType.cdm.json/EncounterTestResultType\",\"name\":\"EncounterTestResultTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Test Result Type.\",\"isNullable\":false,\"name\":\"EncounterTestResultTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResultType.cdm.json/EncounterTestResultType\",\"name\":\"EncounterTestResultTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Encounter Test Result Type.\",\"isNullable\":true,\"name\":\"EncounterTestResultTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResultType.cdm.json/EncounterTestResultType\",\"name\":\"EncounterTestResultTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Encounter Test Result Type.\",\"isNullable\":true,\"name\":\"EncounterTestResultTypeDescription\"}]}}}",
+			"Description": "The result type of the Encounter Test.\n\nEx:\n- Normal\n- Abnormal\n- Within acceptable limits\n- Exceeds acceptable limits\n- Below acceptable limits\n- Within specifications\n- Exceeds specification\n- Inconclusive\n- Positive\n- Negative\n- As expected\n- Unknown\n- N/A\n- Additional testing required",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EncounterTestResultTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

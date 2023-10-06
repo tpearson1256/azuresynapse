@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zlzhtxjarj",
+	"properties": {
+		"Name": "relationship-zlzhtxjarj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SpecimenEventType",
+		"ToTableName": "SpecimenEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SpecimenEventTypeId",
+				"ToColumnName": "SpecimenEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SpecimenEventType.cdm.json/SpecimenEventType\",\"toEntity\":\"SpecimenEvent.cdm.json/SpecimenEvent\",\"joinPairs\":[{\"fromAttribute\":\"SpecimenEventTypeId\",\"toAttribute\":\"SpecimenEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,115 @@
+{
+	"name": "DocumentAvailabilityType",
+	"properties": {
+		"Name": "DocumentAvailabilityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The document availability type(s) associated with a document.\n\nEx:\n- from sponsor\n- from government organization\n- from creator\n- from www",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentAvailabilityTypeId",
+					"Description": "The unique identifier of a Document Availability Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAvailabilityType.cdm.json/DocumentAvailabilityType",
+						"Name": "DocumentAvailabilityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentAvailabilityTypeName",
+					"Description": "The name of a Document Availability Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAvailabilityType.cdm.json/DocumentAvailabilityType",
+						"Name": "DocumentAvailabilityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentAvailabilityTypeDescription",
+					"Description": "The description of a Document Availability Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentAvailabilityType.cdm.json/DocumentAvailabilityType",
+						"Name": "DocumentAvailabilityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentAvailabilityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentAvailabilityType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentAvailabilityTypeId\":{\"entity\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\",\"name\":\"DocumentAvailabilityTypeId\"},\"DocumentAvailabilityTypeName\":{\"entity\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\",\"name\":\"DocumentAvailabilityTypeName\"},\"DocumentAvailabilityTypeDescription\":{\"entity\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\",\"name\":\"DocumentAvailabilityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentAvailabilityType\",\"path\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\"},\"description\":\"The document availability type(s) associated with a document.\\n\\nEx:\\n- from sponsor\\n- from government organization\\n- from creator\\n- from www\",\"primaryKey\":[\"DocumentAvailabilityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\",\"name\":\"DocumentAvailabilityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Availability Type.\",\"isNullable\":false,\"name\":\"DocumentAvailabilityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\",\"name\":\"DocumentAvailabilityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Document Availability Type.\",\"isNullable\":true,\"name\":\"DocumentAvailabilityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentAvailabilityType.cdm.json/DocumentAvailabilityType\",\"name\":\"DocumentAvailabilityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Document Availability Type.\",\"isNullable\":true,\"name\":\"DocumentAvailabilityTypeDescription\"}]}}}",
+			"Description": "The document availability type(s) associated with a document.\n\nEx:\n- from sponsor\n- from government organization\n- from creator\n- from www",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentAvailabilityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,114 @@
+{
+	"name": "EmblFormatNucleicAminoAcidCodeOrder",
+	"properties": {
+		"Name": "EmblFormatNucleicAminoAcidCodeOrder",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The ordering of the nucleic amino acid code in the EMBL format sequence.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SequenceOrderNumber",
+					"Description": "The ordering of the nucleic acid code in the plain sequence format sequence.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder",
+						"Name": "SequenceOrderNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EmblFormatSequenceValueTypeId",
+					"Description": "The unique identifier of a EMBL format sequence value type.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder",
+						"Name": "EmblFormatSequenceValueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EmblFormatNucleicAminoAcidCodeOrder",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EmblFormatNucleicAminoAcidCodeOrder",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SequenceOrderNumber\":{\"entity\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\",\"name\":\"SequenceOrderNumber\"},\"GeneSequencingFileFormatId\":{\"entity\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\",\"name\":\"GeneSequencingFileFormatId\"},\"EmblFormatSequenceValueTypeId\":{\"entity\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\",\"name\":\"EmblFormatSequenceValueTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmblFormatNucleicAminoAcidCodeOrder\",\"path\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\"},\"description\":\"The ordering of the nucleic amino acid code in the EMBL format sequence.\",\"primaryKey\":[\"SequenceOrderNumber\",\"GeneSequencingFileFormatId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\",\"name\":\"SequenceOrderNumber\"},\"dataType\":\"integer\",\"description\":\"The ordering of the nucleic acid code in the plain sequence format sequence.\",\"isNullable\":false,\"name\":\"SequenceOrderNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\",\"name\":\"EmblFormatSequenceValueTypeId\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The unique identifier of a EMBL format sequence value type.\",\"isNullable\":false,\"name\":\"EmblFormatSequenceValueTypeId\"}]}}}",
+			"Description": "The ordering of the nucleic amino acid code in the EMBL format sequence.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SequenceOrderNumber,GeneSequencingFileFormatId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

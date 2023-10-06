@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xbodyhseom",
+	"properties": {
+		"Name": "relationship-xbodyhseom",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFile",
+		"ToTableName": "GeneSequencingFileRelatedDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FileId",
+				"ToColumnName": "FileId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFile.cdm.json/GeneSequencingFile\",\"toEntity\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\",\"joinPairs\":[{\"fromAttribute\":\"FileId\",\"toAttribute\":\"FileId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

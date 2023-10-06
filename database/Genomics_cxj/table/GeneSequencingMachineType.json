@@ -1,0 +1,115 @@
+{
+	"name": "GeneSequencingMachineType",
+	"properties": {
+		"Name": "GeneSequencingMachineType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "File types accepted by platform\n\nEx:\nIllumina - bam, fastq, qseq, fasta+qual*?, native*, srf*?\nSOLiD - bam, csfasta + QV.qual, srf*?\nRoche 454 (formerly Life Sciences) - bam, sff, fastq, fasta+qual*?\nIonTorrent - bam, sff, fastq, fasta+qual*?\nPacBio - bam, hdf5, fastq\nMinION Oxford Nanopore - hdf5, fastq\nHelicos - bam, fastq\nCapillary (Sanger) - bam, fastq*?\nCompleteGenomics - native, bam*",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingMachineTypeId",
+					"Description": "The unique identifier of a gene sequencing machine type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingMachineType.cdm.json/GeneSequencingMachineType",
+						"Name": "GeneSequencingMachineTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingMachineTypeName",
+					"Description": "The name of a gene sequencing machine type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingMachineType.cdm.json/GeneSequencingMachineType",
+						"Name": "GeneSequencingMachineTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingMachineTypeDescription",
+					"Description": "The description of a gene sequencing machine type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingMachineType.cdm.json/GeneSequencingMachineType",
+						"Name": "GeneSequencingMachineTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingMachineType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingMachineType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingMachineTypeId\":{\"entity\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\",\"name\":\"GeneSequencingMachineTypeId\"},\"GeneSequencingMachineTypeName\":{\"entity\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\",\"name\":\"GeneSequencingMachineTypeName\"},\"GeneSequencingMachineTypeDescription\":{\"entity\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\",\"name\":\"GeneSequencingMachineTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequencingMachineType\",\"path\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\"},\"description\":\"File types accepted by platform\\n\\nEx:\\nIllumina - bam, fastq, qseq, fasta+qual*?, native*, srf*?\\nSOLiD - bam, csfasta + QV.qual, srf*?\\nRoche 454 (formerly Life Sciences) - bam, sff, fastq, fasta+qual*?\\nIonTorrent - bam, sff, fastq, fasta+qual*?\\nPacBio - bam, hdf5, fastq\\nMinION Oxford Nanopore - hdf5, fastq\\nHelicos - bam, fastq\\nCapillary (Sanger) - bam, fastq*?\\nCompleteGenomics - native, bam*\",\"primaryKey\":[\"GeneSequencingMachineTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\",\"name\":\"GeneSequencingMachineTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing machine type.\",\"isNullable\":false,\"name\":\"GeneSequencingMachineTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\",\"name\":\"GeneSequencingMachineTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a gene sequencing machine type.\",\"isNullable\":true,\"name\":\"GeneSequencingMachineTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingMachineType.cdm.json/GeneSequencingMachineType\",\"name\":\"GeneSequencingMachineTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a gene sequencing machine type.\",\"isNullable\":true,\"name\":\"GeneSequencingMachineTypeDescription\"}]}}}",
+			"Description": "File types accepted by platform\n\nEx:\nIllumina - bam, fastq, qseq, fasta+qual*?, native*, srf*?\nSOLiD - bam, csfasta + QV.qual, srf*?\nRoche 454 (formerly Life Sciences) - bam, sff, fastq, fasta+qual*?\nIonTorrent - bam, sff, fastq, fasta+qual*?\nPacBio - bam, hdf5, fastq\nMinION Oxford Nanopore - hdf5, fastq\nHelicos - bam, fastq\nCapillary (Sanger) - bam, fastq*?\nCompleteGenomics - native, bam*",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingMachineTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,132 @@
+{
+	"name": "AminoAcidSynonym",
+	"properties": {
+		"Name": "AminoAcidSynonym",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Synonym names for the amino acid.\n\nEx: L-Phenylalanine\n\nSynonym\n(S)-2-Amino-3-phenylpropionic acid\n(S)-alpha-Amino-beta-phenylpropionic acid\n3-phenyl-L-alanine\nbeta-Phenyl-L-alanine\nF\nL-Phenylalanine\nPhe\nPHENYLALANINE\nß-phenyl-L-alanine",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidSynonymId",
+					"Description": "The unique identifier of an amino acid synonym.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSynonym.cdm.json/AminoAcidSynonym",
+						"Name": "AminoAcidSynonymId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SynonymName",
+					"Description": "The synonym name of the amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSynonym.cdm.json/AminoAcidSynonym",
+						"Name": "SynonymName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSynonym.cdm.json/AminoAcidSynonym",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SynonymProvidingPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidSynonym.cdm.json/AminoAcidSynonym",
+						"Name": "SynonymProvidingPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidSynonym",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidSynonym",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidSynonymId\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"AminoAcidSynonymId\"},\"SynonymName\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"SynonymName\"},\"AminoAcidId\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"AminoAcidId\"},\"SynonymProvidingPartyId\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"SynonymProvidingPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidSynonym\",\"path\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\"},\"description\":\"Synonym names for the amino acid.\\n\\nEx: L-Phenylalanine\\n\\nSynonym\\n(S)-2-Amino-3-phenylpropionic acid\\n(S)-alpha-Amino-beta-phenylpropionic acid\\n3-phenyl-L-alanine\\nbeta-Phenyl-L-alanine\\nF\\nL-Phenylalanine\\nPhe\\nPHENYLALANINE\\nß-phenyl-L-alanine\",\"primaryKey\":[\"AminoAcidSynonymId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"AminoAcidSynonymId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid synonym.\",\"isNullable\":false,\"name\":\"AminoAcidSynonymId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"SynonymName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The synonym name of the amino acid.\",\"isNullable\":true,\"name\":\"SynonymName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidSynonym.cdm.json/AminoAcidSynonym\",\"name\":\"SynonymProvidingPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"SynonymProvidingPartyId\"}]}}}",
+			"Description": "Synonym names for the amino acid.\n\nEx: L-Phenylalanine\n\nSynonym\n(S)-2-Amino-3-phenylpropionic acid\n(S)-alpha-Amino-beta-phenylpropionic acid\n3-phenyl-L-alanine\nbeta-Phenyl-L-alanine\nF\nL-Phenylalanine\nPhe\nPHENYLALANINE\nß-phenyl-L-alanine",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidSynonymId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

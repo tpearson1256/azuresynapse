@@ -1,0 +1,115 @@
+{
+	"name": "AminoAcidDerivativeDrug",
+	"properties": {
+		"Name": "AminoAcidDerivativeDrug",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The drug associated with the amino acid derivative.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DrugId",
+					"Description": "The unique identifier of a drug.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug",
+						"Name": "DrugId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidDerivativeId",
+					"Description": "The unique identifier of an amino acid derivative.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug",
+						"Name": "AminoAcidDerivativeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidDerivativeDrugNote",
+					"Description": "A note, comment or additional information regarding the amino acid derivative drug.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug",
+						"Name": "AminoAcidDerivativeDrugNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidDerivativeDrug",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidDerivativeDrug",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DrugId\":{\"entity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"name\":\"DrugId\"},\"AminoAcidDerivativeId\":{\"entity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"name\":\"AminoAcidDerivativeId\"},\"AminoAcidDerivativeDrugNote\":{\"entity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"name\":\"AminoAcidDerivativeDrugNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidDerivativeDrug\",\"path\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\"},\"description\":\"The drug associated with the amino acid derivative.\",\"primaryKey\":[\"DrugId\",\"AminoAcidDerivativeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"name\":\"DrugId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a drug.\",\"isNullable\":false,\"name\":\"DrugId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"name\":\"AminoAcidDerivativeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid derivative.\",\"isNullable\":false,\"name\":\"AminoAcidDerivativeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidDerivativeDrug.cdm.json/AminoAcidDerivativeDrug\",\"name\":\"AminoAcidDerivativeDrugNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid derivative drug.\",\"isNullable\":true,\"name\":\"AminoAcidDerivativeDrugNote\"}]}}}",
+			"Description": "The drug associated with the amino acid derivative.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "DrugId,AminoAcidDerivativeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

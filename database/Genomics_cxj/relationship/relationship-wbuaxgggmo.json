@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wbuaxgggmo",
+	"properties": {
+		"Name": "relationship-wbuaxgggmo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MediaType",
+		"ToTableName": "Document",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MediaTypeId",
+				"ToColumnName": "MediaTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MediaType.cdm.json/MediaType\",\"toEntity\":\"Document.cdm.json/Document\",\"joinPairs\":[{\"fromAttribute\":\"MediaTypeId\",\"toAttribute\":\"MediaTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

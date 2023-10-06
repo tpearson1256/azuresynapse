@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vcfuzkvxao",
+	"properties": {
+		"Name": "relationship-vcfuzkvxao",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReferenceBase",
+		"ToTableName": "DataLineAlternateAlle",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceBase",
+				"ToColumnName": "ReferenceBase"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReferenceBase.cdm.json/ReferenceBase\",\"toEntity\":\"DataLineAlternateAlle.cdm.json/DataLineAlternateAlle\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceBase\",\"toAttribute\":\"ReferenceBase\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

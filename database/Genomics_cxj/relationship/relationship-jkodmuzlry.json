@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jkodmuzlry",
+	"properties": {
+		"Name": "relationship-jkodmuzlry",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AminoAcidPhysicalFunctionRelationshipType",
+		"ToTableName": "AminoAcidPhysicalFunction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AminoAcidPhysicalFunctionRelationshipTypeId",
+				"ToColumnName": "AminoAcidPhysicalFunctionRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\",\"toEntity\":\"AminoAcidPhysicalFunction.cdm.json/AminoAcidPhysicalFunction\",\"joinPairs\":[{\"fromAttribute\":\"AminoAcidPhysicalFunctionRelationshipTypeId\",\"toAttribute\":\"AminoAcidPhysicalFunctionRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

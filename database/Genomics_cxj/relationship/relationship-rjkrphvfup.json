@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rjkrphvfup",
+	"properties": {
+		"Name": "relationship-rjkrphvfup",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "SampleFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChromContigId",
+				"ToColumnName": "ChromContigId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"joinPairs\":[{\"fromAttribute\":\"ChromContigId\",\"toAttribute\":\"ChromContigId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

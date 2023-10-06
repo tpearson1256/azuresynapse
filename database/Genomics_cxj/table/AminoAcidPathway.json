@@ -1,0 +1,132 @@
+{
+	"name": "AminoAcidPathway",
+	"properties": {
+		"Name": "AminoAcidPathway",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The pathways related to the amino acid.\n\nEx:  L-phenylalanine\nTyrosinemia Type 2 (or Richner-Hanhart syndrome)\nPhenylketonuria\nTyrosinemia Type 3 (TYRO3)\nPhenylalanine and Tyrosine Metabolism",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPathway.cdm.json/AminoAcidPathway",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PathwayId",
+					"Description": "The unique identifier of a pathway defined by the associated database.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPathway.cdm.json/AminoAcidPathway",
+						"Name": "PathwayId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPathwayNote",
+					"Description": "A note, comment or additional information regarding the amino acid - pathway.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPathway.cdm.json/AminoAcidPathway",
+						"Name": "AminoAcidPathwayNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPathwayTypeId",
+					"Description": "The unique identifier of a amino acid pathway name.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPathway.cdm.json/AminoAcidPathway",
+						"Name": "AminoAcidPathwayTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPathway",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPathway",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidId\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"AminoAcidId\"},\"PathwayId\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"PathwayId\"},\"AminoAcidPathwayNote\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"AminoAcidPathwayNote\"},\"AminoAcidPathwayTypeId\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"AminoAcidPathwayTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidPathway\",\"path\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\"},\"description\":\"The pathways related to the amino acid.\\n\\nEx:  L-phenylalanine\\nTyrosinemia Type 2 (or Richner-Hanhart syndrome)\\nPhenylketonuria\\nTyrosinemia Type 3 (TYRO3)\\nPhenylalanine and Tyrosine Metabolism\",\"primaryKey\":[\"AminoAcidId\",\"PathwayId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"PathwayId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pathway defined by the associated database.\",\"isNullable\":false,\"name\":\"PathwayId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"AminoAcidPathwayNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid - pathway.\",\"isNullable\":true,\"name\":\"AminoAcidPathwayNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"name\":\"AminoAcidPathwayTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a amino acid pathway name.\",\"isNullable\":true,\"name\":\"AminoAcidPathwayTypeId\"}]}}}",
+			"Description": "The pathways related to the amino acid.\n\nEx:  L-phenylalanine\nTyrosinemia Type 2 (or Richner-Hanhart syndrome)\nPhenylketonuria\nTyrosinemia Type 3 (TYRO3)\nPhenylalanine and Tyrosine Metabolism",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidId,PathwayId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kdkogfwgfa",
+	"properties": {
+		"Name": "relationship-kdkogfwgfa",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfFormatType",
+		"ToTableName": "VcfFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "VcfFormatTypeId",
+				"ToColumnName": "FormatType"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfFormatType.cdm.json/VcfFormatType\",\"toEntity\":\"VcfFormat.cdm.json/VcfFormat\",\"joinPairs\":[{\"fromAttribute\":\"VcfFormatTypeId\",\"toAttribute\":\"FormatType\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

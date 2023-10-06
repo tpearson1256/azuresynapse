@@ -1,0 +1,115 @@
+{
+	"name": "IgFormatSequenceValueType",
+	"properties": {
+		"Name": "IgFormatSequenceValueType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A potential value for a position in the IG file sequence.\n\nEx:\n- Comment\n- ; \n- A\n- C  \n- T\n- G",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IgFormatSequenceValueTypeId",
+					"Description": "The unique identifier of a IG Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType",
+						"Name": "IgFormatSequenceValueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IgFormatSequenceValueTypeName",
+					"Description": "The name of a IG Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType",
+						"Name": "IgFormatSequenceValueTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "IgFormatSequenceValueTypeDescription",
+					"Description": "The description of a IG Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType",
+						"Name": "IgFormatSequenceValueTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/IgFormatSequenceValueType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/IgFormatSequenceValueType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IgFormatSequenceValueTypeId\":{\"entity\":\"IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType\",\"name\":\"IgFormatSequenceValueTypeId\"},\"IgFormatSequenceValueTypeName\":{\"entity\":\"IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType\",\"name\":\"IgFormatSequenceValueTypeName\"},\"IgFormatSequenceValueTypeDescription\":{\"entity\":\"IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType\",\"name\":\"IgFormatSequenceValueTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IgFormatSequenceValueType\",\"path\":\"IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType\"},\"description\":\"A potential value for a position in the IG file sequence.\\n\\nEx:\\n- Comment\\n- ; \\n- A\\n- C  \\n- T\\n- G\",\"primaryKey\":[\"IgFormatSequenceValueTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType\",\"name\":\"IgFormatSequenceValueTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a IG Format Sequence Value Type.\",\"isNullable\":false,\"name\":\"IgFormatSequenceValueTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType\",\"name\":\"IgFormatSequenceValueTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a IG Format Sequence Value Type.\",\"isNullable\":true,\"name\":\"IgFormatSequenceValueTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IgFormatSequenceValueType.cdm.json/IgFormatSequenceValueType\",\"name\":\"IgFormatSequenceValueTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a IG Format Sequence Value Type.\",\"isNullable\":true,\"name\":\"IgFormatSequenceValueTypeDescription\"}]}}}",
+			"Description": "A potential value for a position in the IG file sequence.\n\nEx:\n- Comment\n- ; \n- A\n- C  \n- T\n- G",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "IgFormatSequenceValueTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

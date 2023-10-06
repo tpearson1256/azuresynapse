@@ -1,0 +1,96 @@
+{
+	"name": "SolexaIllumina1Format",
+	"properties": {
+		"Name": "SolexaIllumina1Format",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Solexa/Illumina 1.0 format can encode a Solexa/Illumina quality score from -5 to 62 using ASCII 59 to 126 (although in raw read data Solexa scores from -5 to 40 only are expected)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FastqLineSequenceQualityTypeId",
+					"Description": "The unique identifier of a FASTQ line sequence quality type.",
+					"BaseAttributeReference": {
+						"Entity": "SolexaIllumina1Format.cdm.json/SolexaIllumina1Format",
+						"Name": "FastqLineSequenceQualityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SolexaIlluminaQualityScore",
+					"Description": "Sequencing quality scores are a measure of the uncertainty of base calls, or the probability of a base call being wrong.",
+					"BaseAttributeReference": {
+						"Entity": "SolexaIllumina1Format.cdm.json/SolexaIllumina1Format",
+						"Name": "SolexaIlluminaQualityScore"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SolexaIllumina1Format",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SolexaIllumina1Format",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FastqLineSequenceQualityTypeId\":{\"entity\":\"SolexaIllumina1Format.cdm.json/SolexaIllumina1Format\",\"name\":\"FastqLineSequenceQualityTypeId\"},\"SolexaIlluminaQualityScore\":{\"entity\":\"SolexaIllumina1Format.cdm.json/SolexaIllumina1Format\",\"name\":\"SolexaIlluminaQualityScore\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SolexaIllumina1Format\",\"path\":\"SolexaIllumina1Format.cdm.json/SolexaIllumina1Format\"},\"description\":\"Solexa/Illumina 1.0 format can encode a Solexa/Illumina quality score from -5 to 62 using ASCII 59 to 126 (although in raw read data Solexa scores from -5 to 40 only are expected)\",\"primaryKey\":[\"FastqLineSequenceQualityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolexaIllumina1Format.cdm.json/SolexaIllumina1Format\",\"name\":\"FastqLineSequenceQualityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a FASTQ line sequence quality type.\",\"isNullable\":false,\"name\":\"FastqLineSequenceQualityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SolexaIllumina1Format.cdm.json/SolexaIllumina1Format\",\"name\":\"SolexaIlluminaQualityScore\"},\"dataType\":\"integer\",\"description\":\"Sequencing quality scores are a measure of the uncertainty of base calls, or the probability of a base call being wrong.\",\"isNullable\":true,\"name\":\"SolexaIlluminaQualityScore\"}]}}}",
+			"Description": "Solexa/Illumina 1.0 format can encode a Solexa/Illumina quality score from -5 to 62 using ASCII 59 to 126 (although in raw read data Solexa scores from -5 to 40 only are expected)",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "FastqLineSequenceQualityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

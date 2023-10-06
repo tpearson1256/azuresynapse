@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pqppkviduw",
+	"properties": {
+		"Name": "relationship-pqppkviduw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SampleFormat",
+		"ToTableName": "SampleAnnotatedValue",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReferenceFile",
+				"ToColumnName": "ReferenceFile"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SampleFormat.cdm.json/SampleFormat\",\"toEntity\":\"SampleAnnotatedValue.cdm.json/SampleAnnotatedValue\",\"joinPairs\":[{\"fromAttribute\":\"ReferenceFile\",\"toAttribute\":\"ReferenceFile\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

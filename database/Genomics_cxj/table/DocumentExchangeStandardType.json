@@ -1,0 +1,115 @@
+{
+	"name": "DocumentExchangeStandardType",
+	"properties": {
+		"Name": "DocumentExchangeStandardType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The document exchange standard type(s) associated with a document.\n\nEx:\n- ANSI ASC X12\n- EANCOM UN/EDIFACT\n- HIPAA\n- ODETTE\n- SWIFT\n- VDA\n- VICS",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentExchangeStandardTypeId",
+					"Description": "The unique identifier of a Document Exchange Standard Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType",
+						"Name": "DocumentExchangeStandardTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentExchangeStandardTypeName",
+					"Description": "The name of a Document Exchange Standard Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType",
+						"Name": "DocumentExchangeStandardTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentExchangeStandardTypeDescription",
+					"Description": "The description of a Document Exchange Standard Type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType",
+						"Name": "DocumentExchangeStandardTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentExchangeStandardType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentExchangeStandardType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentExchangeStandardTypeId\":{\"entity\":\"DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType\",\"name\":\"DocumentExchangeStandardTypeId\"},\"DocumentExchangeStandardTypeName\":{\"entity\":\"DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType\",\"name\":\"DocumentExchangeStandardTypeName\"},\"DocumentExchangeStandardTypeDescription\":{\"entity\":\"DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType\",\"name\":\"DocumentExchangeStandardTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentExchangeStandardType\",\"path\":\"DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType\"},\"description\":\"The document exchange standard type(s) associated with a document.\\n\\nEx:\\n- ANSI ASC X12\\n- EANCOM UN/EDIFACT\\n- HIPAA\\n- ODETTE\\n- SWIFT\\n- VDA\\n- VICS\",\"primaryKey\":[\"DocumentExchangeStandardTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType\",\"name\":\"DocumentExchangeStandardTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Document Exchange Standard Type.\",\"isNullable\":false,\"name\":\"DocumentExchangeStandardTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType\",\"name\":\"DocumentExchangeStandardTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Document Exchange Standard Type.\",\"isNullable\":true,\"name\":\"DocumentExchangeStandardTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentExchangeStandardType.cdm.json/DocumentExchangeStandardType\",\"name\":\"DocumentExchangeStandardTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Document Exchange Standard Type.\",\"isNullable\":true,\"name\":\"DocumentExchangeStandardTypeDescription\"}]}}}",
+			"Description": "The document exchange standard type(s) associated with a document.\n\nEx:\n- ANSI ASC X12\n- EANCOM UN/EDIFACT\n- HIPAA\n- ODETTE\n- SWIFT\n- VDA\n- VICS",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentExchangeStandardTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

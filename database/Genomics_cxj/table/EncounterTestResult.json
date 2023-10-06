@@ -1,0 +1,167 @@
+{
+	"name": "EncounterTestResult",
+	"properties": {
+		"Name": "EncounterTestResult",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The result associated with an encounter test.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestId",
+					"Description": "The timestamp that the associated test was requested.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResult.cdm.json/EncounterTestResult",
+						"Name": "MedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestResultParameterTypeId",
+					"Description": "The unique identifier of a Test Result Parameter Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResult.cdm.json/EncounterTestResult",
+						"Name": "TestResultParameterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestResultParameterValue",
+					"Description": "The result of the test associated with the test result parameter.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResult.cdm.json/EncounterTestResult",
+						"Name": "TestResultParameterValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResult.cdm.json/EncounterTestResult",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestResultTypeId",
+					"Description": "The unique identifier of an Encounter Test Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResult.cdm.json/EncounterTestResult",
+						"Name": "EncounterTestResultTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestResultNote",
+					"Description": "A note, comment or additional information regarding the encounter test result.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestResult.cdm.json/EncounterTestResult",
+						"Name": "EncounterTestResultNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestResult",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestResult",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestId\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"MedicalTestId\"},\"TestResultParameterTypeId\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"TestResultParameterTypeId\"},\"TestResultParameterValue\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"TestResultParameterValue\"},\"UnitOfMeasureId\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"UnitOfMeasureId\"},\"EncounterTestResultTypeId\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"EncounterTestResultTypeId\"},\"EncounterTestResultNote\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"EncounterTestResultNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestResult\",\"path\":\"EncounterTestResult.cdm.json/EncounterTestResult\"},\"description\":\"The result associated with an encounter test.\",\"primaryKey\":[\"MedicalTestId\",\"TestResultParameterTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"MedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The timestamp that the associated test was requested.\",\"isNullable\":false,\"name\":\"MedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"TestResultParameterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Test Result Parameter Type.\",\"isNullable\":false,\"name\":\"TestResultParameterTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"TestResultParameterValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The result of the test associated with the test result parameter.\",\"isNullable\":true,\"scale\":8,\"name\":\"TestResultParameterValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"EncounterTestResultTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Encounter Test Result Type.\",\"isNullable\":true,\"name\":\"EncounterTestResultTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestResult.cdm.json/EncounterTestResult\",\"name\":\"EncounterTestResultNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the encounter test result.\",\"isNullable\":true,\"name\":\"EncounterTestResultNote\"}]}}}",
+			"Description": "The result associated with an encounter test.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestId,TestResultParameterTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,24 @@
+{
+	"name": "Genomics_cxj",
+	"properties": {
+		"Name": "Genomics_cxj",
+		"EntityType": "DATABASE",
+		"Description": "",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Genomics\",\"Version\":\"0.1.0\"}}}",
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage"
+			}
+		}
+	},
+	"type": "DATABASE"
+}

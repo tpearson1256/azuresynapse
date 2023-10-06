@@ -1,0 +1,249 @@
+{
+	"name": "EncounterTestGenomicInformation",
+	"properties": {
+		"Name": "EncounterTestGenomicInformation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A test is a diagnostic procedure performed to confirm, or determine the presence of a disease, condition or state in an individual.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestId",
+					"Description": "The timestamp that the associated test was requested.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "MedicalTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GenomicInformationId",
+					"Description": "The unique identifier of genomic information that is associated with an encounter test.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "GenomicInformationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StartSequenceSubjectGenomeId",
+					"Description": "The unique identifier of a DNA Sequence.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "StartSequenceSubjectGenomeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "StartRelatedSubjectGenomeId",
+					"Description": "The unique identifier of a DNA Sequence.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "StartRelatedSubjectGenomeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EndRelatedSubjectGenomeId",
+					"Description": "The unique identifier of a DNA Sequence.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "EndRelatedSubjectGenomeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EndSequenceSubjectGenomeId",
+					"Description": "The unique identifier of a DNA Sequence.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "EndSequenceSubjectGenomeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SubjectGenomeBaseOrderStartSequenceNumber",
+					"Description": "The base order sequence number of the nucleotide base types.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "SubjectGenomeBaseOrderStartSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SubjectGenomeBaseOrderEndSequenceNumber",
+					"Description": "The base order sequence number of the nucleotide base types.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "SubjectGenomeBaseOrderEndSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SubjectGenomeBaseOrderStartRelatedSequenceNumber",
+					"Description": "The base order sequence number of the nucleotide base types.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "SubjectGenomeBaseOrderStartRelatedSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SubjectGenomeBaseOrderEndRelatedSequenceNumber",
+					"Description": "The base order sequence number of the nucleotide base types.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "SubjectGenomeBaseOrderEndRelatedSequenceNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DnaSequenceRelationshipTypeId",
+					"Description": "The unique identifier of a DNA Sequence Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation",
+						"Name": "DnaSequenceRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestGenomicInformation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestGenomicInformation",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestId\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"MedicalTestId\"},\"GenomicInformationId\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"GenomicInformationId\"},\"StartSequenceSubjectGenomeId\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"StartSequenceSubjectGenomeId\"},\"StartRelatedSubjectGenomeId\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"StartRelatedSubjectGenomeId\"},\"EndRelatedSubjectGenomeId\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"EndRelatedSubjectGenomeId\"},\"EndSequenceSubjectGenomeId\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"EndSequenceSubjectGenomeId\"},\"SubjectGenomeBaseOrderStartSequenceNumber\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderStartSequenceNumber\"},\"SubjectGenomeBaseOrderEndSequenceNumber\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderEndSequenceNumber\"},\"SubjectGenomeBaseOrderStartRelatedSequenceNumber\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderStartRelatedSequenceNumber\"},\"SubjectGenomeBaseOrderEndRelatedSequenceNumber\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderEndRelatedSequenceNumber\"},\"DnaSequenceRelationshipTypeId\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"DnaSequenceRelationshipTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestGenomicInformation\",\"path\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\"},\"description\":\"A test is a diagnostic procedure performed to confirm, or determine the presence of a disease, condition or state in an individual.\",\"primaryKey\":[\"MedicalTestId\",\"GenomicInformationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"MedicalTestId\"},\"dataType\":\"integer\",\"description\":\"The timestamp that the associated test was requested.\",\"isNullable\":false,\"name\":\"MedicalTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"GenomicInformationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of genomic information that is associated with an encounter test.\",\"isNullable\":false,\"name\":\"GenomicInformationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"StartSequenceSubjectGenomeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a DNA Sequence.\",\"isNullable\":true,\"name\":\"StartSequenceSubjectGenomeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"StartRelatedSubjectGenomeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a DNA Sequence.\",\"isNullable\":true,\"name\":\"StartRelatedSubjectGenomeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"EndRelatedSubjectGenomeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a DNA Sequence.\",\"isNullable\":true,\"name\":\"EndRelatedSubjectGenomeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"EndSequenceSubjectGenomeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a DNA Sequence.\",\"isNullable\":true,\"name\":\"EndSequenceSubjectGenomeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderStartSequenceNumber\"},\"dataType\":\"integer\",\"description\":\"The base order sequence number of the nucleotide base types.\",\"isNullable\":true,\"name\":\"SubjectGenomeBaseOrderStartSequenceNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderEndSequenceNumber\"},\"dataType\":\"integer\",\"description\":\"The base order sequence number of the nucleotide base types.\",\"isNullable\":true,\"name\":\"SubjectGenomeBaseOrderEndSequenceNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderStartRelatedSequenceNumber\"},\"dataType\":\"integer\",\"description\":\"The base order sequence number of the nucleotide base types.\",\"isNullable\":true,\"name\":\"SubjectGenomeBaseOrderStartRelatedSequenceNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"SubjectGenomeBaseOrderEndRelatedSequenceNumber\"},\"dataType\":\"integer\",\"description\":\"The base order sequence number of the nucleotide base types.\",\"isNullable\":true,\"name\":\"SubjectGenomeBaseOrderEndRelatedSequenceNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestGenomicInformation.cdm.json/EncounterTestGenomicInformation\",\"name\":\"DnaSequenceRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a DNA Sequence Relationship Type.\",\"isNullable\":true,\"name\":\"DnaSequenceRelationshipTypeId\"}]}}}",
+			"Description": "A test is a diagnostic procedure performed to confirm, or determine the presence of a disease, condition or state in an individual.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestId,GenomicInformationId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

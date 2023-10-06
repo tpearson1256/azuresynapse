@@ -1,0 +1,115 @@
+{
+	"name": "EncounterTestStatusType",
+	"properties": {
+		"Name": "EncounterTestStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A status that may be applied to an encounter test.\n\nEx:\n- Planned\n- Scheduled\n- Reschedule\n- Completed\n- In-process\n- Cancelled\n- Unknown\n- Withdrawn\n- Performed / Pending results\n- Results Returned\n- Inconclusive / Re-Test Required\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterTestStatusTypeId",
+					"Description": "The unique identifier of an encounter test status type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestStatusType.cdm.json/EncounterTestStatusType",
+						"Name": "EncounterTestStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestStatusTypeName",
+					"Description": "The name of an encounter test status type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestStatusType.cdm.json/EncounterTestStatusType",
+						"Name": "EncounterTestStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestStatusTypeDescription",
+					"Description": "The description of an encounter test status type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestStatusType.cdm.json/EncounterTestStatusType",
+						"Name": "EncounterTestStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestStatusType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterTestStatusTypeId\":{\"entity\":\"EncounterTestStatusType.cdm.json/EncounterTestStatusType\",\"name\":\"EncounterTestStatusTypeId\"},\"EncounterTestStatusTypeName\":{\"entity\":\"EncounterTestStatusType.cdm.json/EncounterTestStatusType\",\"name\":\"EncounterTestStatusTypeName\"},\"EncounterTestStatusTypeDescription\":{\"entity\":\"EncounterTestStatusType.cdm.json/EncounterTestStatusType\",\"name\":\"EncounterTestStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestStatusType\",\"path\":\"EncounterTestStatusType.cdm.json/EncounterTestStatusType\"},\"description\":\"A status that may be applied to an encounter test.\\n\\nEx:\\n- Planned\\n- Scheduled\\n- Reschedule\\n- Completed\\n- In-process\\n- Cancelled\\n- Unknown\\n- Withdrawn\\n- Performed / Pending results\\n- Results Returned\\n- Inconclusive / Re-Test Required\\n- N/A\",\"primaryKey\":[\"EncounterTestStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestStatusType.cdm.json/EncounterTestStatusType\",\"name\":\"EncounterTestStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an encounter test status type.\",\"isNullable\":false,\"name\":\"EncounterTestStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestStatusType.cdm.json/EncounterTestStatusType\",\"name\":\"EncounterTestStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an encounter test status type.\",\"isNullable\":true,\"name\":\"EncounterTestStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestStatusType.cdm.json/EncounterTestStatusType\",\"name\":\"EncounterTestStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an encounter test status type.\",\"isNullable\":true,\"name\":\"EncounterTestStatusTypeDescription\"}]}}}",
+			"Description": "A status that may be applied to an encounter test.\n\nEx:\n- Planned\n- Scheduled\n- Reschedule\n- Completed\n- In-process\n- Cancelled\n- Unknown\n- Withdrawn\n- Performed / Pending results\n- Results Returned\n- Inconclusive / Re-Test Required\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EncounterTestStatusTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

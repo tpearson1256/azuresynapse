@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wltfeilnyk",
+	"properties": {
+		"Name": "relationship-wltfeilnyk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFile",
+		"ToTableName": "VcfAssembly",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FileId",
+				"ToColumnName": "FileId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFile.cdm.json/GeneSequencingFile\",\"toEntity\":\"VcfAssembly.cdm.json/VcfAssembly\",\"joinPairs\":[{\"fromAttribute\":\"FileId\",\"toAttribute\":\"FileId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

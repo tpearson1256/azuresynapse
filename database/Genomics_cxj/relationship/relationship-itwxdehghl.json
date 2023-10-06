@@ -1,0 +1,26 @@
+{
+	"name": "relationship-itwxdehghl",
+	"properties": {
+		"Name": "relationship-itwxdehghl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InternationalStatisticalClassificationOfDiseaseCode",
+		"ToTableName": "MedicalCondition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IcdVersionNumber",
+				"ToColumnName": "IcdVersionNumber"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"toEntity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"joinPairs\":[{\"fromAttribute\":\"IcdVersionNumber\",\"toAttribute\":\"IcdVersionNumber\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

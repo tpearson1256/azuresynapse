@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vskglokzry",
+	"properties": {
+		"Name": "relationship-vskglokzry",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentEvent",
+		"ToTableName": "DocumentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentEvent.cdm.json/DocumentEvent\",\"toEntity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

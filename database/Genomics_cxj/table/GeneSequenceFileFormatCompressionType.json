@@ -1,0 +1,115 @@
+{
+	"name": "GeneSequenceFileFormatCompressionType",
+	"properties": {
+		"Name": "GeneSequenceFileFormatCompressionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of compression used to compress the associated file format.\n\nEx:\nFASTQ Compression\nThe compression of FASTA files requires a specific compressor to handle both channels of information: identifiers and sequence. For improved compression results, these are mainly divided in two streams where the compression is made assuming independence. For example, the algorithm MFCompress [3] performs lossless compression of these files using context modelling and arithmetic encoding.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequenceFileFormatCompressionTypeId",
+					"Description": "The unique identifier of a gene sequence file format compression type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType",
+						"Name": "GeneSequenceFileFormatCompressionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFileFormatCompressionTypeName",
+					"Description": "The name of a gene sequence file format compression type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType",
+						"Name": "GeneSequenceFileFormatCompressionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFileFormatCompressionTypeDescription",
+					"Description": "The description of a gene sequence file format compression type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType",
+						"Name": "GeneSequenceFileFormatCompressionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFileFormatCompressionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFileFormatCompressionType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequenceFileFormatCompressionTypeId\":{\"entity\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\",\"name\":\"GeneSequenceFileFormatCompressionTypeId\"},\"GeneSequenceFileFormatCompressionTypeName\":{\"entity\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\",\"name\":\"GeneSequenceFileFormatCompressionTypeName\"},\"GeneSequenceFileFormatCompressionTypeDescription\":{\"entity\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\",\"name\":\"GeneSequenceFileFormatCompressionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequenceFileFormatCompressionType\",\"path\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\"},\"description\":\"The type of compression used to compress the associated file format.\\n\\nEx:\\nFASTQ Compression\\nThe compression of FASTA files requires a specific compressor to handle both channels of information: identifiers and sequence. For improved compression results, these are mainly divided in two streams where the compression is made assuming independence. For example, the algorithm MFCompress [3] performs lossless compression of these files using context modelling and arithmetic encoding.\",\"primaryKey\":[\"GeneSequenceFileFormatCompressionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\",\"name\":\"GeneSequenceFileFormatCompressionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequence file format compression type.\",\"isNullable\":false,\"name\":\"GeneSequenceFileFormatCompressionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\",\"name\":\"GeneSequenceFileFormatCompressionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a gene sequence file format compression type.\",\"isNullable\":true,\"name\":\"GeneSequenceFileFormatCompressionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\",\"name\":\"GeneSequenceFileFormatCompressionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a gene sequence file format compression type.\",\"isNullable\":true,\"name\":\"GeneSequenceFileFormatCompressionTypeDescription\"}]}}}",
+			"Description": "The type of compression used to compress the associated file format.\n\nEx:\nFASTQ Compression\nThe compression of FASTA files requires a specific compressor to handle both channels of information: identifiers and sequence. For improved compression results, these are mainly divided in two streams where the compression is made assuming independence. For example, the algorithm MFCompress [3] performs lossless compression of these files using context modelling and arithmetic encoding.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequenceFileFormatCompressionTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

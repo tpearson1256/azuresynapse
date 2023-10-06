@@ -1,0 +1,26 @@
+{
+	"name": "relationship-foprfahdku",
+	"properties": {
+		"Name": "relationship-foprfahdku",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequenceFileFormatCompressionType",
+		"ToTableName": "GeneSequenceFormatCompressionType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequenceFileFormatCompressionTypeId",
+				"ToColumnName": "GeneSequenceFileFormatCompressionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequenceFileFormatCompressionType.cdm.json/GeneSequenceFileFormatCompressionType\",\"toEntity\":\"GeneSequenceFormatCompressionType.cdm.json/GeneSequenceFormatCompressionType\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequenceFileFormatCompressionTypeId\",\"toAttribute\":\"GeneSequenceFileFormatCompressionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

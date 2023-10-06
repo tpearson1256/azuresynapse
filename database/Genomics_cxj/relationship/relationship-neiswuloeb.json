@@ -1,0 +1,26 @@
+{
+	"name": "relationship-neiswuloeb",
+	"properties": {
+		"Name": "relationship-neiswuloeb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "DataLineReferenceAllele",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "Pos",
+				"ToColumnName": "Pos"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"joinPairs\":[{\"fromAttribute\":\"Pos\",\"toAttribute\":\"Pos\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

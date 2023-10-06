@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidCoreStructuralGroupLocationType",
+	"properties": {
+		"Name": "AminoAcidCoreStructuralGroupLocationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The core structural/functional group location type associated with the amino acid.\n\nEx:\n-  alpha\n-  beta\n-  gamma\n-  delta",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidCoreStructuralGroupLocationTypeId",
+					"Description": "The unique identifier of an amino acid core structural group location type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType",
+						"Name": "AminoAcidCoreStructuralGroupLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidCoreStructuralGroupLocationTypeName",
+					"Description": "The name of an amino acid core structural group location type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType",
+						"Name": "AminoAcidCoreStructuralGroupLocationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidCoreStructuralGroupLocationTypeDescription",
+					"Description": "The description of an amino acid core structural group location type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType",
+						"Name": "AminoAcidCoreStructuralGroupLocationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidCoreStructuralGroupLocationType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidCoreStructuralGroupLocationType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidCoreStructuralGroupLocationTypeId\":{\"entity\":\"AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType\",\"name\":\"AminoAcidCoreStructuralGroupLocationTypeId\"},\"AminoAcidCoreStructuralGroupLocationTypeName\":{\"entity\":\"AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType\",\"name\":\"AminoAcidCoreStructuralGroupLocationTypeName\"},\"AminoAcidCoreStructuralGroupLocationTypeDescription\":{\"entity\":\"AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType\",\"name\":\"AminoAcidCoreStructuralGroupLocationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidCoreStructuralGroupLocationType\",\"path\":\"AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType\"},\"description\":\"The core structural/functional group location type associated with the amino acid.\\n\\nEx:\\n-  alpha\\n-  beta\\n-  gamma\\n-  delta\",\"primaryKey\":[\"AminoAcidCoreStructuralGroupLocationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType\",\"name\":\"AminoAcidCoreStructuralGroupLocationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid core structural group location type.\",\"isNullable\":false,\"name\":\"AminoAcidCoreStructuralGroupLocationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType\",\"name\":\"AminoAcidCoreStructuralGroupLocationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an amino acid core structural group location type.\",\"isNullable\":true,\"name\":\"AminoAcidCoreStructuralGroupLocationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidCoreStructuralGroupLocationType.cdm.json/AminoAcidCoreStructuralGroupLocationType\",\"name\":\"AminoAcidCoreStructuralGroupLocationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an amino acid core structural group location type.\",\"isNullable\":true,\"name\":\"AminoAcidCoreStructuralGroupLocationTypeDescription\"}]}}}",
+			"Description": "The core structural/functional group location type associated with the amino acid.\n\nEx:\n-  alpha\n-  beta\n-  gamma\n-  delta",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidCoreStructuralGroupLocationTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

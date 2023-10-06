@@ -1,0 +1,116 @@
+{
+	"name": "EmblFormatSequenceValueType",
+	"properties": {
+		"Name": "EmblFormatSequenceValueType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A potential value for a position in the EMBL file sequence.\n\nEx:\n- SQ (The start of the sequence is marked by a line starting with \"SQ\" )\n- // ( and the end of the sequence is marked by two slashes)\n-A\n-C\n-T\n-G",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EmblFormatSequenceValueTypeId",
+					"Description": "The unique identifier of a EMBL format sequence value type.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType",
+						"Name": "EmblFormatSequenceValueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EmblFormatSequenceValueTypeName",
+					"Description": "The name of a EMBL format sequence value type.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType",
+						"Name": "EmblFormatSequenceValueTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EmblFormatSequenceValueTypeDescription",
+					"Description": "The description of a EMBL format sequence value type.",
+					"BaseAttributeReference": {
+						"Entity": "EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType",
+						"Name": "EmblFormatSequenceValueTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EmblFormatSequenceValueType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EmblFormatSequenceValueType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EmblFormatSequenceValueTypeId\":{\"entity\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\",\"name\":\"EmblFormatSequenceValueTypeId\"},\"EmblFormatSequenceValueTypeName\":{\"entity\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\",\"name\":\"EmblFormatSequenceValueTypeName\"},\"EmblFormatSequenceValueTypeDescription\":{\"entity\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\",\"name\":\"EmblFormatSequenceValueTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EmblFormatSequenceValueType\",\"path\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\"},\"description\":\"A potential value for a position in the EMBL file sequence.\\n\\nEx:\\n- SQ (The start of the sequence is marked by a line starting with \\\"SQ\\\" )\\n- // ( and the end of the sequence is marked by two slashes)\\n-A\\n-C\\n-T\\n-G\",\"primaryKey\":[\"EmblFormatSequenceValueTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\",\"name\":\"EmblFormatSequenceValueTypeId\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The unique identifier of a EMBL format sequence value type.\",\"isNullable\":false,\"name\":\"EmblFormatSequenceValueTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\",\"name\":\"EmblFormatSequenceValueTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a EMBL format sequence value type.\",\"isNullable\":true,\"name\":\"EmblFormatSequenceValueTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\",\"name\":\"EmblFormatSequenceValueTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a EMBL format sequence value type.\",\"isNullable\":true,\"name\":\"EmblFormatSequenceValueTypeDescription\"}]}}}",
+			"Description": "A potential value for a position in the EMBL file sequence.\n\nEx:\n- SQ (The start of the sequence is marked by a line starting with \"SQ\" )\n- // ( and the end of the sequence is marked by two slashes)\n-A\n-C\n-T\n-G",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EmblFormatSequenceValueTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

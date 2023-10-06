@@ -1,0 +1,116 @@
+{
+	"name": "MedicalTestMethod",
+	"properties": {
+		"Name": "MedicalTestMethod",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of testing method associated with the medical test.\n\nEx:\n- Blood Test\n- Stool Specimen\n- Saliva Specimen\n- DNA Analysis",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestMethodId",
+					"Description": "The unique identifier of a Medical Test Method.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestMethod.cdm.json/MedicalTestMethod",
+						"Name": "MedicalTestMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestMethodName",
+					"Description": "The name of a Medical Test Method.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestMethod.cdm.json/MedicalTestMethod",
+						"Name": "MedicalTestMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestMethodDescription",
+					"Description": "The description of a Medical Test Method.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestMethod.cdm.json/MedicalTestMethod",
+						"Name": "MedicalTestMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestMethod",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestMethod",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestMethodId\":{\"entity\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\",\"name\":\"MedicalTestMethodId\"},\"MedicalTestMethodName\":{\"entity\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\",\"name\":\"MedicalTestMethodName\"},\"MedicalTestMethodDescription\":{\"entity\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\",\"name\":\"MedicalTestMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalTestMethod\",\"path\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\"},\"description\":\"The type of testing method associated with the medical test.\\n\\nEx:\\n- Blood Test\\n- Stool Specimen\\n- Saliva Specimen\\n- DNA Analysis\",\"primaryKey\":[\"MedicalTestMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\",\"name\":\"MedicalTestMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Method.\",\"isNullable\":false,\"name\":\"MedicalTestMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\",\"name\":\"MedicalTestMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Medical Test Method.\",\"isNullable\":true,\"name\":\"MedicalTestMethodName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestMethod.cdm.json/MedicalTestMethod\",\"name\":\"MedicalTestMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Medical Test Method.\",\"isNullable\":true,\"name\":\"MedicalTestMethodDescription\"}]}}}",
+			"Description": "The type of testing method associated with the medical test.\n\nEx:\n- Blood Test\n- Stool Specimen\n- Saliva Specimen\n- DNA Analysis",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "MedicalTestMethodId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

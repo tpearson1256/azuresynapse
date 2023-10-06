@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zperprhgwa",
+	"properties": {
+		"Name": "relationship-zperprhgwa",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EncounterTestPartyRelationshipType",
+		"ToTableName": "EncounterTestRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EncounterTestPartyRelationshipTypeId",
+				"ToColumnName": "EncounterTestPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\",\"toEntity\":\"EncounterTestRelatedParty.cdm.json/EncounterTestRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"EncounterTestPartyRelationshipTypeId\",\"toAttribute\":\"EncounterTestPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

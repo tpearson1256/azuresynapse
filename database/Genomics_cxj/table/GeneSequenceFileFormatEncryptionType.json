@@ -1,0 +1,115 @@
+{
+	"name": "GeneSequenceFileFormatEncryptionType",
+	"properties": {
+		"Name": "GeneSequenceFileFormatEncryptionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The encryption of FASTQ reads is usually addressed with a specific encryption tool: Cryfa (https://github.com/pratas/cryfa) [16]. Cryfa uses AES encryption and enables to compact data besides encryption. It can also address FASTA files. Cryfa shuffles the data before encryption to protect against low data complexity attacks",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequenceFileFormatEncryptionTypeId",
+					"Description": "The unique identifier of a gene sequence file format encryption type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType",
+						"Name": "GeneSequenceFileFormatEncryptionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFileFormatEncryptionTypeName",
+					"Description": "The name of a gene sequence file format encryption type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType",
+						"Name": "GeneSequenceFileFormatEncryptionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFileFormatEncryptionTypeDescription",
+					"Description": "The description of a gene sequence file format encryption type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType",
+						"Name": "GeneSequenceFileFormatEncryptionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFileFormatEncryptionType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFileFormatEncryptionType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequenceFileFormatEncryptionTypeId\":{\"entity\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeId\"},\"GeneSequenceFileFormatEncryptionTypeName\":{\"entity\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeName\"},\"GeneSequenceFileFormatEncryptionTypeDescription\":{\"entity\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequenceFileFormatEncryptionType\",\"path\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\"},\"description\":\"The encryption of FASTQ reads is usually addressed with a specific encryption tool: Cryfa (https://github.com/pratas/cryfa) [16]. Cryfa uses AES encryption and enables to compact data besides encryption. It can also address FASTA files. Cryfa shuffles the data before encryption to protect against low data complexity attacks\",\"primaryKey\":[\"GeneSequenceFileFormatEncryptionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequence file format encryption type.\",\"isNullable\":false,\"name\":\"GeneSequenceFileFormatEncryptionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a gene sequence file format encryption type.\",\"isNullable\":true,\"name\":\"GeneSequenceFileFormatEncryptionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFileFormatEncryptionType.cdm.json/GeneSequenceFileFormatEncryptionType\",\"name\":\"GeneSequenceFileFormatEncryptionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a gene sequence file format encryption type.\",\"isNullable\":true,\"name\":\"GeneSequenceFileFormatEncryptionTypeDescription\"}]}}}",
+			"Description": "The encryption of FASTQ reads is usually addressed with a specific encryption tool: Cryfa (https://github.com/pratas/cryfa) [16]. Cryfa uses AES encryption and enables to compact data besides encryption. It can also address FASTA files. Cryfa shuffles the data before encryption to protect against low data complexity attacks",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequenceFileFormatEncryptionTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

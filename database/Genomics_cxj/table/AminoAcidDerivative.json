@@ -1,0 +1,133 @@
+{
+	"name": "AminoAcidDerivative",
+	"properties": {
+		"Name": "AminoAcidDerivative",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "An amino acid derivative is a molecule that is generated using an amino acid as a starting point (precursor).\n\nEx:\n5-HTP (5-hydroxytryptophan)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidDerivativeId",
+					"Description": "The unique identifier of an amino acid derivative.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidDerivative.cdm.json/AminoAcidDerivative",
+						"Name": "AminoAcidDerivativeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidDerivativeName",
+					"Description": "The name of an amino acid.\n\nEx:\n5-HTP (5-hydroxytryptophan)",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidDerivative.cdm.json/AminoAcidDerivative",
+						"Name": "AminoAcidDerivativeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidDerivativeNotation",
+					"Description": "The notation of an amino acid.\n\nEx:\n5-HTP (5-hydroxytryptophan)",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidDerivative.cdm.json/AminoAcidDerivative",
+						"Name": "AminoAcidDerivativeNotation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidDerivative.cdm.json/AminoAcidDerivative",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidDerivative",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidDerivative",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidDerivativeId\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidDerivativeId\"},\"AminoAcidDerivativeName\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidDerivativeName\"},\"AminoAcidDerivativeNotation\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidDerivativeNotation\"},\"AminoAcidId\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidDerivative\",\"path\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\"},\"description\":\"An amino acid derivative is a molecule that is generated using an amino acid as a starting point (precursor).\\n\\nEx:\\n5-HTP (5-hydroxytryptophan)\",\"primaryKey\":[\"AminoAcidDerivativeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidDerivativeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid derivative.\",\"isNullable\":false,\"name\":\"AminoAcidDerivativeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidDerivativeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an amino acid.\\n\\nEx:\\n5-HTP (5-hydroxytryptophan)\",\"isNullable\":true,\"name\":\"AminoAcidDerivativeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidDerivativeNotation\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The notation of an amino acid.\\n\\nEx:\\n5-HTP (5-hydroxytryptophan)\",\"isNullable\":true,\"name\":\"AminoAcidDerivativeNotation\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidDerivative.cdm.json/AminoAcidDerivative\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"}]}}}",
+			"Description": "An amino acid derivative is a molecule that is generated using an amino acid as a starting point (precursor).\n\nEx:\n5-HTP (5-hydroxytryptophan)",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidDerivativeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

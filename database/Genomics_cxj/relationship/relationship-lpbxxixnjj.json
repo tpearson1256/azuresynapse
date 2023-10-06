@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lpbxxixnjj",
+	"properties": {
+		"Name": "relationship-lpbxxixnjj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MediaType",
+		"ToTableName": "GeneSequencingFile",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MediaTypeId",
+				"ToColumnName": "MediaTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MediaType.cdm.json/MediaType\",\"toEntity\":\"GeneSequencingFile.cdm.json/GeneSequencingFile\",\"joinPairs\":[{\"fromAttribute\":\"MediaTypeId\",\"toAttribute\":\"MediaTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

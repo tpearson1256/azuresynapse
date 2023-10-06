@@ -1,0 +1,114 @@
+{
+	"name": "TestPanelTestType",
+	"properties": {
+		"Name": "TestPanelTestType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The test type(s) that comprise a test panel.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestTypeId",
+					"Description": "The unique identifier of a Medical Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "TestPanelTestType.cdm.json/TestPanelTestType",
+						"Name": "MedicalTestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestPanelId",
+					"Description": "The unique identifier of a Test Panel.",
+					"BaseAttributeReference": {
+						"Entity": "TestPanelTestType.cdm.json/TestPanelTestType",
+						"Name": "TestPanelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestPanelTestNote",
+					"Description": "A note, comment or additional information regarding the test panel test.",
+					"BaseAttributeReference": {
+						"Entity": "TestPanelTestType.cdm.json/TestPanelTestType",
+						"Name": "TestPanelTestNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TestPanelTestType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TestPanelTestType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestTypeId\":{\"entity\":\"TestPanelTestType.cdm.json/TestPanelTestType\",\"name\":\"MedicalTestTypeId\"},\"TestPanelId\":{\"entity\":\"TestPanelTestType.cdm.json/TestPanelTestType\",\"name\":\"TestPanelId\"},\"TestPanelTestNote\":{\"entity\":\"TestPanelTestType.cdm.json/TestPanelTestType\",\"name\":\"TestPanelTestNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TestPanelTestType\",\"path\":\"TestPanelTestType.cdm.json/TestPanelTestType\"},\"description\":\"The test type(s) that comprise a test panel.\",\"primaryKey\":[\"MedicalTestTypeId\",\"TestPanelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestPanelTestType.cdm.json/TestPanelTestType\",\"name\":\"MedicalTestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Type.\",\"isNullable\":false,\"name\":\"MedicalTestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestPanelTestType.cdm.json/TestPanelTestType\",\"name\":\"TestPanelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Test Panel.\",\"isNullable\":false,\"name\":\"TestPanelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestPanelTestType.cdm.json/TestPanelTestType\",\"name\":\"TestPanelTestNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the test panel test.\",\"isNullable\":true,\"name\":\"TestPanelTestNote\"}]}}}",
+			"Description": "The test type(s) that comprise a test panel.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "MedicalTestTypeId,TestPanelId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

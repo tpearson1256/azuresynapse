@@ -1,0 +1,115 @@
+{
+	"name": "GeneSequencingFileFormatMachineTypeStatus",
+	"properties": {
+		"Name": "GeneSequencingFileFormatMachineTypeStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The status of the gene sequencing file format machine.\n\nEx:\n- Preferred file format for machine\n- Optional file format for machine\n- Discontinued file format form machine\n- Machine discontinued\n- File format no longer available on machine",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatMachineTypeStatusId",
+					"Description": "The unique identifier of a Gene Sequencing File Format Machine Type Status.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus",
+						"Name": "GeneSequencingFileFormatMachineTypeStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatMachineTypeStatusName",
+					"Description": "The name of a Gene Sequencing File Format Machine Type Status.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus",
+						"Name": "GeneSequencingFileFormatMachineTypeStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatMachineTypeStatusDescription",
+					"Description": "The name of a Gene Sequencing File Format Machine Type Status.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus",
+						"Name": "GeneSequencingFileFormatMachineTypeStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileFormatMachineTypeStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileFormatMachineTypeStatus",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatMachineTypeStatusId\":{\"entity\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\",\"name\":\"GeneSequencingFileFormatMachineTypeStatusId\"},\"GeneSequencingFileFormatMachineTypeStatusName\":{\"entity\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\",\"name\":\"GeneSequencingFileFormatMachineTypeStatusName\"},\"GeneSequencingFileFormatMachineTypeStatusDescription\":{\"entity\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\",\"name\":\"GeneSequencingFileFormatMachineTypeStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequencingFileFormatMachineTypeStatus\",\"path\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\"},\"description\":\"The status of the gene sequencing file format machine.\\n\\nEx:\\n- Preferred file format for machine\\n- Optional file format for machine\\n- Discontinued file format form machine\\n- Machine discontinued\\n- File format no longer available on machine\",\"primaryKey\":[\"GeneSequencingFileFormatMachineTypeStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\",\"name\":\"GeneSequencingFileFormatMachineTypeStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Gene Sequencing File Format Machine Type Status.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatMachineTypeStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\",\"name\":\"GeneSequencingFileFormatMachineTypeStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Gene Sequencing File Format Machine Type Status.\",\"isNullable\":true,\"name\":\"GeneSequencingFileFormatMachineTypeStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\",\"name\":\"GeneSequencingFileFormatMachineTypeStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The name of a Gene Sequencing File Format Machine Type Status.\",\"isNullable\":true,\"name\":\"GeneSequencingFileFormatMachineTypeStatusDescription\"}]}}}",
+			"Description": "The status of the gene sequencing file format machine.\n\nEx:\n- Preferred file format for machine\n- Optional file format for machine\n- Discontinued file format form machine\n- Machine discontinued\n- File format no longer available on machine",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatMachineTypeStatusId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

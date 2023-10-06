@@ -1,0 +1,115 @@
+{
+	"name": "MediaType",
+	"properties": {
+		"Name": "MediaType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The media type(s) associated with a document.\n\nEx:\n- Paper\n- Letter\n- Electronic \n- email\n- www page\n- Image\n- jpeg\n- pdf\n- tiff\n- Video\n- avi\n- DVD\n- mp4\n- mpeg\n- mov\n- HDV\n- Audio\n- mp3\n- wav\n- vox\n- raw\n- wma",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MediaTypeId",
+					"Description": "The unique identifier of a Media Type.",
+					"BaseAttributeReference": {
+						"Entity": "MediaType.cdm.json/MediaType",
+						"Name": "MediaTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MediaTypeName",
+					"Description": "The name of a Media Type.",
+					"BaseAttributeReference": {
+						"Entity": "MediaType.cdm.json/MediaType",
+						"Name": "MediaTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MediaTypeDescription",
+					"Description": "The description of a Media Type.",
+					"BaseAttributeReference": {
+						"Entity": "MediaType.cdm.json/MediaType",
+						"Name": "MediaTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MediaType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MediaType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MediaTypeId\":{\"entity\":\"MediaType.cdm.json/MediaType\",\"name\":\"MediaTypeId\"},\"MediaTypeName\":{\"entity\":\"MediaType.cdm.json/MediaType\",\"name\":\"MediaTypeName\"},\"MediaTypeDescription\":{\"entity\":\"MediaType.cdm.json/MediaType\",\"name\":\"MediaTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MediaType\",\"path\":\"MediaType.cdm.json/MediaType\"},\"description\":\"The media type(s) associated with a document.\\n\\nEx:\\n- Paper\\n- Letter\\n- Electronic \\n- email\\n- www page\\n- Image\\n- jpeg\\n- pdf\\n- tiff\\n- Video\\n- avi\\n- DVD\\n- mp4\\n- mpeg\\n- mov\\n- HDV\\n- Audio\\n- mp3\\n- wav\\n- vox\\n- raw\\n- wma\",\"primaryKey\":[\"MediaTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MediaType.cdm.json/MediaType\",\"name\":\"MediaTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Media Type.\",\"isNullable\":false,\"name\":\"MediaTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MediaType.cdm.json/MediaType\",\"name\":\"MediaTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Media Type.\",\"isNullable\":true,\"name\":\"MediaTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MediaType.cdm.json/MediaType\",\"name\":\"MediaTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Media Type.\",\"isNullable\":true,\"name\":\"MediaTypeDescription\"}]}}}",
+			"Description": "The media type(s) associated with a document.\n\nEx:\n- Paper\n- Letter\n- Electronic \n- email\n- www page\n- Image\n- jpeg\n- pdf\n- tiff\n- Video\n- avi\n- DVD\n- mp4\n- mpeg\n- mov\n- HDV\n- Audio\n- mp3\n- wav\n- vox\n- raw\n- wma",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "MediaTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

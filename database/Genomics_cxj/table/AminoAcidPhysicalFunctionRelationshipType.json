@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidPhysicalFunctionRelationshipType",
+	"properties": {
+		"Name": "AminoAcidPhysicalFunctionRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The nature of the relationship between the amino acid and physical function.\n\nEx:\n- Suspected\n- Under investigation\n- Contributing\n- Sole responsibility\n- Partial responsibility\n- Chemical essential relationship\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidPhysicalFunctionRelationshipTypeId",
+					"Description": "The unique identifier of an Amino Acid Physical Function Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType",
+						"Name": "AminoAcidPhysicalFunctionRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPhysicalFunctionRelationshipTypeName",
+					"Description": "The name of an Amino Acid Physical Function Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType",
+						"Name": "AminoAcidPhysicalFunctionRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidPhysicalFunctionRelationshipTypeDescription",
+					"Description": "The description of an Amino Acid Physical Function Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType",
+						"Name": "AminoAcidPhysicalFunctionRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPhysicalFunctionRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidPhysicalFunctionRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidPhysicalFunctionRelationshipTypeId\":{\"entity\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeId\"},\"AminoAcidPhysicalFunctionRelationshipTypeName\":{\"entity\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeName\"},\"AminoAcidPhysicalFunctionRelationshipTypeDescription\":{\"entity\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidPhysicalFunctionRelationshipType\",\"path\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\"},\"description\":\"The nature of the relationship between the amino acid and physical function.\\n\\nEx:\\n- Suspected\\n- Under investigation\\n- Contributing\\n- Sole responsibility\\n- Partial responsibility\\n- Chemical essential relationship\\n- Unknown\",\"primaryKey\":[\"AminoAcidPhysicalFunctionRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Amino Acid Physical Function Relationship Type.\",\"isNullable\":false,\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Amino Acid Physical Function Relationship Type.\",\"isNullable\":true,\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidPhysicalFunctionRelationshipType.cdm.json/AminoAcidPhysicalFunctionRelationshipType\",\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Amino Acid Physical Function Relationship Type.\",\"isNullable\":true,\"name\":\"AminoAcidPhysicalFunctionRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the amino acid and physical function.\n\nEx:\n- Suspected\n- Under investigation\n- Contributing\n- Sole responsibility\n- Partial responsibility\n- Chemical essential relationship\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidPhysicalFunctionRelationshipTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

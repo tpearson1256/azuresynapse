@@ -1,0 +1,115 @@
+{
+	"name": "KaryotypeBandingType",
+	"properties": {
+		"Name": "KaryotypeBandingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of karyotype banding associated with the Karyotype Test.\n\nCytogenetics employs several banding techniques to visualize different aspects of chromosomes:\n\n- G-banding\n- R-banding\n- C-banding\n- Q-banding\n- T-banding\n- Silver staining\n\nG-banding is obtained with Giemsa stain following digestion of chromosomes with trypsin. It yields a series of lightly and darkly stained bands - the dark regions tend to be heterochromatic, late-replicating and AT rich. The light regions tend to be euchromatic, early-replicating and GC rich. This method will normally produce 300-400 bands in a normal, human genome.\nR-banding is the reverse of G-banding (the R stands for \"reverse\"). The dark regions are euchromatic (guanine-cytosine rich regions) and the bright regions are heterochromatic (thymine-adenine rich regions).\nC-banding: Giemsa binds to constitutive heterochromatin, so it stains centromeres.\nQ-banding is a fluorescent pattern obtained using quinacrine for staining. The pattern of bands is very similar to that seen in G-banding.\nT-banding: visualize telomeres.\nSilver staining: Silver nitrate stains the nucleolar organization region-associated protein. This yields a dark region where the silver is deposited, denoting the activity of rRNA genes within the NOR.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "KaryotypeBandingTypeId",
+					"Description": "The unique identifier of a karyotype banding type.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeBandingType.cdm.json/KaryotypeBandingType",
+						"Name": "KaryotypeBandingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "KaryotypeBandingTypeName",
+					"Description": "The name of a karyotype banding type.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeBandingType.cdm.json/KaryotypeBandingType",
+						"Name": "KaryotypeBandingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "KaryotypeBandingTypeDescription",
+					"Description": "The description of a karyotype banding type.",
+					"BaseAttributeReference": {
+						"Entity": "KaryotypeBandingType.cdm.json/KaryotypeBandingType",
+						"Name": "KaryotypeBandingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/KaryotypeBandingType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/KaryotypeBandingType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"KaryotypeBandingTypeId\":{\"entity\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\",\"name\":\"KaryotypeBandingTypeId\"},\"KaryotypeBandingTypeName\":{\"entity\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\",\"name\":\"KaryotypeBandingTypeName\"},\"KaryotypeBandingTypeDescription\":{\"entity\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\",\"name\":\"KaryotypeBandingTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"KaryotypeBandingType\",\"path\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\"},\"description\":\"The type of karyotype banding associated with the Karyotype Test.\\n\\nCytogenetics employs several banding techniques to visualize different aspects of chromosomes:\\n\\n- G-banding\\n- R-banding\\n- C-banding\\n- Q-banding\\n- T-banding\\n- Silver staining\\n\\nG-banding is obtained with Giemsa stain following digestion of chromosomes with trypsin. It yields a series of lightly and darkly stained bands - the dark regions tend to be heterochromatic, late-replicating and AT rich. The light regions tend to be euchromatic, early-replicating and GC rich. This method will normally produce 300-400 bands in a normal, human genome.\\nR-banding is the reverse of G-banding (the R stands for \\\"reverse\\\"). The dark regions are euchromatic (guanine-cytosine rich regions) and the bright regions are heterochromatic (thymine-adenine rich regions).\\nC-banding: Giemsa binds to constitutive heterochromatin, so it stains centromeres.\\nQ-banding is a fluorescent pattern obtained using quinacrine for staining. The pattern of bands is very similar to that seen in G-banding.\\nT-banding: visualize telomeres.\\nSilver staining: Silver nitrate stains the nucleolar organization region-associated protein. This yields a dark region where the silver is deposited, denoting the activity of rRNA genes within the NOR.\",\"primaryKey\":[\"KaryotypeBandingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\",\"name\":\"KaryotypeBandingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a karyotype banding type.\",\"isNullable\":false,\"name\":\"KaryotypeBandingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\",\"name\":\"KaryotypeBandingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a karyotype banding type.\",\"isNullable\":true,\"name\":\"KaryotypeBandingTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"KaryotypeBandingType.cdm.json/KaryotypeBandingType\",\"name\":\"KaryotypeBandingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a karyotype banding type.\",\"isNullable\":true,\"name\":\"KaryotypeBandingTypeDescription\"}]}}}",
+			"Description": "The type of karyotype banding associated with the Karyotype Test.\n\nCytogenetics employs several banding techniques to visualize different aspects of chromosomes:\n\n- G-banding\n- R-banding\n- C-banding\n- Q-banding\n- T-banding\n- Silver staining\n\nG-banding is obtained with Giemsa stain following digestion of chromosomes with trypsin. It yields a series of lightly and darkly stained bands - the dark regions tend to be heterochromatic, late-replicating and AT rich. The light regions tend to be euchromatic, early-replicating and GC rich. This method will normally produce 300-400 bands in a normal, human genome.\nR-banding is the reverse of G-banding (the R stands for \"reverse\"). The dark regions are euchromatic (guanine-cytosine rich regions) and the bright regions are heterochromatic (thymine-adenine rich regions).\nC-banding: Giemsa binds to constitutive heterochromatin, so it stains centromeres.\nQ-banding is a fluorescent pattern obtained using quinacrine for staining. The pattern of bands is very similar to that seen in G-banding.\nT-banding: visualize telomeres.\nSilver staining: Silver nitrate stains the nucleolar organization region-associated protein. This yields a dark region where the silver is deposited, denoting the activity of rRNA genes within the NOR.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "KaryotypeBandingTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

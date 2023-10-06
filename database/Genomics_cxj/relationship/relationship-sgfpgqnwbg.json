@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sgfpgqnwbg",
+	"properties": {
+		"Name": "relationship-sgfpgqnwbg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentConfidentialityType",
+		"ToTableName": "DocumentConfidentiality",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentConfidentialityTypeId",
+				"ToColumnName": "DocumentConfidentialityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentConfidentialityType.cdm.json/DocumentConfidentialityType\",\"toEntity\":\"DocumentConfidentiality.cdm.json/DocumentConfidentiality\",\"joinPairs\":[{\"fromAttribute\":\"DocumentConfidentialityTypeId\",\"toAttribute\":\"DocumentConfidentialityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

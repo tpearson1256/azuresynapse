@@ -1,0 +1,115 @@
+{
+	"name": "FileSecurityType",
+	"properties": {
+		"Name": "FileSecurityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The file security type applied to the file.\n\nEx:\n- Vendor private security\n- Government classified security\n- Purchasing-party responsible security\n- For sale to public\n- For sale without IDs to public\n- For sale to government without ID\n- Not for sale\n- Not for distribution",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FileSecurityTypeId",
+					"Description": "The unique identifier of a file security type.",
+					"BaseAttributeReference": {
+						"Entity": "FileSecurityType.cdm.json/FileSecurityType",
+						"Name": "FileSecurityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FileSecurityTypeName",
+					"Description": "The name of a file security type.",
+					"BaseAttributeReference": {
+						"Entity": "FileSecurityType.cdm.json/FileSecurityType",
+						"Name": "FileSecurityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FileSecurityTypeDescription",
+					"Description": "The description of a file security type.",
+					"BaseAttributeReference": {
+						"Entity": "FileSecurityType.cdm.json/FileSecurityType",
+						"Name": "FileSecurityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FileSecurityType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/FileSecurityType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FileSecurityTypeId\":{\"entity\":\"FileSecurityType.cdm.json/FileSecurityType\",\"name\":\"FileSecurityTypeId\"},\"FileSecurityTypeName\":{\"entity\":\"FileSecurityType.cdm.json/FileSecurityType\",\"name\":\"FileSecurityTypeName\"},\"FileSecurityTypeDescription\":{\"entity\":\"FileSecurityType.cdm.json/FileSecurityType\",\"name\":\"FileSecurityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FileSecurityType\",\"path\":\"FileSecurityType.cdm.json/FileSecurityType\"},\"description\":\"The file security type applied to the file.\\n\\nEx:\\n- Vendor private security\\n- Government classified security\\n- Purchasing-party responsible security\\n- For sale to public\\n- For sale without IDs to public\\n- For sale to government without ID\\n- Not for sale\\n- Not for distribution\",\"primaryKey\":[\"FileSecurityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FileSecurityType.cdm.json/FileSecurityType\",\"name\":\"FileSecurityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a file security type.\",\"isNullable\":false,\"name\":\"FileSecurityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FileSecurityType.cdm.json/FileSecurityType\",\"name\":\"FileSecurityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a file security type.\",\"isNullable\":true,\"name\":\"FileSecurityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FileSecurityType.cdm.json/FileSecurityType\",\"name\":\"FileSecurityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a file security type.\",\"isNullable\":true,\"name\":\"FileSecurityTypeDescription\"}]}}}",
+			"Description": "The file security type applied to the file.\n\nEx:\n- Vendor private security\n- Government classified security\n- Purchasing-party responsible security\n- For sale to public\n- For sale without IDs to public\n- For sale to government without ID\n- Not for sale\n- Not for distribution",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "FileSecurityTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

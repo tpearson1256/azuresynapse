@@ -1,0 +1,26 @@
+{
+	"name": "relationship-swdmlvburu",
+	"properties": {
+		"Name": "relationship-swdmlvburu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentFormatType",
+		"ToTableName": "Document",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentFormatTypeId",
+				"ToColumnName": "DocumentFormatTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentFormatType.cdm.json/DocumentFormatType\",\"toEntity\":\"Document.cdm.json/Document\",\"joinPairs\":[{\"fromAttribute\":\"DocumentFormatTypeId\",\"toAttribute\":\"DocumentFormatTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

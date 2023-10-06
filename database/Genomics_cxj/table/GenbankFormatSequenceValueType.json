@@ -1,0 +1,115 @@
+{
+	"name": "GenbankFormatSequenceValueType",
+	"properties": {
+		"Name": "GenbankFormatSequenceValueType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A potential value for a position in the GenBank file sequence.\n\nEx:\n-  ORIGIN (The start of the sequence is marked by a line starting with \"SQ\" )\n- // ( the end of the sequence is marked by two slashes)\n- A\n- C  \n- T\n- G",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GenbankFormatSequenceValueTypeId",
+					"Description": "The unique identifier of a GenBank Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType",
+						"Name": "GenbankFormatSequenceValueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GenbankFormatSequenceValueTypeName",
+					"Description": "The name of a GenBank Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType",
+						"Name": "GenbankFormatSequenceValueTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GenbankFormatSequenceValueTypeDescription",
+					"Description": "The description of a GenBank Format Sequence Value Type.",
+					"BaseAttributeReference": {
+						"Entity": "GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType",
+						"Name": "GenbankFormatSequenceValueTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenbankFormatSequenceValueType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GenbankFormatSequenceValueType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GenbankFormatSequenceValueTypeId\":{\"entity\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\",\"name\":\"GenbankFormatSequenceValueTypeId\"},\"GenbankFormatSequenceValueTypeName\":{\"entity\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\",\"name\":\"GenbankFormatSequenceValueTypeName\"},\"GenbankFormatSequenceValueTypeDescription\":{\"entity\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\",\"name\":\"GenbankFormatSequenceValueTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GenbankFormatSequenceValueType\",\"path\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\"},\"description\":\"A potential value for a position in the GenBank file sequence.\\n\\nEx:\\n-  ORIGIN (The start of the sequence is marked by a line starting with \\\"SQ\\\" )\\n- // ( the end of the sequence is marked by two slashes)\\n- A\\n- C  \\n- T\\n- G\",\"primaryKey\":[\"GenbankFormatSequenceValueTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\",\"name\":\"GenbankFormatSequenceValueTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a GenBank Format Sequence Value Type.\",\"isNullable\":false,\"name\":\"GenbankFormatSequenceValueTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\",\"name\":\"GenbankFormatSequenceValueTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a GenBank Format Sequence Value Type.\",\"isNullable\":true,\"name\":\"GenbankFormatSequenceValueTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GenbankFormatSequenceValueType.cdm.json/GenbankFormatSequenceValueType\",\"name\":\"GenbankFormatSequenceValueTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a GenBank Format Sequence Value Type.\",\"isNullable\":true,\"name\":\"GenbankFormatSequenceValueTypeDescription\"}]}}}",
+			"Description": "A potential value for a position in the GenBank file sequence.\n\nEx:\n-  ORIGIN (The start of the sequence is marked by a line starting with \"SQ\" )\n- // ( the end of the sequence is marked by two slashes)\n- A\n- C  \n- T\n- G",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GenbankFormatSequenceValueTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

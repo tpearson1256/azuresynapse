@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vpofqrggas",
+	"properties": {
+		"Name": "relationship-vpofqrggas",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFileFormatMachineTypeStatus",
+		"ToTableName": "GeneSequencingFileFormatMachineType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatMachineTypeStatusId",
+				"ToColumnName": "GeneSequencingFileFormatMachineTypeStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFileFormatMachineTypeStatus.cdm.json/GeneSequencingFileFormatMachineTypeStatus\",\"toEntity\":\"GeneSequencingFileFormatMachineType.cdm.json/GeneSequencingFileFormatMachineType\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatMachineTypeStatusId\",\"toAttribute\":\"GeneSequencingFileFormatMachineTypeStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

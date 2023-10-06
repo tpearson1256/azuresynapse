@@ -1,0 +1,26 @@
+{
+	"name": "relationship-civzwcrzjq",
+	"properties": {
+		"Name": "relationship-civzwcrzjq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfContig",
+		"ToTableName": "VcfDataLine",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ContigId",
+				"ToColumnName": "ChromContigId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfContig.cdm.json/VcfContig\",\"toEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"joinPairs\":[{\"fromAttribute\":\"ContigId\",\"toAttribute\":\"ChromContigId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

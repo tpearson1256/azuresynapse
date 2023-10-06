@@ -1,0 +1,116 @@
+{
+	"name": "TestTechnique",
+	"properties": {
+		"Name": "TestTechnique",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The test technique associated with the test.\n\nEx:\n- Scintillation analyzer\n- LC/MS/MS method\n- Positive ion electrospray\n- Mass spectrometer analysis\n- Sanger DNA Sequencing\n- SKY\n- M-FISH\n- CGH\n- Polymerase Chain Reaction (PCR)\n- Polymorphism (RFLP)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TestTechniqueId",
+					"Description": "The unique identifier of a test technique.",
+					"BaseAttributeReference": {
+						"Entity": "TestTechnique.cdm.json/TestTechnique",
+						"Name": "TestTechniqueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestTechniqueName",
+					"Description": "The name of a test technique.",
+					"BaseAttributeReference": {
+						"Entity": "TestTechnique.cdm.json/TestTechnique",
+						"Name": "TestTechniqueName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TestTechniqueDescription",
+					"Description": "The description of a test technique.",
+					"BaseAttributeReference": {
+						"Entity": "TestTechnique.cdm.json/TestTechnique",
+						"Name": "TestTechniqueDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TestTechnique",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TestTechnique",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TestTechniqueId\":{\"entity\":\"TestTechnique.cdm.json/TestTechnique\",\"name\":\"TestTechniqueId\"},\"TestTechniqueName\":{\"entity\":\"TestTechnique.cdm.json/TestTechnique\",\"name\":\"TestTechniqueName\"},\"TestTechniqueDescription\":{\"entity\":\"TestTechnique.cdm.json/TestTechnique\",\"name\":\"TestTechniqueDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TestTechnique\",\"path\":\"TestTechnique.cdm.json/TestTechnique\"},\"description\":\"The test technique associated with the test.\\n\\nEx:\\n- Scintillation analyzer\\n- LC/MS/MS method\\n- Positive ion electrospray\\n- Mass spectrometer analysis\\n- Sanger DNA Sequencing\\n- SKY\\n- M-FISH\\n- CGH\\n- Polymerase Chain Reaction (PCR)\\n- Polymorphism (RFLP)\",\"primaryKey\":[\"TestTechniqueId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestTechnique.cdm.json/TestTechnique\",\"name\":\"TestTechniqueId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a test technique.\",\"isNullable\":false,\"name\":\"TestTechniqueId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestTechnique.cdm.json/TestTechnique\",\"name\":\"TestTechniqueName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a test technique.\",\"isNullable\":true,\"name\":\"TestTechniqueName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TestTechnique.cdm.json/TestTechnique\",\"name\":\"TestTechniqueDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a test technique.\",\"isNullable\":true,\"name\":\"TestTechniqueDescription\"}]}}}",
+			"Description": "The test technique associated with the test.\n\nEx:\n- Scintillation analyzer\n- LC/MS/MS method\n- Positive ion electrospray\n- Mass spectrometer analysis\n- Sanger DNA Sequencing\n- SKY\n- M-FISH\n- CGH\n- Polymerase Chain Reaction (PCR)\n- Polymorphism (RFLP)",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "TestTechniqueId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

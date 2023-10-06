@@ -1,0 +1,115 @@
+{
+	"name": "EncounterTestDocumentType",
+	"properties": {
+		"Name": "EncounterTestDocumentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The document type of an encounter test document.\n\nEx:\n- Test governing document\n- Test result document\n- Test guidelines document\n- Adverse Result Warning",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterTestDocumentTypeId",
+					"Description": "The unique identifier of an encounter test document type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestDocumentType.cdm.json/EncounterTestDocumentType",
+						"Name": "EncounterTestDocumentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestDocumentTypeName",
+					"Description": "The name of an encounter test document type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestDocumentType.cdm.json/EncounterTestDocumentType",
+						"Name": "EncounterTestDocumentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestDocumentTypeDescription",
+					"Description": "The description of an encounter test document type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestDocumentType.cdm.json/EncounterTestDocumentType",
+						"Name": "EncounterTestDocumentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestDocumentType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestDocumentType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterTestDocumentTypeId\":{\"entity\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\",\"name\":\"EncounterTestDocumentTypeId\"},\"EncounterTestDocumentTypeName\":{\"entity\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\",\"name\":\"EncounterTestDocumentTypeName\"},\"EncounterTestDocumentTypeDescription\":{\"entity\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\",\"name\":\"EncounterTestDocumentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestDocumentType\",\"path\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\"},\"description\":\"The document type of an encounter test document.\\n\\nEx:\\n- Test governing document\\n- Test result document\\n- Test guidelines document\\n- Adverse Result Warning\",\"primaryKey\":[\"EncounterTestDocumentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\",\"name\":\"EncounterTestDocumentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an encounter test document type.\",\"isNullable\":false,\"name\":\"EncounterTestDocumentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\",\"name\":\"EncounterTestDocumentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an encounter test document type.\",\"isNullable\":true,\"name\":\"EncounterTestDocumentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestDocumentType.cdm.json/EncounterTestDocumentType\",\"name\":\"EncounterTestDocumentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an encounter test document type.\",\"isNullable\":true,\"name\":\"EncounterTestDocumentTypeDescription\"}]}}}",
+			"Description": "The document type of an encounter test document.\n\nEx:\n- Test governing document\n- Test result document\n- Test guidelines document\n- Adverse Result Warning",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EncounterTestDocumentTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,99 @@
+{
+	"name": "ReferenceBase",
+	"properties": {
+		"Name": "ReferenceBase",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "Each base must be one of A,C,G,T,N (case insensitive).",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceBase",
+					"Description": "The reference base single letter.",
+					"BaseAttributeReference": {
+						"Entity": "ReferenceBase.cdm.json/ReferenceBase",
+						"Name": "ReferenceBase"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 1,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReferenceBaseName",
+					"Description": "The reference base name.",
+					"BaseAttributeReference": {
+						"Entity": "ReferenceBase.cdm.json/ReferenceBase",
+						"Name": "ReferenceBaseName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/ReferenceBase",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/ReferenceBase",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceBase\":{\"entity\":\"ReferenceBase.cdm.json/ReferenceBase\",\"name\":\"ReferenceBase\"},\"ReferenceBaseName\":{\"entity\":\"ReferenceBase.cdm.json/ReferenceBase\",\"name\":\"ReferenceBaseName\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ReferenceBase\",\"path\":\"ReferenceBase.cdm.json/ReferenceBase\"},\"description\":\"Each base must be one of A,C,G,T,N (case insensitive).\",\"primaryKey\":[\"ReferenceBase\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReferenceBase.cdm.json/ReferenceBase\",\"name\":\"ReferenceBase\"},\"dataType\":\"decimal\",\"dataTypeLength\":1,\"description\":\"The reference base single letter.\",\"isNullable\":false,\"scale\":0,\"name\":\"ReferenceBase\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReferenceBase.cdm.json/ReferenceBase\",\"name\":\"ReferenceBaseName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The reference base name.\",\"isNullable\":true,\"name\":\"ReferenceBaseName\"}]}}}",
+			"Description": "Each base must be one of A,C,G,T,N (case insensitive).",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceBase",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

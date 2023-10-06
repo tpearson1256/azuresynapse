@@ -1,0 +1,132 @@
+{
+	"name": "VcfFilter",
+	"properties": {
+		"Name": "VcfFilter",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The FILTER lines tell you what  filters have been applied to the data.\n\nEx:\n##FILTER=<ID=q10,Description=\"Quality below 10\"> \n##FILTER=<ID=s50,Description=\"Less than 50% of samples have data\">\\n\nEx:\n LowDP-Applied to sites with depth of coverage below a cutoff.\nLowGQ-The genotyping quality (GQ) is below a cutoff.\nLowQual-The variant quality (QUAL) is below a cutoff.\nLowVariantFreq-The variant frequency is less than the given threshold.\nR8-For an indel, the number of adjacent repeats (1-base or 2-base) in the reference is greater than 8.\nSB-The strand bias is more than the given threshold. Used with the Somatic Variant Caller and GATK.\n\nNote:\nRecords that fail any of the  filters listed here will contain the ID of the  filter (here, LowQual ) in its FILTER  eld (see how records are structured further below).",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReferenceFile",
+					"Description": "The version of the VCF specification to which the file conforms.\n\nIn the flat file received this line will begin with ##reference.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFilter.cdm.json/VcfFilter",
+						"Name": "ReferenceFile"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFilter.cdm.json/VcfFilter",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FilterId",
+					"Description": "The unique identifier of the filter.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFilter.cdm.json/VcfFilter",
+						"Name": "FilterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "FilterDescription",
+					"Description": "The description of the filter.",
+					"BaseAttributeReference": {
+						"Entity": "VcfFilter.cdm.json/VcfFilter",
+						"Name": "FilterDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFilter",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/VcfFilter",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReferenceFile\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"ReferenceFile\"},\"GeneSequencingFileFormatId\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"GeneSequencingFileFormatId\"},\"FilterId\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"FilterId\"},\"FilterDescription\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"FilterDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"VcfFilter\",\"path\":\"VcfFilter.cdm.json/VcfFilter\"},\"description\":\"The FILTER lines tell you what  filters have been applied to the data.\\n\\nEx:\\n##FILTER=<ID=q10,Description=\\\"Quality below 10\\\"> \\n##FILTER=<ID=s50,Description=\\\"Less than 50% of samples have data\\\">\\\\n\\nEx:\\n LowDP-Applied to sites with depth of coverage below a cutoff.\\nLowGQ-The genotyping quality (GQ) is below a cutoff.\\nLowQual-The variant quality (QUAL) is below a cutoff.\\nLowVariantFreq-The variant frequency is less than the given threshold.\\nR8-For an indel, the number of adjacent repeats (1-base or 2-base) in the reference is greater than 8.\\nSB-The strand bias is more than the given threshold. Used with the Somatic Variant Caller and GATK.\\n\\nNote:\\nRecords that fail any of the  filters listed here will contain the ID of the  filter (here, LowQual ) in its FILTER  eld (see how records are structured further below).\",\"primaryKey\":[\"ReferenceFile\",\"GeneSequencingFileFormatId\",\"FilterId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"ReferenceFile\"},\"dataType\":\"integer\",\"description\":\"The version of the VCF specification to which the file conforms.\\n\\nIn the flat file received this line will begin with ##reference.\",\"isNullable\":false,\"name\":\"ReferenceFile\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"FilterId\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The unique identifier of the filter.\",\"isNullable\":false,\"name\":\"FilterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"VcfFilter.cdm.json/VcfFilter\",\"name\":\"FilterDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the filter.\",\"isNullable\":true,\"name\":\"FilterDescription\"}]}}}",
+			"Description": "The FILTER lines tell you what  filters have been applied to the data.\n\nEx:\n##FILTER=<ID=q10,Description=\"Quality below 10\"> \n##FILTER=<ID=s50,Description=\"Less than 50% of samples have data\">\\n\nEx:\n LowDP-Applied to sites with depth of coverage below a cutoff.\nLowGQ-The genotyping quality (GQ) is below a cutoff.\nLowQual-The variant quality (QUAL) is below a cutoff.\nLowVariantFreq-The variant frequency is less than the given threshold.\nR8-For an indel, the number of adjacent repeats (1-base or 2-base) in the reference is greater than 8.\nSB-The strand bias is more than the given threshold. Used with the Somatic Variant Caller and GATK.\n\nNote:\nRecords that fail any of the  filters listed here will contain the ID of the  filter (here, LowQual ) in its FILTER  eld (see how records are structured further below).",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "ReferenceFile,GeneSequencingFileFormatId,FilterId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

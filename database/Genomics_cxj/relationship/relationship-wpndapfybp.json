@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wpndapfybp",
+	"properties": {
+		"Name": "relationship-wpndapfybp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AminoAcidBiofunctionType",
+		"ToTableName": "AminoAcidBiofunction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AminoAcidBiofunctionTypeId",
+				"ToColumnName": "AminoAcidBiofunctionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AminoAcidBiofunctionType.cdm.json/AminoAcidBiofunctionType\",\"toEntity\":\"AminoAcidBiofunction.cdm.json/AminoAcidBiofunction\",\"joinPairs\":[{\"fromAttribute\":\"AminoAcidBiofunctionTypeId\",\"toAttribute\":\"AminoAcidBiofunctionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

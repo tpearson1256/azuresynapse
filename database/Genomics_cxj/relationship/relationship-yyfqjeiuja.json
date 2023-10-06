@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yyfqjeiuja",
+	"properties": {
+		"Name": "relationship-yyfqjeiuja",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneSequencingFileFormatType",
+		"ToTableName": "GeneSequencingFileFormat",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneSequencingFileFormatTypeId",
+				"ToColumnName": "GeneSequencingFileFormatTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneSequencingFileFormatType.cdm.json/GeneSequencingFileFormatType\",\"toEntity\":\"GeneSequencingFileFormat.cdm.json/GeneSequencingFileFormat\",\"joinPairs\":[{\"fromAttribute\":\"GeneSequencingFileFormatTypeId\",\"toAttribute\":\"GeneSequencingFileFormatTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

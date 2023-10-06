@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hfreymhflu",
+	"properties": {
+		"Name": "relationship-hfreymhflu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InternationalStatisticalClassificationOfDiseaseCode",
+		"ToTableName": "MedicalCondition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IcdDiseaseCode",
+				"ToColumnName": "IcdDiseaseCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InternationalStatisticalClassificationOfDiseaseCode.cdm.json/InternationalStatisticalClassificationOfDiseaseCode\",\"toEntity\":\"MedicalCondition.cdm.json/MedicalCondition\",\"joinPairs\":[{\"fromAttribute\":\"IcdDiseaseCode\",\"toAttribute\":\"IcdDiseaseCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,115 @@
+{
+	"name": "EncounterTestPartyRelationshipType",
+	"properties": {
+		"Name": "EncounterTestPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The nature of the relationship between the Encounter Test and the Party.\n\nEx:\n- Authorized-by Party\n- Ordered-by Party\n- Performed-by Party\n- Documented-by Party\n- Report-to Party\n- Required-by Party\n- Requested-by Physician\n- Attending Physician\n- Received-By Party\n\n- Shipped-by Party\n- Read-By Party\n- Technician\n- Participant Spouse\n- Participant Health Care Provider\n- Clinical Research Coordinator (CRC)\nThe coordinating administrator of a clinical trial at a certain site. CRCs can be certified after two years of work by studying a program and passing an examination.\n- Clinical Trial Doctor\n- Clinical Trial Participant\n- Clinical Investigator\nA medical researcher in charge of carrying out a clinical trial's protocol.\n- Contract Research Organization (CRO)\nA company contracted by the sponsoring entity to manage specific parts of a clinical trial.\n- INSTITUTIONAL REVIEW BOARD (IRB)\nA committee of physicians, statisticians, researchers, community advocates, and others that ensures that a clinical trial is ethical and that the rights of study participants are protected. All clinical trials in the U.S. must be approved by an IRB before they begin. 2. Every institution that conducts or supports biomedical or behavioral research involving human participants must, by federal regulation, have an IRB that initially approves and periodically reviews the research in order to protect the rights of human participants.\n- INVESTIGATOR OF RECORD (IOR)\nThe person responsible for the conduct of the clinical trial, at a clinical research site. This person is the signatory for the FDA Form 1572 (IND studies), or IoR Agreement (Non-IND studies). Written delegation of authority for specific study responsibilities may be given to qualified individuals. \n- ADVOCACY AND SUPPORT GROUPS: Organizations and groups that actively support participants and their families with valuable resources, including self-empowerment and survival tools.\n- KEY PERSONNEL\nIndividuals who are involved in the design and conduct of NIH-funded human subjects' clinical research. This includes all individuals named on the Form FDA 1572 or DAIDS Investigator of Record Agreement and any clinical research site personnel who have more than minimal involvement with the conduct of the research (performing study evaluations or procedures or providing intervention) or more than minimal study conduct-related contact with study subjects or confidential study data, records, or specimens. \n- ETHICS COMMITTEE\nAn independent group of both medical and non-medical professionals who are responsible for verifying the integrity of a study and ensuring the safety, integrity, and human rights of the study participants.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterTestPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Party Encounter Test Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType",
+						"Name": "EncounterTestPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestPartyRelationshipTypeName",
+					"Description": "The name of a Party Encounter Test Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType",
+						"Name": "EncounterTestPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestPartyRelationshipTypeDescription",
+					"Description": "The description of a Party Encounter Test Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType",
+						"Name": "EncounterTestPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestPartyRelationshipType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterTestPartyRelationshipTypeId\":{\"entity\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\",\"name\":\"EncounterTestPartyRelationshipTypeId\"},\"EncounterTestPartyRelationshipTypeName\":{\"entity\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\",\"name\":\"EncounterTestPartyRelationshipTypeName\"},\"EncounterTestPartyRelationshipTypeDescription\":{\"entity\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\",\"name\":\"EncounterTestPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestPartyRelationshipType\",\"path\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\"},\"description\":\"The nature of the relationship between the Encounter Test and the Party.\\n\\nEx:\\n- Authorized-by Party\\n- Ordered-by Party\\n- Performed-by Party\\n- Documented-by Party\\n- Report-to Party\\n- Required-by Party\\n- Requested-by Physician\\n- Attending Physician\\n- Received-By Party\\n\\n- Shipped-by Party\\n- Read-By Party\\n- Technician\\n- Participant Spouse\\n- Participant Health Care Provider\\n- Clinical Research Coordinator (CRC)\\nThe coordinating administrator of a clinical trial at a certain site. CRCs can be certified after two years of work by studying a program and passing an examination.\\n- Clinical Trial Doctor\\n- Clinical Trial Participant\\n- Clinical Investigator\\nA medical researcher in charge of carrying out a clinical trial's protocol.\\n- Contract Research Organization (CRO)\\nA company contracted by the sponsoring entity to manage specific parts of a clinical trial.\\n- INSTITUTIONAL REVIEW BOARD (IRB)\\nA committee of physicians, statisticians, researchers, community advocates, and others that ensures that a clinical trial is ethical and that the rights of study participants are protected. All clinical trials in the U.S. must be approved by an IRB before they begin. 2. Every institution that conducts or supports biomedical or behavioral research involving human participants must, by federal regulation, have an IRB that initially approves and periodically reviews the research in order to protect the rights of human participants.\\n- INVESTIGATOR OF RECORD (IOR)\\nThe person responsible for the conduct of the clinical trial, at a clinical research site. This person is the signatory for the FDA Form 1572 (IND studies), or IoR Agreement (Non-IND studies). Written delegation of authority for specific study responsibilities may be given to qualified individuals. \\n- ADVOCACY AND SUPPORT GROUPS: Organizations and groups that actively support participants and their families with valuable resources, including self-empowerment and survival tools.\\n- KEY PERSONNEL\\nIndividuals who are involved in the design and conduct of NIH-funded human subjects' clinical research. This includes all individuals named on the Form FDA 1572 or DAIDS Investigator of Record Agreement and any clinical research site personnel who have more than minimal involvement with the conduct of the research (performing study evaluations or procedures or providing intervention) or more than minimal study conduct-related contact with study subjects or confidential study data, records, or specimens. \\n- ETHICS COMMITTEE\\nAn independent group of both medical and non-medical professionals who are responsible for verifying the integrity of a study and ensuring the safety, integrity, and human rights of the study participants.\",\"primaryKey\":[\"EncounterTestPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\",\"name\":\"EncounterTestPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Party Encounter Test Relationship.\",\"isNullable\":false,\"name\":\"EncounterTestPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\",\"name\":\"EncounterTestPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Party Encounter Test Relationship.\",\"isNullable\":true,\"name\":\"EncounterTestPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestPartyRelationshipType.cdm.json/EncounterTestPartyRelationshipType\",\"name\":\"EncounterTestPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Party Encounter Test Relationship.\",\"isNullable\":true,\"name\":\"EncounterTestPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the Encounter Test and the Party.\n\nEx:\n- Authorized-by Party\n- Ordered-by Party\n- Performed-by Party\n- Documented-by Party\n- Report-to Party\n- Required-by Party\n- Requested-by Physician\n- Attending Physician\n- Received-By Party\n\n- Shipped-by Party\n- Read-By Party\n- Technician\n- Participant Spouse\n- Participant Health Care Provider\n- Clinical Research Coordinator (CRC)\nThe coordinating administrator of a clinical trial at a certain site. CRCs can be certified after two years of work by studying a program and passing an examination.\n- Clinical Trial Doctor\n- Clinical Trial Participant\n- Clinical Investigator\nA medical researcher in charge of carrying out a clinical trial's protocol.\n- Contract Research Organization (CRO)\nA company contracted by the sponsoring entity to manage specific parts of a clinical trial.\n- INSTITUTIONAL REVIEW BOARD (IRB)\nA committee of physicians, statisticians, researchers, community advocates, and others that ensures that a clinical trial is ethical and that the rights of study participants are protected. All clinical trials in the U.S. must be approved by an IRB before they begin. 2. Every institution that conducts or supports biomedical or behavioral research involving human participants must, by federal regulation, have an IRB that initially approves and periodically reviews the research in order to protect the rights of human participants.\n- INVESTIGATOR OF RECORD (IOR)\nThe person responsible for the conduct of the clinical trial, at a clinical research site. This person is the signatory for the FDA Form 1572 (IND studies), or IoR Agreement (Non-IND studies). Written delegation of authority for specific study responsibilities may be given to qualified individuals. \n- ADVOCACY AND SUPPORT GROUPS: Organizations and groups that actively support participants and their families with valuable resources, including self-empowerment and survival tools.\n- KEY PERSONNEL\nIndividuals who are involved in the design and conduct of NIH-funded human subjects' clinical research. This includes all individuals named on the Form FDA 1572 or DAIDS Investigator of Record Agreement and any clinical research site personnel who have more than minimal involvement with the conduct of the research (performing study evaluations or procedures or providing intervention) or more than minimal study conduct-related contact with study subjects or confidential study data, records, or specimens. \n- ETHICS COMMITTEE\nAn independent group of both medical and non-medical professionals who are responsible for verifying the integrity of a study and ensuring the safety, integrity, and human rights of the study participants.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EncounterTestPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

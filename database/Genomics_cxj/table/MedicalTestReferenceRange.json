@@ -1,0 +1,234 @@
+{
+	"name": "MedicalTestReferenceRange",
+	"properties": {
+		"Name": "MedicalTestReferenceRange",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The range of values that 95% of the identified population (age, sex, race) will exhibit for the associated medical test.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MedicalTestTypeId",
+					"Description": "The unique identifier of a Medical Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "MedicalTestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MinimumAge",
+					"Description": "Minimum Age to which this Reference Range applies.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "MinimumAge"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MaximumAge",
+					"Description": "Maximum Age to which this Reference Range applies.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "MaximumAge"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SexId",
+					"Description": "The unique identifier of a Sex.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "SexId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RacialCategoryId",
+					"Description": "The unique identifier of a Racial Category.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "RacialCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReferenceRangeMinimumValue",
+					"Description": "The target or desired MIN-max reference range value.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "ReferenceRangeMinimumValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReferenceRangeMaximumValue",
+					"Description": "The target or desired min-MAX reference range value.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "ReferenceRangeMaximumValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ReferenceRangeMeanValue",
+					"Description": "The mean value of the reference range.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "ReferenceRangeMeanValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "MedicalTestReferenceRangeNote",
+					"Description": "A note, comment or additional information regarding the reference range.",
+					"BaseAttributeReference": {
+						"Entity": "MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange",
+						"Name": "MedicalTestReferenceRangeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestReferenceRange",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/MedicalTestReferenceRange",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MedicalTestTypeId\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MedicalTestTypeId\"},\"MinimumAge\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MinimumAge\"},\"MaximumAge\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MaximumAge\"},\"SexId\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"SexId\"},\"RacialCategoryId\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"RacialCategoryId\"},\"ReferenceRangeMinimumValue\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"ReferenceRangeMinimumValue\"},\"ReferenceRangeMaximumValue\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"ReferenceRangeMaximumValue\"},\"ReferenceRangeMeanValue\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"ReferenceRangeMeanValue\"},\"UnitOfMeasureId\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"UnitOfMeasureId\"},\"MedicalTestReferenceRangeNote\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MedicalTestReferenceRangeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MedicalTestReferenceRange\",\"path\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\"},\"description\":\"The range of values that 95% of the identified population (age, sex, race) will exhibit for the associated medical test.\",\"primaryKey\":[\"MedicalTestTypeId\",\"MinimumAge\",\"MaximumAge\",\"SexId\",\"RacialCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MedicalTestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Medical Test Type.\",\"isNullable\":false,\"name\":\"MedicalTestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MinimumAge\"},\"dataType\":\"integer\",\"description\":\"Minimum Age to which this Reference Range applies.\",\"isNullable\":false,\"name\":\"MinimumAge\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MaximumAge\"},\"dataType\":\"integer\",\"description\":\"Maximum Age to which this Reference Range applies.\",\"isNullable\":false,\"name\":\"MaximumAge\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"SexId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Sex.\",\"isNullable\":false,\"name\":\"SexId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"RacialCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Racial Category.\",\"isNullable\":false,\"name\":\"RacialCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"ReferenceRangeMinimumValue\"},\"dataType\":\"integer\",\"description\":\"The target or desired MIN-max reference range value.\",\"isNullable\":true,\"name\":\"ReferenceRangeMinimumValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"ReferenceRangeMaximumValue\"},\"dataType\":\"integer\",\"description\":\"The target or desired min-MAX reference range value.\",\"isNullable\":true,\"name\":\"ReferenceRangeMaximumValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"ReferenceRangeMeanValue\"},\"dataType\":\"integer\",\"description\":\"The mean value of the reference range.\",\"isNullable\":true,\"name\":\"ReferenceRangeMeanValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MedicalTestReferenceRange.cdm.json/MedicalTestReferenceRange\",\"name\":\"MedicalTestReferenceRangeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the reference range.\",\"isNullable\":true,\"name\":\"MedicalTestReferenceRangeNote\"}]}}}",
+			"Description": "The range of values that 95% of the identified population (age, sex, race) will exhibit for the associated medical test.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#4B003F\"}",
+			"PrimaryKeys": "MedicalTestTypeId,MinimumAge,MaximumAge,SexId,RacialCategoryId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

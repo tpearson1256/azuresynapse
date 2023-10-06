@@ -1,0 +1,167 @@
+{
+	"name": "GeneSequenceFormatRelatedParty",
+	"properties": {
+		"Name": "GeneSequenceFormatRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The party(s) having a relationship with the gene sequence format during the indicated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneSequencingFileFormatId",
+					"Description": "The unique identifier of a gene sequencing file format.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty",
+						"Name": "GeneSequencingFileFormatId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Gene Sequence Format Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty",
+						"Name": "GeneSequenceFormatPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequenceFormatRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the gene sequence format related party.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty",
+						"Name": "GeneSequenceFormatRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFormatRelatedParty",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequenceFormatRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneSequencingFileFormatId\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"GeneSequencingFileFormatId\"},\"PartyId\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"PartyId\"},\"GeneSequenceFormatPartyRelationshipTypeId\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"GeneSequenceFormatRelatedPartyNote\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"GeneSequenceFormatRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequenceFormatRelatedParty\",\"path\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\"},\"description\":\"The party(s) having a relationship with the gene sequence format during the indicated period.\",\"primaryKey\":[\"GeneSequencingFileFormatId\",\"PartyId\",\"GeneSequenceFormatPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"GeneSequencingFileFormatId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a gene sequencing file format.\",\"isNullable\":false,\"name\":\"GeneSequencingFileFormatId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"GeneSequenceFormatPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Gene Sequence Format Party Relationship Type.\",\"isNullable\":false,\"name\":\"GeneSequenceFormatPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequenceFormatRelatedParty.cdm.json/GeneSequenceFormatRelatedParty\",\"name\":\"GeneSequenceFormatRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the gene sequence format related party.\",\"isNullable\":true,\"name\":\"GeneSequenceFormatRelatedPartyNote\"}]}}}",
+			"Description": "The party(s) having a relationship with the gene sequence format during the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "GeneSequencingFileFormatId,PartyId,GeneSequenceFormatPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

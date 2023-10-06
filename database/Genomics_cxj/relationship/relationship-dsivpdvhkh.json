@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dsivpdvhkh",
+	"properties": {
+		"Name": "relationship-dsivpdvhkh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AlleleCharacteristicType",
+		"ToTableName": "AlleleCharacteristic",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AlleleCharacteristicTypeId",
+				"ToColumnName": "AlleleCharacteristicTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AlleleCharacteristicType.cdm.json/AlleleCharacteristicType\",\"toEntity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"joinPairs\":[{\"fromAttribute\":\"AlleleCharacteristicTypeId\",\"toAttribute\":\"AlleleCharacteristicTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zcxojxjbdn",
+	"properties": {
+		"Name": "relationship-zcxojxjbdn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "DataLineReferenceAllele",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ChromContigId",
+				"ToColumnName": "ChromContigId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"DataLineReferenceAllele.cdm.json/DataLineReferenceAllele\",\"joinPairs\":[{\"fromAttribute\":\"ChromContigId\",\"toAttribute\":\"ChromContigId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

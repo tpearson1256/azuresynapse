@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vpugiwgobn",
+	"properties": {
+		"Name": "relationship-vpugiwgobn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfDataLine",
+		"ToTableName": "DataLineInfo",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "Pos",
+				"ToColumnName": "Pos"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfDataLine.cdm.json/VcfDataLine\",\"toEntity\":\"DataLineInfo.cdm.json/DataLineInfo\",\"joinPairs\":[{\"fromAttribute\":\"Pos\",\"toAttribute\":\"Pos\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

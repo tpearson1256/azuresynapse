@@ -1,0 +1,26 @@
+{
+	"name": "relationship-paevhvurfg",
+	"properties": {
+		"Name": "relationship-paevhvurfg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AminoAcidPathwayType",
+		"ToTableName": "AminoAcidPathway",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AminoAcidPathwayTypeId",
+				"ToColumnName": "AminoAcidPathwayTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AminoAcidPathwayType.cdm.json/AminoAcidPathwayType\",\"toEntity\":\"AminoAcidPathway.cdm.json/AminoAcidPathway\",\"joinPairs\":[{\"fromAttribute\":\"AminoAcidPathwayTypeId\",\"toAttribute\":\"AminoAcidPathwayTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

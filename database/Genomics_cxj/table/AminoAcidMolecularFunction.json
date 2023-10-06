@@ -1,0 +1,115 @@
+{
+	"name": "AminoAcidMolecularFunction",
+	"properties": {
+		"Name": "AminoAcidMolecularFunction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The molecular function(s) associated with the amino acid.\n\nEx:\nNon-protein amino acids have important roles as metabolic intermediates, such as in the biosynthesis of the neurotransmitter gamma-amino-butyric acid (GABA). \n\nMany amino acids are used to synthesize other molecules, for example:\n\nEx:\n-  Tryptophan is a precursor of the neurotransmitter serotonin. \n-  Glycine is a precursor of porphyrins such as heme. \n-  Arginine is a precursor of nitric oxide.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "ProteinMolecularFunctionTypeId",
+					"Description": "The unique identifier of a protein molecular function type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction",
+						"Name": "ProteinMolecularFunctionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidMolecularFunctionNote",
+					"Description": "A note, comment or additional information regarding the amino acid molecular function.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction",
+						"Name": "AminoAcidMolecularFunctionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidMolecularFunction",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidMolecularFunction",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidId\":{\"entity\":\"AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction\",\"name\":\"AminoAcidId\"},\"ProteinMolecularFunctionTypeId\":{\"entity\":\"AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction\",\"name\":\"ProteinMolecularFunctionTypeId\"},\"AminoAcidMolecularFunctionNote\":{\"entity\":\"AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction\",\"name\":\"AminoAcidMolecularFunctionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidMolecularFunction\",\"path\":\"AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction\"},\"description\":\"The molecular function(s) associated with the amino acid.\\n\\nEx:\\nNon-protein amino acids have important roles as metabolic intermediates, such as in the biosynthesis of the neurotransmitter gamma-amino-butyric acid (GABA). \\n\\nMany amino acids are used to synthesize other molecules, for example:\\n\\nEx:\\n-  Tryptophan is a precursor of the neurotransmitter serotonin. \\n-  Glycine is a precursor of porphyrins such as heme. \\n-  Arginine is a precursor of nitric oxide.\",\"primaryKey\":[\"AminoAcidId\",\"ProteinMolecularFunctionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction\",\"name\":\"ProteinMolecularFunctionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a protein molecular function type.\",\"isNullable\":false,\"name\":\"ProteinMolecularFunctionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidMolecularFunction.cdm.json/AminoAcidMolecularFunction\",\"name\":\"AminoAcidMolecularFunctionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid molecular function.\",\"isNullable\":true,\"name\":\"AminoAcidMolecularFunctionNote\"}]}}}",
+			"Description": "The molecular function(s) associated with the amino acid.\n\nEx:\nNon-protein amino acids have important roles as metabolic intermediates, such as in the biosynthesis of the neurotransmitter gamma-amino-butyric acid (GABA). \n\nMany amino acids are used to synthesize other molecules, for example:\n\nEx:\n-  Tryptophan is a precursor of the neurotransmitter serotonin. \n-  Glycine is a precursor of porphyrins such as heme. \n-  Arginine is a precursor of nitric oxide.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidId,ProteinMolecularFunctionTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

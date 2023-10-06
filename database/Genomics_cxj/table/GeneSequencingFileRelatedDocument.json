@@ -1,0 +1,114 @@
+{
+	"name": "GeneSequencingFileRelatedDocument",
+	"properties": {
+		"Name": "GeneSequencingFileRelatedDocument",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The document(s) related to the gene sequencing file.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FileId",
+					"Description": "The unique identifier of a file.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument",
+						"Name": "FileId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "GeneSequencingFileRelatedDocumentNote",
+					"Description": "A note, comment or additional information regarding the gene sequencing file related document.",
+					"BaseAttributeReference": {
+						"Entity": "GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument",
+						"Name": "GeneSequencingFileRelatedDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileRelatedDocument",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/GeneSequencingFileRelatedDocument",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FileId\":{\"entity\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\",\"name\":\"FileId\"},\"DocumentId\":{\"entity\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\",\"name\":\"DocumentId\"},\"GeneSequencingFileRelatedDocumentNote\":{\"entity\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\",\"name\":\"GeneSequencingFileRelatedDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneSequencingFileRelatedDocument\",\"path\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\"},\"description\":\"The document(s) related to the gene sequencing file.\",\"primaryKey\":[\"FileId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\",\"name\":\"FileId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a file.\",\"isNullable\":false,\"name\":\"FileId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneSequencingFileRelatedDocument.cdm.json/GeneSequencingFileRelatedDocument\",\"name\":\"GeneSequencingFileRelatedDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the gene sequencing file related document.\",\"isNullable\":true,\"name\":\"GeneSequencingFileRelatedDocumentNote\"}]}}}",
+			"Description": "The document(s) related to the gene sequencing file.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "FileId,DocumentId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tkpmkamoxn",
+	"properties": {
+		"Name": "relationship-tkpmkamoxn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Allele",
+		"ToTableName": "AlleleCharacteristic",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AlleleId",
+				"ToColumnName": "AlleleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Allele.cdm.json/Allele\",\"toEntity\":\"AlleleCharacteristic.cdm.json/AlleleCharacteristic\",\"joinPairs\":[{\"fromAttribute\":\"AlleleId\",\"toAttribute\":\"AlleleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

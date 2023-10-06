@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hetoqjejml",
+	"properties": {
+		"Name": "relationship-hetoqjejml",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentEvent",
+		"ToTableName": "DocumentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentEventTimestamp",
+				"ToColumnName": "DocumentEventTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentEvent.cdm.json/DocumentEvent\",\"toEntity\":\"DocumentEventRelatedParty.cdm.json/DocumentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"DocumentEventTimestamp\",\"toAttribute\":\"DocumentEventTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

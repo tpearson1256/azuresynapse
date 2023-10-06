@@ -1,0 +1,26 @@
+{
+	"name": "relationship-boduvmeqcc",
+	"properties": {
+		"Name": "relationship-boduvmeqcc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentStandardType",
+		"ToTableName": "DocumentStandard",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentStandardTypeId",
+				"ToColumnName": "DocumentStandardTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentStandardType.cdm.json/DocumentStandardType\",\"toEntity\":\"DocumentStandard.cdm.json/DocumentStandard\",\"joinPairs\":[{\"fromAttribute\":\"DocumentStandardTypeId\",\"toAttribute\":\"DocumentStandardTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,131 @@
+{
+	"name": "RelatedSpecimen",
+	"properties": {
+		"Name": "RelatedSpecimen",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The relationship of two or more test specimens.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenId",
+					"Description": "The unique identifier of a Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSpecimen.cdm.json/RelatedSpecimen",
+						"Name": "SpecimenId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RelatedSpecimenId",
+					"Description": "The unique identifier of a Specimen.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSpecimen.cdm.json/RelatedSpecimen",
+						"Name": "RelatedSpecimenId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenRelationshipTypeId",
+					"Description": "The unique identifier of a test relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSpecimen.cdm.json/RelatedSpecimen",
+						"Name": "SpecimenRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "RelatedSpecimenNote",
+					"Description": "A note, comment or additional information regarding the related specimen.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedSpecimen.cdm.json/RelatedSpecimen",
+						"Name": "RelatedSpecimenNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/RelatedSpecimen",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/RelatedSpecimen",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenId\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"SpecimenId\"},\"RelatedSpecimenId\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"RelatedSpecimenId\"},\"SpecimenRelationshipTypeId\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"SpecimenRelationshipTypeId\"},\"RelatedSpecimenNote\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"RelatedSpecimenNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedSpecimen\",\"path\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\"},\"description\":\"The relationship of two or more test specimens.\",\"primaryKey\":[\"SpecimenId\",\"RelatedSpecimenId\",\"SpecimenRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"SpecimenId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen.\",\"isNullable\":false,\"name\":\"SpecimenId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"RelatedSpecimenId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen.\",\"isNullable\":false,\"name\":\"RelatedSpecimenId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"SpecimenRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a test relationship type.\",\"isNullable\":false,\"name\":\"SpecimenRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedSpecimen.cdm.json/RelatedSpecimen\",\"name\":\"RelatedSpecimenNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the related specimen.\",\"isNullable\":true,\"name\":\"RelatedSpecimenNote\"}]}}}",
+			"Description": "The relationship of two or more test specimens.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenId,RelatedSpecimenId,SpecimenRelationshipTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

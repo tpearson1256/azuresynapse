@@ -1,0 +1,116 @@
+{
+	"name": "AminoAcidStatus",
+	"properties": {
+		"Name": "AminoAcidStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The status of the amino acid.\n\nEx:\n- Detected and Quantified\n- Detected but not Quantified",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidStatusId",
+					"Description": "The unique identifier of an amino acid status.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidStatus.cdm.json/AminoAcidStatus",
+						"Name": "AminoAcidStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidStatusName",
+					"Description": "The name of an amino acid status.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidStatus.cdm.json/AminoAcidStatus",
+						"Name": "AminoAcidStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidStatusDescription",
+					"Description": "The description of an amino acid status.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidStatus.cdm.json/AminoAcidStatus",
+						"Name": "AminoAcidStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidStatus",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidStatus",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidStatusId\":{\"entity\":\"AminoAcidStatus.cdm.json/AminoAcidStatus\",\"name\":\"AminoAcidStatusId\"},\"AminoAcidStatusName\":{\"entity\":\"AminoAcidStatus.cdm.json/AminoAcidStatus\",\"name\":\"AminoAcidStatusName\"},\"AminoAcidStatusDescription\":{\"entity\":\"AminoAcidStatus.cdm.json/AminoAcidStatus\",\"name\":\"AminoAcidStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidStatus\",\"path\":\"AminoAcidStatus.cdm.json/AminoAcidStatus\"},\"description\":\"The status of the amino acid.\\n\\nEx:\\n- Detected and Quantified\\n- Detected but not Quantified\",\"primaryKey\":[\"AminoAcidStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidStatus.cdm.json/AminoAcidStatus\",\"name\":\"AminoAcidStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid status.\",\"isNullable\":false,\"name\":\"AminoAcidStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidStatus.cdm.json/AminoAcidStatus\",\"name\":\"AminoAcidStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an amino acid status.\",\"isNullable\":true,\"name\":\"AminoAcidStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidStatus.cdm.json/AminoAcidStatus\",\"name\":\"AminoAcidStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an amino acid status.\",\"isNullable\":true,\"name\":\"AminoAcidStatusDescription\"}]}}}",
+			"Description": "The status of the amino acid.\n\nEx:\n- Detected and Quantified\n- Detected but not Quantified",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidStatusId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

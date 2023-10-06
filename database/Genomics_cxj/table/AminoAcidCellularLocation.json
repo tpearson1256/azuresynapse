@@ -1,0 +1,115 @@
+{
+	"name": "AminoAcidCellularLocation",
+	"properties": {
+		"Name": "AminoAcidCellularLocation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The cellular location(s) associated with the amino acid.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "CellularLocationTypeId",
+					"Description": "The unique identifier of a cellular location type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation",
+						"Name": "CellularLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidCellularLocationNote",
+					"Description": "A note, comment or additional information regarding the amino acid cellular location type.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation",
+						"Name": "AminoAcidCellularLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidCellularLocation",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidCellularLocation",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AminoAcidId\":{\"entity\":\"AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation\",\"name\":\"AminoAcidId\"},\"CellularLocationTypeId\":{\"entity\":\"AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation\",\"name\":\"CellularLocationTypeId\"},\"AminoAcidCellularLocationNote\":{\"entity\":\"AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation\",\"name\":\"AminoAcidCellularLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidCellularLocation\",\"path\":\"AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation\"},\"description\":\"The cellular location(s) associated with the amino acid.\",\"primaryKey\":[\"AminoAcidId\",\"CellularLocationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation\",\"name\":\"CellularLocationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a cellular location type.\",\"isNullable\":false,\"name\":\"CellularLocationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidCellularLocation.cdm.json/AminoAcidCellularLocation\",\"name\":\"AminoAcidCellularLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the amino acid cellular location type.\",\"isNullable\":true,\"name\":\"AminoAcidCellularLocationNote\"}]}}}",
+			"Description": "The cellular location(s) associated with the amino acid.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "AminoAcidId,CellularLocationTypeId",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

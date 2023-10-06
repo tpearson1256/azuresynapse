@@ -1,0 +1,115 @@
+{
+	"name": "TissueType",
+	"properties": {
+		"Name": "TissueType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of tissue associated with the specimen.\n\nEx:\n- Adrenal gland\n- Bile\n- Blood\n- Bone\n- Bone marrow\n- Cecum\n- Cecum contents\n- Cerebellum\n- Cerebrum\n- Cerebrospinal fluid\n- Diaphragm\n- Epididymis\n- Esophageal contents\n- Esophageal mucosa\n- Esophagus\n- Exorbital lacrimal gland\n- Eye\n- Eye (lens)\n- Fat (abdominal)\n- Fat (brown)\n- Bone marrow 0.12\n- Large intestine 0.12\n- Liver 0.05\n- Lung 0.12\n- Skin 0.01\n- Stomach 0.12\n- - Testis 0.20\n- Thyroid 0.05\n- Urinary",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "TissueTypeId",
+					"Description": "The unique identifier of a tissue type.",
+					"BaseAttributeReference": {
+						"Entity": "TissueType.cdm.json/TissueType",
+						"Name": "TissueTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TissueTypeName",
+					"Description": "The name of a tissue type.",
+					"BaseAttributeReference": {
+						"Entity": "TissueType.cdm.json/TissueType",
+						"Name": "TissueTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "TissueTypeDescription",
+					"Description": "The description of a tissue type.",
+					"BaseAttributeReference": {
+						"Entity": "TissueType.cdm.json/TissueType",
+						"Name": "TissueTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TissueType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/TissueType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"TissueTypeId\":{\"entity\":\"TissueType.cdm.json/TissueType\",\"name\":\"TissueTypeId\"},\"TissueTypeName\":{\"entity\":\"TissueType.cdm.json/TissueType\",\"name\":\"TissueTypeName\"},\"TissueTypeDescription\":{\"entity\":\"TissueType.cdm.json/TissueType\",\"name\":\"TissueTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"TissueType\",\"path\":\"TissueType.cdm.json/TissueType\"},\"description\":\"The type of tissue associated with the specimen.\\n\\nEx:\\n- Adrenal gland\\n- Bile\\n- Blood\\n- Bone\\n- Bone marrow\\n- Cecum\\n- Cecum contents\\n- Cerebellum\\n- Cerebrum\\n- Cerebrospinal fluid\\n- Diaphragm\\n- Epididymis\\n- Esophageal contents\\n- Esophageal mucosa\\n- Esophagus\\n- Exorbital lacrimal gland\\n- Eye\\n- Eye (lens)\\n- Fat (abdominal)\\n- Fat (brown)\\n- Bone marrow 0.12\\n- Large intestine 0.12\\n- Liver 0.05\\n- Lung 0.12\\n- Skin 0.01\\n- Stomach 0.12\\n- - Testis 0.20\\n- Thyroid 0.05\\n- Urinary\",\"primaryKey\":[\"TissueTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TissueType.cdm.json/TissueType\",\"name\":\"TissueTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a tissue type.\",\"isNullable\":false,\"name\":\"TissueTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TissueType.cdm.json/TissueType\",\"name\":\"TissueTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a tissue type.\",\"isNullable\":true,\"name\":\"TissueTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"TissueType.cdm.json/TissueType\",\"name\":\"TissueTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a tissue type.\",\"isNullable\":true,\"name\":\"TissueTypeDescription\"}]}}}",
+			"Description": "The type of tissue associated with the specimen.\n\nEx:\n- Adrenal gland\n- Bile\n- Blood\n- Bone\n- Bone marrow\n- Cecum\n- Cecum contents\n- Cerebellum\n- Cerebrum\n- Cerebrospinal fluid\n- Diaphragm\n- Epididymis\n- Esophageal contents\n- Esophageal mucosa\n- Esophagus\n- Exorbital lacrimal gland\n- Eye\n- Eye (lens)\n- Fat (abdominal)\n- Fat (brown)\n- Bone marrow 0.12\n- Large intestine 0.12\n- Liver 0.05\n- Lung 0.12\n- Skin 0.01\n- Stomach 0.12\n- - Testis 0.20\n- Thyroid 0.05\n- Urinary",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "TissueTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

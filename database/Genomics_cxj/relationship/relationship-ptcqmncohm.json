@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ptcqmncohm",
+	"properties": {
+		"Name": "relationship-ptcqmncohm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "VcfFilter",
+		"ToTableName": "DataLineFilter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FilterId",
+				"ToColumnName": "FilterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"VcfFilter.cdm.json/VcfFilter\",\"toEntity\":\"DataLineFilter.cdm.json/DataLineFilter\",\"joinPairs\":[{\"fromAttribute\":\"FilterId\",\"toAttribute\":\"FilterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

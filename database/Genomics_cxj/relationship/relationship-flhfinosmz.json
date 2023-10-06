@@ -1,0 +1,26 @@
+{
+	"name": "relationship-flhfinosmz",
+	"properties": {
+		"Name": "relationship-flhfinosmz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EmblFormatSequenceValueType",
+		"ToTableName": "EmblFormatNucleicAminoAcidCodeOrder",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EmblFormatSequenceValueTypeId",
+				"ToColumnName": "EmblFormatSequenceValueTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EmblFormatSequenceValueType.cdm.json/EmblFormatSequenceValueType\",\"toEntity\":\"EmblFormatNucleicAminoAcidCodeOrder.cdm.json/EmblFormatNucleicAminoAcidCodeOrder\",\"joinPairs\":[{\"fromAttribute\":\"EmblFormatSequenceValueTypeId\",\"toAttribute\":\"EmblFormatSequenceValueTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

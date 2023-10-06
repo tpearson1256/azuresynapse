@@ -1,0 +1,115 @@
+{
+	"name": "EncounterTestEventType",
+	"properties": {
+		"Name": "EncounterTestEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A type of encounter event that is associated with an encounter test.\n\nEx:\n- Test completed\n- Test Performed\n- Test Sent to Lab\n- Test Analyzed\n- Test Results Returned\n- Test Results Conveyed To Patient\n- Test Results Sent to Payer\n- Test canceled\n- Re-test Requested",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EncounterTestEventTypeId",
+					"Description": "The unique identifier of an encounter test event type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestEventType.cdm.json/EncounterTestEventType",
+						"Name": "EncounterTestEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestEventTypeName",
+					"Description": "The name of an encounter test event type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestEventType.cdm.json/EncounterTestEventType",
+						"Name": "EncounterTestEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "EncounterTestEventTypeDescription",
+					"Description": "The description of an encounter test event type.",
+					"BaseAttributeReference": {
+						"Entity": "EncounterTestEventType.cdm.json/EncounterTestEventType",
+						"Name": "EncounterTestEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestEventType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/EncounterTestEventType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EncounterTestEventTypeId\":{\"entity\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\",\"name\":\"EncounterTestEventTypeId\"},\"EncounterTestEventTypeName\":{\"entity\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\",\"name\":\"EncounterTestEventTypeName\"},\"EncounterTestEventTypeDescription\":{\"entity\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\",\"name\":\"EncounterTestEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EncounterTestEventType\",\"path\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\"},\"description\":\"A type of encounter event that is associated with an encounter test.\\n\\nEx:\\n- Test completed\\n- Test Performed\\n- Test Sent to Lab\\n- Test Analyzed\\n- Test Results Returned\\n- Test Results Conveyed To Patient\\n- Test Results Sent to Payer\\n- Test canceled\\n- Re-test Requested\",\"primaryKey\":[\"EncounterTestEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\",\"name\":\"EncounterTestEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an encounter test event type.\",\"isNullable\":false,\"name\":\"EncounterTestEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\",\"name\":\"EncounterTestEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an encounter test event type.\",\"isNullable\":true,\"name\":\"EncounterTestEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EncounterTestEventType.cdm.json/EncounterTestEventType\",\"name\":\"EncounterTestEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an encounter test event type.\",\"isNullable\":true,\"name\":\"EncounterTestEventTypeDescription\"}]}}}",
+			"Description": "A type of encounter event that is associated with an encounter test.\n\nEx:\n- Test completed\n- Test Performed\n- Test Sent to Lab\n- Test Analyzed\n- Test Results Returned\n- Test Results Conveyed To Patient\n- Test Results Sent to Payer\n- Test canceled\n- Re-test Requested",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "EncounterTestEventTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

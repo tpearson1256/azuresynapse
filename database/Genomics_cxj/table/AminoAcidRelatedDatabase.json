@@ -1,0 +1,133 @@
+{
+	"name": "AminoAcidRelatedDatabase",
+	"properties": {
+		"Name": "AminoAcidRelatedDatabase",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The database(s) containing information and entries related to the amino acid.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DatabaseId",
+					"Description": "The unique identifier of a database.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase",
+						"Name": "DatabaseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "AminoAcidId",
+					"Description": "The unique identifier of an amino acid.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase",
+						"Name": "AminoAcidId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DatabaseEntry",
+					"Description": "The database entry of the associated type related to the amino acid.\n\nEx:\nModBase - P06968\nSWISS2DPAGE - P06969\nHAMAP - MF_00116\nInterPro - IPR008180, IPR008181",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase",
+						"Name": "DatabaseEntry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DatabaseUrl",
+					"Description": "The URL of the database location for the associated entry.",
+					"BaseAttributeReference": {
+						"Entity": "AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase",
+						"Name": "DatabaseUrl"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2083,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidRelatedDatabase",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/AminoAcidRelatedDatabase",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DatabaseId\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"DatabaseId\"},\"AminoAcidId\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"AminoAcidId\"},\"DatabaseEntry\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"DatabaseEntry\"},\"DatabaseUrl\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"DatabaseUrl\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AminoAcidRelatedDatabase\",\"path\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\"},\"description\":\"The database(s) containing information and entries related to the amino acid.\",\"primaryKey\":[\"DatabaseId\",\"AminoAcidId\",\"DatabaseEntry\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"DatabaseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a database.\",\"isNullable\":false,\"name\":\"DatabaseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"AminoAcidId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an amino acid.\",\"isNullable\":false,\"name\":\"AminoAcidId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"DatabaseEntry\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The database entry of the associated type related to the amino acid.\\n\\nEx:\\nModBase - P06968\\nSWISS2DPAGE - P06969\\nHAMAP - MF_00116\\nInterPro - IPR008180, IPR008181\",\"isNullable\":false,\"name\":\"DatabaseEntry\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AminoAcidRelatedDatabase.cdm.json/AminoAcidRelatedDatabase\",\"name\":\"DatabaseUrl\"},\"dataType\":\"string\",\"dataTypeLength\":2083,\"description\":\"The URL of the database location for the associated entry.\",\"isNullable\":true,\"name\":\"DatabaseUrl\"}]}}}",
+			"Description": "The database(s) containing information and entries related to the amino acid.",
+			"DisplayFolderInfo": "{\"name\":\"Patient\",\"colorCode\":\"#917EDB\"}",
+			"PrimaryKeys": "DatabaseId,AminoAcidId,DatabaseEntry",
+			"spark.sql.sources.provider": "csv",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

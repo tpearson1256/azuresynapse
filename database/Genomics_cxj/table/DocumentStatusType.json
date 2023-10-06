@@ -1,0 +1,115 @@
+{
+	"name": "DocumentStatusType",
+	"properties": {
+		"Name": "DocumentStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "A type of document status.\n\nEx:\n- To be filed\n- Filed\n- In preparation\n- Under review\n- Accepted\n- In Revision\n- Completed\n- Unknown\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DocumentStatusTypeId",
+					"Description": "The unique identifier of a document status type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentStatusType.cdm.json/DocumentStatusType",
+						"Name": "DocumentStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentStatusTypeName",
+					"Description": "The name of a document status type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentStatusType.cdm.json/DocumentStatusType",
+						"Name": "DocumentStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "DocumentStatusTypeDescription",
+					"Description": "The description of a document status type.",
+					"BaseAttributeReference": {
+						"Entity": "DocumentStatusType.cdm.json/DocumentStatusType",
+						"Name": "DocumentStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentStatusType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/DocumentStatusType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DocumentStatusTypeId\":{\"entity\":\"DocumentStatusType.cdm.json/DocumentStatusType\",\"name\":\"DocumentStatusTypeId\"},\"DocumentStatusTypeName\":{\"entity\":\"DocumentStatusType.cdm.json/DocumentStatusType\",\"name\":\"DocumentStatusTypeName\"},\"DocumentStatusTypeDescription\":{\"entity\":\"DocumentStatusType.cdm.json/DocumentStatusType\",\"name\":\"DocumentStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DocumentStatusType\",\"path\":\"DocumentStatusType.cdm.json/DocumentStatusType\"},\"description\":\"A type of document status.\\n\\nEx:\\n- To be filed\\n- Filed\\n- In preparation\\n- Under review\\n- Accepted\\n- In Revision\\n- Completed\\n- Unknown\\n- N/A\",\"primaryKey\":[\"DocumentStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentStatusType.cdm.json/DocumentStatusType\",\"name\":\"DocumentStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a document status type.\",\"isNullable\":false,\"name\":\"DocumentStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentStatusType.cdm.json/DocumentStatusType\",\"name\":\"DocumentStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a document status type.\",\"isNullable\":true,\"name\":\"DocumentStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DocumentStatusType.cdm.json/DocumentStatusType\",\"name\":\"DocumentStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a document status type.\",\"isNullable\":true,\"name\":\"DocumentStatusTypeDescription\"}]}}}",
+			"Description": "A type of document status.\n\nEx:\n- To be filed\n- Filed\n- In preparation\n- Under review\n- Accepted\n- In Revision\n- Completed\n- Unknown\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Document Management\",\"colorCode\":\"#0078D4\"}",
+			"PrimaryKeys": "DocumentStatusTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

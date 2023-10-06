@@ -1,0 +1,115 @@
+{
+	"name": "SpecimenType",
+	"properties": {
+		"Name": "SpecimenType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Description": "The type of Specimen taken.\n\nEx:\n- Body Fluid Analysis\n- Tissue\n- Endoscopy\n- Bodily Function Analysis\n- Genetic Material Analysis\n\nwhere:\n\nBODY FLUID ANALYSIS\nTests that provide a picture of the inside of the body, either in its entirety or only of certain parts. Ordinary x-rays are the most common imaging tests, but others include ultrasound, radioisotope (nuclear) scans, computed tomography (CT) scans, magnetic resonance imaging (MRI) scans, and positron emission tomography (PET) scans.\n\nENDOSCOPY\nThe use of a viewing tube to directly observe the inside of body organs or spaces (cavities). Most often, the endoscope is flexible, although a few types are rigid. The tip of the endoscope is usually equipped with a light and a camera, so images can be seen on a television monitor while the examiner is observing through the endoscope. Tools are often passed through a channel in the endoscope. One type of tool is used to cut and remove tissue samples.\n\nEndoscopy usually consists of passing the viewing tube through an existing body opening. For example, esophagogastroduodenoscopy (EGD) is accomplished by passing a viewing tube through the mouth. Colonoscopy involves passing a viewing tube through the anus. However, sometimes an opening in the body must be created. This can be done by making a small cut (incision) through the skin and through layers of tissue beneath the skin, so that the endoscope can be passed into a body cavity. For example, in arthroscopy, an endoscope is passed through an incision to view a joint, such as the knee or shoulder.\n\nBODILY FUNCTION ANALYSIS\nOften involves recording and analyzing the activity of various body organs. For example, electrical activity of the heart is measured with electrocardiography (ECG), and electrical activity of the brain is measured with electroencephalography (EEG).\n\nBIOPSY\nInvolves removing tissue samples and examining them, usually with a microscope. The examination often focuses on finding abnormal cells that might provide evidence of inflammation or of a disease, such as cancer. Tissues that are commonly examined include skin, breast, lung, liver, kidney, and bone.\n\nGENETIC MATERIAL ANALYSIS\nUsually involves testing cells from skin, blood, or bone marrow. Genetic testing consists of an examination for abnormalities of chromosomes, genes, or both. Examination of genes includes analysis of DNA. Fetuses may undergo genetic testing to determine whether they have a genetic disorder. Children and young adults often undergo genetic testing to determine whether they themselves have a disease or are at risk of a disease. Adults sometimes undergo genetic testing to help determine the likelihood that their relatives, such as children or grandchildren, will develop certain diseases.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SpecimenTypeId",
+					"Description": "The unique identifier of a Specimen Type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenType.cdm.json/SpecimenType",
+						"Name": "SpecimenTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenTypeName",
+					"Description": "The name of a Specimen Type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenType.cdm.json/SpecimenType",
+						"Name": "SpecimenTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				},
+				{
+					"Name": "SpecimenTypeDescription",
+					"Description": "The description of a Specimen Type.",
+					"BaseAttributeReference": {
+						"Entity": "SpecimenType.cdm.json/SpecimenType",
+						"Name": "SpecimenTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"DeltaFormatInvalidMessages": []
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenType",
+					"delimiter": ",",
+					"multiLine": "false",
+					"firstRowAsHeader": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://llmdataraw@tpearson1256.dfs.core.windows.net/Genomics_cxj/SpecimenType",
+				"Properties": {
+					"LinkedServiceName": "myadfasas-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SpecimenTypeId\":{\"entity\":\"SpecimenType.cdm.json/SpecimenType\",\"name\":\"SpecimenTypeId\"},\"SpecimenTypeName\":{\"entity\":\"SpecimenType.cdm.json/SpecimenType\",\"name\":\"SpecimenTypeName\"},\"SpecimenTypeDescription\":{\"entity\":\"SpecimenType.cdm.json/SpecimenType\",\"name\":\"SpecimenTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SpecimenType\",\"path\":\"SpecimenType.cdm.json/SpecimenType\"},\"description\":\"The type of Specimen taken.\\n\\nEx:\\n- Body Fluid Analysis\\n- Tissue\\n- Endoscopy\\n- Bodily Function Analysis\\n- Genetic Material Analysis\\n\\nwhere:\\n\\nBODY FLUID ANALYSIS\\nTests that provide a picture of the inside of the body, either in its entirety or only of certain parts. Ordinary x-rays are the most common imaging tests, but others include ultrasound, radioisotope (nuclear) scans, computed tomography (CT) scans, magnetic resonance imaging (MRI) scans, and positron emission tomography (PET) scans.\\n\\nENDOSCOPY\\nThe use of a viewing tube to directly observe the inside of body organs or spaces (cavities). Most often, the endoscope is flexible, although a few types are rigid. The tip of the endoscope is usually equipped with a light and a camera, so images can be seen on a television monitor while the examiner is observing through the endoscope. Tools are often passed through a channel in the endoscope. One type of tool is used to cut and remove tissue samples.\\n\\nEndoscopy usually consists of passing the viewing tube through an existing body opening. For example, esophagogastroduodenoscopy (EGD) is accomplished by passing a viewing tube through the mouth. Colonoscopy involves passing a viewing tube through the anus. However, sometimes an opening in the body must be created. This can be done by making a small cut (incision) through the skin and through layers of tissue beneath the skin, so that the endoscope can be passed into a body cavity. For example, in arthroscopy, an endoscope is passed through an incision to view a joint, such as the knee or shoulder.\\n\\nBODILY FUNCTION ANALYSIS\\nOften involves recording and analyzing the activity of various body organs. For example, electrical activity of the heart is measured with electrocardiography (ECG), and electrical activity of the brain is measured with electroencephalography (EEG).\\n\\nBIOPSY\\nInvolves removing tissue samples and examining them, usually with a microscope. The examination often focuses on finding abnormal cells that might provide evidence of inflammation or of a disease, such as cancer. Tissues that are commonly examined include skin, breast, lung, liver, kidney, and bone.\\n\\nGENETIC MATERIAL ANALYSIS\\nUsually involves testing cells from skin, blood, or bone marrow. Genetic testing consists of an examination for abnormalities of chromosomes, genes, or both. Examination of genes includes analysis of DNA. Fetuses may undergo genetic testing to determine whether they have a genetic disorder. Children and young adults often undergo genetic testing to determine whether they themselves have a disease or are at risk of a disease. Adults sometimes undergo genetic testing to help determine the likelihood that their relatives, such as children or grandchildren, will develop certain diseases.\",\"primaryKey\":[\"SpecimenTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenType.cdm.json/SpecimenType\",\"name\":\"SpecimenTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Specimen Type.\",\"isNullable\":false,\"name\":\"SpecimenTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenType.cdm.json/SpecimenType\",\"name\":\"SpecimenTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Specimen Type.\",\"isNullable\":true,\"name\":\"SpecimenTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SpecimenType.cdm.json/SpecimenType\",\"name\":\"SpecimenTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Specimen Type.\",\"isNullable\":true,\"name\":\"SpecimenTypeDescription\"}]}}}",
+			"Description": "The type of Specimen taken.\n\nEx:\n- Body Fluid Analysis\n- Tissue\n- Endoscopy\n- Bodily Function Analysis\n- Genetic Material Analysis\n\nwhere:\n\nBODY FLUID ANALYSIS\nTests that provide a picture of the inside of the body, either in its entirety or only of certain parts. Ordinary x-rays are the most common imaging tests, but others include ultrasound, radioisotope (nuclear) scans, computed tomography (CT) scans, magnetic resonance imaging (MRI) scans, and positron emission tomography (PET) scans.\n\nENDOSCOPY\nThe use of a viewing tube to directly observe the inside of body organs or spaces (cavities). Most often, the endoscope is flexible, although a few types are rigid. The tip of the endoscope is usually equipped with a light and a camera, so images can be seen on a television monitor while the examiner is observing through the endoscope. Tools are often passed through a channel in the endoscope. One type of tool is used to cut and remove tissue samples.\n\nEndoscopy usually consists of passing the viewing tube through an existing body opening. For example, esophagogastroduodenoscopy (EGD) is accomplished by passing a viewing tube through the mouth. Colonoscopy involves passing a viewing tube through the anus. However, sometimes an opening in the body must be created. This can be done by making a small cut (incision) through the skin and through layers of tissue beneath the skin, so that the endoscope can be passed into a body cavity. For example, in arthroscopy, an endoscope is passed through an incision to view a joint, such as the knee or shoulder.\n\nBODILY FUNCTION ANALYSIS\nOften involves recording and analyzing the activity of various body organs. For example, electrical activity of the heart is measured with electrocardiography (ECG), and electrical activity of the brain is measured with electroencephalography (EEG).\n\nBIOPSY\nInvolves removing tissue samples and examining them, usually with a microscope. The examination often focuses on finding abnormal cells that might provide evidence of inflammation or of a disease, such as cancer. Tissues that are commonly examined include skin, breast, lung, liver, kidney, and bone.\n\nGENETIC MATERIAL ANALYSIS\nUsually involves testing cells from skin, blood, or bone marrow. Genetic testing consists of an examination for abnormalities of chromosomes, genes, or both. Examination of genes includes analysis of DNA. Fetuses may undergo genetic testing to determine whether they have a genetic disorder. Children and young adults often undergo genetic testing to determine whether they themselves have a disease or are at risk of a disease. Adults sometimes undergo genetic testing to help determine the likelihood that their relatives, such as children or grandchildren, will develop certain diseases.",
+			"DisplayFolderInfo": "{\"name\":\"Encounter\",\"colorCode\":\"#00188F\"}",
+			"PrimaryKeys": "SpecimenTypeId",
+			"spark.sql.sources.provider": "csv"
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

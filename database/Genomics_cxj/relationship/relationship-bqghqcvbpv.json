@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bqghqcvbpv",
+	"properties": {
+		"Name": "relationship-bqghqcvbpv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Genomics_cxj"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProcedureCode",
+		"ToTableName": "MedicalTestType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CptCode",
+				"ToColumnName": "CptCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProcedureCode.cdm.json/ProcedureCode\",\"toEntity\":\"MedicalTestType.cdm.json/MedicalTestType\",\"joinPairs\":[{\"fromAttribute\":\"CptCode\",\"toAttribute\":\"CptCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}
