@@ -66,7 +66,7 @@
 								"type": "ParquetSink",
 								"storeSettings": {
 									"type": "AzureBlobStorageWriteSettings",
-									"copyBehavior": "PreserveHierarchy"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "ParquetWriteSettings"
@@ -398,7 +398,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "pecan_submit_tbl-2",
+						"fileName": "pecan_submit_tbl2",
 						"folderPath": "queryhistory",
 						"container": "output"
 					},
