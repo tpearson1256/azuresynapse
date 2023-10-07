@@ -38,6 +38,150 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('workspaceName'), '/SnowflakeTable1')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "ENTITY_ID",
+						"type": "VARCHAR",
+						"precision": 36,
+						"scale": 0
+					},
+					{
+						"name": "QUERY_TYPE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MARKER",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "PARTITIONS_SCANNED",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "BYTES_SCANNED",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "CREDITS_USED_CLOUD_SERVICES",
+						"type": "FLOAT",
+						"precision": 15,
+						"scale": 0
+					},
+					{
+						"name": "EXECUTION_TIME",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "TOTAL_ELAPSED_TIME",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "PERCENTAGE_SCANNED_FROM_CACHE",
+						"type": "FLOAT",
+						"precision": 15,
+						"scale": 0
+					},
+					{
+						"name": "BYTES_WRITTEN",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "TRANSACTION_BLOCKED_TIME",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "DATABASE_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "SCHEMA_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "WAREHOUSE_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "MACHINE_LEARNING",
+					"table": "PECAN_SUBMIT_TBL_2"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/copypecandata')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "pecan_submit_tbl-2",
+						"folderPath": "queryhistory",
+						"container": "output"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/AzureBlobStorage1')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
