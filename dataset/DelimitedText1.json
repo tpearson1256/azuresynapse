@@ -1,0 +1,88 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "pecan_submit_tbl2.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "String"
+			},
+			{
+				"name": "QUERY_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "MARKER",
+				"type": "String"
+			},
+			{
+				"name": "PARTITIONS_SCANNED",
+				"type": "String"
+			},
+			{
+				"name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+				"type": "String"
+			},
+			{
+				"name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+				"type": "String"
+			},
+			{
+				"name": "BYTES_SCANNED",
+				"type": "String"
+			},
+			{
+				"name": "CREDITS_USED_CLOUD_SERVICES",
+				"type": "String"
+			},
+			{
+				"name": "EXECUTION_TIME",
+				"type": "String"
+			},
+			{
+				"name": "TOTAL_ELAPSED_TIME",
+				"type": "String"
+			},
+			{
+				"name": "PERCENTAGE_SCANNED_FROM_CACHE",
+				"type": "String"
+			},
+			{
+				"name": "BYTES_WRITTEN",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_BLOCKED_TIME",
+				"type": "String"
+			},
+			{
+				"name": "DATABASE_NAME",
+				"type": "String"
+			},
+			{
+				"name": "SCHEMA_NAME",
+				"type": "String"
+			},
+			{
+				"name": "WAREHOUSE_NAME",
+				"type": "String"
+			}
+		]
+	}
+}
