@@ -14,9 +14,10 @@
 				"container": "input"
 			},
 			"columnDelimiter": ",",
-			"escapeChar": "\\",
+			"encodingName": "UTF-8",
+			"escapeChar": "",
 			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"quoteChar": ""
 		},
 		"schema": [
 			{
