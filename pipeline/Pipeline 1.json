@@ -1,0 +1,217 @@
+{
+	"name": "Pipeline 1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SnowflakeSource",
+						"exportSettings": {
+							"type": "SnowflakeExportCopyCommand"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ENTITY_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ENTITY_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QUERY_TYPE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "QUERY_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MARKER",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "MARKER",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PARTITIONS_SCANNED",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "PARTITIONS_SCANNED",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "BYTES_SCANNED",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "BYTES_SCANNED",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "CREDITS_USED_CLOUD_SERVICES",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "CREDITS_USED_CLOUD_SERVICES",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "EXECUTION_TIME",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "EXECUTION_TIME",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "TOTAL_ELAPSED_TIME",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "TOTAL_ELAPSED_TIME",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "PERCENTAGE_SCANNED_FROM_CACHE",
+									"type": "Double"
+								},
+								"sink": {
+									"name": "PERCENTAGE_SCANNED_FROM_CACHE",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "BYTES_WRITTEN",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "BYTES_WRITTEN",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "TRANSACTION_BLOCKED_TIME",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "TRANSACTION_BLOCKED_TIME",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "DATABASE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DATABASE_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SCHEMA_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SCHEMA_NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WAREHOUSE_NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "WAREHOUSE_NAME",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SnowflakeTable1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "copypecandata",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
