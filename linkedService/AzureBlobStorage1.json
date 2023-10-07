@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"sasUri": "https://pearsongenaistorage.blob.core.windows.net/output/query/"
+			"sasUri": "https://pearsongenaistorage.blob.core.windows.net/output/queryhistory/"
 		},
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",
