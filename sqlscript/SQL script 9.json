@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 9",
+	"properties": {
+		"content": {
+			"query": "CREATE EXTERNAL DATA SOURCE [ExternalDataSource] WITH\n(\n\tLOCATION = 'https://<STORAGEACCOUNT>.blob.core.windows.net/<CONTAINER>'\n)\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "LLM",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
