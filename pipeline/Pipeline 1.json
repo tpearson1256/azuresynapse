@@ -54,6 +54,16 @@
 							},
 							{
 								"source": {
+									"name": "MARKER",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "MARKER",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
 									"name": "QUERY_TYPE",
 									"type": "String"
 								},
