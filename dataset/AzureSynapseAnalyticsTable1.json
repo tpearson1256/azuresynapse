@@ -10,7 +10,83 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MARKER",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "QUERY_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PARTITIONS_SCANNED",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BYTES_SCANNED",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CREDITS_USED_CLOUD_SERVICES",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "EXECUTION_TIME",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TOTAL_ELAPSED_TIME",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PERCENTAGE_SCANNED_FROM_CACHE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "BYTES_WRITTEN",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRANSACTION_BLOCKED_TIME",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "DATABASE_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SCHEMA_NAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WAREHOUSE_NAME",
+				"type": "nvarchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "pecan_submit"
