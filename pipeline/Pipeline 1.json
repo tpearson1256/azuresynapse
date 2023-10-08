@@ -35,7 +35,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "truncate table dbo.pecan_submit",
 						"allowPolyBase": true,
 						"polyBaseSettings": {
 							"rejectValue": 0,
