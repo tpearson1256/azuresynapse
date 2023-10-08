@@ -252,7 +252,7 @@
 					},
 					"staging": {
 						"linkedService": {
-							"referenceName": "myadfasas-WorkspaceDefaultStorage",
+							"referenceName": "AzureBlobStorage1",
 							"type": "LinkedServiceReference"
 						},
 						"folderPath": ""
