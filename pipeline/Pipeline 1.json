@@ -286,7 +286,7 @@
 							"referenceName": "myadfasas-WorkspaceDefaultStorage",
 							"type": "LinkedServiceReference"
 						},
-						"path": "output"
+						"path": "output/logs"
 					},
 					"enableLogging": true,
 					"storeSettings": {
