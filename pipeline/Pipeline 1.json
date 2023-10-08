@@ -5,6 +5,8 @@
 			{
 				"name": "Copy data1",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Data flow1",
@@ -25,8 +27,8 @@
 					"source": {
 						"type": "ParquetSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
+							"type": "AzureBlobFSReadSettings",
+							"recursive": false,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -197,7 +199,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "copypecandata",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					}
 				],
