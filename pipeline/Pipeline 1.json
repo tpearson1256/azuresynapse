@@ -35,6 +35,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "truncate table dbo.pecan_submit",
 						"allowCopyCommand": true,
 						"disableMetricsCollection": false
 					},
