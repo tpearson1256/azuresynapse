@@ -1,0 +1,48 @@
+{
+	"name": "Dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "copypecandata",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ENTITY_ID as string,",
+				"          QUERY_TYPE as string,",
+				"          MARKER as timestamp,",
+				"          PARTITIONS_SCANNED as long,",
+				"          BYTES_SPILLED_TO_LOCAL_STORAGE as long,",
+				"          BYTES_SPILLED_TO_REMOTE_STORAGE as long,",
+				"          BYTES_SCANNED as long,",
+				"          CREDITS_USED_CLOUD_SERVICES as double,",
+				"          EXECUTION_TIME as long,",
+				"          TOTAL_ELAPSED_TIME as long,",
+				"          PERCENTAGE_SCANNED_FROM_CACHE as double,",
+				"          BYTES_WRITTEN as long,",
+				"          TRANSACTION_BLOCKED_TIME as long,",
+				"          DATABASE_NAME as string,",
+				"          SCHEMA_NAME as string,",
+				"          WAREHOUSE_NAME as string",
+				"     ),",
+				"     allowSchemaDrift: false,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> source1",
+				"source1 derive(MARKER = toLong(MARKER)) ~> derivedColumn1"
+			]
+		}
+	}
+}
