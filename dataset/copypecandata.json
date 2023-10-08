@@ -10,9 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "pecan_submit_tbl2",
-				"folderPath": "queryhistory",
-				"container": "output"
+				"fileName": "pecan_submit_tbl2.parquet",
+				"container": "input"
 			},
 			"compressionCodec": "snappy"
 		},
