@@ -5,7 +5,13 @@
 		"workspaceName": {
 			"value": "myadfasas"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_connectionString": {
 			"value": ""
 		},
 		"Snowflake1_connectionString": {
@@ -13,9 +19,6 @@
 		},
 		"myadfasas-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:myadfasas.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
-		},
-		"AzureBlobStorage1_sasUri": {
-			"value": ""
 		},
 		"AzureKeyVaultsynapse_properties_typeProperties_baseUrl": {
 			"value": "https://pearsonkeyvault.vault.azure.net/"

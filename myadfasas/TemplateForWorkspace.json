@@ -7,9 +7,17 @@
 			"metadata": "Workspace name",
 			"defaultValue": "myadfasas"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'"
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
@@ -19,10 +27,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'myadfasas-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:myadfasas.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
-		},
-		"AzureBlobStorage1_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorage1'"
 		},
 		"AzureKeyVaultsynapse_properties_typeProperties_baseUrl": {
 			"type": "string",
@@ -57,20 +61,26 @@
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "SnowflakeSource",
-								"exportSettings": {
-									"type": "SnowflakeExportCopyCommand"
+								"type": "ParquetSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "ParquetReadSettings"
 								}
 							},
 							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobStorageWriteSettings",
-									"copyBehavior": "FlattenHierarchy"
+								"type": "SqlDWSink",
+								"allowPolyBase": true,
+								"polyBaseSettings": {
+									"rejectValue": 0,
+									"rejectType": "value",
+									"useTypeDefault": true
 								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
 							},
 							"enableStaging": false,
 							"translator": {
@@ -94,16 +104,6 @@
 										"sink": {
 											"name": "QUERY_TYPE",
 											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "MARKER",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "MARKER",
-											"type": "DateTime"
 										}
 									},
 									{
@@ -241,14 +241,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SnowflakeTable1",
+								"referenceName": "copypecandata",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "copypecandata",
+								"referenceName": "AzureSynapseAnalyticsTable1",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -262,8 +262,126 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/datasets/SnowflakeTable1')]",
-				"[concat(variables('workspaceId'), '/datasets/copypecandata')]"
+				"[concat(variables('workspaceId'), '/datasets/copypecandata')]",
+				"[concat(variables('workspaceId'), '/datasets/AzureSynapseAnalyticsTable1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/AzureSynapseAnalyticsTable1')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "myadfasas-WorkspaceDefaultSqlServer",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"DBName": "dedicatedsqlpool1"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "pecan_submit"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/myadfasas-WorkspaceDefaultSqlServer')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/DelimitedText1')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "pecan_submit_tbl2.csv",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"encodingName": "UTF-8",
+					"escapeChar": "",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": [
+					{
+						"name": "ENTITY_ID",
+						"type": "String"
+					},
+					{
+						"name": "QUERY_TYPE",
+						"type": "String"
+					},
+					{
+						"name": "MARKER",
+						"type": "String"
+					},
+					{
+						"name": "PARTITIONS_SCANNED",
+						"type": "String"
+					},
+					{
+						"name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+						"type": "String"
+					},
+					{
+						"name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+						"type": "String"
+					},
+					{
+						"name": "BYTES_SCANNED",
+						"type": "String"
+					},
+					{
+						"name": "CREDITS_USED_CLOUD_SERVICES",
+						"type": "String"
+					},
+					{
+						"name": "EXECUTION_TIME",
+						"type": "String"
+					},
+					{
+						"name": "TOTAL_ELAPSED_TIME",
+						"type": "String"
+					},
+					{
+						"name": "PERCENTAGE_SCANNED_FROM_CACHE",
+						"type": "String"
+					},
+					{
+						"name": "BYTES_WRITTEN",
+						"type": "String"
+					},
+					{
+						"name": "TRANSACTION_BLOCKED_TIME",
+						"type": "String"
+					},
+					{
+						"name": "DATABASE_NAME",
+						"type": "String"
+					},
+					{
+						"name": "SCHEMA_NAME",
+						"type": "String"
+					},
+					{
+						"name": "WAREHOUSE_NAME",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/AzureBlobStorage1')]"
 			]
 		},
 		{
@@ -398,9 +516,8 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "pecan_submit_tbl2",
-						"folderPath": "queryhistory",
-						"container": "output"
+						"fileName": "pecan_submit_tbl2.parquet",
+						"container": "input"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -418,7 +535,7 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"sasUri": "[parameters('AzureBlobStorage1_sasUri')]"
+					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",
@@ -451,6 +568,25 @@
 				"type": "AzureSqlDatabase",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/AzureSqlDatabase2')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase2_connectionString')]"
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",
@@ -557,6 +693,106 @@
 			"properties": {
 				"type": "ManagedIdentity",
 				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 5')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "\n",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "LLM",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 6')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "CREATE EXTERNAL TABLE [dbo].[ExternalTable]\n(\n\t [Id] INT\n)\nWITH\n(\n\tLOCATION = '/output/*',\n\tDATA_SOURCE = [DefaultSource],\n\tFILE_FORMAT = [CSV]\n)\n",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "LLM",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 7')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT TOP (100) [Id]\n FROM [dbo].[ExternalTable]\n\n drop external table dbo.Externaltable\n\n describe DefaultSource",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "LLM",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 8')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "DROP EXTERNAL DATA SOURCE ExternalDataSource",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "LLM",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 9')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "CREATE EXTERNAL DATA SOURCE [ExternalDataSource] WITH\n(\n\tLOCATION = 'https://pearsongenaistorage.blob.core.windows.net/'\n)\n",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "LLM",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
 			},
 			"dependsOn": []
 		},
@@ -36908,6 +37144,18 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/dedicatedsqlpool1')]",
+			"type": "Microsoft.Synapse/workspaces/sqlPools",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"collation": "SQL_Latin1_General_CP1_CI_AS",
+				"maxSizeBytes": 263882790666240,
+				"annotations": []
+			},
+			"dependsOn": [],
+			"location": "eastus"
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/default')]",
 			"type": "Microsoft.Synapse/workspaces/managedVirtualNetworks",
 			"apiVersion": "2019-06-01-preview",
@@ -36955,6 +37203,26 @@
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/managedVirtualNetworks/default')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 10')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT TOP (100) [ENTITY_ID]\n,[QUERY_TYPE]\n,[PARTITIONS_SCANNED]\n,[BYTES_SPILLED_TO_LOCAL_STORAGE]\n,[BYTES_SPILLED_TO_REMOTE_STORAGE]\n,[BYTES_SCANNED]\n,[CREDITS_USED_CLOUD_SERVICES]\n,[EXECUTION_TIME]\n,[TOTAL_ELAPSED_TIME]\n,[PERCENTAGE_SCANNED_FROM_CACHE]\n,[BYTES_WRITTEN]\n,[TRANSACTION_BLOCKED_TIME]\n,[DATABASE_NAME]\n,[SCHEMA_NAME]\n,[WAREHOUSE_NAME]\n FROM [dbo].[pecan_submit]",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "dedicatedsqlpool1",
+						"poolName": "dedicatedsqlpool1"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
 		}
 	]
 }
