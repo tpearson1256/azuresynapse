@@ -281,6 +281,13 @@
 						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "myadfasas-WorkspaceDefaultStorage",
+							"type": "LinkedServiceReference"
+						},
+						"path": "output"
+					},
 					"enableLogging": true,
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
