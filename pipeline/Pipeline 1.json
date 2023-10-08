@@ -250,7 +250,7 @@
 							"referenceName": "myadfasas-WorkspaceDefaultStorage",
 							"type": "LinkedServiceReference"
 						},
-						"folderPath": "output"
+						"folderPath": "output/parquet"
 					},
 					"compute": {
 						"coreCount": 8,
