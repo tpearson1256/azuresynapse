@@ -247,10 +247,10 @@
 					},
 					"staging": {
 						"linkedService": {
-							"referenceName": "AzureBlobStorage1",
+							"referenceName": "myadfasas-WorkspaceDefaultStorage",
 							"type": "LinkedServiceReference"
 						},
-						"folderPath": ""
+						"folderPath": "output"
 					},
 					"compute": {
 						"coreCount": 8,
