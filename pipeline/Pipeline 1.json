@@ -37,13 +37,13 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
+						"preCopyScript": "truncate table dbo.pecan_submit",
 						"allowPolyBase": true,
 						"polyBaseSettings": {
 							"rejectValue": 0,
 							"rejectType": "value",
 							"useTypeDefault": true
 						},
-						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
