@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 12",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nDROP TABLE [dbo].[pecan_submit]\n\nCREATE TABLE [dbo].[pecan_submit]\n( \n\t[ENTITY_ID] [nvarchar](max)  NULL,\n\t[MARKER] [bigint] NULL,\n\t[QUERY_TYPE] [nvarchar](max)  NULL,\n\t[PARTITIONS_SCANNED] [bigint]  NULL,\n\t[BYTES_SPILLED_TO_LOCAL_STORAGE] [bigint]  NULL,\n\t[BYTES_SPILLED_TO_REMOTE_STORAGE] [bigint]  NULL,\n\t[BYTES_SCANNED] [bigint]  NULL,\n\t[CREDITS_USED_CLOUD_SERVICES] [float]  NULL,\n\t[EXECUTION_TIME] [bigint]  NULL,\n\t[TOTAL_ELAPSED_TIME] [bigint]  NULL,\n\t[PERCENTAGE_SCANNED_FROM_CACHE] [float]  NULL,\n\t[BYTES_WRITTEN] [bigint]  NULL,\n\t[TRANSACTION_BLOCKED_TIME] [bigint]  NULL,\n\t[DATABASE_NAME] [nvarchar](max)  NULL,\n\t[SCHEMA_NAME] [nvarchar](max)  NULL,\n\t[WAREHOUSE_NAME] [nvarchar](max)  NULL\n)\nWITH\n(\n\tDISTRIBUTION = ROUND_ROBIN,\n\tHEAP\n)\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "dedicatedsqlpool1",
+				"poolName": "dedicatedsqlpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
