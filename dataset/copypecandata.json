@@ -15,6 +15,71 @@
 			},
 			"compressionCodec": "none"
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "UTF8"
+			},
+			{
+				"name": "QUERY_TYPE",
+				"type": "UTF8"
+			},
+			{
+				"name": "MARKER",
+				"type": "TIMESTAMP_MICROS"
+			},
+			{
+				"name": "PARTITIONS_SCANNED",
+				"type": "INT_64"
+			},
+			{
+				"name": "BYTES_SPILLED_TO_LOCAL_STORAGE",
+				"type": "INT_64"
+			},
+			{
+				"name": "BYTES_SPILLED_TO_REMOTE_STORAGE",
+				"type": "INT_64"
+			},
+			{
+				"name": "BYTES_SCANNED",
+				"type": "INT_64"
+			},
+			{
+				"name": "CREDITS_USED_CLOUD_SERVICES",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "EXECUTION_TIME",
+				"type": "INT_64"
+			},
+			{
+				"name": "TOTAL_ELAPSED_TIME",
+				"type": "INT_64"
+			},
+			{
+				"name": "PERCENTAGE_SCANNED_FROM_CACHE",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "BYTES_WRITTEN",
+				"type": "INT_64"
+			},
+			{
+				"name": "TRANSACTION_BLOCKED_TIME",
+				"type": "INT_64"
+			},
+			{
+				"name": "DATABASE_NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "SCHEMA_NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "WAREHOUSE_NAME",
+				"type": "UTF8"
+			}
+		]
 	}
 }
