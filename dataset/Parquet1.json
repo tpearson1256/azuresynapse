@@ -9,7 +9,9 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileName": "parquet1",
+				"fileSystem": "output"
 			},
 			"compressionCodec": "snappy"
 		},
