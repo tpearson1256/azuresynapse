@@ -215,7 +215,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Dataflow1",
+						"referenceName": "ChangeMarker",
 						"type": "DataFlowReference"
 					},
 					"compute": {
