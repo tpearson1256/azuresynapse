@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "AzureSynapseAnalyticsTable1",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
 					"name": "sink1",
@@ -55,12 +55,12 @@
 				"     format: 'parquet') ~> source1",
 				"source1 derive(MARKER = toLong(MARKER),",
 				"     partitionBy('hash', 1)) ~> derivedColumn1",
-				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"derivedColumn1 sink(allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     input(",
 				"          ENTITY_ID as string,",
-				"          MARKER as long,",
 				"          QUERY_TYPE as string,",
+				"          MARKER as long,",
 				"          PARTITIONS_SCANNED as long,",
 				"          BYTES_SPILLED_TO_LOCAL_STORAGE as long,",
 				"          BYTES_SPILLED_TO_REMOTE_STORAGE as long,",
@@ -75,19 +75,12 @@
 				"          SCHEMA_NAME as string,",
 				"          WAREHOUSE_NAME as string",
 				"     ),",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
-				"     staged: true,",
+				"     format: 'parquet',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError',",
 				"     outputAssertFailedRows: true,",
 				"     assertFailure_fileSystem: 'output',",
-				"     assertFailure_folderPath: 'logs',",
-				"     partitionBy('hash', 1)) ~> sink1"
+				"     assertFailure_folderPath: 'logs') ~> sink1"
 			]
 		}
 	}
