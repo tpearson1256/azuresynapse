@@ -13,7 +13,7 @@
 				"fileName": "pecan_submit_tbl2.parquet",
 				"container": "input"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": "none"
 		},
 		"schema": []
 	}
