@@ -12,7 +12,15 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "derivedColumn1"
@@ -41,7 +49,33 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> source1",
-				"source1 derive(MARKER = toLong(MARKER)) ~> derivedColumn1"
+				"source1 derive(MARKER = toLong(MARKER)) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: false,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0764,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          ENTITY_ID,",
+				"          QUERY_TYPE,",
+				"          MARKER,",
+				"          PARTITIONS_SCANNED,",
+				"          BYTES_SPILLED_TO_LOCAL_STORAGE,",
+				"          BYTES_SPILLED_TO_REMOTE_STORAGE,",
+				"          BYTES_SCANNED,",
+				"          CREDITS_USED_CLOUD_SERVICES,",
+				"          EXECUTION_TIME,",
+				"          TOTAL_ELAPSED_TIME,",
+				"          PERCENTAGE_SCANNED_FROM_CACHE,",
+				"          BYTES_WRITTEN,",
+				"          TRANSACTION_BLOCKED_TIME,",
+				"          DATABASE_NAME,",
+				"          SCHEMA_NAME,",
+				"          WAREHOUSE_NAME",
+				"     )) ~> sink1"
 			]
 		}
 	}
