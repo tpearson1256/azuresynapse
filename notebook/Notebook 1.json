@@ -1,0 +1,68 @@
+{
+	"name": "Notebook 1",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "MLSparkPool",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "9c3d1534-046c-4856-b19c-1328574e862d"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/8c95e5bc-6519-484b-a2e5-c1efd1fdd75f/resourceGroups/myadf/providers/Microsoft.Synapse/workspaces/myadfasas/bigDataPools/MLSparkPool",
+				"name": "MLSparkPool",
+				"type": "Spark",
+				"endpoint": "https://myadfasas.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/MLSparkPool",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.2",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"import pyodbc\r\n",
+					"server='myadfasas.sql.azuresynapse.net'\r\n",
+					"username='sqladminuser'\r\n",
+					"password='Stegopuss3$'\r\n",
+					"database='dedicatedsqlpool1'\r\n",
+					"\r\n",
+					"cnxn=pyodbc.connect('SERVER=' + server + 'DATABASE=' + database + 'UID=' + username + 'PWD=' + password)\r\n",
+					"\r\n",
+					""
+				],
+				"execution_count": 2
+			}
+		]
+	}
+}
