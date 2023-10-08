@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 10",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [ENTITY_ID]\n,[QUERY_TYPE]\n,[PARTITIONS_SCANNED]\n,[BYTES_SPILLED_TO_LOCAL_STORAGE]\n,[BYTES_SPILLED_TO_REMOTE_STORAGE]\n,[BYTES_SCANNED]\n,[CREDITS_USED_CLOUD_SERVICES]\n,[EXECUTION_TIME]\n,[TOTAL_ELAPSED_TIME]\n,[PERCENTAGE_SCANNED_FROM_CACHE]\n,[BYTES_WRITTEN]\n,[TRANSACTION_BLOCKED_TIME]\n,[DATABASE_NAME]\n,[SCHEMA_NAME]\n,[WAREHOUSE_NAME]\n FROM [dbo].[pecan_submit]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "dedicatedsqlpool1",
+				"poolName": "dedicatedsqlpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
