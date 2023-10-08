@@ -13,7 +13,7 @@
 				"fileName": "parquet1",
 				"fileSystem": "output"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": "none"
 		},
 		"schema": []
 	}
