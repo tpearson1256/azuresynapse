@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "9c3d1534-046c-4856-b19c-1328574e862d"
+				"spark.autotune.trackingId": "0ecaa010-f957-4903-854f-e9d21004cb16"
 			}
 		},
 		"metadata": {
@@ -57,7 +57,7 @@
 					"password='Stegopuss3$'\r\n",
 					"database='dedicatedsqlpool1'\r\n",
 					"\r\n",
-					"cnxn=pyodbc.connect('SERVER=' + server + 'DATABASE=' + database + 'UID=' + username + 'PWD=' + password)\r\n",
+					"cnxn=pyodbc.connect('DRIVER={ODBC Driver 17 For SQL Server};' + 'SERVER=' + server + 'DATABASE=' + database + 'UID=' + username + 'PWD=' + password)\r\n",
 					"\r\n",
 					""
 				],
