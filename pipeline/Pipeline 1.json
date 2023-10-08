@@ -63,16 +63,6 @@
 							},
 							{
 								"source": {
-									"name": "MARKER",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "MARKER",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
 									"name": "PARTITIONS_SCANNED",
 									"type": "Int64"
 								},
