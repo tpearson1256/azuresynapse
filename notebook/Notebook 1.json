@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "ea7d2f48-bafa-444b-adc2-38fa884cda21"
+				"spark.autotune.trackingId": "e98a1156-feae-4728-88d0-5cfb371e02c6"
 			}
 		},
 		"metadata": {
@@ -62,10 +62,9 @@
 					}
 				},
 				"source": [
-					"pip install mlforecast\r\n",
 					""
 				],
-				"execution_count": 15
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -97,6 +96,7 @@
 					"import sklearn_pandas as skp\r\n",
 					"import sklearn\r\n",
 					"import scipy\r\n",
+					"import numpy\r\n",
 					"from sklearn import linear_model\r\n",
 					"from sklearn.metrics import mean_absolute_error\r\n",
 					"from sklearn.preprocessing import OneHotEncoder\r\n",
@@ -126,6 +126,12 @@
 					"from sklearn.linear_model import LinearRegression\r\n",
 					"from sklearn.preprocessing import MinMaxScaler\r\n",
 					"from sklearn.metrics import accuracy_score\r\n",
+					"from sklearn.neural_network import MLPRegressor\r\n",
+					"from sklearn.metrics import mean_squared_error\r\n",
+					"from numpy import ravel\r\n",
+					"from sklearn.preprocessing import StandardScaler\r\n",
+					"from numpy import unique\r\n",
+					"from numpy import argmax\r\n",
 					"# The servername is in the format \"jdbc:sqlserver://<AzureSQLServerName>.database.windows.net:1433\"\r\n",
 					"servername = \"jdbc:sqlserver://myadfasas.sql.azuresynapse.net:1433\"\r\n",
 					"dbname = \"dedicatedsqlpool1\"\r\n",
@@ -146,7 +152,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 18
+				"execution_count": 19
 			},
 			{
 				"cell_type": "code",
