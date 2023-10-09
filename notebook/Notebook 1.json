@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "d80725f2-c2c4-488d-b11f-7f74ab48ca3e"
+				"spark.autotune.trackingId": "f48d57fc-8281-45bd-be98-02a16c86e780"
 			}
 		},
 		"metadata": {
@@ -78,7 +78,9 @@
 					"        .option(\"user\", user) \\\r\n",
 					"        .option(\"password\", password).load()\r\n",
 					"\r\n",
-					"pecanDF.show(5)"
+					"pecanDF.show(5)\r\n",
+					"\r\n",
+					""
 				],
 				"execution_count": 40
 			},
