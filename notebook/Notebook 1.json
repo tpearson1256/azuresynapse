@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "fde8f58e-2807-4355-ae4b-9dc573f868d2"
+				"spark.autotune.trackingId": "2d4851aa-b6f0-423b-9ea4-dffdd1cee5b4"
 			}
 		},
 		"metadata": {
@@ -141,18 +141,18 @@
 					"password=\"Stegopuss3$\"\r\n",
 					"\r\n",
 					"print(\"read data from SQL server table  \")\r\n",
-					"pecanDF = spark.read \\\r\n",
+					"df_init = spark.read \\\r\n",
 					"        .format(\"com.microsoft.sqlserver.jdbc.spark\") \\\r\n",
 					"        .option(\"url\", url) \\\r\n",
 					"        .option(\"dbtable\", dbtable) \\\r\n",
 					"        .option(\"user\", user) \\\r\n",
 					"        .option(\"password\", password).load()\r\n",
 					"\r\n",
-					"pecanDF.show(5)\r\n",
+					"df_init.show(5)\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 20
+				"execution_count": 21
 			},
 			{
 				"cell_type": "code",
@@ -168,9 +168,15 @@
 					}
 				},
 				"source": [
+					"weight_column_names=[\"\"]\r\n",
+					"label_column_names=[\"EXECUTION_TIME\"]\r\n",
+					"feature_column_names=[\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\"]\r\n",
+					"OUTPUT_COLUMNS = [\"PREDICTED_EXECUTION_TIME\"]\r\n",
+					"data2=df_init.select(\"MARKER\",\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
+					"data2=data2.toDF(\"DS\",\"UNIQUE_ID\",\"Y\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\")\r\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 22
 			}
 		]
 	}
