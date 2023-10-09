@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "0507a791-000f-438a-9248-88abe0e78642"
+				"spark.autotune.trackingId": "5e9ad57e-6ba9-491b-a864-ec7e8de7e24d"
 			}
 		},
 		"metadata": {
@@ -156,7 +156,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 96
+				"execution_count": 102
 			},
 			{
 				"cell_type": "code",
@@ -188,17 +188,18 @@
 					"#print(data2[['DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED']])\r\n",
 					"#data20=data2.select('DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED')\r\n",
 					"#data20.show(5)\r\n",
-					"\r\n",
+					"print(train.count())\r\n",
 					"#train = data2.loc[(data2['DS'] < '2023-08-30') & (data2['DS'] >='2023-04-29')]\r\n",
 					"#valid = data2.loc[(data2['DS'] >= '2023-05-30') & (data2['DS'] < '2023-09-13')]\r\n",
 					"\r\n",
 					"train = data2.filter((data2['DS'] < '2023-08-30') & (data2['DS'] >='2023-04-29'))\r\n",
 					"valid = data2.filter((data2['DS'] >= '2023-05-30') & (data2['DS'] < '2023-09-13'))\r\n",
 					"\r\n",
-					"train.dropna(how='all')\r\n",
-					"valid.dropna(how='all')"
+					"#train.dropna(how='all')\r\n",
+					"$valid.dropna(how='all')\r\n",
+					"print(train.count())"
 				],
-				"execution_count": 97
+				"execution_count": 103
 			}
 		]
 	}
