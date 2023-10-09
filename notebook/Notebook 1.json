@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "08b622d2-a50d-4594-9bfb-20b75146103f"
+				"spark.autotune.trackingId": "6f6bd446-103e-4743-9966-2a0fb157d4a7"
 			}
 		},
 		"metadata": {
@@ -157,7 +157,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 150
+				"execution_count": 152
 			},
 			{
 				"cell_type": "code",
@@ -219,9 +219,12 @@
 					"                       1: [(rolling_mean, 1),(rolling_min, 1), (rolling_max, 2)],\r\n",
 					"                   },\r\n",
 					"                   date_features=['day'],\r\n",
-					"                   num_threads=6)"
+					"                   num_threads=6)\r\n",
+					"\r\n",
+					"\r\n",
+					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])                   "
 				],
-				"execution_count": 151
+				"execution_count": 153
 			}
 		]
 	}
