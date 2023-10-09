@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "1b7ce665-5268-426f-8084-bdb0cbed734c"
+				"spark.autotune.trackingId": "974929a1-db3e-4644-ab82-9a16dc207f93"
 			}
 		},
 		"metadata": {
@@ -156,7 +156,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 108
+				"execution_count": 112
 			},
 			{
 				"cell_type": "code",
@@ -190,14 +190,14 @@
 					"#data20.show(5)\r\n",
 					"print(data2.count())\r\n",
 					"\r\n",
-					"train, valid = df.randomSplit([0.7, 0.3], seed=42)\r\n",
+					"train, valid = data2.randomSplit([0.7, 0.3], seed=42)\r\n",
 					"\r\n",
 					"\r\n",
-					"#train.dropna(how='all')\r\n",
-					"#valid.dropna(how='all')\r\n",
+					"train.dropna(how='all')\r\n",
+					"valid.dropna(how='all')\r\n",
 					"print(train.count())"
 				],
-				"execution_count": 109
+				"execution_count": 113
 			}
 		]
 	}
