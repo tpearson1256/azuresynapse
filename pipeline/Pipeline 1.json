@@ -242,7 +242,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "ChangeMarker",
+						"referenceName": "Dataflow1",
 						"type": "DataFlowReference"
 					},
 					"staging": {
