@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "80327521-659b-46f8-82d2-43b2b413b4d1"
+				"spark.autotune.trackingId": "aa418457-e3d9-4f3c-a5fc-d6558018d561"
 			}
 		},
 		"metadata": {
@@ -103,6 +103,8 @@
 					"import numpy\r\n",
 					"import lightgbm\r\n",
 					"import pandas as pd\r\n",
+					"import tensorflow as tf\r\n",
+					"import keras_applications\r\n",
 					"from pyspark.sql import functions as F\r\n",
 					"from pyspark.sql.types import LongType\r\n",
 					"from sklearn import linear_model\r\n",
@@ -207,6 +209,7 @@
 					"valid.dropna(how='any')\r\n",
 					"\r\n",
 					"train=train.to_pandas_on_spark()\r\n",
+					"\r\n",
 					"Y=Y.to_pandas_on_spark()\r\n",
 					"\r\n",
 					"#print(f\"train {train.count()}  valid {valid.count()}\")\r\n",
