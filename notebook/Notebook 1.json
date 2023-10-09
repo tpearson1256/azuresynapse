@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "0ecaa010-f957-4903-854f-e9d21004cb16"
+				"spark.autotune.trackingId": "6ddee79f-7364-4a25-87f7-eeb770a33e93"
 			}
 		},
 		"metadata": {
@@ -50,6 +50,35 @@
 		"cells": [
 			{
 				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"pyodbc.drivers()"
+				],
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
 				"source": [
 					"import pyodbc\r\n",
 					"server='myadfasas.sql.azuresynapse.net'\r\n",
@@ -57,11 +86,26 @@
 					"password='Stegopuss3$'\r\n",
 					"database='dedicatedsqlpool1'\r\n",
 					"\r\n",
-					"cnxn=pyodbc.connect('DRIVER={ODBC Driver 17 For SQL Server};' + 'SERVER=' + server + 'DATABASE=' + database + 'UID=' + username + 'PWD=' + password)\r\n",
+					"cnxn=pyodbc.connect('DRIVER={'+ 'ODBC Driver 17 for SQL Server' +'};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)\r\n",
+					"cnxn.execute('select top 5 from dbo.pecan_submit')\r\n",
+					"\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 2
+				"execution_count": 17
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					""
+				]
 			}
 		]
 	}
