@@ -18,7 +18,11 @@
 						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "sink1",
+					"rejectedDataLinkedService": {
+						"referenceName": "myadfasas-WorkspaceDefaultStorage",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
@@ -76,6 +80,9 @@
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
+				"     outputAssertFailedRows: true,",
+				"     assertFailure_fileSystem: 'output',",
+				"     assertFailure_folderPath: 'logs',",
 				"     mapColumn(",
 				"          ENTITY_ID,",
 				"          QUERY_TYPE,",
