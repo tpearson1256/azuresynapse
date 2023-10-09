@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "5f5a8ec4-326e-4341-b8d9-4aaa481cf37e"
+				"spark.autotune.trackingId": "90dbbb2e-87ea-4624-8921-379fd2503b43"
 			}
 		},
 		"metadata": {
@@ -161,7 +161,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 250
+				"execution_count": 252
 			},
 			{
 				"cell_type": "code",
@@ -184,7 +184,6 @@
 					"#data2=df_init.select(F.to_timestamp(F.col(\"MARKER\")/1000),\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
 					"data2=df_init.select(F.timestamp_seconds(F.col(\"MARKER\")/1000),\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
 					"data2=data2.toDF(\"DS\",\"UNIQUE_ID\",\"Y\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\")\r\n",
-					"data2.show(3)\r\n",
 					"data2=data2.toPandas()\r\n",
 					"data2[\"QUERY_TYPE\"] = data2[\"QUERY_TYPE\"].astype('category')\r\n",
 					"data2[\"QUERY_TYPE_CAT\"] = data2[\"QUERY_TYPE\"].cat.codes\r\n",
@@ -195,6 +194,7 @@
 					"#data20=data2.select('DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED')\r\n",
 					"#data20.show(5)\r\n",
 					"#print(data2.count())\r\n",
+					"data2.show(3)\r\n",
 					"\r\n",
 					"\r\n",
 					"train, valid = data2.randomSplit([0.7, 0.3], seed=42)\r\n",
@@ -240,7 +240,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 251
+				"execution_count": 253
 			}
 		]
 	}
