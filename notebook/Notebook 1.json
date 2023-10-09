@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "d584cfcc-c748-4113-860e-bfa815c32ac7"
+				"spark.autotune.trackingId": "58b2ca0e-0ab8-468d-a0c0-b5ecaa732230"
 			}
 		},
 		"metadata": {
@@ -161,7 +161,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 218
+				"execution_count": 230
 			},
 			{
 				"cell_type": "code",
@@ -199,9 +199,14 @@
 					"train, valid = data2.randomSplit([0.7, 0.3], seed=42)\r\n",
 					"\r\n",
 					"\r\n",
-					"train.dropna(how='all')\r\n",
-					"valid.dropna(how='all')\r\n",
+					"train.dropna(how='any')\r\n",
+					"valid.dropna(how='any')\r\n",
+					"\r\n",
+					"train=train.to_pandas_on_spark()\r\n",
+					"Y=Y.to_pandas_on_spark()\r\n",
+					"\r\n",
 					"print(f\"train {train.count()}  valid {valid.count()}\")\r\n",
+					"\r\n",
 					"\r\n",
 					"\r\n",
 					"\r\n",
@@ -227,23 +232,14 @@
 					"                   },\r\n",
 					"                   date_features=['day'],\r\n",
 					"                   num_threads=6)\r\n",
-					"train.show(3)\r\n",
+					"#train.show(3)\r\n",
 					"\r\n",
-					"train=train.to_pandas_on_spark()\r\n",
 					"\r\n",
 					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])\r\n",
 					"\r\n",
-					"df_columns=train.drop(['DS','UNIQUE_ID','Y'])\r\n",
-					"\r\n",
-					"cols=['DS','PARTITIONS_SCANNED','BYTES_SPILLED_TO_LOCAL_STORAGE','BYTES_SPILLED_TO_REMOTE_STORAGE','BYTES_SCANNED','PERCENTAGE_SCANNED_FROM_CACHE','BYTES_WRITTEN','QUERY_TYPE_CAT']\r\n",
-					"\r\n",
-					"feats = {} # a dict to hold feature_name: feature_importance\r\n",
-					"for feature, importance in zip(df_columns.columns, model.models_['XGBRegressor'].feature_importances_):\r\n",
-					"    feats[feature] = importance #add the name/value pair\r\n",
-					"feats = {k:[v] for k,v in feats.items()}  # WORKAROUND\r\n",
 					""
 				],
-				"execution_count": 219
+				"execution_count": 231
 			}
 		]
 	}
