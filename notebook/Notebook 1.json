@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "ba8a343f-c20c-4c7d-b613-144e78d66e47"
+				"spark.autotune.trackingId": "34c441a3-8d6c-4ebf-90d5-bb90fd3fc9a1"
 			}
 		},
 		"metadata": {
@@ -62,10 +62,25 @@
 					}
 				},
 				"source": [
-					"pyodbc.drivers()\r\n",
-					""
+					"# The servername is in the format \"jdbc:sqlserver://<AzureSQLServerName>.database.windows.net:1433\"\r\n",
+					"servername = \"jdbc:sqlserver://myadfasas.sql.azuresynapse.net:1433\"\r\n",
+					"dbname = \"dedicatedsqlpool1\"\r\n",
+					"url = servername + \";\" + \"databaseName=\" + dbname + \";\"\r\n",
+					"dbtable = \"dbo.pecan_submit\"\r\n",
+					"user = \"sqladminuser\"\r\n",
+					"password=\"Stegopuss3$\"\r\n",
+					"\r\n",
+					"print(\"read data from SQL server table  \")\r\n",
+					"pecanDF = spark.read \\\r\n",
+					"        .format(\"com.microsoft.sqlserver.jdbc.spark\") \\\r\n",
+					"        .option(\"url\", url) \\\r\n",
+					"        .option(\"dbtable\", dbtable) \\\r\n",
+					"        .option(\"user\", user) \\\r\n",
+					"        .option(\"password\", password).load()\r\n",
+					"\r\n",
+					"pecanDF.show(5)"
 				],
-				"execution_count": 9
+				"execution_count": 39
 			},
 			{
 				"cell_type": "code",
@@ -94,8 +109,8 @@
 					"cnxn=pyodbc.connect('DRIVER={'+ 'ODBC Driver 17 for SQL Server' +'};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)\r\n",
 					"curs=cnxn.cursor()\r\n",
 					"curs.execute('select top 5 * from dbo.pecan_submit')\r\n",
-					"pecanDF=spark.sql(\"\"\"select  * from dbo.pecan_submit\"\"\")\r\n",
-					"display(pecanDF)\r\n",
+					"pecanDF=spark.sql(\"select  * from dedicatedsqlpool1.pecan_submit\")\r\n",
+					"display(pecanDF(10))\r\n",
 					"\r\n",
 					"\r\n",
 					"\r\n",
@@ -103,7 +118,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 31
+				"execution_count": 36
 			},
 			{
 				"cell_type": "markdown",
