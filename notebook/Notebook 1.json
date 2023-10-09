@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "cac742a7-0676-4875-8153-880c751206d1"
+				"spark.autotune.trackingId": "766b163b-8f13-4c43-807a-d3abef2d305c"
 			}
 		},
 		"metadata": {
@@ -156,7 +156,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 124
+				"execution_count": 146
 			},
 			{
 				"cell_type": "code",
@@ -195,9 +195,21 @@
 					"\r\n",
 					"train.dropna(how='all')\r\n",
 					"valid.dropna(how='all')\r\n",
-					"print(f\"train {train.count()}\" + \\n\\r + f\" valid {valid.count()}\")"
+					"print(f\"train {train.count()}  valid {valid.count()}\")\r\n",
+					"\r\n",
+					"Y=valid[['UNIQUE_ID','DS','Y']]\r\n",
+					"\r\n",
+					"x_train=train.drop('Y')\r\n",
+					"\r\n",
+					"x_test=valid.drop('Y')\r\n",
+					"\r\n",
+					"y_train=train[['Y']]\r\n",
+					"\r\n",
+					"x_train=x_train.drop('UNIQUE_ID')\r\n",
+					"\r\n",
+					"x_test=x_test.drop('UNIQUE_ID')"
 				],
-				"execution_count": 125
+				"execution_count": 147
 			}
 		]
 	}
