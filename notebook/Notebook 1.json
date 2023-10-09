@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "6ddee79f-7364-4a25-87f7-eeb770a33e93"
+				"spark.autotune.trackingId": "c3ec76b3-e572-49b8-953c-258ccc3163a0"
 			}
 		},
 		"metadata": {
@@ -87,7 +87,8 @@
 					"database='dedicatedsqlpool1'\r\n",
 					"\r\n",
 					"cnxn=pyodbc.connect('DRIVER={'+ 'ODBC Driver 17 for SQL Server' +'};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)\r\n",
-					"cnxn.execute('select top 5 from dbo.pecan_submit')\r\n",
+					"curs=cnxn.cursor()\r\n",
+					"\r\n",
 					"\r\n",
 					"\r\n",
 					""
