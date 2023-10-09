@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "102c7e3b-8b69-497f-a6bd-f2a7f30d04c7"
+				"spark.autotune.trackingId": "d14dfff9-2e88-4610-b976-fb36671671bd"
 			}
 		},
 		"metadata": {
@@ -164,7 +164,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 276
+				"execution_count": 283
 			},
 			{
 				"cell_type": "code",
@@ -232,16 +232,16 @@
 					"#models = [make_pipeline(SimpleImputer(),RandomForestRegressor(random_state=0, n_estimators=600)),XGBRegressor(random_state=0,n_estimators=600),lightgbm.LGBMRegressor(random_state=0,n_estimators=600),HistGradientBoostingRegressor()]\r\n",
 					"\r\n",
 					"#model = MLForecast(models=models,\r\n",
-					"                   freq='D',\r\n",
-					"                   lags=[1,2],\r\n",
-					"                   lag_transforms={\r\n",
-					"                       1: [(rolling_mean, 1),(rolling_min, 1), (rolling_max, 2)],\r\n",
-					"                   },\r\n",
-					"                   date_features=['day'],\r\n",
-					"                   num_threads=6)\r\n",
+					"#                   freq='D',\r\n",
+					"#                  lags=[1,2],\r\n",
+					"#                  lag_transforms={\r\n",
+					"#                      1: [(rolling_mean, 1),(rolling_min, 1), (rolling_max, 2)],\r\n",
+					"#                  },\r\n",
+					"#                  date_features=['day'],\r\n",
+					"#                   num_threads=6)\r\n",
 					"\r\n",
 					"model = MLForecast(\r\n",
-					"    models=LinearRegression(),\r\n",
+					"    models=XGBRegressor(),\r\n",
 					"    freq='D',  # our serie has a monthly frequency\r\n",
 					"    lags=[1,2],\r\n",
 					"    target_transforms=[Differences([1])],\r\n",
@@ -253,7 +253,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 284
 			}
 		]
 	}
