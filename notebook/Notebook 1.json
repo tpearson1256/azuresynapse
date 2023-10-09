@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "6f6bd446-103e-4743-9966-2a0fb157d4a7"
+				"spark.autotune.trackingId": "7d436f04-3b91-48c5-aeff-85ecee3b4140"
 			}
 		},
 		"metadata": {
@@ -155,9 +155,11 @@
 					"\r\n",
 					"#df_init.show(5)\r\n",
 					"\r\n",
+					"\r\n",
+					"\r\n",
 					""
 				],
-				"execution_count": 152
+				"execution_count": 166
 			},
 			{
 				"cell_type": "code",
@@ -220,11 +222,15 @@
 					"                   },\r\n",
 					"                   date_features=['day'],\r\n",
 					"                   num_threads=6)\r\n",
+					"train.show(3)\r\n",
 					"\r\n",
+					"train=train.to_pandas_on_spark()\r\n",
 					"\r\n",
-					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])                   "
+					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])    \r\n",
+					"\r\n",
+					"#model.fit_models(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])"
 				],
-				"execution_count": 153
+				"execution_count": 167
 			}
 		]
 	}
