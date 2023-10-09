@@ -1,0 +1,100 @@
+{
+	"name": "Dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "copypecandata",
+						"type": "DatasetReference"
+					},
+					"name": "PecanFile"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ENTITY_ID as string,",
+				"          QUERY_TYPE as string,",
+				"          MARKER as timestamp,",
+				"          PARTITIONS_SCANNED as long,",
+				"          BYTES_SPILLED_TO_LOCAL_STORAGE as long,",
+				"          BYTES_SPILLED_TO_REMOTE_STORAGE as long,",
+				"          BYTES_SCANNED as long,",
+				"          CREDITS_USED_CLOUD_SERVICES as double,",
+				"          EXECUTION_TIME as long,",
+				"          TOTAL_ELAPSED_TIME as long,",
+				"          PERCENTAGE_SCANNED_FROM_CACHE as double,",
+				"          BYTES_WRITTEN as long,",
+				"          TRANSACTION_BLOCKED_TIME as long,",
+				"          DATABASE_NAME as string,",
+				"          SCHEMA_NAME as string,",
+				"          WAREHOUSE_NAME as string",
+				"     ),",
+				"     allowSchemaDrift: false,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> PecanFile",
+				"PecanFile derive(MARKER = toLong(MARKER)) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: false,",
+				"     validateSchema: false,",
+				"     input(",
+				"          ENTITY_ID as string,",
+				"          QUERY_TYPE as string,",
+				"          MARKER as long,",
+				"          PARTITIONS_SCANNED as long,",
+				"          BYTES_SPILLED_TO_LOCAL_STORAGE as long,",
+				"          BYTES_SPILLED_TO_REMOTE_STORAGE as long,",
+				"          BYTES_SCANNED as long,",
+				"          CREDITS_USED_CLOUD_SERVICES as double,",
+				"          EXECUTION_TIME as long,",
+				"          TOTAL_ELAPSED_TIME as long,",
+				"          PERCENTAGE_SCANNED_FROM_CACHE as double,",
+				"          BYTES_WRITTEN as long,",
+				"          TRANSACTION_BLOCKED_TIME as long,",
+				"          DATABASE_NAME as string,",
+				"          SCHEMA_NAME as string,",
+				"          WAREHOUSE_NAME as string",
+				"     ),",
+				"     format: 'parquet',",
+				"     umask: 0762,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          ENTITY_ID,",
+				"          QUERY_TYPE,",
+				"          MARKER,",
+				"          PARTITIONS_SCANNED,",
+				"          BYTES_SPILLED_TO_LOCAL_STORAGE,",
+				"          BYTES_SPILLED_TO_REMOTE_STORAGE,",
+				"          BYTES_SCANNED,",
+				"          CREDITS_USED_CLOUD_SERVICES,",
+				"          EXECUTION_TIME,",
+				"          TOTAL_ELAPSED_TIME,",
+				"          PERCENTAGE_SCANNED_FROM_CACHE,",
+				"          BYTES_WRITTEN,",
+				"          TRANSACTION_BLOCKED_TIME,",
+				"          DATABASE_NAME,",
+				"          SCHEMA_NAME,",
+				"          WAREHOUSE_NAME",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
