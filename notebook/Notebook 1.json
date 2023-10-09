@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "b8eea677-bd6a-41cb-8cb9-910251a0cc82"
+				"spark.autotune.trackingId": "08b622d2-a50d-4594-9bfb-20b75146103f"
 			}
 		},
 		"metadata": {
@@ -157,7 +157,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 148
+				"execution_count": 150
 			},
 			{
 				"cell_type": "code",
@@ -212,9 +212,16 @@
 					"\r\n",
 					"models = [make_pipeline(SimpleImputer(),RandomForestRegressor(random_state=0, n_estimators=600)),XGBRegressor(random_state=0,n_estimators=600),lightgbm.LGBMRegressor(random_state=0,n_estimators=600),HistGradientBoostingRegressor()]\r\n",
 					"\r\n",
-					""
+					"model = MLForecast(models=models,\r\n",
+					"                   freq='D',\r\n",
+					"                   lags=[1,2],\r\n",
+					"                   lag_transforms={\r\n",
+					"                       1: [(rolling_mean, 1),(rolling_min, 1), (rolling_max, 2)],\r\n",
+					"                   },\r\n",
+					"                   date_features=['day'],\r\n",
+					"                   num_threads=6)"
 				],
-				"execution_count": 149
+				"execution_count": 151
 			}
 		]
 	}
