@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "61a1c14f-5a63-4927-ae9a-62ebe24e28c3"
+				"spark.autotune.trackingId": "e32f38b1-2f6c-40d4-b28f-ae6f85b1421a"
 			}
 		},
 		"metadata": {
@@ -161,7 +161,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 238
+				"execution_count": 244
 			},
 			{
 				"cell_type": "code",
@@ -181,7 +181,8 @@
 					"label_column_names=[\"EXECUTION_TIME\"]\r\n",
 					"feature_column_names=[\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\"]\r\n",
 					"OUTPUT_COLUMNS = [\"PREDICTED_EXECUTION_TIME\"]\r\n",
-					"data2=df_init.select(F.to_timestamp(F.col(\"MARKER\")/1000),\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
+					"#data2=df_init.select(F.to_timestamp(F.col(\"MARKER\")/1000),\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
+					"data2=df_init.select(\"MARKER\",\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
 					"data2=data2.toDF(\"DS\",\"UNIQUE_ID\",\"Y\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\")\r\n",
 					"data2.show(3)\r\n",
 					"data2=data2.toPandas()\r\n",
@@ -205,7 +206,7 @@
 					"train=train.to_pandas_on_spark()\r\n",
 					"Y=Y.to_pandas_on_spark()\r\n",
 					"\r\n",
-					"print(f\"train {train.count()}  valid {valid.count()}\")\r\n",
+					"#print(f\"train {train.count()}  valid {valid.count()}\")\r\n",
 					"\r\n",
 					"\r\n",
 					"\r\n",
@@ -232,14 +233,14 @@
 					"                   },\r\n",
 					"                   date_features=['day'],\r\n",
 					"                   num_threads=6)\r\n",
-					"#train.show(3)\r\n",
+					"\r\n",
 					"\r\n",
 					"\r\n",
 					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 239
+				"execution_count": 245
 			}
 		]
 	}
