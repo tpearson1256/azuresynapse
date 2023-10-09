@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "c3ec76b3-e572-49b8-953c-258ccc3163a0"
+				"spark.autotune.trackingId": "ba8a343f-c20c-4c7d-b613-144e78d66e47"
 			}
 		},
 		"metadata": {
@@ -62,7 +62,8 @@
 					}
 				},
 				"source": [
-					"pyodbc.drivers()"
+					"pyodbc.drivers()\r\n",
+					""
 				],
 				"execution_count": 9
 			},
@@ -77,9 +78,13 @@
 						"transient": {
 							"deleting": false
 						}
+					},
+					"microsoft": {
+						"language": "python"
 					}
 				},
 				"source": [
+					"%%pyspark\r\n",
 					"import pyodbc\r\n",
 					"server='myadfasas.sql.azuresynapse.net'\r\n",
 					"username='sqladminuser'\r\n",
@@ -88,12 +93,17 @@
 					"\r\n",
 					"cnxn=pyodbc.connect('DRIVER={'+ 'ODBC Driver 17 for SQL Server' +'};SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)\r\n",
 					"curs=cnxn.cursor()\r\n",
+					"curs.execute('select top 5 * from dbo.pecan_submit')\r\n",
+					"pecanDF=spark.sql(\"\"\"select  * from dbo.pecan_submit\"\"\")\r\n",
+					"display(pecanDF)\r\n",
+					"\r\n",
+					"\r\n",
 					"\r\n",
 					"\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 17
+				"execution_count": 31
 			},
 			{
 				"cell_type": "markdown",
