@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "85fc4d98-bd34-48c3-a3a3-2cc92c906dae"
+				"spark.autotune.trackingId": "0ca04957-baf8-4ee5-a9eb-c95f4d64d9f4"
 			}
 		},
 		"metadata": {
@@ -62,7 +62,7 @@
 					}
 				},
 				"source": [
-					"pip install keras"
+					""
 				],
 				"execution_count": 3
 			},
@@ -135,7 +135,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 4
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
