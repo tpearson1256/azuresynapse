@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "34bea6c0-ad0b-4cad-bc7e-da6eda707329"
+				"spark.autotune.trackingId": "149324e4-760e-4a08-8792-b2deaa998467"
 			}
 		},
 		"metadata": {
@@ -101,7 +101,6 @@
 					"from sklearn.preprocessing import OneHotEncoder\r\n",
 					"from sklearn.preprocessing import OrdinalEncoder\r\n",
 					"from sklearn.preprocessing import LabelEncoder\r\n",
-					"from snowflake.snowpark.types import IntegerType, StringType,LongType, BooleanType,StructField, StructType, DateType\r\n",
 					"from sklearn.model_selection import cross_val_score\r\n",
 					"from sklearn.model_selection import RepeatedKFold\r\n",
 					"from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor,HistGradientBoostingRegressor,GradientBoostingRegressor\r\n",
@@ -136,7 +135,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 4
 			}
 		]
 	}
