@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "766b163b-8f13-4c43-807a-d3abef2d305c"
+				"spark.autotune.trackingId": "b8eea677-bd6a-41cb-8cb9-910251a0cc82"
 			}
 		},
 		"metadata": {
@@ -101,6 +101,7 @@
 					"import sklearn\r\n",
 					"import scipy\r\n",
 					"import numpy\r\n",
+					"import lightgbm\r\n",
 					"from sklearn import linear_model\r\n",
 					"from sklearn.metrics import mean_absolute_error\r\n",
 					"from sklearn.preprocessing import OneHotEncoder\r\n",
@@ -156,7 +157,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 146
+				"execution_count": 148
 			},
 			{
 				"cell_type": "code",
@@ -207,9 +208,13 @@
 					"\r\n",
 					"x_train=x_train.drop('UNIQUE_ID')\r\n",
 					"\r\n",
-					"x_test=x_test.drop('UNIQUE_ID')"
+					"x_test=x_test.drop('UNIQUE_ID')\r\n",
+					"\r\n",
+					"models = [make_pipeline(SimpleImputer(),RandomForestRegressor(random_state=0, n_estimators=600)),XGBRegressor(random_state=0,n_estimators=600),lightgbm.LGBMRegressor(random_state=0,n_estimators=600),HistGradientBoostingRegressor()]\r\n",
+					"\r\n",
+					""
 				],
-				"execution_count": 147
+				"execution_count": 149
 			}
 		]
 	}
