@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "58c496d9-4d24-45b6-8c9c-8882873226ba"
+				"spark.autotune.trackingId": "102c7e3b-8b69-497f-a6bd-f2a7f30d04c7"
 			}
 		},
 		"metadata": {
@@ -119,7 +119,7 @@
 					"from sklearn.experimental import enable_hist_gradient_boosting\r\n",
 					"from sklearn.ensemble import HistGradientBoostingRegressor\r\n",
 					"from sklearn.ensemble import GradientBoostingRegressor\r\n",
-					"from window_ops.rolling import rolling_mean, rolling_max, rolling_min\r\n",
+					"#from window_ops.rolling import rolling_mean, rolling_max, rolling_min\r\n",
 					"from mlforecast import MLForecast\r\n",
 					"from mlforecast.utils import generate_daily_series\r\n",
 					"from sklearn.impute import SimpleImputer\r\n",
@@ -164,7 +164,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 274
+				"execution_count": 276
 			},
 			{
 				"cell_type": "code",
