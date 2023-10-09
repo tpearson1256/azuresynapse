@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "e768b950-f36d-4bb3-996a-1a6e25f19947"
+				"spark.autotune.trackingId": "92b804bc-d99e-4fbe-8e76-d64b9e1885e0"
 			}
 		},
 		"metadata": {
@@ -156,7 +156,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 92
+				"execution_count": 94
 			},
 			{
 				"cell_type": "code",
@@ -193,12 +193,12 @@
 					"#valid = data2.loc[(data2['DS'] >= '2023-05-30') & (data2['DS'] < '2023-09-13')]\r\n",
 					"\r\n",
 					"train = data2.filter((data2['DS'] < '2023-08-30') & (data2['DS'] >='2023-04-29'))\r\n",
-					"#valid = data2.loc[(data2['DS'] >= '2023-05-30') & (data2['DS'] < '2023-09-13')]\r\n",
+					"valid = data2.filter((data2['DS'] >= '2023-05-30') & (data2['DS'] < '2023-09-13'))\r\n",
 					"\r\n",
-					"train.dropna(inplace=True)\r\n",
-					"valid.dropna(inplace=True)"
+					"train.dropna(all)\r\n",
+					"valid.dropna(all)"
 				],
-				"execution_count": 93
+				"execution_count": 95
 			}
 		]
 	}
