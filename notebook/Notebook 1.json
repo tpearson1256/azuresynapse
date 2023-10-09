@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "0ca04957-baf8-4ee5-a9eb-c95f4d64d9f4"
+				"spark.autotune.trackingId": "7fc32c8f-f52f-4251-b4f5-ef40c848d336"
 			}
 		},
 		"metadata": {
@@ -95,7 +95,6 @@
 				"source": [
 					"import sklearn_pandas as skp\r\n",
 					"import sklearn\r\n",
-					"import keras\r\n",
 					"from sklearn import linear_model\r\n",
 					"from sklearn.metrics import mean_absolute_error\r\n",
 					"from sklearn.preprocessing import OneHotEncoder\r\n",
@@ -103,7 +102,10 @@
 					"from sklearn.preprocessing import LabelEncoder\r\n",
 					"from sklearn.model_selection import cross_val_score\r\n",
 					"from sklearn.model_selection import RepeatedKFold\r\n",
-					"from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor,HistGradientBoostingRegressor,GradientBoostingRegressor\r\n",
+					"from sklearn.ensemble import RandomForestRegressor\r\n",
+					"from sklearn.ensemble import ExtraTreesRegressor\r\n",
+					"from sklearn.ensemble import HistGradientBoostingRegressor\r\n",
+					"from sklearn.ensemble import GradientBoostingRegressor\r\n",
 					"from window_ops.rolling import rolling_mean, rolling_max, rolling_min\r\n",
 					"from mlforecast import MLForecast\r\n",
 					"from mlforecast.utils import generate_daily_series\r\n",
@@ -135,7 +137,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 5
+				"execution_count": 10
 			},
 			{
 				"cell_type": "code",
