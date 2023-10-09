@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "7d436f04-3b91-48c5-aeff-85ecee3b4140"
+				"spark.autotune.trackingId": "c39ed3d1-340c-4c60-b454-f93a55c8842e"
 			}
 		},
 		"metadata": {
@@ -102,6 +102,8 @@
 					"import scipy\r\n",
 					"import numpy\r\n",
 					"import lightgbm\r\n",
+					"import pyarrow\r\n",
+					"from pyspark.sql import functions as F\r\n",
 					"from sklearn import linear_model\r\n",
 					"from sklearn.metrics import mean_absolute_error\r\n",
 					"from sklearn.preprocessing import OneHotEncoder\r\n",
@@ -159,7 +161,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 166
+				"execution_count": 176
 			},
 			{
 				"cell_type": "code",
@@ -179,7 +181,7 @@
 					"label_column_names=[\"EXECUTION_TIME\"]\r\n",
 					"feature_column_names=[\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\"]\r\n",
 					"OUTPUT_COLUMNS = [\"PREDICTED_EXECUTION_TIME\"]\r\n",
-					"data2=df_init.select(\"MARKER\",\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
+					"data2=df_init.select(F.to_timestamp(\"MARKER\") as DS,\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
 					"data2=data2.toDF(\"DS\",\"UNIQUE_ID\",\"Y\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\")\r\n",
 					"data2.show(3)\r\n",
 					"data2=data2.toPandas()\r\n",
@@ -193,12 +195,15 @@
 					"#data20.show(5)\r\n",
 					"print(data2.count())\r\n",
 					"\r\n",
+					"\r\n",
 					"train, valid = data2.randomSplit([0.7, 0.3], seed=42)\r\n",
 					"\r\n",
 					"\r\n",
 					"train.dropna(how='all')\r\n",
 					"valid.dropna(how='all')\r\n",
 					"print(f\"train {train.count()}  valid {valid.count()}\")\r\n",
+					"\r\n",
+					"\r\n",
 					"\r\n",
 					"Y=valid[['UNIQUE_ID','DS','Y']]\r\n",
 					"\r\n",
@@ -228,9 +233,9 @@
 					"\r\n",
 					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])    \r\n",
 					"\r\n",
-					"#model.fit_models(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])"
+					""
 				],
-				"execution_count": 167
+				"execution_count": 177
 			}
 		]
 	}
