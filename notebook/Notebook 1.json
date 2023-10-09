@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "fb18cfb1-6980-4be8-b7be-b7aded766736"
+				"spark.autotune.trackingId": "58c496d9-4d24-45b6-8c9c-8882873226ba"
 			}
 		},
 		"metadata": {
@@ -164,7 +164,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 272
+				"execution_count": 274
 			},
 			{
 				"cell_type": "code",
@@ -229,9 +229,9 @@
 					"\r\n",
 					"x_test=x_test.drop('UNIQUE_ID')\r\n",
 					"\r\n",
-					"models = [make_pipeline(SimpleImputer(),RandomForestRegressor(random_state=0, n_estimators=600)),XGBRegressor(random_state=0,n_estimators=600),lightgbm.LGBMRegressor(random_state=0,n_estimators=600),HistGradientBoostingRegressor()]\r\n",
+					"#models = [make_pipeline(SimpleImputer(),RandomForestRegressor(random_state=0, n_estimators=600)),XGBRegressor(random_state=0,n_estimators=600),lightgbm.LGBMRegressor(random_state=0,n_estimators=600),HistGradientBoostingRegressor()]\r\n",
 					"\r\n",
-					"model = MLForecast(models=models,\r\n",
+					"#model = MLForecast(models=models,\r\n",
 					"                   freq='D',\r\n",
 					"                   lags=[1,2],\r\n",
 					"                   lag_transforms={\r\n",
@@ -240,13 +240,20 @@
 					"                   date_features=['day'],\r\n",
 					"                   num_threads=6)\r\n",
 					"\r\n",
+					"model = MLForecast(\r\n",
+					"    models=LinearRegression(),\r\n",
+					"    freq='D',  # our serie has a monthly frequency\r\n",
+					"    lags=[1,2],\r\n",
+					"    target_transforms=[Differences([1])],\r\n",
+					")\r\n",
+					"\r\n",
 					"\r\n",
 					"\r\n",
 					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 273
+				"execution_count": null
 			}
 		]
 	}
