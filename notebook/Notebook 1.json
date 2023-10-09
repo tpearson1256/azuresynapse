@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "a3fc5024-9239-47a7-9cdb-a91708d4322d"
+				"spark.autotune.trackingId": "7ee5490b-3f2a-4c7d-a970-d564b150494c"
 			}
 		},
 		"metadata": {
@@ -156,7 +156,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 44
+				"execution_count": 48
 			},
 			{
 				"cell_type": "code",
@@ -182,13 +182,13 @@
 					"data2=data2.toPandas()\r\n",
 					"data2[\"QUERY_TYPE\"] = data2[\"QUERY_TYPE\"].astype('category')\r\n",
 					"data2[\"QUERY_TYPE_CAT\"] = data2[\"QUERY_TYPE\"].cat.codes\r\n",
-					"#data2 = data2.drop('QUERY_TYPE', axis=1)\r\n",
-					"print(data2.dtypes)\r\n",
-					"data2.show(3)\r\n",
+					"data2 = data2.drop('QUERY_TYPE', axis=1)\r\n",
+					"#print(data2.dtypes)\r\n",
+					"print(data2[\"ENTITY_ID\",\"QUERY_TYPE_CAT\"])\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 45
+				"execution_count": 49
 			}
 		]
 	}
