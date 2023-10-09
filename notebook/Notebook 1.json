@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "c39ed3d1-340c-4c60-b454-f93a55c8842e"
+				"spark.autotune.trackingId": "d584cfcc-c748-4113-860e-bfa815c32ac7"
 			}
 		},
 		"metadata": {
@@ -102,7 +102,7 @@
 					"import scipy\r\n",
 					"import numpy\r\n",
 					"import lightgbm\r\n",
-					"import pyarrow\r\n",
+					"import pandas as pd\r\n",
 					"from pyspark.sql import functions as F\r\n",
 					"from sklearn import linear_model\r\n",
 					"from sklearn.metrics import mean_absolute_error\r\n",
@@ -161,7 +161,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 176
+				"execution_count": 218
 			},
 			{
 				"cell_type": "code",
@@ -181,14 +181,14 @@
 					"label_column_names=[\"EXECUTION_TIME\"]\r\n",
 					"feature_column_names=[\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\"]\r\n",
 					"OUTPUT_COLUMNS = [\"PREDICTED_EXECUTION_TIME\"]\r\n",
-					"data2=df_init.select(F.to_timestamp(\"MARKER\") as DS,\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
+					"data2=df_init.select(F.to_timestamp(F.col(\"MARKER\")/1000),\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
 					"data2=data2.toDF(\"DS\",\"UNIQUE_ID\",\"Y\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\")\r\n",
 					"data2.show(3)\r\n",
 					"data2=data2.toPandas()\r\n",
 					"data2[\"QUERY_TYPE\"] = data2[\"QUERY_TYPE\"].astype('category')\r\n",
 					"data2[\"QUERY_TYPE_CAT\"] = data2[\"QUERY_TYPE\"].cat.codes\r\n",
 					"data2 = data2.drop('QUERY_TYPE', axis=1)\r\n",
-					"#print(data2.dtypes)\r\n",
+					"print(data2.dtypes)\r\n",
 					"data2=spark.createDataFrame(data2)\r\n",
 					"#print(data2[['DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED']])\r\n",
 					"#data20=data2.select('DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED')\r\n",
@@ -231,11 +231,19 @@
 					"\r\n",
 					"train=train.to_pandas_on_spark()\r\n",
 					"\r\n",
-					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])    \r\n",
+					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])\r\n",
 					"\r\n",
+					"df_columns=train.drop(['DS','UNIQUE_ID','Y'])\r\n",
+					"\r\n",
+					"cols=['DS','PARTITIONS_SCANNED','BYTES_SPILLED_TO_LOCAL_STORAGE','BYTES_SPILLED_TO_REMOTE_STORAGE','BYTES_SCANNED','PERCENTAGE_SCANNED_FROM_CACHE','BYTES_WRITTEN','QUERY_TYPE_CAT']\r\n",
+					"\r\n",
+					"feats = {} # a dict to hold feature_name: feature_importance\r\n",
+					"for feature, importance in zip(df_columns.columns, model.models_['XGBRegressor'].feature_importances_):\r\n",
+					"    feats[feature] = importance #add the name/value pair\r\n",
+					"feats = {k:[v] for k,v in feats.items()}  # WORKAROUND\r\n",
 					""
 				],
-				"execution_count": 177
+				"execution_count": 219
 			}
 		]
 	}
