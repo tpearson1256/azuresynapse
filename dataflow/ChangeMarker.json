@@ -9,7 +9,7 @@
 						"referenceName": "copypecandata",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "PecanFile"
 				}
 			],
 			"sinks": [
@@ -52,8 +52,8 @@
 				"     allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     format: 'parquet') ~> source1",
-				"source1 derive(MARKER = toLong(MARKER),",
+				"     format: 'parquet') ~> PecanFile",
+				"PecanFile derive(MARKER = toLong(MARKER),",
 				"     partitionBy('hash', 1)) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: false,",
 				"     validateSchema: false,",
