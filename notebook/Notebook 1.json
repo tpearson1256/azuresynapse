@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "3ea436bd-19bb-45cf-93e6-c12f8515c1f2"
+				"spark.autotune.trackingId": "dead8bcf-ad96-4b2b-99aa-d7df2fbb409d"
 			}
 		},
 		"metadata": {
@@ -156,7 +156,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 68
+				"execution_count": 70
 			},
 			{
 				"cell_type": "code",
@@ -185,11 +185,11 @@
 					"data2 = data2.drop('QUERY_TYPE', axis=1)\r\n",
 					"#print(data2.dtypes)\r\n",
 					"data20=spark.createDataFrame(data2)\r\n",
-					"print(data20[['DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED']])\r\n",
+					"print(data2[['DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED']])\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 69
+				"execution_count": 71
 			}
 		]
 	}
