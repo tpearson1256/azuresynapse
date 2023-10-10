@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "2437648a-042f-455f-b1b2-0d6af4cf8d34"
+				"spark.autotune.trackingId": "968d2012-2ef9-4d96-8ee5-2ca876ee1333"
 			}
 		},
 		"metadata": {
@@ -165,7 +165,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 287
+				"execution_count": 297
 			},
 			{
 				"cell_type": "code",
@@ -185,10 +185,10 @@
 					"label_column_names=[\"EXECUTION_TIME\"]\r\n",
 					"feature_column_names=[\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\"]\r\n",
 					"OUTPUT_COLUMNS = [\"PREDICTED_EXECUTION_TIME\"]\r\n",
-					"#data2=df_init.select(F.to_timestamp(F.col(\"MARKER\")/1000),\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
-					"data2=df_init.select(F.col(\"MARKER\")/1000,\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
+					"data2=df_init.select(F.to_timestamp(F.col(\"MARKER\")/1000),\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
+					"#data2=df_init.select(F.col(\"MARKER\")/1000,\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
 					"data2=data2.toDF(\"DS\",\"UNIQUE_ID\",\"Y\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\")\r\n",
-					"data2=data2.withColumn(\"DS\", data2[\"DS\"].cast(LongType()))\r\n",
+					"#data2=data2.withColumn(\"DS\", data2[\"DS\"].cast(LongType()))\r\n",
 					"data2=data2.toPandas()\r\n",
 					"data2[\"QUERY_TYPE\"] = data2[\"QUERY_TYPE\"].astype('category')\r\n",
 					"data2[\"QUERY_TYPE_CAT\"] = data2[\"QUERY_TYPE\"].cat.codes\r\n",
@@ -206,8 +206,8 @@
 					"train, valid = data2.randomSplit([0.7, 0.3], seed=42)\r\n",
 					"\r\n",
 					"\r\n",
-					"train.dropna(how='any')\r\n",
-					"valid.dropna(how='any')\r\n",
+					"#train.dropna(how='any')\r\n",
+					"#valid.dropna(how='any')\r\n",
 					"Y=valid[['UNIQUE_ID','DS','Y']]\r\n",
 					"\r\n",
 					"train=train.to_pandas_on_spark()\r\n",
@@ -244,8 +244,8 @@
 					"\r\n",
 					"model = MLForecast(\r\n",
 					"    models=XGBRegressor(),\r\n",
-					"    freq='D',  # our serie has a monthly frequency\r\n",
-					"    lags=[1,2],\r\n",
+					"    freq='H',  # our series has a monthly frequency\r\n",
+					"    lags=[1],\r\n",
 					"    target_transforms=[Differences([1])],\r\n",
 					")\r\n",
 					"\r\n",
@@ -255,7 +255,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 288
+				"execution_count": 298
 			}
 		]
 	}
