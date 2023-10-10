@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "968d2012-2ef9-4d96-8ee5-2ca876ee1333"
+				"spark.autotune.trackingId": "615e2d4e-bf12-4795-aaba-efc624ea65e4"
 			}
 		},
 		"metadata": {
@@ -165,7 +165,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 297
+				"execution_count": 307
 			},
 			{
 				"cell_type": "code",
@@ -244,18 +244,19 @@
 					"\r\n",
 					"model = MLForecast(\r\n",
 					"    models=XGBRegressor(),\r\n",
-					"    freq='H',  # our series has a monthly frequency\r\n",
+					"    freq='D',  # our series has a daily frequency\r\n",
 					"    lags=[1],\r\n",
 					"    target_transforms=[Differences([1])],\r\n",
 					")\r\n",
 					"\r\n",
 					"\r\n",
 					"\r\n",
-					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y', static_features=[])\r\n",
+					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y',static_features=[])\r\n",
+					"#model.fit(train)\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 298
+				"execution_count": 308
 			}
 		]
 	}
