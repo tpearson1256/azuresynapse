@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "668f93b7-240b-4065-a12f-b92613beaaee"
+				"spark.autotune.trackingId": "d2fe19c3-10ed-4b9f-966b-e8dd8cb0fb15"
 			}
 		},
 		"metadata": {
@@ -166,7 +166,7 @@
 					"\r\n",
 					""
 				],
-				"execution_count": 307
+				"execution_count": 317
 			},
 			{
 				"cell_type": "code",
@@ -190,13 +190,15 @@
 					"#data2=df_init.select(F.col(\"MARKER\")/1000,\"ENTITY_ID\",\"EXECUTION_TIME\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\").distinct()\r\n",
 					"data2=data2.toDF(\"DS\",\"UNIQUE_ID\",\"Y\",\"QUERY_TYPE\",\"PARTITIONS_SCANNED\",\"BYTES_SPILLED_TO_LOCAL_STORAGE\",\"BYTES_SPILLED_TO_REMOTE_STORAGE\",\"BYTES_SCANNED\",\"PERCENTAGE_SCANNED_FROM_CACHE\",\"BYTES_WRITTEN\")\r\n",
 					"#data2=data2.withColumn(\"DS\", data2[\"DS\"].cast(LongType()))\r\n",
-					"data2=data2.toPandas()\r\n",
-					"data2[\"QUERY_TYPE\"] = data2[\"QUERY_TYPE\"].astype('category')\r\n",
-					"data2[\"QUERY_TYPE_CAT\"] = data2[\"QUERY_TYPE\"].cat.codes\r\n",
-					"data2 = data2.drop('QUERY_TYPE', axis=1)\r\n",
+					"#data2=data2.toPandas()\r\n",
+					"#data2[\"QUERY_TYPE\"] = data2[\"QUERY_TYPE\"].astype('category')\r\n",
+					"#data2[\"QUERY_TYPE_CAT\"] = data2[\"QUERY_TYPE\"].cat.codes\r\n",
+					"indexer = StringIndexer(inputCol=\"QUERY_TYPE\", outputCol=\"QUERY_TYPE_CAT\")\r\n",
+					"data2 = indexer.fit(data2).transform(data2)\r\n",
+					"data2 = data2.drop('QUERY_TYPE')\r\n",
 					"#print(data2.dtypes)\r\n",
-					"data12=data2\r\n",
-					"data2=spark.createDataFrame(data2)\r\n",
+					"data12=data2.toPandas()\r\n",
+					"#data2=spark.createDataFrame(data2)\r\n",
 					"print(data12[['DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED']])\r\n",
 					"#data20=data2.select('DS', 'UNIQUE_ID','QUERY_TYPE_CAT','PARTITIONS_SCANNED')\r\n",
 					"#data20.show(5)\r\n",
@@ -252,12 +254,12 @@
 					"\r\n",
 					"\r\n",
 					"\r\n",
-					"model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y',static_features=[])\r\n",
-					"#model.fit(train)\r\n",
+					"#model.fit(train, id_col='UNIQUE_ID', time_col='DS', target_col='Y',static_features=[])\r\n",
+					"model.fit(train)\r\n",
 					"\r\n",
 					""
 				],
-				"execution_count": 308
+				"execution_count": 318
 			}
 		]
 	}
